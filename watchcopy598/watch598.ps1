@@ -1,6 +1,9 @@
 
 # David Gleba # 2021-07-08
 # https://stackoverflow.com/questions/29066742/watch-file-for-changes-and-run-command-with-powershell
+# this tool should only need built in windows 10 tools. No need to install anything.
+# 		mkdir C:\crib\watch598testfolder
+
 
 Function Register-Watcher {
     param ($folder)
@@ -18,10 +21,12 @@ Function Register-Watcher {
         $timeStamp = $Event.TimeGenerated
         Write-Host "The file $name was $changeType at $timeStamp"
         # https://ss64.com/ps/call.html
-        @ c:\data\script\tools599\watchcopy598.bat 
+        & c:\data\script\tools599\watchcopy598\watchcopy598.bat 
     ')
 
     Register-ObjectEvent $Watcher -EventName "Changed" -Action $changeAction
     Register-ObjectEvent $Watcher -EventName "Created" -Action $changeAction
 }
-Register-Watcher "c:\0"
+
+# Watch this folder, then copy it..
+Register-Watcher "C:\crib\watch598testfolder"
