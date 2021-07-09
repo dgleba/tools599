@@ -1,0 +1,14 @@
+
+this won't write sched_rsynclog.log..
+
+c:\prg\cygwin64\bin\cygstart.exe --showminimized   c:\prg\cygwin64\bin\bash.exe -l -c "/cygdrive/c/data/script/movefiles575/move_files_to_nas575.sh | /cygdrive/c/prg/cygwin64/bin/tee /cygdrive/c/temp/moveimg/sched_rsynclog.log 2>&1"
+
+
+test..
+c:\prg\cygwin64\bin\bash.exe -l -c "/cygdrive/c/data/script/movefiles575/move_files_to_nas575.sh | /cygdrive/c/prg/cygwin64/bin/tee /cygdrive/c/temp/moveimg/sched_rsynclog.log 2>&1"
+
+
+2021-03-26_Fri_09.50-AM
+Workaround..
+works..
+c:\prg\cygwin64\bin\cygstart.exe --showminimized   c:\prg\cygwin64\bin\bash.exe -l -c "/cygdrive/c/data/script/movefiles575/move_files_to_nas575.sh>/cygdrive/c/temp/moveimg/sched_rsynclog.log 2>&1"

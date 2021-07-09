@@ -1,0 +1,13 @@
+
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+#@  
+#@  
+#@  
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@   2021-03-26[Mar-Fri]09-06AM 
+
+
+C:\data\script\movefiles575\2021-03-26 09_02_29-C__temp_moveimg.jpg
+
+this pic shows that C:\temp\moveimg\rsynclog_2021.03.25_21.00.54.wtasksch.log
+is missing for runs after that time.
+

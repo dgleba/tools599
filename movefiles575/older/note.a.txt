@@ -1,0 +1,23 @@
+020-11/S1 Inner Rim - Nov 2/20201102/s1_inner_rim_20201102T005234.png
+2020-11/S1 Inner Rim - Nov 2/20201102/s1_inner_rim_20201102T005240.png
+2020-11/S1 Inner Rim - Nov 2/20201102/s1_inner_rim_20201102T005246.png
+2020-11/S1 Inner Rim - Nov 2/20201102/s1_inner_rim_20201102T005251.png
+2020-11/S1 Inner Rim - Nov 2/20201102/s1_inner_rim_20201102T005257.png
+2020-11/S1 Inner Rim - Nov 2/20201102/s1_inner_rim_20201102T005303.png
+2020-11/S1 Inner Rim - Nov 2/20201102/s1_inner_rim_20201102T005309.png
+2020-11/S1 Inner Rim - Nov 2/20201102/s1_inner_rim_20201102T005314.png
+2020-11/S1 Inner Rim - Nov 2/20201102/s1_inner_rim_20201102T005320.png
+2020-11/S1 Inner Rim - Nov 2/20201102/s1_inner_rim_20201102T005326.png
+2020-11/S1 Inner Rim - Nov 2/20201102/s1_inner_rim_20201102T005332.png
+2020-11/S1 Inner Rim - Nov 2/20201102/s1_inner_rim_20201102T005337.png
+2020-11/S1 Inner Rim - Nov 2/20201102/s1_inner_rim_20201102T005343.png
+2020-11/S1 Inner Rim - Nov 2/20201102/s1_inner_rim_20201102T005349.png
+2020-11/S1 Inner Rim - Nov 2/20201102/s1_inner_rim_20201102T005355.png
+2020-11/S1 Inner Rim - Nov 2/20201102/s1_inner_rim_20201102T005400.png
+2020-11/S1 Inner Rim - Nov 2/20201102/s1_inner_rim_20201102T005406.png
+2020-11/S1 Inner Rim - Nov 2/20201102/s1_inner_rim_20201102T005412.png
+rsync error: received SIGINT, SIGTERM, or SIGHUP (code 20) at rsync.c(701) [sender=3.2.4dev]
+rsync error: received SIGUSR1 (code 19) at main.c(1592) [generator=3.2.4dev]
+
+pmdacameras@DESKTOP-FH831O9 ~
+$
