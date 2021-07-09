@@ -5,6 +5,14 @@
 # 		mkdir C:\crib\watch598testfolder
 
 
+# :: Settings ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+$watchedfolder="C:\crib\watch598testfolder"
+
+
+# :: Functions ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
 Function Register-Watcher {
     param ($folder)
     $filter = "*.*" #all files
@@ -28,5 +36,10 @@ Function Register-Watcher {
     Register-ObjectEvent $Watcher -EventName "Created" -Action $changeAction
 }
 
+
+
+# :: Main ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
 # Watch this folder, then copy it..
-Register-Watcher "C:\crib\watch598testfolder"
+Register-Watcher $watchedfolder

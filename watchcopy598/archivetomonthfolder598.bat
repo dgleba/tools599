@@ -1,5 +1,15 @@
 @echo off
 
+:: Settings ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+set sourcefolder=C:\crib\watch598testfolder
+
+
+
+
+:: date ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
 REM :Prepare date. must be usa locale
 REM set timea=%TIME: =0%
 REM set ymd=%date:~12,2%%date:~4,2%%date:~7,2%&set dhms=%date:~12,2%%date:~4,2%%date:~7,2%_%time:~0,2%%time:~3,2%%time:~6,2%
@@ -19,6 +29,12 @@ echo ts_dhms... is %ts_dhms%
 echo ts_ymd ... is %ts_ymd%
 echo ts_yr ... is %ts_yr%
 echo ts_mon ... is %ts_mon%
+
+
+:: calculate ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+calculate 
+
 
 
 ::Move files older than minage..
