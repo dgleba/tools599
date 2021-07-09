@@ -5,8 +5,6 @@
 set sourcefolder=C:\crib\watch598testfolder
 
 
-
-
 :: date ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -31,15 +29,14 @@ echo ts_yr ... is %ts_yr%
 echo ts_mon ... is %ts_mon%
 
 
-:: calculate ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+:: move ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-calculate 
 
 
 
 ::Move files older than minage..
 
-Need to calculate month minus 1.  eg: 07 -1 = 06
-robocopy C:\crib\watch598testfolder C:\crib\watch598archive\%ts_yr%-%ts_mon_prev% /s /MOVe /MINAGE:30 /IS /R:3 /W:4 > NUL
+robocopy C:\crib\watch598testfolder C:\crib\watch598archive\%ts_yr%-%ts_mon%-minus30 /s /MOVe /MINAGE:30 /IS /R:3 /W:4 > NUL
 
 
+timeout 14
