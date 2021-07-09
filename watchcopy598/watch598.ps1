@@ -7,7 +7,7 @@
 
 # :: Settings ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-$watchedfolder="C:\crib\watch598testfolder"
+$watchedfolder = "C:\crib\watch598testfolder"
 
 
 # :: Functions ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -29,7 +29,7 @@ Function Register-Watcher {
         $timeStamp = $Event.TimeGenerated
         Write-Host "The file $name was $changeType at $timeStamp"
         # https://ss64.com/ps/call.html
-        & c:\data\script\tools599\watchcopy598\watchcopy598.bat 
+        & C:\data\script\tools599\watchcopy598\watchcopy598.bat
     ')
 
     Register-ObjectEvent $Watcher -EventName "Changed" -Action $changeAction
