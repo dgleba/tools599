@@ -1,7 +1,5 @@
 
-# save process id to file. Could use this to check later that is still running.
-    cmd /c echo $pid>c:\crib\logs\testc-598watch-ps1.pid
-	
+
 # https://community.idera.com/database-tools/powershell/powertips/b/tips/posts/using-filesystemwatcher-correctly-part-2
 
 
@@ -86,7 +84,6 @@ $Action = {
 	$Stamp = (Get-Date).toString("yyyy-MM-dd_HH.mm.ss")
     $text = "{0} was {1} at {2} {3}" -f $FullPath, $ChangeType, $Timestamp, $Stamp
 
-    cmd /c echo testc-598watch.ps1, $Stamp>>c:\crib\logs\$(gc env:computername)_testc-598watch-ps1.log
 	& robocopy  C:\crib\c598 C:\crib\c598copy /e
 	# LogWrite "hello"
 	# LogWrite "ran C:\data\script\tools599\watchcopy598\testc-598watch.ps1"
@@ -132,8 +129,7 @@ try
 {
     do
     {
-		# 3 is wait 3 seconds in loop.
-        Wait-Event -Timeout 3
+        Wait-Event -Timeout 1
         Write-Host "." -NoNewline
         
     } while ($true)

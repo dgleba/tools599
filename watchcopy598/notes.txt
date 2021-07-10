@@ -1,5 +1,14 @@
 
 
+C:\data\script\tools599\watchcopy598\
+
+cd \temp
+
+C:\data\script\tools599\watchcopy598\test-d598.ps1
+
+C:\data\script\tools599\watchcopy598\testc-598watch.ps1
+
+
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 #@  
 #@  how to ensure it is always active?
@@ -44,6 +53,59 @@ https://social.technet.microsoft.com/Forums/en-US/e8ef5eb4-61fb-4fc1-a387-dfba21
 _____________
 
 
+https://stackoverflow.com/questions/15969662/assure-only-1-instance-of-powershell-script-is-running-at-any-given-time
+
+
+
+
+
+must have admin...
+
+Get-WmiObject Win32_Process -Filter "Name='powershell.exe' AND CommandLine LIKE '%script.ps1%'"
+
+Get-WmiObject Win32_Process -Filter "Name='powershell.exe' AND CommandLine LIKE '%598watch%'"
+
+__PATH                     : \\REDYO7\root\cimv2:Win32_Process.Handle="22712"
+Caption                    : powershell.exe
+CommandLine                : C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE -File
+                             C:\data\script\tools599\watchcopy598\testc-598watch.ps1
+Handle                     : 22712
+HandleCount                : 749
+							 
+
+_____________
+
+
+https://stackoverflow.com/questions/15969662/assure-only-1-instance-of-powershell-script-is-running-at-any-given-time
+
+
+$otherScriptInstances=get-wmiobject win32_process | where{$_.processname -eq 'powershell.exe' -and $_.ProcessId -ne $pid -and $_.commandline -match $($MyInvocation.MyCommand.Path)}
+
+if ($otherScriptInstances -ne $null)
+{
+    "Already running"
+	
+    cmd /c pause
+}else
+{
+    "Not yet running"
+    cmd /c pause
+}
+
+
+Write-Host $_.processname   $_.ProcessId  $pid  $_.commandline $($MyInvocation.MyCommand.Path)
+Write-Host  $pid 
+
+get-wmiobject win32_process
+
+$otherScriptInstances = get-wmiobject win32_process | where{$_.processname -eq 'powershell.exe' }
+
+write-host $otherScriptInstances
+
+
+_____________
+
+
 
 https://www.raymond.cc/blog/3-portable-tools-monitor-files-folders-changes/2/
 
@@ -60,4 +122,21 @@ task scheduler cannot create the task or the user does not have permission to cr
 task scheduler cannot create the task. The user account is unknown, the password is incorrect, or the user account does not have permission to create this task
 
 _____________
+
+git4winport
+
+C:\prg\PortableGit\git-bash.exe
+
+
+C:\data\script\tools599\watchcopy598
+
+cd /c/data/script/tools599/watchcopy598
+
+git clone https://github.com/dgleba/tools599.git
+
+
+_____________
+
+
+
 

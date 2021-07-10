@@ -1,67 +1,22 @@
 
-# save process id to file. Could use this to check later that is still running.
-    cmd /c echo $pid>c:\crib\logs\testc-598watch-ps1.pid
-	
+
+# C:\data\script\tools599\watchcopy598\test-d598.ps1
+# purpose:  test log to file with cmd
+
+
+
+
+
 # https://community.idera.com/database-tools/powershell/powertips/b/tips/posts/using-filesystemwatcher-correctly-part-2
 
+mkdir "c:\crib\d598"
 
 # make sure you adjust this to point to the folder you want to monitor
-$PathToMonitor = "c:\crib\c598"
-
-# explorer $PathToMonitor
+$PathToMonitor = "c:\crib\d598"
 
 
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-# Cant get this to work.
-
-
-# Function Write-Log {
-
-# # https://stackoverflow.com/questions/7834656/create-log-file-in-powershell
-
-	# $logfile = "c:\crib\logs\$(gc env:computername).log"
-
-    # [CmdletBinding()]
-    # Param(
-    # [Parameter(Mandatory=$False)]
-    # [ValidateSet("INFO","WARN","ERROR","FATAL","DEBUG")]
-    # [String]
-    # $Level = "INFO",
-
-    # [Parameter(Mandatory=$True)]
-    # [string]
-    # $Message,
-
-    # [Parameter(Mandatory=$False)]
-    # [string]
-    # $logfile
-    # )
-
-    # $Stamp = (Get-Date).toString("yyyy/MM/dd HH:mm:ss")
-    # $Line = "$Stamp $Level $Message"
-    # If($logfile) {
-        # Add-Content $logfile -Value $Line
-    # }
-    # Else {
-        # Write-Output $Line
-    # }
-# }
-
-
-Function LogWrite
-{
-
-	$Logfile =  "c:\crib\logs\$(gc env:computername).log"
-   Param ([string]$logstring)
-
-	$Stamp = (Get-Date).toString("yyyy-MM-dd_HH.mm.ss")
-    Add-content $Logfile -value $logstring 
-	# $Stamp
-}
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 
 
 
@@ -86,12 +41,13 @@ $Action = {
 	$Stamp = (Get-Date).toString("yyyy-MM-dd_HH.mm.ss")
     $text = "{0} was {1} at {2} {3}" -f $FullPath, $ChangeType, $Timestamp, $Stamp
 
-    cmd /c echo testc-598watch.ps1, $Stamp>>c:\crib\logs\$(gc env:computername)_testc-598watch-ps1.log
-	& robocopy  C:\crib\c598 C:\crib\c598copy /e
+	# & robocopy  C:\crib\c598 C:\crib\c598copy /e
 	# LogWrite "hello"
 	# LogWrite "ran C:\data\script\tools599\watchcopy598\testc-598watch.ps1"
  	#& echo ran $Stamp>>c:\crib\logs\log.testc-598watch.ps1-2.log
     
+    cmd /c echo $Stamp>>c:\crib\logs\$(gc env:computername).log
+	
     Write-Host ""
     Write-Host $Stamp
     Write-Host $text -ForegroundColor Green
@@ -132,7 +88,6 @@ try
 {
     do
     {
-		# 3 is wait 3 seconds in loop.
         Wait-Event -Timeout 3
         Write-Host "." -NoNewline
         
