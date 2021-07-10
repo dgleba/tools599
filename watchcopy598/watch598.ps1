@@ -24,6 +24,19 @@
 
 
 
+# https://powershell.one/tricks/filesystem/filesystemwatcher
+
+# https://devblogs.microsoft.com/powershell-community/a-reusable-file-system-event-watcher-for-powershell/
+
+
+
+# =================================================
+# =================================================
+# =================================================
+
+
+
+
 # :: prep ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # run this once..

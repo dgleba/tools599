@@ -1,5 +1,63 @@
 
-=================================================
+
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+#@  
+#@  how to ensure it is always active?
+#@  
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@   2021-07-10[Jul-Sat]10-46AM 
 
 
+this works, but how do I monitor that is is running and active?
+Say it is running as a scheduled task. How to ensure it is always running?
+
+
+C:\data\script\tools599\watchcopy598\testc-598watch.ps1
+
+_____________
+
+
+
+https://powershell.one/tricks/filesystem/filesystemwatcher
+
+Great script, congrats!
+I'm new to Powershell, so maybe my question is somewhat basic.
+Is it possible to have the asysnchronous version of the script started as a service?
+Thanks.
+−
+Avatar
+Tobias Mod  Juan Carlos De Vinatea • 4 months ago
+This should be possible in Windows by scheduling a script as a "planned task". Make sure you allow the task to run without a user being logged on. Then pick the launch event, i.e. booting the machine, or logging on of a user. This way, the script acts pretty much like a classic service, and there won't be any visible PowerShell console window.
+
+
+_____________
+
+how to check if a powershell script is running in background
+
+
+https://social.technet.microsoft.com/Forums/windows/en-US/95216631-3829-4bbc-9809-fc4424decaf4/how-to-tell-if-my-powershell-script-is-running-or-open?forum=winserverpowershell
+
+
+https://community.spiceworks.com/topic/1734705-check-for-running-script
+
+https://social.technet.microsoft.com/Forums/en-US/e8ef5eb4-61fb-4fc1-a387-dfba21b068a6/how-can-you-change-the-process-name-and-description-of-powershell-instance-in-task-manager?forum=ITCG
+
+_____________
+
+
+
+https://www.raymond.cc/blog/3-portable-tools-monitor-files-folders-changes/2/
+
+
+Final Note: Other useful tools to monitor files and folders in real time that are not listed here include File Watcher Utilities  and DaemonFS . One tool we would advise caution over is Free Folder Monitor  as it can install adware during setup even if you opt out. Extracting the installer with something like Universal Extractor and using the program portably does get around the issue.
+
+Although not included here, a favorite techie’s tool Process Monitor  could also be configured to perform these functions in some capacity. The problem is setting it up to monitor files and folders for create/delete/rename actions is really not that easy and requires extensive use of the filters function.
+Read More: https://www.raymond.cc/blog/3-portable-tools-monitor-files-folders-changes/2/
+
+_____________
+
+task scheduler cannot create the task or the user does not have permission to create this task.
+
+task scheduler cannot create the task. The user account is unknown, the password is incorrect, or the user account does not have permission to create this task
+
+_____________
 
