@@ -1,11 +1,15 @@
 
+cd /cygdrive/c/data/script/tools599/watchcopy598
+
+cd C:\data\script\tools599
+
+cd C:\data\script\tools599\ps1-yard
 
 C:\data\script\tools599\watchcopy598\
 
-cd \temp
-
 C:\data\script\tools599\watchcopy598\test-d598.ps1
 
+cd \temp
 C:\data\script\tools599\watchcopy598\testc-598watch.ps1
 
 

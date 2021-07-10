@@ -1,4 +1,14 @@
 
+
+Status:
+errors.
+
+
+
+
+
+
+
 # https://powershell.one/tricks/filesystem/filesystemwatcher
 
 # find the path to the desktop folder:

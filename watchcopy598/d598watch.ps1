@@ -1,12 +1,5 @@
 
-# Status: works from windows task scheduler
-
-# Purpose:  test watch a folder for changes and copy files.
-
-
 # save process id to file. Could use this to check later that is still running.
-$Stamp = (Get-Date).toString("yyyy-MM-dd_HH.mm.ss")
-cmd /c echo $pid "," $Stamp>>c:\crib\logs\testc-598watch-ps1.pid.log
 cmd /c echo $pid>c:\crib\logs\testc-598watch-ps1.pid
 	
 # https://community.idera.com/database-tools/powershell/powertips/b/tips/posts/using-filesystemwatcher-correctly-part-2
@@ -43,7 +36,7 @@ $Action = {
 
 	# dgleba stamp
 	$Stamp = (Get-Date).toString("yyyy-MM-dd_HH.mm.ss")
-    cmd /c echo testc-598watch.ps1, $FullPath, $ChangeType, $Timestamp,$Stamp>>c:\crib\logs\$(gc env:computername)_testc-598watch-ps1.log
+    cmd /c echo testc-598watch.ps1, $Stamp>>c:\crib\logs\$(gc env:computername)_testc-598watch-ps1.log
 	& robocopy  C:\crib\c598 C:\crib\c598copy /e
 
     $text = "{0} was {1} at {2} {3}" -f $FullPath, $ChangeType, $Timestamp, $Stamp
