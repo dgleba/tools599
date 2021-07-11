@@ -36,7 +36,7 @@ echo ts_mon ... is %ts_mon%
 
 ::Move files older than minage..
 
-robocopy C:\crib\watch598testfolder C:\crib\watch598archive\%ts_yr%-%ts_mon%-minus30 /s /MOVe /MINAGE:30 /IS /R:3 /W:4 > NUL
+robocopy C:\crib\watch598testfolder C:\crib\watch598archive\%ts_yr%-%ts_mon%-minus30 /s /MOVe /MINAGE:30 /IS /R:3 /W:4 
 
 
 timeout 14

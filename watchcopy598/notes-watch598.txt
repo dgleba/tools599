@@ -16,6 +16,8 @@ cd \temp
 C:\data\script\tools599\watchcopy598\testc-598watch.ps1
 
 
+
+
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 #@  
 #@  how to ensure it is always active?
@@ -146,11 +148,45 @@ git clone https://github.com/dgleba/tools599.git
 _____________
 
 
-]password
 
+=================================================
+
+powershell pass powershell variables to cmd /c command
+
+powershell pass powershell variables to cmd /c command
 
 https://stackoverflow.com/questions/809333/powershell-command-processing-passing-in-variables
 
 
+_____________
 
+
+issue:
+
+background  powershell script in task scheduler running but not working after waking up
+
+_____________
+
+Start-ScheduledTask -TaskPath "your task path" -TaskName "your task name"
+
+To stop:
+
+Stop-ScheduledTask -TaskPath "your task path" -TaskName "your task name"
+
+--
+
+
+Get-ScheduledTask -TaskName "testc-598watch.ps1"
+Start-ScheduledTask -TaskPath "\" -TaskName "testc-598watch.ps1"
+Stop-ScheduledTask -TaskPath "\" -TaskName "testc-598watch.ps1"
+
+--
+
+Stop-ScheduledTask -TaskPath what is task path to task scheduler libary
+
+
+
+
+
+_____________
 
