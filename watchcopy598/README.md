@@ -30,7 +30,7 @@ Put the watch598.ps1 in a scheduled task to start on boot.
 
 # Issues
 
- 1. I noticed it stopped working after waking up after hibernation. The task is still in task manager shown as running, but it won't do anything. It won't log anything to the log file either. I don't know how to debug that.
+ 1. Ignore this. I may have been wrong....  I noticed it stopped working after waking up after hibernation. The task is still in task manager shown as running, but it won't do anything. It won't log anything to the log file either. I don't know how to debug that.
 
 
 
@@ -39,4 +39,7 @@ Put the watch598.ps1 in a scheduled task to start on boot.
 
  - devise a way to restart the powershell file if it should stop.
  - put settings in variables in one location in each script.
+ - use an array of strings to call cmd /c, or some proper way of calling cmd with ps variables in the arguments.
+ 
+ 
  
