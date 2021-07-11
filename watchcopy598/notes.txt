@@ -1,6 +1,9 @@
 
 cd /cygdrive/c/data/script/tools599/watchcopy598
 
+cd /c/data/script/tools599
+
+
 cd C:\data\script\tools599
 
 cd C:\data\script\tools599\ps1-yard
@@ -68,6 +71,7 @@ must have admin...
 Get-WmiObject Win32_Process -Filter "Name='powershell.exe' AND CommandLine LIKE '%script.ps1%'"
 
 Get-WmiObject Win32_Process -Filter "Name='powershell.exe' AND CommandLine LIKE '%598watch%'"
+Get-WmiObject Win32_Process -Filter "Name='powershell.exe' AND CommandLine LIKE '%598%'"
 
 __PATH                     : \\REDYO7\root\cimv2:Win32_Process.Handle="22712"
 Caption                    : powershell.exe
@@ -140,6 +144,12 @@ git clone https://github.com/dgleba/tools599.git
 
 
 _____________
+
+
+]password
+
+
+https://stackoverflow.com/questions/809333/powershell-command-processing-passing-in-variables
 
 
 

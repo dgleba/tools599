@@ -1,16 +1,34 @@
 
-# save process id to file. Could use this to check later that is still running.
-cmd /c echo $pid>c:\crib\logs\testc-598watch-ps1.pid
-	
+# Status: 
+
+# Purpose:  watch a folder for changes and copy files. Can be edited to use for cmm chr files.
+
 # https://community.idera.com/database-tools/powershell/powertips/b/tips/posts/using-filesystemwatcher-correctly-part-2
 
+# Settings ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # make sure you adjust this to point to the folder you want to monitor
-$PathToMonitor = "c:\crib\c598"
+$PathToMonitor = "c:\crib\d598"
 
-# explorer $PathToMonitor
+$copypath = "C:\crib\d598copy"
+
+$thispsfilename= "d598watch-ps1"
 
 
+# Settings ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+# save process id to file. Could use this to check later that is still running.
+$Stamp = (Get-Date).toString("yyyy-MM-dd_HH.mm.ss")
+cmd /c echo $pid "," $Stamp>>c:\crib\logs\""$thispsfilename__pid"".log
+cmd /c echo $pid>c:\crib\logs\$thispsfilename__pid.txt
+	
+	
+cmd /c mkdir $copypath	
+cmd /c mkdir c:\crib\logs	
+	
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -19,7 +37,8 @@ $PathToMonitor = "c:\crib\c598"
 
 $FileSystemWatcher = New-Object System.IO.FileSystemWatcher
 $FileSystemWatcher.Path  = $PathToMonitor
-$FileSystemWatcher.IncludeSubdirectories = $true
+$FileSystemWatcher.Filter  = "*chr.txt"
+$FileSystemWatcher.IncludeSubdirectories = $false
 
 # make sure the watcher emits events
 $FileSystemWatcher.EnableRaisingEvents = $true
@@ -33,13 +52,8 @@ $Action = {
     $OldName = $details.OldName
     $ChangeType = $details.ChangeType
     $Timestamp = $event.TimeGenerated
-
-	# dgleba stamp
-	$Stamp = (Get-Date).toString("yyyy-MM-dd_HH.mm.ss")
-    cmd /c echo testc-598watch.ps1, $Stamp>>c:\crib\logs\$(gc env:computername)_testc-598watch-ps1.log
-	& robocopy  C:\crib\c598 C:\crib\c598copy /e
-
-    $text = "{0} was {1} at {2} {3}" -f $FullPath, $ChangeType, $Timestamp, $Stamp
+    Start-Sleep -Seconds 1
+    $text = "{0} was {1} at {2} " -f $FullPath, $ChangeType, $Timestamp
     Write-Host ""
     Write-Host $Stamp
     Write-Host $text -ForegroundColor Green
@@ -47,8 +61,16 @@ $Action = {
     # you can also execute code based on change type here
     switch ($ChangeType)
     {
-        'Changed' { "CHANGE" }
-        'Created' { "CREATED"}
+        'Changed' { "CHANGE" 
+		}
+        'Created' { "CREATED"
+			# dgleba stamp
+			$Stamp = (Get-Date).toString("yyyy-MM-dd_HH.mm.ss")
+			cmd /c echo $thispsfilename, $Stamp, $FullPath>>"c:\crib\logs\"$(gc env:computername)"_"$thispsfilename".log"
+			# & robocopy  C:\crib\c598 C:\crib\c598copy /e
+			cmd /c copy $Fullpath" "$copypath
+					
+		}
         'Deleted' { "DELETED"
             # uncomment the below to mimick a time intensive handler
             <#

@@ -12,21 +12,8 @@ cmd /c echo $pid>c:\crib\logs\testc-598watch-ps1__pid.txt
 # https://community.idera.com/database-tools/powershell/powertips/b/tips/posts/using-filesystemwatcher-correctly-part-2
 
 
-#  SETTINGS  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 # make sure you adjust this to point to the folder you want to monitor
 $PathToMonitor = "c:\crib\c598"
-
-$watchfilefilter = "*chr.txt"
-
-$fl = "fll"
-
-
-#  SETTINGS  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-
-
 
 # explorer $PathToMonitor
 
@@ -39,8 +26,7 @@ $fl = "fll"
 
 $FileSystemWatcher = New-Object System.IO.FileSystemWatcher
 $FileSystemWatcher.Path  = $PathToMonitor
-$FileSystemWatcher.Filter  = $watchfilefilter
-$FileSystemWatcher.IncludeSubdirectories = $false
+$FileSystemWatcher.IncludeSubdirectories = $true
 
 # make sure the watcher emits events
 $FileSystemWatcher.EnableRaisingEvents = $true
@@ -57,7 +43,7 @@ $Action = {
 
 	# dgleba stamp
 	$Stamp = (Get-Date).toString("yyyy-MM-dd_HH.mm.ss")
-    cmd /c echo testc-598watch.ps1, $FullPath, $ChangeType, $Timestamp,$Stamp>>c:\crib\logs\$(gc env:computername)_testc-598watch-ps1_$(fl).log
+    cmd /c echo testc-598watch.ps1, $FullPath, $ChangeType, $Timestamp,$Stamp>>c:\crib\logs\$(gc env:computername)_testc-598watch-ps1.log
 	& robocopy  C:\crib\c598 C:\crib\c598copy /e
 
     $text = "{0} was {1} at {2} {3}" -f $FullPath, $ChangeType, $Timestamp, $Stamp

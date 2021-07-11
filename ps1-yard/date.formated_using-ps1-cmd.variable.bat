@@ -30,7 +30,12 @@ ECHO %var%
 REM ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
+:Works..
+
 for /f "delims=" %%# in ('powershell get-date -format "{yyyy-mm-dd_HH.mm.ss}"') do @set dhms=%%#
-echo %dhms%
+echo %dhms% 
+
+mkdir c:\temp
+echo %dhms% > c:\temp\%dhms%.txt
 
 pause
