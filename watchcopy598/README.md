@@ -26,6 +26,10 @@ Run watch598.ps1 and it will copy files in the watched folder to the output fold
 
 Put the watch598.ps1 in a scheduled task to start on boot.
 
+Set the task scheduler	
+ - run even if not logged in (need admin user/pass to edit it)
+ - remove all restrictions like run for 3 days, etc. This should just run forever with no restrictions.
+ 
 
 # todo
 
