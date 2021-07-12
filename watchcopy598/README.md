@@ -31,6 +31,12 @@ Set the task scheduler
  - remove all restrictions like run for 3 days, etc. This should just run forever with no restrictions.
  
 
+# issues
+
+ - 2021-07-12: I set the task scheduler to restart every minute if it fails. That seemed to result in 3 running in parallel in about 15 minutes. I need to investigate more.
+ 
+ 
+
 # todo
 
  - finish the archivetomonthfolder script. create logic in the watch598 to run the archiving every day at a set time. Or, just create a task scheduler to run it daily.
