@@ -33,7 +33,7 @@ Set the task scheduler
 
 # todo
 
- - finish the archivetomonthfolder. create logic in the watch598 to run the archiving every day at a set time. Or, just create a task scheduler to run it daily.
+ - finish the archivetomonthfolder script. create logic in the watch598 to run the archiving every day at a set time. Or, just create a task scheduler to run it daily.
  - devise a way to restart the powershell file if it should stop.
  - send email and log to file if it is found to be not running so we can know the size of the problem and deal with it.
  - put settings in variables in one location in each script.
