@@ -1,5 +1,0 @@
-ma was memoryvar b
-ma, memoryvar b
-2021-07-11_18.22.57, memoryvar b, 
-2021-07-11_18.23.46, ma, memoryvar b, 
-2021-07-11_18.24.14, ma, memoryvar b 

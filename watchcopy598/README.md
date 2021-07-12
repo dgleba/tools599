@@ -9,7 +9,6 @@ Copy a folder when files are added or changed within it.
 Then archive files older than 30 days to monthly folders.
 
 
-
 Use windows 10 builtin tools.
 
 Uses:
@@ -28,16 +27,11 @@ Run watch598.ps1 and it will copy files in the watched folder to the output fold
 Put the watch598.ps1 in a scheduled task to start on boot.
 
 
-# Issues
-
- 1. Ignore this. I may have been wrong....  I noticed it stopped working after waking up after hibernation. The task is still in task manager shown as running, but it won't do anything. It won't log anything to the log file either. I don't know how to debug that.
-
-
-
-
 # todo
 
+ - finish the archivetomonthfolder. create logic in the watch598 to run the archiving every day at a set time. Or, just create a task scheduler to run it daily.
  - devise a way to restart the powershell file if it should stop.
+ - send email and log to file if it is found to be not running so we can know the size of the problem and deal with it.
  - put settings in variables in one location in each script.
  - use an array of strings to call cmd /c, or some proper way of calling cmd with ps variables in the arguments.
  

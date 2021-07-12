@@ -58,7 +58,7 @@ $Action = {
 	# dgleba stamp
 	$Stamp = (Get-Date).toString("yyyy-MM-dd_HH.mm.ss")
     cmd /c echo testc-598watch.ps1, $FullPath, $ChangeType, $Timestamp,$Stamp>>c:\crib\logs\$(gc env:computername)_testc-598watch-ps1_$(fl).log
-	& robocopy  C:\crib\c598 C:\crib\c598copy /e
+	& robocopy  C:\crib\c598 C:\crib\c598copy /e *.chr.txt
 
     $text = "{0} was {1} at {2} {3}" -f $FullPath, $ChangeType, $Timestamp, $Stamp
     Write-Host ""
