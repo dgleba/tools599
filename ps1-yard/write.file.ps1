@@ -16,7 +16,7 @@ $mf = "callcmdwithpsvariables-log.txt"
 $marg = "echo {0}, {1}, {2}, {3} >>{4}_{5}" -f $mts, $ma, $mb, $(gc env:computername), $mtsymd, $mf
 
 $logpath = "c:\data\test\logs"
-cmd /c mkdir $logpath>NULL
+cmd /c mkdir $logpath
 $nickname = "writefile"
 
 $mtext = "{0}, {1}, {2}" -f $mts, $ma, $mb
