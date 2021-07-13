@@ -33,6 +33,25 @@ Invoke-expression $cmd
 
 # =================================================
 
+# issue
+
+
+
+# i am having trouble passing the variables to the arguments of the robocopy call.
+
+# $carg = "robocopy {0} {1} /e {2}" -f $PathToMonitor, $copyToPath, $watch_file_filter
+# & $carg
+
+# $cmd = "cmd /c robocopy  $PathToMonitor $copyToPath  /e $watch_file_filter"
+# Invoke-expression $cmd
+
+# $mexe = "cmd";
+# [Array]$mparams = "/c", "robocopy", $PathToMonitor, $copyToPath,  "/e", $watch_file_filter;
+# & $mexe $mparams;
+
+
+
+
 
 
 # =================================================
