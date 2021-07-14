@@ -19,10 +19,17 @@ Uses:
  
  
 # to run it
+
+Place the repository in C:\data\script
+
+So the path to `watch598.ps1` will be `C:\data\script\tools599\watchcopy598\watch598.ps1`
+
+
+Copy `watch598settings_example.conf` to `watch598settings.conf`
  
-Read the scripts for folder settings etc. and edit them to your needs.
+Read `watch598.ps1` for folder settings etc. and edit them to your needs.
  
-Run watch598.ps1 and it will copy files in the watched folder to the output folder on file changes in the folder.
+Run watch598.ps1 and it will copy files in the watched folder to the output folders on file changes in the folder.
 
 Put the watch598.ps1 in a scheduled task to start on boot.
 
@@ -42,8 +49,5 @@ Set the task scheduler
  - finish the archivetomonthfolder script. create logic in the watch598 to run the archiving every day at a set time. Or, just create a task scheduler to run it daily.
  - devise a way to restart the powershell file if it should stop.
  - send email and log to file if it is found to be not running so we can know the size of the problem and deal with it.
- - put settings in variables in one location in each script.
- - use an array of strings to call cmd /c, or some proper way of calling cmd with ps variables in the arguments.
- 
- 
- 
+
+
