@@ -11,25 +11,22 @@
 #  SETTINGS  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-$script:copyToQCcalc =  "C:\data\cmm\watchedoutput\qccalc"
+$global:copyToQCcalc =  "C:\data\cmm\watchedoutput\qccalc"
 
-$script:copyToGeneral = "C:\data\cmm\watchedoutput\general"
+$global:copyToGeneral = "C:\data\cmm\watchedoutput\general"
 
+$global:logpath="c:\data\logs\watch598cmmresults"
 
-$script:logpath="c:\data\logs\watch598cmmresults"
+$global:thisNickName = "watch598cmm-ps1"
 
-$script:watch_file_filter = "*chr.txt"
-
-$script:thisNickName = "watch598cmm-ps1"
-
-$script:rundate = (Get-Date).toString("yyyy-MM-dd")
+$global:rundate = (Get-Date).toString("yyyy-MM-dd")
 
 
 #  SETTINGS end ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 
-# settings-file ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# settings-from-file ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 # get path to monitor from settings file..
@@ -38,7 +35,9 @@ Get-Content watch598settings.conf | Foreach-Object{
    New-Variable -Name $var[0] -Value $var[1]
 }
 
-$script:PathToMonitor = "$MonitorPathSetting"
+$global:PathToMonitor = "$s_PathToMonitor"
+
+$global:watch_file_filter = $s_watch_file_filter
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -90,19 +89,24 @@ $Action = {
   # cmd /c $carg
   # Write-Host ""
   # Write-Host $carg
-  
-  # copy the files to both locations..
-  
-  $cmd = "cmd /c robocopy  $PathToMonitor $copyToQCcalc  /e $watch_file_filter"
-  Invoke-expression $cmd
-  
-  $cmd = "cmd /c robocopy  $PathToMonitor $copyToGeneral  /e $watch_file_filter"
-  Invoke-expression $cmd
 
-  $tsdhms = (Get-Date).toString("yyyy-MM-dd_HH.mm.ss")
+
   $text = "{0} was {1} at {2} " -f $FullPath, $ChangeType, $Timestamp
   Write-Host ""
   Write-Host $text -ForegroundColor Green
+  
+  # copy the files to both locations..
+  
+  Write-Host "wf: $watch_file_filter"
+  
+  $cmd = 'cmd /c robocopy  "$PathToMonitor " $copyToQCcalc  /e $watch_file_filter'
+  Invoke-expression $cmd
+  
+  $cmd = 'cmd /c robocopy  "$PathToMonitor " $copyToGeneral  /e $watch_file_filter'
+  Invoke-expression $cmd
+  Write-Host "$cmd"
+ 
+
 
   # you can also execute code based on change type here
   switch ($ChangeType)
@@ -135,7 +139,7 @@ $handlers = . {
   Register-ObjectEvent -InputObject $FileSystemWatcher -EventName Renamed -Action $Action -SourceIdentifier FSRename
 }
 
-Write-Host "Watching for changes to $PathToMonitor"
+Write-Host "Watching for changes to $PathToMonitor, file filter:  $watch_file_filter" 
 
 try
 {
