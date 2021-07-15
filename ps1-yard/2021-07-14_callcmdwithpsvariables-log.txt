@@ -1,0 +1,3 @@
+2021-07-14_19.38.17, ma, memoryvar b, REDYO7 
+2021-07-14_19.40.19, ma, memoryvar b, REDYO7 
+2021-07-14_19.41.27, ma, memoryvar b, REDYO7 

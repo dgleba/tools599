@@ -100,10 +100,12 @@ $Action = {
   Write-Host "wf: $watch_file_filter"
   
   $cmd = 'cmd /c robocopy  "$PathToMonitor " $copyToQCcalc  /e $watch_file_filter'
-  Invoke-expression $cmd
+  Invoke-expression $cmd 
   
-  $cmd = 'cmd /c robocopy  "$PathToMonitor " $copyToGeneral  /e $watch_file_filter'
+  #debug..
+  $cmd = 'cmd /c robocopy  "$PathToMonitor " $copyToGeneral  /e $watch_file_filter>>$logpath\$rundate-$(gc env:computername)-$thisNickName--rsync-log.txt'
   Invoke-expression $cmd
+  #debug..
   Write-Host "$cmd"
  
 

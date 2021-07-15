@@ -1,5 +1,6 @@
 
 Version:
 
-v1 - 2021-07-14 - try on CMM 10001 dgleba
+v1 - 2021-07-14              - try on CMM 10001 dgleba
+v2 - 2021-07-14_Wed_20.39-PM - add debug
 
