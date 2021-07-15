@@ -2,10 +2,6 @@
 
 # run at specified time.
 
-
-# =================================================
-
-
 # =================================================
 
 try
@@ -13,18 +9,21 @@ try
   do
   {
     # -Timeout 3 is wait 3 seconds in loop.
-    Wait-Event -Timeout 5
     Write-Host "." -NoNewline
+    Wait-Event -Timeout 10
       
-    # run once per day  
-    $min = Get-Date '20:24:00'
-    $max = Get-Date '20:24:05'
+    # run once per hour
+    [int]$hr = get-date -format HH
+    $min = Get-Date ("{0}:25:00" -f $hr)
+    $max = Get-Date ("{0}:25:10" -f $hr)
     $now = Get-Date
-    if ($min.TimeOfDay -le $now.TimeOfDay -and $max.TimeOfDay -ge $now.TimeOfDay) {
+    # Write-Host $min $max 
+    Write-Host $now $min $max
+    if ( $now.TimeOfDay -ge $min.TimeOfDay  -and $now.TimeOfDay -le $max.TimeOfDay ) {
       Write-host "doit"
       (Get-Date).toString("yyyy-MM-dd_HH.mm.ss")|Write-Host
     }
-    # end. run once per day  
+    # end. run once per hour  
   } while ($true)
 }
 finally
@@ -32,12 +31,9 @@ finally
   # this gets executed when user presses CTRL+C
 }
 
-
 # =================================================
-
 
 # ending..
 
 cmd /c timeout 19
 # Start-Sleep -Seconds 1
-

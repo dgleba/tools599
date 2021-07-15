@@ -1,5 +1,7 @@
 @echo off
 
+REM I might call this from watch598.ps1 once per day.
+
 :: Settings ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 set sourcefolder=C:\crib\watch598testfolder
