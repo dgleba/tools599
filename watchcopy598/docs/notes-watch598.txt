@@ -185,8 +185,47 @@ Stop-ScheduledTask -TaskPath "\" -TaskName "testc-598watch.ps1"
 Stop-ScheduledTask -TaskPath what is task path to task scheduler libary
 
 
+=================================================
 
+powershell check if "pid" is running
+
+
+PS C:\Users\david> Get-Process -id 13024
+
+Handles  NPM(K)    PM(K)      WS(K)     CPU(s)     Id  SI ProcessName
+-------  ------    -----      -----     ------     --  -- -----------
+    729      26    62008      13240             13024   0 powershell
+
+
+=================================================
+
+2021-07-15
+
+processmonitor598
+
+run once and stop
+task sched run every 5 min
+
+get pid from file.
+get-process
+  check it is powershell
+  if process not running  
+    send email
+    stop task sched
+    start task sched
+    
+    
+    
+    
+=================================================
+
+variable scope
+
+
+https://stackoverflow.com/questions/9325569/variable-scoping-in-powershell
 
 
 _____________
+
+
 

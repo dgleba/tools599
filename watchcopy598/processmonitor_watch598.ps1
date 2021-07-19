@@ -6,10 +6,13 @@
 
  # - It will be a task scheduler runing every 5 minutes separate from watch598
  # - email if watch598 is not found running
- # - restart it.
+ # - later: restart it.
  # - log to file so we can measure the problems.
  
-# watch598 writes it's process id to a file when it starts. we can check if that process id is running.
+ # I think I will make a heartbeat file and check that is alive.
+ # I may check if count of files is too few in the destination.
+ # watch598 writes it's process id to a file when it starts. we can check if that process id is running.
+
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -31,3 +34,12 @@ $script:rundate = (Get-Date).toString("yyyy-MM-dd")
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #  Main code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+# I will let it run without checking right now.
+
+
+#  run archiving ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
