@@ -2,16 +2,24 @@
 
 # Status: indev
 
-# Purpose:  this will be a script to check that watch598 is running
+# Purpose:  this will be a script to check that watch598 is working correctly.
 
- # - It will be a task scheduler runing every 5 minutes separate from watch598
- # - email if watch598 is not found running
+ # - This will be a task scheduler running every 1 minutes. It is separate from watch598
+ # - it runs once and stops. 
+ # - check that file sizes are equal. see  C:\data\script\tools599\ps1-yard\24.cmpfilesize.ps1. log it.
+ # - send email upon failure. write marker file saying email was sent. send it only once per n hours. use setting for frequency.
+ # - call 24.cmpfilesize.ps1 cmpfilesize598.ps1
+
+ # - once per day start  C:\data\script\tools599\watchcopy598\archivetomonthfolder598.bat
+     # if time is greater than 23:35:00 and less than 23:36:00 then start it. see C:\data\script\tools599\ps1-yard\12.run.between.two.times.hours.seconds.ps1
+
+
+
+ # - may not need heartbeat.
+ # - check that watch598 heartbeat file timestamp string written in the file is changing. log it.
+
  # - later: restart it.
- # - log to file so we can measure the problems.
- 
- # I think I will make a heartbeat file and check that is alive.
- # I may check if count of files is too few in the destination.
- # watch598 writes it's process id to a file when it starts. we can check if that process id is running.
+
 
 
 

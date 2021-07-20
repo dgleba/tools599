@@ -199,7 +199,8 @@ ssc=/cygdrive/c/Users/pmdacameras/My\ Documents/LabVIEW\ Data/SGE\ Rotor\ Vision
 
 
 # REM :destination dir
-ddc="//pmda-sgenas01/PMDA-SGE/image_data/SGE_Rotor_6365"
+# temporary change to d drive 2021-07-19 ---  ddc="//pmda-sgenas01/PMDA-SGE/image_data/SGE_Rotor_6365"
+ddc="/cygdrive/d/image_data/SGE_Rotor_6365"
 mkdir -p ${ddc}
 
 # REM :tempfile
@@ -250,6 +251,7 @@ function_one
 
 # History:
 
+# 2021-07-19 r38  change to d drive due to nas full. ~line 202
 # 2021-07-06 r37  line 35 was 2000, now find . -type f  -mmin +1920 > ${tfc}
 #					change cleanup call to line 183
 # 2021-07-06 r36 minor changes

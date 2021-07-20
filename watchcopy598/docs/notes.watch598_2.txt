@@ -1,0 +1,20 @@
+
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+#@  
+#@  idea: copy only files modified 30 sec or more ago. 
+#@  
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@   2021-07-19[Jul-Mon]17-11PM 
+
+try to avoid copying before the file is completely written.
+
+
+https://community.spiceworks.com/topic/1977561-robocopy-files-and-folders-older-than-1-hour-only
+
+
+_____________
+
+
+https://stackoverflow.com/questions/10982104/wait-until-file-is-completely-written
+
+
+_____________

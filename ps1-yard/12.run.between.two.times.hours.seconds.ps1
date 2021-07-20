@@ -8,7 +8,7 @@ try
 {
   do
   {
-    # -Timeout 3 is wait 3 seconds in loop.
+    # `-Timeout 10` is wait 10 seconds in loop.
     Write-Host "." -NoNewline
     Wait-Event -Timeout 10
       
