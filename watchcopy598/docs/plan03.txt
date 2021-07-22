@@ -14,12 +14,12 @@ _____________
 
 
 
-A=calyso folder
-B=temporary transfer folder
-C=full-copy
-D=QC Calc
+A=calyso folder 
+B=temporary transfer folder [interimfolder]
+C=full-copy  [general] C:\data\cmm\watchedoutput\general
+D=QC Calc [qccalc] 
 
-2021-07-lagged = monthly? minus30days?  archive of full-copy
+2021-07-minus = monthly? minus30days?  archive of full-copy
 
 
 each minute.

@@ -67,6 +67,13 @@ cmd /c $carg
 
 #  Main code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+
+# on startup, handle chr,fet,hdr files in folder A
+
+
+
+
+
 $FileSystemWatcher = New-Object System.IO.FileSystemWatcher
 $FileSystemWatcher.Path  = "$PathToMonitor"
 $FileSystemWatcher.Filter  = $watch_file_filter
