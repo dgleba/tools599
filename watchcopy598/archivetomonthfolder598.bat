@@ -4,7 +4,7 @@ REM I might call this from watch598.ps1 once per day.
 
 :: Settings ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-set sourcefolder=C:\crib\watch598testfolder
+set sourcefolder=C:\data\cmm\results
 
 
 :: date ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -29,5 +29,7 @@ echo ts_mon ... is %ts_mon%
 ::Move files older than minage. minage=30 is 30 days..
 
 robocopy %sourcefolder% C:\data\test\watch598data-archive\%ts_yr%-%ts_mon%-minus30 /s /MOVE /MINAGE:30 /IS /R:3 /W:4 
+
+
 
 timeout 14

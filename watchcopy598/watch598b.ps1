@@ -11,7 +11,7 @@
 #  SETTINGS  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-$global:interimfolder =  "C:\data\cmm\interimfolder"
+$global:interimfolder =  "C:\data\cmm\system\interimfolder"
 
 $global:copyToQCcalc =  "C:\data\cmm\watchedoutput\qccalc"
 
@@ -49,7 +49,7 @@ $global:watch_file_filter = $s_watch_file_filter
 
 
 cmd /c mkdir $PathToMonitor
-cmd /c mkdir $iterimfolder
+cmd /c mkdir $interimfolder
 cmd /c mkdir $copyToQCcalc
 cmd /c mkdir $copyToGeneral
 cmd /c mkdir $logpath

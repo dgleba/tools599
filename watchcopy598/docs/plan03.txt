@@ -33,3 +33,6 @@ C will have all files.
 
 _____________
 
+::robocopy %sourcefolder% C:\data\cmm\interimfolder *.hdr.txt *.fet.txt *.chr.txt /MOVE  /IS /R:3 /W:4 
+
+_____________
