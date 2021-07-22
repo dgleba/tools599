@@ -10,6 +10,14 @@ set sourcefolder=C:\crib\watch598testfolder
 :: date ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
+REM :Prepare date. must be usa locale
+REM set timea=%TIME: =0%
+REM set ymd=%date:~12,2%%date:~4,2%%date:~7,2%&set dhms=%date:~12,2%%date:~4,2%%date:~7,2%_%time:~0,2%%time:~3,2%%time:~6,2%
+REM set yr=%date:~12,2%
+REM set mon=%date:~4,2%
+REM :: c: & md c:\temp\ & cd c:\temp 
+REM :: & md c:\temp\log & md c:\temp\log\"%dhms%"  & cd c:\temp\log\"%dhms%"
+
 : Using wmic - windows batch universal way to get region independent date time to environment variable
 for /F "usebackq tokens=1,2 delims==" %%i in (`wmic os get LocalDateTime /VALUE 2^>NUL`) do if '.%%i.'=='.LocalDateTime.' set ts_in=%%j
 echo %ts_in%
@@ -24,6 +32,8 @@ echo ts_mon ... is %ts_mon%
 
 
 :: move ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
 
 
 ::Move files older than minage. minage=30 is 30 days..

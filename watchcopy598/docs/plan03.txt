@@ -7,7 +7,7 @@ error prevention:
 
 - copy only when the file is completely finished writing. (wait 10 seconds after it's changed?)
 
-- check if it stops functioning
+- check if it stops functioning?
 
 
 _____________
