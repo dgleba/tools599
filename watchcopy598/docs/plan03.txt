@@ -1,0 +1,35 @@
+
+- watch folder A for changed? files.
+- copy only 'new' completely finished files to B and C folder
+
+
+error prevention:
+
+- copy only when the file is completely finished writing. (wait 10 seconds after it's changed?)
+
+- check if it stops functioning
+
+
+_____________
+
+
+
+A=calyso folder
+B=temporary transfer folder
+C=full-copy
+D=QC Calc
+
+2021-07-lagged = monthly? minus30days?  archive of full-copy
+
+
+each minute.
+move ALL files (chr,fet,hdr, all dates) from A to B. (robocopy)
+copy all from B to C  (robocopy)
+move all from B to D. (robocopy)
+
+D will be altered by QC calc
+
+C will have all files.
+
+_____________
+
