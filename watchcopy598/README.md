@@ -31,7 +31,7 @@ Read `watch598.ps1` for folder settings etc. and edit them to your needs.
  
 Run watch598.ps1 and it will copy files in the watched folder to the output folders on file changes in the folder.
 
-Put the watch598.ps1 in a scheduled task to start on boot.
+Put the watch598.ps1 in a scheduled task to start on login.
 
 Set the task scheduler	
  - run even if not logged in (need admin user/pass to edit it)
