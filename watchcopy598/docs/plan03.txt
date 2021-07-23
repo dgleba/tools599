@@ -5,7 +5,7 @@
 
 error prevention:
 
-- copy only when the file is completely finished writing. (wait 10 seconds after it's changed?)
+- copy only when the file is completely finished writing. (wait 5 seconds after it's changed?)
 
 - check if it stops functioning?
 
@@ -21,8 +21,10 @@ D=QC Calc [qccalc]
 
 2021-07-minus = monthly? minus30days?  archive of full-copy
 
+--
 
-each minute.
+upon watcher notification...
+
 move ALL files (chr,fet,hdr, all dates) from A to B. (robocopy)
 copy all from B to C  (robocopy)
 move all from B to D. (robocopy)
