@@ -1,0 +1,35 @@
+
+for testing only..
+_____________
+
+
+A=calypso folder 
+B=temporary transfer folder [interimfolder]
+E=litmus
+C=full-copy  [general] C:\data\cmm\watchedoutput\general
+D=QC Calc [qccalc] 
+
+2021-07-minus = monthly? minus30days?  archive of full-copy
+
+--
+
+upon watcher notification...
+
+move only notified files (chr,fet,hdr) from A to B. (robocopy)
+copy chr,hdr from B to E  (robocopy)
+copy all from B to C  (robocopy)
+move all from B to D. (robocopy)
+
+
+D will be altered by QC calc
+E will be empty after litmus gets and deletes the files.
+C will have all files.
+
+
+_____________
+
+::robocopy %sourcefolder% C:\data\cmm\interimfolder *.hdr.txt *.fet.txt *.chr.txt /MOVE  /IS /R:3 /W:4 
+
+_____________
+
+b1= temp-test =  copy only notified files for testing purposes.
