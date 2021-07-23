@@ -1,0 +1,11 @@
+import os
+os.system(r"mkdir c:\data\34\a")
+myfile = open("c:\data\34\a\34a.txt" , 'w')
+myfile.write("a\n")
+myfile.close()
+
+
+File "C:\data\script\tools599\ps1-yard\34.write.a.py", line 3, in <module>
+    myfile = open( "c:\data\34\a\34a.txt" , 'w')
+OSError: [Errno 22] Invalid argument: 'c:\\data\x1c\x07\x1ca.txt'
+                                                ^ 
