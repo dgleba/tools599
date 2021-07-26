@@ -26,7 +26,7 @@ E=litmus
 
 upon watcher notification...
 
-move ALL files (chr,fet,hdr, all dates) from A to B. (robocopy)
+move files (chr,fet,hdr, all dates) from A to B. (robocopy)
 copy chr,hdr from B to E  (robocopy)
 copy all from B to C  (robocopy)
 move all from B to D. (robocopy)

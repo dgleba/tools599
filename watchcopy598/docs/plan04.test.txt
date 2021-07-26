@@ -1,11 +1,16 @@
 
 for testing only..
+
+We want to copy from A rather than move. We want to leave it functioning the way it does now during testing.
+Leave the A folder untouched during testing.
+
 _____________
 
 
 A=calypso folder 
+A2=copy of calyso folder for testing.
 B=temporary transfer folder [interimfolder]
-E=litmus
+E=litmus C:\data\cmm\watchedoutput\litmus
 C=full-copy  [general] C:\data\cmm\watchedoutput\general
 D=QC Calc [qccalc] 
 
@@ -15,9 +20,13 @@ D=QC Calc [qccalc]
 
 upon watcher notification...
 
-move only notified files (chr,fet,hdr) from A to B. (robocopy)
+copy only notified files (chr,fet,hdr) from A to A2.(robocopy)  (for testing we need to leave them in A)
+move all from A2 to B (robocopy) 
+sleep 2 sec.
 copy chr,hdr from B to E  (robocopy)
+sleep 2 sec.
 copy all from B to C  (robocopy)
+sleep 2 sec.
 move all from B to D. (robocopy)
 
 
