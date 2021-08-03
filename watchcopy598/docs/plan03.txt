@@ -15,10 +15,10 @@ _____________
 
 
 A=calyso folder 
-B=temporary transfer folder [interimfolder]
+B=temporary transfer folder [interimfolder] C:\data\cmm\watchedoutput\general
 C=full-copy  [general] C:\data\cmm\watchedoutput\general
-D=QC Calc [qccalc] 
-E=litmus
+D=QC Calc [qccalc] C:\data\cmm\watchedoutput\qccalc
+E=litmus C:\data\cmm\watchedoutput\litmus
 
 2021-07-minus = monthly? minus30days?  archive of full-copy
 
@@ -42,3 +42,9 @@ _____________
 
 _____________
 
+
+$global:interimfolder =  "C:\data\cmm\system\interimfolder"
+$global:copyToQCcalc =  "C:\data\cmm\watchedoutput\litmus"
+$global:copyToQCcalc =  "C:\data\cmm\watchedoutput\qccalc"
+$global:copyToGeneral = "C:\data\cmm\watchedoutput\general"
+$global:logpath="c:\data\logs\watch598cmmresults"
