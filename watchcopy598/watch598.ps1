@@ -19,7 +19,7 @@ $global:copyToGeneral = "C:\data\cmm\watchedoutput\general"
 
 $global:copyToLitmus = "C:\data\cmm\watchedoutput\litmus"
 
-$global:copyToA2 = "C:\data\cmm\A2"
+$global:copyToA2 = "C:\data\cmm\system\A2"
 
 $global:logpath="c:\data\logs\watch598cmmresults"
 
@@ -118,7 +118,7 @@ $Action = {
   # Write-Host $carg
 
 
-  $text = "{0} was {1} at {2} " -f $FullPath, $ChangeType, $Timestamp
+  $text = "{0} was {1} at {2} {3} " -f $FullPath, $ChangeType, $Timestamp, (get-date)
   Write-Host ""
   Write-Host $text -ForegroundColor Green
   
@@ -138,8 +138,13 @@ $Action = {
       # Wait 10 seconds after file is changed to move files
       Start-Sleep -Seconds 10
 
+      $print = "changed switch: copying. file CHANGED  {0} {1}" -f (Get-Date), $FullPath
+      $print | Out-File 'C:\data\logs\watch598cmmresults\changed598logs.txt' -Append
+      
+      # 2021-08-08a: idea, if all three files, firstname.chr firstname.hdr firstname.fet are present, then copy them..
+      #
       # Copy file from A to A2
-      robocopy $PathToMonitor $copyToA2 $Name
+      robocopy $PathToMonitor $copyToA2 $Name /tee /log+:$logpath\robo-cp-a2.$rundate.log.txt
       Start-Sleep 2
 
       # Move A2 to Interim
@@ -158,7 +163,6 @@ $Action = {
       robocopy $interimfolder $copyToQCcalc '*chr.txt*' '*hdr.txt*' '*fet.txt*' /mov /is /R:3 /W:4
       
 
-
       #$cmd = 'cmd /c copy  "$FullPath" $copyToQCcalc>>$logpath\$rundate-$(gc env:computername)-$thisNickName--copy-log.txt'
       #Invoke-expression $cmd 
       #$cmd = 'cmd /c copy  "$FullPath" $copyToGeneral'
@@ -166,7 +170,7 @@ $Action = {
     }
     'Created' { 
         $print = "FILE CREATED AT {0} {1}" -f (Get-Date), $FullPath
-        $print | Out-File 'C:\data\logs\watch598cmmresults\testlogs.txt' -Append
+        $print | Out-File 'C:\data\logs\watch598cmmresults\created598logs.txt' -Append
     }
     'Deleted' { "DELETED"
     # uncomment the below to mimick a time intensive handler
@@ -181,7 +185,10 @@ $Action = {
       $text = "File {0} was renamed to {1}" -f $OldName, $Name
       Write-Host $text -ForegroundColor Yellow
     }
-    default { Write-Host $_ -ForegroundColor Red -BackgroundColor White }
+    default { 
+    Write-Host "default." -ForegroundColor Red -BackgroundColor White 
+    Write-Host $_ -ForegroundColor Red -BackgroundColor White 
+    }
   }
 }
 
