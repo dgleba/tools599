@@ -5,9 +5,9 @@ write file with error time. or just use modified time of file.
 emailFrequencyMinutes=120
 
 
-if error and lastemailsend < emailFrequencyMinutes 
-	dont send
+if error and  current time > lastemailsend time + emailFrequencyMinutes
+	send
 else
-	send.
+	dont send.
 	
 	

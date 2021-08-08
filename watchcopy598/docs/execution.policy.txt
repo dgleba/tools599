@@ -1,0 +1,79 @@
+Fingers crossed ;)
+
+From: Dave Gleba <DGleba@stackpole.com> 
+Sent: July 21, 2021 3:41 PM
+To: Jack C. Fung <jcfung@stackpole.com>
+Subject: RE: folder watcher
+
+I ran the following. I hope it sticks.
+
+
+PS C:\> Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
+Do you want to change the execution policy?
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help
+(default is "N"):y
+PS C:\>
+
+PS M:\> Get-ExecutionPolicy -List
+        Scope ExecutionPolicy
+        ----- ---------------
+MachinePolicy       Undefined
+   UserPolicy       Undefined
+      Process       Undefined
+  CurrentUser    Unrestricted
+LocalMachine      Restricted
+
+
+
+
+
+From: Jack C. Fung <jcfung@stackpole.com> 
+Sent: Wednesday, July 21, 2021 3:17 PM
+To: Dave Gleba <DGleba@stackpole.com>
+Subject: RE: folder watcher
+
+I googled around and found this (you may have seen it too): https://stackoverflow.com/questions/41117421/ps1-cannot-be-loaded-because-running-scripts-is-disabled-on-this-system/49112322
+
+See if this helps
+
+
+
+ 
+Jack Fung P.Eng. M.Eng. | Principal Engineer, Engineering IT Projects
+Stackpole International | Corporate Services - IT | 1325 Cormorant Road | Ancaster, Ontario L9G 4V5 | Canada
+
+
+
+
+From: Dave Gleba <DGleba@stackpole.com> 
+Sent: July 21, 2021 2:21 PM
+To: Jack C. Fung <jcfung@stackpole.com>
+Subject: RE: folder watcher
+
+I want to reword the email.
+
+1.
+On july 14th I installed the watcher and got.
+
+Error:
+PS C:\data\script\tools599\watchcopy598> .\watch598.ps1
+.\watch598.ps1 : File C:\data\script\tools599\watchcopy598\watch598.ps1 cannot be loaded because running scripts is
+disabled on this system. For more information, see about_Execution_Policies at https:/go.microsoft.com/fwlink/?LinkID=135170.
+
+I ran this to address it:   ` Set-ExecutionPolicy RemoteSigned`
+
+It was working for 4 days.
+
+Now I get the same message that “running scripts is disabled on this system”
+
+Is there something turning off script execution? Maybe Sophos or something?
+
+
+2.
+Ignore #2. I just realized that we can’t use robocopy as that would re-copy files qccalc removed. That may duplicate data in qc calc.
+
+We have to copy only newly added files. 
+
+
+
+
