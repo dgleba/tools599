@@ -136,7 +136,7 @@ $Action = {
     'Changed' {
 
       # Wait 10 seconds after file is changed to move files
-      Start-Sleep -Seconds 10
+      Start-Sleep -Seconds 8
 
       $print = "changed switch: copying. file CHANGED  {0} {1}" -f (Get-Date), $FullPath
       $print | Out-File 'C:\data\logs\watch598cmmresults\changed598logs.txt' -Append
@@ -145,23 +145,23 @@ $Action = {
       #
       # Copy file from A to A2
       robocopy $PathToMonitor $copyToA2 $Name /tee /log+:$logpath\robo-cp-a2.$rundate.log.txt
-      Start-Sleep 2
+      Start-Sleep 1
 
       # Move A2 to Interim
       robocopy $copyToA2 $interimfolder '*chr.txt*' '*hdr.txt*' '*fet.txt*'  /mov /is /R:3 /W:4
-      Start-Sleep 2
+      Start-Sleep 1
 
       # Copy Interim to Litmus
       robocopy $interimfolder $copyToLitmus '*chr.txt*' '*hdr.txt*' '*fet.txt*'
-      Start-Sleep 2
+      # Start-Sleep 1
 
       # Copy Interim to General
       robocopy $interimfolder $copyToGeneral '*chr.txt*' '*hdr.txt*' '*fet.txt*'
-      Start-Sleep 2
+      # Start-Sleep 1
 
       # Move Interim to Qc Calc
       robocopy $interimfolder $copyToQCcalc '*chr.txt*' '*hdr.txt*' '*fet.txt*' /mov /is /R:3 /W:4
-      
+
 
       #$cmd = 'cmd /c copy  "$FullPath" $copyToQCcalc>>$logpath\$rundate-$(gc env:computername)-$thisNickName--copy-log.txt'
       #Invoke-expression $cmd 
