@@ -37,6 +37,14 @@ Set the task scheduler
  - run even if not logged in (need admin user/pass to edit it)
  - remove all restrictions like run for 3 days, etc. This should just run forever with no restrictions.
  
+# Troubleshooting
+
+ 1. if powershell is not enabled.
+    ```
+    Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
+    ```
+    This can be run without admin rights and works permanently as far as my experience goes.
+
 
 # issues
 

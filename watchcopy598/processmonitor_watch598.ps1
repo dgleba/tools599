@@ -27,10 +27,42 @@
 
 #  SETTINGS  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+# Create LastErrorEmailSent if it does not exist (For first run)
+
+if (!(Test-Path "C:\data\logs\watch598cmmresults\LastErrorEmailSent.txt"))
+{
+   New-Item -path "C:\data\logs\watch598cmmresults\LastErrorEmailSent.txt" -type "file" -value ""
+}
+else
+{
+  Write-Host ""
+}
+
+# Get Contents from watch598settings
+Get-Content watch598settings.conf | Foreach-Object{
+    $var = $_.Split('=')
+    New-Variable -Name $var[0] -Value $var[1]
+ }
+
+$global:errorEmailFrequencyMinutes = "$errorEmailFrequencyMinutes"
+
+# Get last email send time from file
+
+# Get last email sent datetime from text file
+$lastEmailSend = [IO.File]::ReadAllText("C:\data\logs\watch598cmmresults\LastErrorEmailSent.txt")
+
+# Convert date string from text file to date object (Will not run if erroremail has never been sent)
+if ($lastEmailSend -ne ""){
+    $lastEmailSendDate = [datetime]$lastEmailSend
+}
+
 
 $script:logpath="c:\data\logs\watch598cmmresults"
 
 $script:rundate = (Get-Date).toString("yyyy-MM-dd")
+
+# Current time - 1 minute
+$timetocheck = (Get-Date).AddMinutes(-1)
 
 
 #  SETTINGS end ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -43,6 +75,37 @@ $script:rundate = (Get-Date).toString("yyyy-MM-dd")
 
 #  Main code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+# Itterate through folder A looking for files older than 1 minute
+
+# Get all files containing fet from folder A
+$filesForA = Get-ChildItem 'C:\data\cmm\results from calypso\' -Filter '*fet.txt*' | Where-Object {$f.LastWriteTime -lt (Get-Date).AddMinutes(-1)}
+
+#$fileForGeneral = Get-ChildItem 'C:\data\cmm\watchedoutput\general\' -Filter '*fet.txt*' | Where-Object {$f.LastWriteTime -lt (Get-Date).AddMinutes(-1)}
+
+# Check if file > 1 minute old in A is also in general (WORKING I THINK)
+if ($filesForA.Length -gt 0) {
+    foreach ($f in $filesForA) {
+        $testpath = 'C:\data\cmm\watchedoutput\general\{0}' -f $f
+        # If file is found in A that is not in General, An error will occur
+        if ((Test-Path -Path $testpath -PathType Leaf) -eq $false) {
+            $print = "Error Occured at {0}" -f (Get-Date)
+            $print | Out-File 'C:\data\logs\watch598cmmresults\errorLogs.txt' -Append
+            
+            # First time error occurs, email will be sent and lastemailsend will be updated in textfile
+            if ($lastEmailSend -eq "") {
+                send-mailmessage -subject "Warning: error detected by processmonitor_watch598." -body "An error was detected. Please check it. `n`nRef: this msg from computer: xxx  file:   C:\data\script\tools599\watchcopy598\processmonitor_watch598" -to @("dgleba@stackpole.com") -dno onFailure -smtpServer MESG01.stackpole.ca -from 'dgleba@stackpole.com'
+                Set-Content  -Path "C:\data\logs\watch598cmmresults\LastErrorEmailSent.txt" -Value (Get-Date)
+            } 
+            # If error is found, and time is greater than lastEmailSendDate + errorEmailFrequencyMinutes, send email and update lastemailsend textfile
+            elseif ((Get-Date) -gt $lastEmailSendDate.AddMinutes([int]$errorEmailFrequencyMinutes)) {
+                # If error is detected and time is greater than lastemailsend + errorfrequencyminutes, send email and update file
+                send-mailmessage -subject "Warning: error detected by processmonitor_watch598." -body "An error was detected. Please check it. `n`nRef: this msg from C:\Users\dgleba\Desktop\tools599-main\watchcopy598\processmonitor_watch598" -to @("dgleba@stackpole.com") -dno onFailure -smtpServer MESG01.stackpole.ca -from 'dgleba@stackpole.com'
+                Set-Content  -Path "C:\data\logs\watch598cmmresults\LastErrorEmailSent.txt" -Value (Get-Date)
+            }
+        }  
+    }
+}
+
 
 # I will let it run without checking right now.
 
@@ -50,4 +113,6 @@ $script:rundate = (Get-Date).toString("yyyy-MM-dd")
 #  run archiving ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
+
+timeout 30
 
