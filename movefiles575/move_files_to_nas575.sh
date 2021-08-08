@@ -121,7 +121,7 @@ echo uptime_seconds: $uptime_seconds
 # 370000 seconds is about 4.3 days.
 if [ $uptime_seconds -ge 370000 ]; then
 echo "sending error email uptime, ${usep}% on ${HOSTNAME} ..."
-/cygdrive/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe 'send-mailmessage -subject "Warning: uptime too long" -body "There seems to be more than 4 days uptime. Please check it. `n`nRef: this msg from 6365 IPC C:\data\script\movefiles575\move_files_to_nas575.sh" -to @("dgleba@stackpole.com") -dno onFailure -smtpServer MESG01.stackpole.ca -from "dgleba@stackpole.com"'
+/cygdrive/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe 'send-mailmessage -subject "Warning: uptime too long. 6365 vision." -body "There seems to be more than 4 days uptime. Please check it. `n`nRef: this msg from 6365 IPC C:\data\script\movefiles575\move_files_to_nas575.sh" -to @("dgleba@stackpole.com") -dno onFailure -smtpServer MESG01.stackpole.ca -from "dgleba@stackpole.com"'
 fi
 
 }
@@ -251,6 +251,7 @@ function_one
 
 # History:
 
+# 2021-07-27 r39  edit subject of uptime email, line ~124
 # 2021-07-19 r38  change to d drive due to nas full. ~line 202
 # 2021-07-06 r37  line 35 was 2000, now find . -type f  -mmin +1920 > ${tfc}
 #					change cleanup call to line 183
