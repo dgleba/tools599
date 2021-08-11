@@ -89,7 +89,7 @@ if ($filesForA.Length -gt 0) {
         # If file is found in A that is not in General, An error will occur
         if ((Test-Path -Path $testpath -PathType Leaf) -eq $false) {
             $print = "Error Occured at {0}" -f (Get-Date)
-            $print | Out-File 'C:\data\logs\watch598cmmresults\errorLogs.txt' -Append
+            $print | Out-File 'C:\data\logs\watch598cmmresults\processmonitor-errorLogs.txt' -Append
             
             # First time error occurs, email will be sent and lastemailsend will be updated in textfile
             if ($lastEmailSend -eq "") {

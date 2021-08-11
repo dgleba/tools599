@@ -21,6 +21,8 @@ $global:copyToLitmus = "C:\data\cmm\watchedoutput\litmus"
 
 $global:copyToA2 = "C:\data\cmm\system\A2"
 
+$global:temp3file = 'C:\data\cmm\system\temp3file'
+
 $global:logpath="c:\data\logs\watch598cmmresults"
 
 $global:thisNickName = "watch598-b-cmm-ps1"
@@ -58,6 +60,7 @@ cmd /c mkdir $copyToQCcalc
 cmd /c mkdir $copyToGeneral
 cmd /c mkdir $global:copyToLitmus
 cmd /c mkdir $global:copyToA2
+cmd /c mkdir $global:temp3file
 cmd /c mkdir $logpath
 
 # save process id to file. Could use this to check later that is still running.
@@ -83,7 +86,7 @@ Write-Host $lastModTimeGeneral
 # find all files that have a modification time later than lastmodificationtime in A and move them to interim folder
 get-childitem -Path $PathToMonitor |
     where-object {$_.LastWriteTime -gt $lastModTimeGeneral} | 
-    move-item -destination $interimfolder
+    copy-item -destination $interimfolder
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -135,14 +138,65 @@ $Action = {
     {
     'Changed' {
 
-      # Wait 10 seconds after file is changed to move files
-      Start-Sleep -Seconds 8
+    # Check if file is correct type
+    if ($Name -match 'chr.txt' -or $Name -match 'hdr.txt' -or $Name -match 'fet.txt') {
+
+      # Get filename of changed file - ending filetype
+      $nameSliced = $Name.Substring(0,$Name.Length-8)
+      
+      # Check if folder named nameSliced exists and if not, create folder
+      $pathtemp3file = '{0}\{1}' -f $global:temp3file, $nameSliced
+      If(!(test-path $pathtemp3file)) {
+        New-Item -ItemType Directory -Force -Path $pathtemp3file
+      }
+
+      # Copy file to its corresponding temp3file folder
+      robocopy $PathToMonitor $pathtemp3file $Name
+      Start-Sleep 2
+
+      # Check if all 3 files have made it into temp3file folder
+      $filechr = $pathtemp3file + "\" + $nameSliced + ".chr.txt"
+      $filehdr = $pathtemp3file + "\" + $nameSliced + ".hdr.txt"
+      $filefet = $pathtemp3file + "\" + $nameSliced + ".fet.txt"
+      
+      $chrfound = Test-Path -Path $filechr -PathType Leaf
+      $hdrfound = Test-Path -Path $filehdr -PathType Leaf
+      $fetfound = Test-Path -Path $filefet -PathType Leaf
+      
+      # If they are all present in the folder, process files and remove folder
+      if ($chrfound -and $hdrfound -and $fetfound) {
+        #Start-Sleep 10
+
+        # copy chr,hdr from B to E
+        robocopy $pathtemp3file $copyToLitmus '*chr.txt*' '*hdr.txt*'
+        Start-Sleep 2
+
+        # Copy all from B to C
+        robocopy $pathtemp3file $copyToGeneral '*chr.txt*' '*hdr.txt*' '*fet.txt*'
+        Start-Sleep 2
+        
+        # Move all from B to D
+        robocopy $pathtemp3file $copyToQCcalc '*chr.txt*' '*hdr.txt*' '*fet.txt*' /mov /is /R:3 /W:4
+
+        # Delete temp3file folder
+        Remove-Item $pathtemp3file -Recurse
+
+      } 
+      # If they arent all present continue looking
+      else {
+        break
+      }
+      
+      
+
+      
+
 
       $print = "changed switch: copying. file CHANGED  {0} {1}" -f (Get-Date), $FullPath
       $print | Out-File 'C:\data\logs\watch598cmmresults\changed598logs.txt' -Append
       
       # 2021-08-08a: idea, if all three files, firstname.chr firstname.hdr firstname.fet are present, then copy them..
-      #
+      <#
       # Copy file from A to A2
       robocopy $PathToMonitor $copyToA2 $Name /tee /log+:$logpath\robo-cp-a2.$rundate.log.txt
       Start-Sleep 1
@@ -167,6 +221,13 @@ $Action = {
       #Invoke-expression $cmd 
       #$cmd = 'cmd /c copy  "$FullPath" $copyToGeneral'
       #Invoke-expression $cmd 
+      #>
+
+    } else {
+      break
+    }
+
+      
     }
     'Created' { 
         $print = "FILE CREATED AT {0} {1}" -f (Get-Date), $FullPath
