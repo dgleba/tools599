@@ -19,8 +19,6 @@ $global:copyToGeneral = "C:\data\cmm\watchedoutput\general"
 
 $global:copyToLitmus = "C:\data\cmm\watchedoutput\litmus"
 
-$global:copyToA2 = "C:\data\cmm\system\A2"
-
 $global:temp3file = 'C:\data\cmm\system\temp3file'
 
 $global:logpath="c:\data\logs\watch598cmmresults"
@@ -29,6 +27,7 @@ $global:thisNickName = "watch598-b-cmm-ps1"
 
 $global:rundate = (Get-Date).toString("yyyy-MM-dd")
 
+# $global:copyToA2 = "C:\data\cmm\system\A2"
 
 #  SETTINGS end ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -59,9 +58,9 @@ cmd /c mkdir $interimfolder
 cmd /c mkdir $copyToQCcalc
 cmd /c mkdir $copyToGeneral
 cmd /c mkdir $global:copyToLitmus
-cmd /c mkdir $global:copyToA2
 cmd /c mkdir $global:temp3file
 cmd /c mkdir $logpath
+# cmd /c mkdir $global:copyToA2
 
 # save process id to file. Could use this to check later that is still running.
 $tsdhms = (Get-Date).toString("yyyy-MM-dd_HH.mm.ss")
@@ -151,7 +150,7 @@ $Action = {
       }
 
       # Copy file to its corresponding temp3file folder
-      robocopy $PathToMonitor $pathtemp3file $Name
+      robocopy $PathToMonitor $pathtemp3file $Name /xo
       Start-Sleep 2
 
       # Check if all 3 files have made it into temp3file folder
@@ -168,20 +167,20 @@ $Action = {
       if ( $hdrfound -and $fetfound) {
         Start-Sleep 10
         # Copy notified files from A to B
-        robocopy $PathToMonitor $interimfolder $filechr $filehdr $filefet
+        robocopy $PathToMonitor $interimfolder $filechr $filehdr $filefet /xo
         # robocopy $PathToMonitor $interimfolder  $filehdr $filefet /tee /log+:$logpath.robocopy.interm.txt
         Start-Sleep 2
 
         # copy chr,hdr from B to E
-        robocopy $interimfolder $copyToLitmus '*chr.txt*' '*hdr.txt*' 
+        robocopy $interimfolder $copyToLitmus '*chr.txt*' '*hdr.txt*' /xo
         Start-Sleep 2
 
         # Copy all from B to C
-        robocopy $interimfolder $copyToGeneral '*chr.txt*' '*hdr.txt*' '*fet.txt*'
+        robocopy $interimfolder $copyToGeneral '*chr.txt*' '*hdr.txt*' '*fet.txt*' /xo
         Start-Sleep 2
         
         # Move all from B to D
-        robocopy $interimfolder $copyToQCcalc '*chr.txt*' '*hdr.txt*' '*fet.txt*' /mov /is /R:3 /W:4
+        robocopy $interimfolder $copyToQCcalc '*chr.txt*' '*hdr.txt*' '*fet.txt*' /mov /is /R:3 /W:4 /tee /log+:$logpath.robocopy.qcc.txt
         #robocopy $interimfolder $copyToQCcalc  '*hdr.txt*' '*fet.txt*' /mov /is /R:3 /W:4
 
         # Delete temp3file folder and files

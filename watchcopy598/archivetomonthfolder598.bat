@@ -32,11 +32,11 @@ echo ts_mon ... is %ts_mon%
 
 ::Move files older than minage. minage=30 is 30 days..
 
-robocopy %sourcefolder% C:\data\older\test\archive\data-archive-calypso-result\%ts_yr%-%ts_mon%-minus30 /s /MOVE  /xf merge__*.txt /xf *.TMP /MINAGE:30 /IS /R:3 /W:4  /tee /log:"C:\data\logs\watch598cmmresults\rb-archi-calyp-%ts_dhms%-%random%"
+robocopy %sourcefolder% C:\data\older\test\archive\data-archive-calypso-result\%ts_yr%-%ts_mon%-minus_lag /s /MOVE  /xf merge__*.txt /xf *.TMP /MINAGE:20 /IS /R:3 /W:4  /tee /log:"C:\data\logs\watch598cmmresults\rb-archi-calyp-%ts_dhms%-%random%"
 
-robocopy C:\data\cmm\watchedoutput\general C:\data\archive\cmm\watch598data-archive-general\%ts_yr%-%ts_mon%-minus30 /s /MOVE  /MINAGE:30 /IS /R:3 /W:4  /tee /log:"C:\data\logs\watch598cmmresults\rb-archi-general-%ts_dhms%-%random%"
+robocopy C:\data\cmm\watchedoutput\general C:\data\archive\cmm\watch598data-archive-general\%ts_yr%-%ts_mon%-minus_lag /s /MOVE  /MINAGE:20 /IS /R:3 /W:4  /tee /log:"C:\data\logs\watch598cmmresults\rb-archi-general-%ts_dhms%-%random%"
 
-robocopy C:\data\cmm\watchedoutput\qccalc C:\data\archive\cmm\watch598data-archive-qccalc\%ts_yr%-%ts_mon%-minus30 /s /MOVE  /MINAGE:30 /IS /R:3 /W:4  /tee /log:"C:\data\logs\watch598cmmresults\rb-archi-qccalc-%ts_dhms%-%random%"
+robocopy C:\data\cmm\watchedoutput\qccalc C:\data\archive\cmm\watch598data-archive-qccalc\%ts_yr%-%ts_mon%-minus_lag /s /MOVE  /MINAGE:20 /IS /R:3 /W:4  /tee /log:"C:\data\logs\watch598cmmresults\rb-archi-qccalc-%ts_dhms%-%random%"
 
 
 

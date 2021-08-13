@@ -27,42 +27,48 @@
 
 #  SETTINGS  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+# Create LastErrorEmailSent if it does not exist (For first run)
+
+if (!(Test-Path "C:\data\logs\watch598cmmresults\LastErrorEmailSent.txt"))
+{
+   New-Item -path "C:\data\logs\watch598cmmresults\LastErrorEmailSent.txt" -type "file" -value ""
+}
+else
+{
+  Write-Host ""
+}
+
 # Get Contents from watch598settings
 Get-Content watch598settings.conf | Foreach-Object{
     $var = $_.Split('=')
     New-Variable -Name $var[0] -Value $var[1]
  }
 
-$global:PathToMonitor = "$s_PathToMonitor"
-
 $global:errorEmailFrequencyMinutes = "$errorEmailFrequencyMinutes"
+
+# Get last email send time from file
+
+# Get last email sent datetime from text file
+$lastEmailSend = [IO.File]::ReadAllText("C:\data\logs\watch598cmmresults\LastErrorEmailSent.txt")
+
+# Convert date string from text file to date object (Will not run if erroremail has never been sent)
+if ($lastEmailSend -ne ""){
+    $lastEmailSendDate = [datetime]$lastEmailSend
+}
+
 
 $script:logpath="c:\data\logs\watch598cmmresults"
 
 $script:rundate = (Get-Date).toString("yyyy-MM-dd")
 
-$script:errorLogs = 'C:\data\logs\watch598cmmresults\processmonitor598-errorLogs.txt'
-
-$script:lastErrorEmailSent = "C:\data\logs\watch598cmmresults\LastErrorEmailSent.txt"
+# Current time - 1 minute
+$timetocheck = (Get-Date).AddMinutes(-1)
 
 
 #  SETTINGS end ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 # Prep ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-# Create LastErrorEmailSent if it does not exist (For first run)
-if (!(Test-Path $script:lastErrorEmailSent))
-{
-   New-Item -path $script:lastErrorEmailSent -type "file" -value ""
-}
-
-# Create ErrorLogs if it does not exist
-if (!(Test-Path $script:errorLogs))
-{
-   New-Item -path $script:errorLogs -type "file" -value ""
-}
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -72,44 +78,41 @@ if (!(Test-Path $script:errorLogs))
 # Itterate through folder A looking for files older than 1 minute
 
 # Get all files containing fet from folder A
-$filesForA = Get-ChildItem $global:PathToMonitor -Filter '*fet.txt*' | Where-Object {$f.LastWriteTime -lt (Get-Date).AddMinutes(-1)}
+$filesForA = Get-ChildItem 'C:\result\' -Filter '*fet.txt*' | Where-Object {$f.LastWriteTime -lt (Get-Date).AddMinutes(-1)}
+
+#$fileForGeneral = Get-ChildItem 'C:\data\cmm\watchedoutput\general\' -Filter '*fet.txt*' | Where-Object {$f.LastWriteTime -lt (Get-Date).AddMinutes(-1)}
 
 # Check if file > 1 minute old in A is also in general (WORKING I THINK)
 if ($filesForA.Length -gt 0) {
     foreach ($f in $filesForA) {
-
         $testpath = 'C:\data\cmm\watchedoutput\general\{0}' -f $f
-
         # If file is found in A that is not in General, An error will occur
         if ((Test-Path -Path $testpath -PathType Leaf) -eq $false) {
-            $print = "Error Occured at {0} with file {1}" -f (Get-Date), $f
-            $print | Out-File $script:errorLogs -Append
+            $print = "Error Occured at {0}" -f (Get-Date)
+            $print | Out-File 'C:\data\logs\watch598cmmresults\processmonitor-errorLogs.txt' -Append
             
-            # Read lastEmailSend from LastErrorEmailSent.txt and assign it to variable
-            $lastEmailSend = [IO.File]::ReadAllText($script:lastErrorEmailSent)
-            # If LastErrorEmailSent.txt is not empty (not the first time being run) convert lastEmailSend to a date object
-            if ($lastEmailSend -ne ""){
-                $lastEmailSendDate = [datetime]$lastEmailSend
-            }
-
             # First time error occurs, email will be sent and lastemailsend will be updated in textfile
             if ($lastEmailSend -eq "") {
-                send-mailmessage -subject "Warning: error detected by processmonitor_watch598." -body "An error (LastEmailSent File is Blank) was detected. Cause of error: $f Please check it. `n`nRef: this msg from computer: $(gc env:computername)  file:   C:\data\script\tools599\watchcopy598\processmonitor_watch598" -to @("dgleba@stackpole.com") -dno onFailure -smtpServer MESG06.stackpole.ca -from 'dgleba@stackpole.com'
-                Set-Content  -Path $script:lastErrorEmailSent -Value (Get-Date)
+                send-mailmessage -subject "Warning: error detected by processmonitor_watch598." -body "An error was detected. Please check it. `n`nRef: this msg from computer: xxx  file:   C:\data\script\tools599\watchcopy598\processmonitor_watch598" -to @("dgleba@stackpole.com") -dno onFailure -smtpServer MESG06.stackpole.ca -from 'dgleba@stackpole.com'
+                Set-Content  -Path "C:\data\logs\watch598cmmresults\LastErrorEmailSent.txt" -Value (Get-Date)
             } 
             # If error is found, and time is greater than lastEmailSendDate + errorEmailFrequencyMinutes, send email and update lastemailsend textfile
             elseif ((Get-Date) -gt $lastEmailSendDate.AddMinutes([int]$errorEmailFrequencyMinutes)) {
                 # If error is detected and time is greater than lastemailsend + errorfrequencyminutes, send email and update file
-                send-mailmessage -subject "Warning: error detected by processmonitor_watch598." -body "An error (File $f was not found in General) was detected. Please check it. `n`nRef: this msg from computer: $(gc env:computername)  file: C:\Users\dgleba\Desktop\tools599-main\watchcopy598\processmonitor_watch598" -to @("dgleba@stackpole.com") -dno onFailure -smtpServer MESG06.stackpole.ca -from 'dgleba@stackpole.com'
-                Set-Content  -Path $script:lastErrorEmailSent -Value (Get-Date)
+                send-mailmessage -subject "Warning: error detected by processmonitor_watch598." -body "An error was detected. Please check it. `n`nRef: this msg from C:\Users\dgleba\Desktop\tools599-main\watchcopy598\processmonitor_watch598" -to @("dgleba@stackpole.com") -dno onFailure -smtpServer MESG06.stackpole.ca -from 'dgleba@stackpole.com'
+                Set-Content  -Path "C:\data\logs\watch598cmmresults\LastErrorEmailSent.txt" -Value (Get-Date)
             }
         }  
     }
 }
 
 
+# I will let it run without checking right now.
+
+
 #  run archiving ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 
-timeout 5
+#timeout 5
+
