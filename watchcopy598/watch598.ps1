@@ -142,7 +142,7 @@ $Action = {
     if ($Name -match 'chr.txt' -or $Name -match 'hdr.txt' -or $Name -match 'fet.txt') {
 
       # Get filename of changed file - ending filetype
-      $nameSliced = $Name.Substring(0,$Name.Length-8)
+      $nameSliced = $Name.Substring(0,$Name.Length-7)
       
       # Check if folder named nameSliced exists and if not, create folder
       $pathtemp3file = '{0}\{1}' -f $global:temp3file, $nameSliced
@@ -155,23 +155,25 @@ $Action = {
       Start-Sleep 2
 
       # Check if all 3 files have made it into temp3file folder
-      $filechr = $nameSliced + ".chr.txt"
-      $filehdr = $nameSliced + ".hdr.txt"
-      $filefet = $nameSliced + ".fet.txt"
+      $filechr = $nameSliced + "chr.txt"
+      $filehdr = $nameSliced + "hdr.txt"
+      $filefet = $nameSliced + "fet.txt"
       
       $chrfound = Test-Path -Path ($pathtemp3file + "\" + $filechr) -PathType Leaf
       $hdrfound = Test-Path -Path ($pathtemp3file + "\" + $filehdr) -PathType Leaf
       $fetfound = Test-Path -Path ($pathtemp3file + "\" + $filefet) -PathType Leaf
       
       # If they are all present in the folder, process files and remove folder
-      if ($chrfound -and $hdrfound -and $fetfound) {
+      # if (2021-08-13_Fri_09.12-AM $chrfound -and $hdrfound -and $fetfound) {
+      if ( $hdrfound -and $fetfound) {
         Start-Sleep 10
         # Copy notified files from A to B
         robocopy $PathToMonitor $interimfolder $filechr $filehdr $filefet
+        # robocopy $PathToMonitor $interimfolder  $filehdr $filefet /tee /log+:$logpath.robocopy.interm.txt
         Start-Sleep 2
 
         # copy chr,hdr from B to E
-        robocopy $interimfolder $copyToLitmus '*chr.txt*' '*hdr.txt*'
+        robocopy $interimfolder $copyToLitmus '*chr.txt*' '*hdr.txt*' 
         Start-Sleep 2
 
         # Copy all from B to C
@@ -180,6 +182,7 @@ $Action = {
         
         # Move all from B to D
         robocopy $interimfolder $copyToQCcalc '*chr.txt*' '*hdr.txt*' '*fet.txt*' /mov /is /R:3 /W:4
+        #robocopy $interimfolder $copyToQCcalc  '*hdr.txt*' '*fet.txt*' /mov /is /R:3 /W:4
 
         # Delete temp3file folder and files
         Remove-Item $pathtemp3file -Recurse
@@ -238,8 +241,8 @@ try
 {
   do
   {
-  # -Timeout 3 is wait 3 seconds in loop.
-    Wait-Event -Timeout 3
+  # -Timeout 3 is wait 10 seconds in loop.
+    Wait-Event -Timeout 10
     Write-Host "." -NoNewline
   } while ($true)
 }

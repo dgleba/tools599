@@ -78,7 +78,7 @@ $timetocheck = (Get-Date).AddMinutes(-1)
 # Itterate through folder A looking for files older than 1 minute
 
 # Get all files containing fet from folder A
-$filesForA = Get-ChildItem 'C:\data\cmm\results from calypso\' -Filter '*fet.txt*' | Where-Object {$f.LastWriteTime -lt (Get-Date).AddMinutes(-1)}
+$filesForA = Get-ChildItem 'C:\result\' -Filter '*fet.txt*' | Where-Object {$f.LastWriteTime -lt (Get-Date).AddMinutes(-1)}
 
 #$fileForGeneral = Get-ChildItem 'C:\data\cmm\watchedoutput\general\' -Filter '*fet.txt*' | Where-Object {$f.LastWriteTime -lt (Get-Date).AddMinutes(-1)}
 
@@ -114,5 +114,5 @@ if ($filesForA.Length -gt 0) {
 
 
 
-timeout 30
+# timeout 5
 
