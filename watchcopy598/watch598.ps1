@@ -155,30 +155,33 @@ $Action = {
       Start-Sleep 2
 
       # Check if all 3 files have made it into temp3file folder
-      $filechr = $pathtemp3file + "\" + $nameSliced + ".chr.txt"
-      $filehdr = $pathtemp3file + "\" + $nameSliced + ".hdr.txt"
-      $filefet = $pathtemp3file + "\" + $nameSliced + ".fet.txt"
+      $filechr = $nameSliced + ".chr.txt"
+      $filehdr = $nameSliced + ".hdr.txt"
+      $filefet = $nameSliced + ".fet.txt"
       
-      $chrfound = Test-Path -Path $filechr -PathType Leaf
-      $hdrfound = Test-Path -Path $filehdr -PathType Leaf
-      $fetfound = Test-Path -Path $filefet -PathType Leaf
+      $chrfound = Test-Path -Path ($pathtemp3file + "\" + $filechr) -PathType Leaf
+      $hdrfound = Test-Path -Path ($pathtemp3file + "\" + $filehdr) -PathType Leaf
+      $fetfound = Test-Path -Path ($pathtemp3file + "\" + $filefet) -PathType Leaf
       
       # If they are all present in the folder, process files and remove folder
       if ($chrfound -and $hdrfound -and $fetfound) {
-        #Start-Sleep 10
+        Start-Sleep 10
+        # Copy notified files from A to B
+        robocopy $PathToMonitor $interimfolder $filechr $filehdr $filefet
+        Start-Sleep 2
 
         # copy chr,hdr from B to E
-        robocopy $pathtemp3file $copyToLitmus '*chr.txt*' '*hdr.txt*'
+        robocopy $interimfolder $copyToLitmus '*chr.txt*' '*hdr.txt*'
         Start-Sleep 2
 
         # Copy all from B to C
-        robocopy $pathtemp3file $copyToGeneral '*chr.txt*' '*hdr.txt*' '*fet.txt*'
+        robocopy $interimfolder $copyToGeneral '*chr.txt*' '*hdr.txt*' '*fet.txt*'
         Start-Sleep 2
         
         # Move all from B to D
-        robocopy $pathtemp3file $copyToQCcalc '*chr.txt*' '*hdr.txt*' '*fet.txt*' /mov /is /R:3 /W:4
+        robocopy $interimfolder $copyToQCcalc '*chr.txt*' '*hdr.txt*' '*fet.txt*' /mov /is /R:3 /W:4
 
-        # Delete temp3file folder
+        # Delete temp3file folder and files
         Remove-Item $pathtemp3file -Recurse
 
       } 
@@ -187,41 +190,8 @@ $Action = {
         break
       }
       
-      
-
-      
-
-
       $print = "changed switch: copying. file CHANGED  {0} {1}" -f (Get-Date), $FullPath
       $print | Out-File 'C:\data\logs\watch598cmmresults\changed598logs.txt' -Append
-      
-      # 2021-08-08a: idea, if all three files, firstname.chr firstname.hdr firstname.fet are present, then copy them..
-      <#
-      # Copy file from A to A2
-      robocopy $PathToMonitor $copyToA2 $Name /tee /log+:$logpath\robo-cp-a2.$rundate.log.txt
-      Start-Sleep 1
-
-      # Move A2 to Interim
-      robocopy $copyToA2 $interimfolder '*chr.txt*' '*hdr.txt*' '*fet.txt*'  /mov /is /R:3 /W:4
-      Start-Sleep 1
-
-      # Copy Interim to Litmus
-      robocopy $interimfolder $copyToLitmus '*chr.txt*' '*hdr.txt*' '*fet.txt*'
-      # Start-Sleep 1
-
-      # Copy Interim to General
-      robocopy $interimfolder $copyToGeneral '*chr.txt*' '*hdr.txt*' '*fet.txt*'
-      # Start-Sleep 1
-
-      # Move Interim to Qc Calc
-      robocopy $interimfolder $copyToQCcalc '*chr.txt*' '*hdr.txt*' '*fet.txt*' /mov /is /R:3 /W:4
-
-
-      #$cmd = 'cmd /c copy  "$FullPath" $copyToQCcalc>>$logpath\$rundate-$(gc env:computername)-$thisNickName--copy-log.txt'
-      #Invoke-expression $cmd 
-      #$cmd = 'cmd /c copy  "$FullPath" $copyToGeneral'
-      #Invoke-expression $cmd 
-      #>
 
     } else {
       break
