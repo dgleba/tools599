@@ -69,10 +69,10 @@ if (!(Test-Path $script:errorLogs))
 
 #  Main code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-# Itterate through folder A looking for files older than 2 minute
+# Itterate through folder A looking for files older than 1 minute
 
 # Get all files containing fet from folder A
-$filesForA = Get-ChildItem $global:PathToMonitor -Filter '*fet.txt*' | Where-Object {$f.LastWriteTime -lt (Get-Date).AddMinutes(-2)}
+$filesForA = Get-ChildItem $global:PathToMonitor -Filter '*fet.txt*' | Where-Object {$f.LastWriteTime -lt (Get-Date).AddMinutes(-1)}
 
 # Check if file > 1 minute old in A is also in general (WORKING I THINK)
 if ($filesForA.Length -gt 0) {
@@ -107,6 +107,8 @@ if ($filesForA.Length -gt 0) {
     }
 }
 
+
+# I will let it run without checking right now.
 
 
 #  run archiving ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
