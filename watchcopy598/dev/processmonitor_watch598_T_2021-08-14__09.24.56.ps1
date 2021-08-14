@@ -74,7 +74,6 @@ if (!(Test-Path $script:errorLogs))
 # Get all files containing fet from folder A
 # $filesForA = Get-ChildItem $global:PathToMonitor -Filter '*fet.txt*' | Where-Object {$f.LastWriteTime -lt (Get-Date).AddMinutes(-2)} | Where-Object {$f.LastWriteTime -gt (Get-Date).AddMinutes(-122)}
 $filesForA = Get-ChildItem $global:PathToMonitor -Filter '*fet.txt*' | Where-Object {$_.LastWriteTime -lt (Get-Date).AddMinutes(-2) -and $_.LastWriteTime -ge (Get-Date).AddMinutes(-22)} 
-(Get-Date) | Out-File $script:logpath\pm598dgts1.txt -Append
 
 # Check if file > 1 minute old in A is also in general (WORKING I THINK)
 if ($filesForA.Length -gt 0) {
@@ -82,8 +81,7 @@ if ($filesForA.Length -gt 0) {
         
         $testpath = 'C:\data\cmm\watchedoutput\general\{0}' -f $f
         write-host $f
-        $f  | Out-File $script:logpath\pm598dgts1.txt -Append
-        
+
         # If file is found in A that is not in General, An error will occur
         if ((Test-Path -Path $testpath -PathType Leaf) -eq $false) {
             $print = "Error Occured at {0} with file {1}" -f (Get-Date), $f
@@ -118,4 +116,4 @@ if ($filesForA.Length -gt 0) {
 
 
 
-timeout 15
+timeout 5
