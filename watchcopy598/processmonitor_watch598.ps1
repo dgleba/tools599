@@ -45,12 +45,15 @@ $script:lastErrorEmailSent = "C:\data\logs\watch598cmmresults\LastErrorEmailSent
 
 
 $script:errorLogs = 'C:\data\logs\watch598cmmresults\processmonitor598-errorLogs.txt'
-$script:debug2Logs = 'C:\data\logs\watch598cmmresults\processmonitor598-debug2Logs.txt'
+$script:debuglogpath = 'C:\data\logs\debug\'
 
 #  SETTINGS end ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 # Prep ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+cmd /c mkdir $logpath
+cmd /c mkdir $debuglogpath
 
 
 # Create LastErrorEmailSent if it does not exist (For first run)
@@ -74,8 +77,9 @@ if (!(Test-Path $script:errorLogs))
 
 # Get all files containing fet from folder A
 # $filesForA = Get-ChildItem $global:PathToMonitor -Filter '*fet.txt*' | Where-Object {$f.LastWriteTime -lt (Get-Date).AddMinutes(-2)} | Where-Object {$f.LastWriteTime -gt (Get-Date).AddMinutes(-122)}
-$filesForA = Get-ChildItem $global:PathToMonitor -Filter '*fet.txt*' | Where-Object {$_.LastWriteTime -lt (Get-Date).AddMinutes(-2) -and $_.LastWriteTime -ge (Get-Date).AddMinutes(-240)} 
-(Get-Date) | Out-File $script:debug2Logs -Append
+$filesForA = Get-ChildItem $global:PathToMonitor -Filter '*fet.txt*' | Where-Object {$_.LastWriteTime -lt (Get-Date).AddMinutes(-2) -and $_.LastWriteTime -ge (Get-Date).AddMinutes(-180)} 
+$mts = (Get-Date).toString("yyyyMMdd_HH.mm.ss")
+(Get-Date) | Out-File $script:debuglogpath\pm598_$mts.txt -Append
 
 # Check if file > 1 minute old in A is also in general (WORKING I THINK)
 if ($filesForA.Length -gt 0) {
@@ -84,14 +88,14 @@ if ($filesForA.Length -gt 0) {
         # 2021-08-14 dgleba: i think adding single and double quote fixed it. It may have been not working with file names with spaces in them.
         $testpath = "'C:\data\cmm\watchedoutput\general\{0}'" -f $f
         write-host "dollarf: $f"
-        "dollarf: $f"  | Out-File $script:debug2Logs -Append
+        "dollarf: $f"  | Out-File $script:debuglogpath\pm598_$mts.txt -Append
         
         # If file is found in A that is not in General, An error will occur
         if ((Test-Path -Path $testpath -PathType Leaf) -eq $false) {
             $print = "Error Occured at {0} with file {1}" -f (Get-Date), $f
             $print | Out-File $script:errorLogs -Append
             write-host $print
-            "$print"  | Out-File $script:debug2Logs -Append
+            "$print"  | Out-File $script:debuglogpath\pm598_$mts.txt -Append
              
             # Read lastEmailSend from LastErrorEmailSent.txt and assign it to variable
             $lastEmailSend = [IO.File]::ReadAllText($script:lastErrorEmailSent)
