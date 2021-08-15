@@ -12,15 +12,16 @@ try
     Write-Host "." -NoNewline
     Wait-Event -Timeout 10
       
-    # run once per hour
-    [int]$hr = get-date -format HH
-    $min = Get-Date ("{0}:25:00" -f $hr)
-    $max = Get-Date ("{0}:25:10" -f $hr)
+    # run once per hour @ $smin
+    [int]$shr = get-date -format HH
+    [int]$smin = 48
+    $min = Get-Date ("{0}:{1}:00" -f $shr, $smin)
+    $max = Get-Date ("{0}:{1}:10" -f $shr, $smin) 
     $now = Get-Date
     # Write-Host $min $max 
     Write-Host $now $min $max
     if ( $now.TimeOfDay -ge $min.TimeOfDay  -and $now.TimeOfDay -le $max.TimeOfDay ) {
-      Write-host "doit"
+      Write-host "do it now!"
       (Get-Date).toString("yyyy-MM-dd_HH.mm.ss")|Write-Host
     }
     # end. run once per hour  
@@ -29,11 +30,13 @@ try
 finally
 {
   # this gets executed when user presses CTRL+C
+  cmd /c echo running finally.
 }
+
 
 # =================================================
 
 # ending..
 
-cmd /c timeout 19
+timeout 19
 # Start-Sleep -Seconds 1
