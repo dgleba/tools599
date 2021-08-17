@@ -14,16 +14,29 @@ set sourcefolder=c:\data\older\testcopy\cmm\result
 :: date ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-:: using powershell
-for /f "delims=" %%# in ('powershell get-date -format "{yyyy-MM-dd_HH.mm.ss}"') do @set ts_dhms=%%#
-echo %ts_dhms% 
-mkdir c:\temp
-echo %ts_dhms% > c:\temp\%ts_dhms%.txt
-for /f "delims=" %%# in ('powershell get-date -format "{yyyy-MM-dd}"') do @set ts_ymd=%%#
-echo %ts_ymd% 
-set ts_yr=%ts_dhms:~0,4%
+: Using wmic - windows batch universal way to get region independent date time to environment variable
+for /F "usebackq tokens=1,2 delims==" %%i in (`wmic os get LocalDateTime /VALUE 2^>NUL`) do if '.%%i.'=='.LocalDateTime.' set ts_in=%%j
+echo %ts_in%
+set ts_dhms=%ts_in:~0,4%-%ts_in:~4,2%-%ts_in:~6,2%_%ts_in:~8,2%.%ts_in:~10,2%.%ts_in:~12,2% 
+set ts_ymd=%ts_in:~0,4%-%ts_in:~4,2%-%ts_in:~6,2%
+set ts_mon=%ts_in:~4,2%
+set ts_yr=%ts_in:~0,4%
+echo ts_dhms... is %ts_dhms%
+echo ts_ymd ... is %ts_ymd%
 echo ts_yr ... is %ts_yr%
-set ts_mon=%ts_dhms:~5,2%
+echo ts_mon ... is %ts_mon%
+
+
+:: using powershell
+for /f "delims=" %%# in ('powershell get-date -format "{yyyy-MM-dd_HH.mm.ss}"') do @set dhms=%%#
+echo %dhms% 
+mkdir c:\temp
+echo %dhms% > c:\temp\%dhms%.txt
+for /f "delims=" %%# in ('powershell get-date -format "{yyyy-MM-dd}"') do @set ymd=%%#
+echo %ymd% 
+set ts_yr=%dhms:~0,4%
+echo ts_yr ... is %ts_yr%
+set ts_mon=%dhms:~5,2%
 echo ts_mon ... is %ts_mon%
 
 
@@ -43,5 +56,6 @@ robocopy C:\data\logs C:\data\archive\data\logs\%ts_yr%-%ts_mon%-minus_lag /s /M
 
 
 
-timeout 14
 
+
+timeout 14

@@ -41,9 +41,6 @@ echo %dhms% > c:\temp\%dhms%.txt
 for /f "delims=" %%# in ('powershell get-date -format "{yyyy-MM-dd}"') do @set ymd=%%#
 echo %ymd% 
 
-set ts_yr=%dhms:~0,4%
-echo ts_yr ... is %ts_yr%
-
 set ts_mon=%dhms:~5,2%
 echo ts_mon ... is %ts_mon%
 
