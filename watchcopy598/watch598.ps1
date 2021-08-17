@@ -22,6 +22,7 @@ $global:copyToLitmus = "C:\data\cmm\watchedoutput\litmus"
 $global:temp3file = 'C:\data\cmm\system\temp3file'
 
 $global:logpath="c:\data\logs\watch598cmmresults"
+$global:debugpath="c:\data\logs\debug"
 
 $global:thisNickName = "watch598-b-cmm-ps1"
 
@@ -60,6 +61,7 @@ cmd /c mkdir $copyToGeneral
 cmd /c mkdir $global:copyToLitmus
 cmd /c mkdir $global:temp3file
 cmd /c mkdir $logpath
+cmd /c mkdir $debugpath
 # cmd /c mkdir $global:copyToA2
 
 # save process id to file. Could use this to check later that is still running.
@@ -184,7 +186,8 @@ $Action = {
         Start-Sleep 1
         
         # Move all from B to D
-        robocopy $interimfolder $copyToQCcalc '*chr.txt*' '*hdr.txt*' '*fet.txt*' /mov /is /R:3 /W:4 /tee /log+:$logpath.robocopy.qcc.txt
+        $mts = (Get-Date).toString("yyyyMMdd_HH.mm.ss")
+        robocopy $interimfolder $copyToQCcalc '*chr.txt*' '*hdr.txt*' '*fet.txt*' /mov /is /R:3 /W:4 /tee /log+:$global:debugpath.robocopy.qcclc_$mts.txt
         #robocopy $interimfolder $copyToQCcalc  '*hdr.txt*' '*fet.txt*' /mov /is /R:3 /W:4
 
         # Delete temp3file folder and files
