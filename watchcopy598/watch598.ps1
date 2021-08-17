@@ -187,7 +187,7 @@ $Action = {
         
         # Move all from B to D
         $mts = (Get-Date).toString("yyyyMMdd_HH.mm.ss")
-        robocopy $interimfolder $copyToQCcalc '*chr.txt*' '*hdr.txt*' '*fet.txt*' /mov /is /R:3 /W:4 /tee /log+:$global:debugpath.robocopy.qcclc_$mts.txt
+        robocopy $interimfolder $copyToQCcalc '*chr.txt*' '*hdr.txt*' '*fet.txt*' /mov /is /R:3 /W:4 /tee /log+:$global:debugpath\robocopy.qcclc_$mts.txt
         #robocopy $interimfolder $copyToQCcalc  '*hdr.txt*' '*fet.txt*' /mov /is /R:3 /W:4
 
         # Delete temp3file folder and files
