@@ -22,11 +22,12 @@ $global:copyToLitmus = "C:\data\cmm\watchedoutput\litmus"
 $global:temp3file = 'C:\data\cmm\system\temp3file'
 
 $global:logpath="c:\data\logs\watch598cmmresults"
-$global:debugpath="c:\data\logs\debug"
 
 $global:thisNickName = "watch598-b-cmm-ps1"
 
 $global:rundate = (Get-Date).toString("yyyy-MM-dd")
+
+$global:pathPMRL = 'C:\data\logs\watch598cmmresults\processmonitor598-runlog.txt'
 
 # $global:copyToA2 = "C:\data\cmm\system\A2"
 
@@ -61,7 +62,6 @@ cmd /c mkdir $copyToGeneral
 cmd /c mkdir $global:copyToLitmus
 cmd /c mkdir $global:temp3file
 cmd /c mkdir $logpath
-cmd /c mkdir $debugpath
 # cmd /c mkdir $global:copyToA2
 
 # save process id to file. Could use this to check later that is still running.
@@ -72,6 +72,8 @@ cmd /c $carg
 
 $carg = "echo {0}>{1}\{2}_{3}_pid.txt" -f $pid, $logpath,$(gc env:computername), $thisNickName
 cmd /c $carg
+
+
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -186,8 +188,7 @@ $Action = {
         Start-Sleep 1
         
         # Move all from B to D
-        $mts = (Get-Date).toString("yyyyMMdd_HH.mm.ss")
-        robocopy $interimfolder $copyToQCcalc '*chr.txt*' '*hdr.txt*' '*fet.txt*' /mov /is /R:3 /W:4 /tee /log+:$global:debugpath\robocopy.qcclc_$mts.txt
+        robocopy $interimfolder $copyToQCcalc '*chr.txt*' '*hdr.txt*' '*fet.txt*' /mov /is /R:3 /W:4 /tee /log:$global:logpath/debug/robocopy.qcc.txt
         #robocopy $interimfolder $copyToQCcalc  '*hdr.txt*' '*fet.txt*' /mov /is /R:3 /W:4
 
         # Delete temp3file folder and files
@@ -247,11 +248,41 @@ try
 {
   do
   {
-  # -Timeout 3 is wait 10 seconds in loop.
-    Wait-Event -Timeout 10
+    # `-Timeout 10` is wait 10 seconds in loop.
     Write-Host "." -NoNewline
+    Wait-Event -Timeout 10
+      
+    # run once per hour @ $smin
+    [int]$shr = get-date -format HH
+    [int]$smin = 52
+    $min = Get-Date ("{0}:{1}:00" -f $shr, $smin)
+    $max = Get-Date ("{0}:{1}:10" -f $shr, $smin) 
+    $now = Get-Date
+    
+    if ( $now.TimeOfDay -ge $min.TimeOfDay  -and $now.TimeOfDay -le $max.TimeOfDay ) {
+      Write-host "do it now!"
+      # get last line of processmonitor run-log
+      $last = Get-Item -Path $global:pathPMRL | Get-Content -Tail 1
+      # If pathPMRL file is empty (prevents crash)
+      if ($last.Length -lt 1){
+        continue
+      }
+      else {
+        # Convert time to date object
+        $lastline = [datetime]$last
+        # If current date > lastline + 10 mins report an error
+        if ((Get-Date) -gt $lastline.AddMinutes(10)) {
+          send-mailmessage -subject "Error detected by watch598 -- processmonitor problem." -body "An error (processmonitor_watch598 has stopped working) was detected. Please check it. `n`nRef: this msg from computer: $(gc env:computername)  file: C:\data\script\tools599\watchcopy598\processmonitor_watch598.ps1" -to @("dgleba@stackpole.com") -dno onFailure -smtpServer MESG06.stackpole.ca -from 'dgleba@stackpole.com'
+        } else {
+          continue
+        }
+      } 
+      (Get-Date).toString("yyyy-MM-dd_HH.mm.ss")|Write-Host
+    }
+    # end. run once per hour  
   } while ($true)
 }
+
 finally
 {
   # this gets executed when user presses CTRL+C
