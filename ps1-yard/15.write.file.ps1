@@ -43,7 +43,9 @@ cmd /c echo hello 4","$ma"," 44 2>&1>>c:\data\logs\test\15writeb.txt
 
 # option 2
 
-"Victor $ma Ashiedu" | Out-File c:\data\logs\test\15writeb.txt  -Append
+$mtsymd = (Get-Date).toString("yyyy-MM-dd")
+"Victor $ma $nickname  Ashiedu" | Out-File c:\data\logs\test\15writeb.$mtsymd.txt  -Append
+"Sictor $ma $nickname $((Get-Date).toString("yyyy-MM-dd_HH.mm.ss")) VAshiedu" | Out-File c:\data\logs\test\15writec.$((Get-Date).toString("yyyy-MM-dd")).txt  -Append
 #-Encoding utf8
 
 
