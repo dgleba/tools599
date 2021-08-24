@@ -23,11 +23,11 @@ rem ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ dropbox to seaf mir
 :main
 
 
-set logf4="c:\temp\log\%ymd%\rb-move_wtch598_bu-%dhms%-%random%"
+set logf4="c:\temp\log\%ymd%\rb-move_wtch598_bu-%dhms%
 ::robocopy \\%thishostname%\c\data\script  c:\backup\%thishostname%\c_data_script  /e   /xf *._sync* /xd libre  /dst /fft /xo /ndl /np /r:0 /w:0 /tee /eta /log:%logf4%
-robocopy \\PMDA-BKH70W2\data\script  c:\backup\PMDA-BKH70W2\c_data_script  /e   /xf *._sync* /xd libre  /dst /fft /xo /ndl /np /r:0 /w:0 /tee /eta /log:%logf4%
+robocopy \\PMDA-BKH70W2\data\script  c:\backup\PMDA-BKH70W2\c_data_script  /e   /xf *._sync* /xd libre  /dst /fft /xo /ndl /np /r:0 /w:0 /tee /eta /log:%logf4%_10001c_%random%"
 timeout 9
-robocopy \\PMDA-BKH70W2\data\script  \\PMDA-BKH70W2\data\backup\PMDA-BKH70W2\c_data_script  /e  /xf *._sync* /xd libre  /dst /fft /xo /ndl /np /r:0 /w:0 /tee /eta /log:%logf4%
+robocopy \\PMDA-BKH70W2\data\script  \\PMDA-BKH70W2\data\backup\PMDA-BKH70W2\c_data_script  /e  /xf *._sync* /xd libre  /dst /fft /xo /ndl /np /r:0 /w:0 /tee /eta /log:%logf4%_10001_%random%"
 
 
 
