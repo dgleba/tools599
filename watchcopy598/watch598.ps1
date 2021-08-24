@@ -74,8 +74,10 @@ cmd /c $carg
 $carg = "echo {0}>{1}\{2}_{3}_pid.txt" -f $pid, $logpath,$(gc env:computername), $thisNickName
 cmd /c $carg
 
-
-
+$mts = (Get-Date).toString("yyyyMMdd_HH.mm.ss")
+$cmd = "cmd /c echo Starting watch598 at $mts>>$logpath\$(gc env:computername)-$thisNickName--run-log.txt"
+Invoke-expression $cmd
+  
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #  Main code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
