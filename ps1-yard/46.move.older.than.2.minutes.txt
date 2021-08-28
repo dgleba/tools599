@@ -1,0 +1,21 @@
+
+
+$sshSource = 'D:\ssh_upload'
+$ssh_Destination = 'D:\ssh_home'
+
+# Just get all files, without folders
+$5MinFiles = Get-ChildItem -Path $sshSource -File -Recurse
+
+ForEach ($FileToArchive in $5MinFiles)
+	{
+	If ( Test-Path ($FileToArchive).FullName -OlderThan (Get-Date).AddMinutes(-5) )
+		{
+		Get-Date
+		"Moving file " + ($FileToArchive).FullName + ' to: ' + $ssh_Destination
+
+		# Only moving the files, wihtout folders
+		Move-Item -Path ($FileToArchive).FullName -Destination $ssh_Destination -WhatIf
+		}
+	Else {
+	# Do Nothing
+	}

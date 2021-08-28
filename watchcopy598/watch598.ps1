@@ -7,7 +7,6 @@
 # https://community.idera.com/database-tools/powershell/powertips/b/tips/posts/using-filesystemwatcher-correctly-part-2
 
 
-
 #  SETTINGS  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -21,13 +20,20 @@ $global:copyToLitmus = "C:\data\cmm\watchedoutput\litmus"
 
 $global:temp3file = 'C:\data\cmm\system\temp3file'
 
-$global:logpath="c:\data\logs\watch598cmmresults"
 
 $global:thisNickName = "watch598-b-cmm-ps1"
 
 $global:rundate = (Get-Date).toString("yyyy-MM-dd")
 
+$global:logpath="c:\data\logs\watch598cmmresults"
 $global:pathPMRL = 'C:\data\logs\watch598cmmresults\processmonitor598-runlog.txt'
+#
+$global:translogpath = "c:\data\logs\watch598cmmresults\debug\watch598_debugtranscrpt"
+# i can't get this to work..
+# trouble getting this to work. "{0}\de...
+# $global:translogpath = "{0}\debug\watch598_debugtranscrpt" -f $logpath
+# $global:translogpath = "$global:logpath\debug\watch598_debugtranscrpt"
+# add this in place below. $global:translogpath_$((Get-Date).toString("yyyy-MM-dd_HH.mm.ss")).log
 
 # $global:copyToA2 = "C:\data\cmm\system\A2"
 
@@ -55,19 +61,28 @@ $global:watch_file_filter = $s_watch_file_filter
 # Prep ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
+cmd /c mkdir $logpath
+cmd /c mkdir $logpath\debug
+#
+# start transcript logging... 
+Start-Transcript -Path c:\data\logs\watch598cmmresults\debug\watch598_debugtranscrpt_$((Get-Date).toString("yyyy-MM-dd_HH.mm.ss")).log
+# path not working in this..
+# Start-Transcript -Path $global:logpath_$((Get-Date).toString("yyyy-MM-dd_HH.mm.ss")).log
+#Start-Transcript -Path $global:translogpath_$((Get-Date).toString("yyyy-MM-dd_HH.mm.ss")).log
+# write-host $global:translogpath_$((Get-Date).toString("yyyy-MM-dd_HH.mm.ss")).log
+
+
 cmd /c mkdir $PathToMonitor
 cmd /c mkdir $interimfolder
 cmd /c mkdir $copyToQCcalc
 cmd /c mkdir $copyToGeneral
 cmd /c mkdir $global:copyToLitmus
 cmd /c mkdir $global:temp3file
-cmd /c mkdir $logpath
-cmd /c mkdir $logpath\debug
 # cmd /c mkdir $global:copyToA2
 
-# save process id to file. Could use this to check later that is still running.
-$tsdhms = (Get-Date).toString("yyyy-MM-dd_HH.mm.ss")
 
+# save process id to file. Could use this to check later that is still running.
+$tsdhms = $((Get-Date).toString("yyyy-MM-dd_HH.mm.ss"))
 $carg = "echo {0}, {1}>>{2}\{3}_{4}_pid__log.txt" -f $pid, $tsdhms, $logpath,$(gc env:computername), $thisNickName
 cmd /c $carg
 
@@ -77,7 +92,7 @@ cmd /c $carg
 $mts = (Get-Date).toString("yyyyMMdd_HH.mm.ss")
 $cmd = "cmd /c echo Starting watch598 at $mts>>$logpath\$(gc env:computername)-$thisNickName--run-log.txt"
 Invoke-expression $cmd
-  
+
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #  Main code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -148,11 +163,15 @@ $Action = {
     {
     'Changed' {
 
+    $print = "changed switch: copying. file CHANGED  {0} {1}" -f (Get-Date), $FullPath
+    $print | Out-File 'C:\data\logs\watch598cmmresults\changed598logs.txt' -Append
+
     # Check if file is correct type
     if ($Name -match 'chr.txt' -or $Name -match 'hdr.txt' -or $Name -match 'fet.txt') {
 
       # Get filename of changed file - ending filetype
       $nameSliced = $Name.Substring(0,$Name.Length-7)
+      
       
       # Check if folder named nameSliced exists and if not, create folder
       $pathtemp3file = '{0}\{1}' -f $global:temp3file, $nameSliced
@@ -172,13 +191,15 @@ $Action = {
       $chrfound = Test-Path -Path ($pathtemp3file + "\" + $filechr) -PathType Leaf
       $hdrfound = Test-Path -Path ($pathtemp3file + "\" + $filehdr) -PathType Leaf
       $fetfound = Test-Path -Path ($pathtemp3file + "\" + $filefet) -PathType Leaf
+      write-host "DEBUG: $((Get-Date).toString("yyyy-MM-dd_HH.mm.ss")), namesliced:$nameSliced , filechr:$filechr , chrfound:$chrfound, pathtemp3file:$pathtemp3file"
       
       # If they are all present in the folder, process files and remove folder
       # if (2021-08-13_Fri_09.12-AM $chrfound -and $hdrfound -and $fetfound) {
-      if ( $hdrfound -and $fetfound) {
-        Start-Sleep 8
+      if ( $chrfound -and $hdrfound -and $fetfound) {
+        Start-Sleep 10
         # Copy notified files from A to B
-        robocopy $PathToMonitor $interimfolder $filechr $filehdr $filefet /xo
+        $mts = (Get-Date).toString("yyyyMMdd_HH.mm.ss")
+        robocopy $PathToMonitor $interimfolder $filechr $filehdr $filefet /mov /xo /is  /R:3 /W:4 /tee /log:$global:logpath\debug\robocopy.monitor-interim_$mts.txt
         # robocopy $PathToMonitor $interimfolder  $filehdr $filefet /tee /log+:$logpath.robocopy.interm.txt
         Start-Sleep 2
 
@@ -194,24 +215,27 @@ $Action = {
         $mts = (Get-Date).toString("yyyyMMdd_HH.mm.ss")
         #robocopy $interimfolder $copyToQCcalc '*chr.txt*' '*hdr.txt*' '*fet.txt*' /mov /is /R:3 /W:4 /tee /log:$global:logpath\debug\robocopy.qcc_$mts.txt
         robocopy $interimfolder $copyToQCcalc  '*chr.txt*' '*hdr.txt*' '*fet.txt*' /mov /is /R:3 /W:4
+        Start-Sleep 1
 
         # Delete temp3file folder and files
+        # remove last character. I did this to test the fact that folder was created with  trailing period removed.
+        # $pathtrim = $pathtemp3file.Substring(0,$pathtemp3file.Length-1)
+        Remove-Item $pathtemp3file -Recurse -force
+        write-host "DEBUG: $((Get-Date).toString("yyyy-MM-dd_HH.mm.ss")), delete temp folder pathtemp3file=$pathtemp3file, pathtrim=$pathtrim"
+        # Delete temp3file folder and files
         Remove-Item $pathtemp3file -Recurse
-
+        cmd /c rmdir /s /q "$pathtemp3file" 
+        
       } 
       # If they arent all present continue looking
       else {
         break
       }
       
-      $print = "changed switch: copying. file CHANGED  {0} {1}" -f (Get-Date), $FullPath
-      $print | Out-File 'C:\data\logs\watch598cmmresults\changed598logs.txt' -Append
-
     } else {
       break
     }
 
-      
     }
     'Created' { 
         $print = "FILE CREATED AT {0} {1}" -f (Get-Date), $FullPath
@@ -256,13 +280,15 @@ try
     Write-Host "." -NoNewline
     Wait-Event -Timeout 10
       
+    #  
+    #  Check if process monitor is functioning..
+    #  
     # run once per hour @ $smin
     [int]$shr = get-date -format HH
     [int]$smin = 18
     $min = Get-Date ("{0}:{1}:00" -f $shr, $smin)
     $max = Get-Date ("{0}:{1}:10" -f $shr, $smin) 
     $now = Get-Date
-    
     if ( $now.TimeOfDay -ge $min.TimeOfDay  -and $now.TimeOfDay -le $max.TimeOfDay ) {
       Write-host "Do hourly stuff now..."
       # get last line of processmonitor run-log
@@ -274,14 +300,13 @@ try
       else {
         # Convert time to date object
         $lastline = [datetime]$last
-        
         #debug
         "$((Get-Date).toString("yyyy-MM-dd_HH.mm.ss")), last=$last, lastine=$lastline" | Out-File `
-            $global:logpath\debug\watch598.debug_$((Get-Date).toString("yyyy-MM-dd")).txt  -Append
+           $global:logpath\debug\watch598.debug_$((Get-Date).toString("yyyy-MM-dd")).txt  -Append
 
         # If current date > lastline + 10 mins report an error
         if ((Get-Date) -gt $lastline.AddMinutes(12)) {
-          send-mailmessage -subject "Error detected by watch598 -- processmonitor problem." -body "An error (processmonitor_watch598 has stopped working) was detected. Please check it. `n`nRef: this msg from computer: $(gc env:computername)  file: C:\data\script\tools599\watchcopy598\processmonitor_watch598.ps1" -to @("dgleba@stackpole.com") -dno onFailure -smtpServer MESG06.stackpole.ca -from 'dgleba@stackpole.com'
+          send-mailmessage -subject "[watch598] Error -- processmonitor problem." -body "An error (processmonitor_watch598 has stopped working) was detected. Please check it. `n`nRef: this msg from computer: $(gc env:computername)  file: C:\data\script\tools599\watchcopy598\processmonitor_watch598.ps1" -to @("dgleba@stackpole.com") -dno onFailure -smtpServer MESG06.stackpole.ca -from 'dgleba@stackpole.com'
         } else {
           continue
         }
@@ -289,6 +314,29 @@ try
       (Get-Date).toString("yyyy-MM-dd_HH.mm.ss")|Write-Host
     }
     # end. run once per hour  
+    
+    #
+    # Once per day stop-start transcript log.
+    #
+    # Run between two times - 10 sec window
+      [int]$shr = 00
+      [int]$smin = 00
+      $min = Get-Date ("{0}:{1}:00" -f $shr, $smin)
+      $max = Get-Date ("{0}:{1}:10" -f $shr, $smin) 
+      $now = Get-Date
+      # Write-Host $min $max 
+      # Write-Host "10s times: now $now  min $min  max $max"
+      # check if it is time to run it.
+      if ( $now.TimeOfDay -ge $min.TimeOfDay  -and $now.TimeOfDay -le $max.TimeOfDay ) {
+        Write-host "once daily Run it now. stop-start transcript.."
+        Stop-Transcript
+        # Start-Sleep 1
+        Start-Transcript -Path c:\data\logs\watch598cmmresults\debug\watch598_debugtranscrpt_$((Get-Date).toString("yyyy-MM-dd_HH.mm.ss")).log
+      }
+    # .end. run between two times - 10 sec window
+    #
+    
+    
   } while ($true)
 }
 

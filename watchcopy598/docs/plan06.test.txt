@@ -1,4 +1,45 @@
 
+This method is in use.
+
+
+2021-08-26:
+
+
+A=calypso folder 
+B2=temporary transfer folder [C:\data\cmm\system\temp3file\`name-for-one-basename`]
+B=temporary transfer folder [interimfolder]
+L=litmus C:\data\cmm\watchedoutput\litmus
+G=full-copy  [general] C:\data\cmm\watchedoutput\general
+Q=QC Calc [qccalc] 
+
+
+copy only notified files (chr,fet,hdr) from A to B2.)  (for testing we need to leave them in A. In production we will move them.)
+When all present. wait 10 seconds.
+(Copy in testing) (move in production) A to B. 
+sleep 2 sec.
+copy chr,hdr from B to L  (robocopy)
+sleep 2 sec.
+copy all from B to G  (robocopy)
+sleep 2 sec.
+move all from B to Q. (robocopy)
+delete temp folder [C:\data\cmm\system\temp3file\`name-for-one-basename`] leaving [C:\data\cmm\system\temp3file\]
+
+
+
+
+
+
+
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+#@  
+#@  
+#@  
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@   2021-08-26[Aug-Thu]14-40PM 
+
+
+
+This is old.
+
 Plan06: revised - using temp folder to gather all three files chr,hdr,fet.
 
 

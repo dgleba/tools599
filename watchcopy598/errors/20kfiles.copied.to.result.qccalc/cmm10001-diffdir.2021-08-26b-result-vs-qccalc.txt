@@ -1,0 +1,2953 @@
+=================================================
+
+2021-08-26_Thu_15.25-PM
+
+compare directory
+
+https://serverfault.com/questions/177001/find-files-in-one-directory-not-in-another
+
+good:
+
+diff --brief  $dir1/ $dir2/  | tee /cygdrive/c/temp/cmm10001-diffdir.2021-08-26b.txt
+
+
+=================================================
+
+Hi Dave,
+Yes, this data is from other CMM.
+Today, I observed that it was missing other CMM's data since 04-Aug-2021. And beacause of that, QEs were not able to see that data in Qc-Calc, so I copied that data in both folders (c:\result and C:\data\cmm\watchedoutput\qccalc).
+Kind regards,
+ 
+pchauhan@stackpole.com | www.stackpole.com
+
+-----Original Message-----
+From: Dave Gleba <DGleba@stackpole.com>
+Sent: August 26, 2021 12:49 PM
+To: Parth Chauhan <pchauhan@stackpole.com>
+Cc: Jack C. Fung <jcfung@stackpole.com>; Noah Boyd <nboyd@stackpole.com>
+Subject: Error with file watcher on CMM 10001 - FW: error detected by processmonitor_watch598.
+
+Looks like thousands of old cmm data files showed up in the c:\result folder on CMM 10001.
+Are these from another cmm that lost connection but now has regained it?
+
+The watcher has not handled it well. Very disappointing.
+I am trying to figure out where it goes wrong.
+
+David Gleba 
+
+
+-----Original Message-----
+From: dgleba@stackpole.com <dgleba@stackpole.com>
+Sent: Thursday, August 26, 2021 12:01 PM
+To: Dave Gleba <DGleba@stackpole.com>
+Subject: Warning: error detected by processmonitor_watch598.
+
+An error (File 35.0080 Coining 1st Off_410_fet.txt was not found in General) was detected. Please check it.
+
+Ref: this msg from computer: PMDA-BKH70W2  file: C:\data\script\tools599\watchcopy598\processmonitor_watch598.ps1
+
+=================================================
+
+
+Files //pmda-bkh70w2/result/~QC-CALC Real-Time.Tmp and //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/~QC-CALC Real-Time.Tmp differ
+Files //pmda-bkh70w2/result/~QC-HDR.TMP and //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/~QC-HDR.TMP differ
+Only in //pmda-bkh70w2/result/: 10R60 Gear Machining 1st Off_1442_chr.txt
+Only in //pmda-bkh70w2/result/: 10R60 Gear Machining 1st Off_1449_chr.txt
+Only in //pmda-bkh70w2/result/: 10R60 Gear Machining 1st Off_1450_chr.txt
+Only in //pmda-bkh70w2/result/: 10R60 Gear Machining 1st Off_1451_chr.txt
+Only in //pmda-bkh70w2/result/: 10R60 Gear Machining 1st Off_1452_chr.txt
+Only in //pmda-bkh70w2/result/: 10R60 Gear Machining 1st Off_1453_chr.txt
+Only in //pmda-bkh70w2/result/: 10R60 Gear Machining 1st Off_1454_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Coining 1st Off_404_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Coining 1st Off_405_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Coining 1st Off_406_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Coining 1st Off_407_chr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 35.0080 Coining 1st Off_408_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 35.0080 Coining 1st Off_408_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 35.0080 Coining 1st Off_409_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 35.0080 Coining 1st Off_409_hdr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Coining 1st Off_410_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Coining Back_171_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Coining Back_175_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Coining Back_176_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Coining Back_177_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Coining Back_178_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Coining Back_179_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Coining Back_180_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Coining Back_181_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Coining Back_182_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Coining Back_183_chr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 35.0080 Coining Back_184_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 35.0080 Coining Back_184_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 35.0080 Coining Back_185_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 35.0080 Coining Back_185_hdr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Coining Back_186_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Coining In Process_10_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Coining In Process_7_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Coining In Process_8_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Coining In Process_9_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compact Back_138_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compact Back_139_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compact Back_140_chr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 35.0080 Compact In Process Back_1811_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 35.0080 Compact In Process Back_1811_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 35.0080 Compact In Process Back_1812_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 35.0080 Compact In Process Back_1812_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 35.0080 Compact In Process Back_1813_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 35.0080 Compact In Process Back_1813_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 35.0080 Compact In Process Back_1814_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 35.0080 Compact In Process Back_1814_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 35.0080 Compact In Process Back_1815_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 35.0080 Compact In Process Back_1815_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 35.0080 Compact In Process Back_1816_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 35.0080 Compact In Process Back_1816_hdr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compact In Process Back_1832_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compact In Process Back_1833_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compact In Process Back_1834_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compact In Process Back_1835_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compact In Process Back_1836_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compact In Process Back_1837_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compact In Process Back_1838_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compact In Process Back_1839_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compact In Process Back_1840_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compact In Process Back_1841_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compact In Process Back_1842_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compact In Process Back_1843_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compact In Process Back_1844_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compact In Process Back_1845_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compact In Process Back_1846_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compact In Process Back_1847_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compact In Process Back_1848_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compact In Process Back_1849_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compact In Process Back_1850_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compact In Process Back_1851_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compact In Process Back_1852_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compact In Process Back_1853_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compact In Process Back_1853_fet.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compact In Process Back_1853_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 35.0080 Compact In Process Back_1855_chr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 35.0080 Compact In Process Back_1855_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 35.0080 Compact In Process Back_1855_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 35.0080 Compact In Process Back_1856_chr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 35.0080 Compact In Process Back_1856_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 35.0080 Compact In Process Back_1856_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 35.0080 Compact In Process Back_1857_chr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 35.0080 Compact In Process Back_1857_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 35.0080 Compact In Process Back_1857_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 35.0080 Compact In Process Back_1858_chr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 35.0080 Compact In Process Back_1858_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 35.0080 Compact In Process Back_1858_hdr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compacting 1st Off_143_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compacting 1st Off_144_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compacting 1st Off_145_chr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 35.0080 Compacting In Process_1850_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 35.0080 Compacting In Process_1850_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 35.0080 Compacting In Process_1851_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 35.0080 Compacting In Process_1851_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 35.0080 Compacting In Process_1852_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 35.0080 Compacting In Process_1852_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 35.0080 Compacting In Process_1853_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 35.0080 Compacting In Process_1853_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 35.0080 Compacting In Process_1854_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 35.0080 Compacting In Process_1854_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 35.0080 Compacting In Process_1855_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 35.0080 Compacting In Process_1855_hdr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compacting In Process_1871_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compacting In Process_1872_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compacting In Process_1873_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compacting In Process_1874_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compacting In Process_1875_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compacting In Process_1876_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compacting In Process_1877_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compacting In Process_1878_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compacting In Process_1879_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compacting In Process_1880_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compacting In Process_1881_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compacting In Process_1882_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compacting In Process_1883_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compacting In Process_1884_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compacting In Process_1885_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compacting In Process_1886_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compacting In Process_1887_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compacting In Process_1888_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compacting In Process_1889_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compacting In Process_1890_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compacting In Process_1891_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compacting In Process_1892_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compacting In Process_1893_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compacting In Process_1894_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compacting In Process_1895_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compacting In Process_1896_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compacting In Process_1897_chr.txt
+Only in //pmda-bkh70w2/result/: 35.0080 Compacting In Process_1898_chr.txt
+Only in //pmda-bkh70w2/result/: 35.1742 Machining First Off_2679_chr.txt
+Only in //pmda-bkh70w2/result/: 35.7074 coining 1st off_510_chr.txt
+Only in //pmda-bkh70w2/result/: 35.7074 coining 1st off_511_chr.txt
+Only in //pmda-bkh70w2/result/: 35.7074 coining 1st off_512_chr.txt
+Only in //pmda-bkh70w2/result/: 35.7074 Coining Back_777_chr.txt
+Only in //pmda-bkh70w2/result/: 35.7074 Coining Back_778_chr.txt
+Only in //pmda-bkh70w2/result/: 35.7074 Coining Back_779_chr.txt
+Only in //pmda-bkh70w2/result/: 35.7074 Coining Back_780_chr.txt
+Only in //pmda-bkh70w2/result/: 35.7074 Coining Back_781_chr.txt
+Only in //pmda-bkh70w2/result/: 35.7074 Coining Back_782_chr.txt
+Only in //pmda-bkh70w2/result/: 35.7074 Coining Back_783_chr.txt
+Only in //pmda-bkh70w2/result/: 35.7074 Coining Back_784_chr.txt
+Only in //pmda-bkh70w2/result/: 35.7074 Coining Back_785_chr.txt
+Only in //pmda-bkh70w2/result/: 35.7074 Coining In Process_959_chr.txt
+Only in //pmda-bkh70w2/result/: 35.7074 Coining In Process_960_chr.txt
+Only in //pmda-bkh70w2/result/: 35.7074 Coining In Process_961_chr.txt
+Only in //pmda-bkh70w2/result/: 35.7074 Coining In Process_962_chr.txt
+Only in //pmda-bkh70w2/result/: 35.7074 Coining In Process_963_chr.txt
+Only in //pmda-bkh70w2/result/: 35.7074 Coining In Process_964_chr.txt
+Only in //pmda-bkh70w2/result/: 35.7074 Coining In Process_965_chr.txt
+Only in //pmda-bkh70w2/result/: 35.7074 Coining In Process_966_chr.txt
+Only in //pmda-bkh70w2/result/: 35.7074 Coining In Process_967_chr.txt
+Only in //pmda-bkh70w2/result/: 35.7074 Coining In Process_968_chr.txt
+Only in //pmda-bkh70w2/result/: 35.7074 Coining In Process_969_chr.txt
+Only in //pmda-bkh70w2/result/: 35.7074 Coining In Process_970_chr.txt
+Only in //pmda-bkh70w2/result/: 35.7074 Coining In Process_971_chr.txt
+Only in //pmda-bkh70w2/result/: 35.7074 Coining In Process_972_chr.txt
+Only in //pmda-bkh70w2/result/: 35.7074 Coining In Process_973_chr.txt
+Only in //pmda-bkh70w2/result/: 35.7074 Coining In Process_974_chr.txt
+Only in //pmda-bkh70w2/result/: 35.7074 Coining In Process_975_chr.txt
+Only in //pmda-bkh70w2/result/: 35.7074 Coining In Process_976_chr.txt
+Only in //pmda-bkh70w2/result/: 35.7074 Coining In Process_977_chr.txt
+Only in //pmda-bkh70w2/result/: 35.7074 Coining In Process_978_chr.txt
+Only in //pmda-bkh70w2/result/: 35.7074 Coining In Process_979_chr.txt
+Only in //pmda-bkh70w2/result/: 35.7074 Coining In Process_980_chr.txt
+Only in //pmda-bkh70w2/result/: 35.7074 Coining In Process_981_chr.txt
+Only in //pmda-bkh70w2/result/: 35.7074 Coining In Process_982_chr.txt
+Only in //pmda-bkh70w2/result/: 35.7074 Coining In Process_983_chr.txt
+Only in //pmda-bkh70w2/result/: 35.7074 Coining In Process_984_chr.txt
+Only in //pmda-bkh70w2/result/: 35.7074 Coining In Process_985_chr.txt
+Only in //pmda-bkh70w2/result/: 35.7080 10R80 Sinter_38_chr.txt
+Only in //pmda-bkh70w2/result/: 35.7080 10R80 Sinter_39_chr.txt
+Only in //pmda-bkh70w2/result/: 35.7371 Machining In Process_100_chr.txt
+Only in //pmda-bkh70w2/result/: 35.7371 Machining In Process_101_chr.txt
+Only in //pmda-bkh70w2/result/: 35.7371 Machining In Process_102_chr.txt
+Only in //pmda-bkh70w2/result/: 35.7371 Machining In Process_103_chr.txt
+Only in //pmda-bkh70w2/result/: 35.7371 Machining In Process_104_chr.txt
+Only in //pmda-bkh70w2/result/: 35.7371 Machining In Process_105_chr.txt
+Only in //pmda-bkh70w2/result/: 35.7371 Machining In Process_106_chr.txt
+Only in //pmda-bkh70w2/result/: 35.7371 Machining In Process_107_chr.txt
+Only in //pmda-bkh70w2/result/: 35.7371 Machining In Process_108_chr.txt
+Only in //pmda-bkh70w2/result/: 35.7371 Machining In Process_109_chr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 35.7371 Machining In Process_111_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 35.7371 Machining In Process_111_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 35.7371 Machining In Process_112_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 35.7371 Machining In Process_112_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 35.7371 Machining In Process_113_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 35.7371 Machining In Process_113_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 35.7371 Machining In Process_114_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 35.7371 Machining In Process_114_hdr.txt
+Only in //pmda-bkh70w2/result/: 35.7371 Machining In Process_99_chr.txt
+Only in //pmda-bkh70w2/result/: 58.1956coin back trials_303_chr.txt
+Only in //pmda-bkh70w2/result/: 58.1956coin back trials_304_chr.txt
+Only in //pmda-bkh70w2/result/: 58.1956coin back trials_305_chr.txt
+Only in //pmda-bkh70w2/result/: 58.1956coin back trials_306_chr.txt
+Only in //pmda-bkh70w2/result/: 58.1956coin back trials_307_chr.txt
+Only in //pmda-bkh70w2/result/: 58.1956coin back trials_308_chr.txt
+Only in //pmda-bkh70w2/result/: 58.1956coin trials_304_chr.txt
+Only in //pmda-bkh70w2/result/: 58.1956coin trials_305_chr.txt
+Only in //pmda-bkh70w2/result/: 58.1956coin trials_306_chr.txt
+Only in //pmda-bkh70w2/result/: 58.1956coin trials_307_chr.txt
+Only in //pmda-bkh70w2/result/: 58.1956coin trials_308_chr.txt
+Only in //pmda-bkh70w2/result/: 58.1956coin trials_309_chr.txt
+Only in //pmda-bkh70w2/result/: 58.1956coin trials_310_chr.txt
+Only in //pmda-bkh70w2/result/: 58.1956compact TRIALS_85_chr.txt
+Only in //pmda-bkh70w2/result/: 58.1956compact TRIALS_86_chr.txt
+Only in //pmda-bkh70w2/result/: 58.1956compact TRIALS_87_chr.txt
+Only in //pmda-bkh70w2/result/: 58.1956sinter TRIALS_551_chr.txt
+Only in //pmda-bkh70w2/result/: 58.1956sinter TRIALS_552_chr.txt
+Only in //pmda-bkh70w2/result/: 58.1956sinter TRIALS_553_chr.txt
+Only in //pmda-bkh70w2/result/: 58.1956sinter TRIALS_554_chr.txt
+Only in //pmda-bkh70w2/result/: 58.1956sinter TRIALS_555_chr.txt
+Only in //pmda-bkh70w2/result/: 58.1956sinter TRIALS_556_chr.txt
+Only in //pmda-bkh70w2/result/: 58.1956sinter TRIALS_557_chr.txt
+Only in //pmda-bkh70w2/result/: 58.1956sinter TRIALS_558_chr.txt
+Only in //pmda-bkh70w2/result/: 58.1956sinter TRIALS_559_chr.txt
+Only in //pmda-bkh70w2/result/: 58.1956sinter TRIALS_560_chr.txt
+Only in //pmda-bkh70w2/result/: 58.1956sinter TRIALS_561_chr.txt
+Only in //pmda-bkh70w2/result/: 58.1956sinter TRIALS_562_chr.txt
+Only in //pmda-bkh70w2/result/: 58.1956sinter TRIALS_563_chr.txt
+Only in //pmda-bkh70w2/result/: 58.1956sinter TRIALS_564_chr.txt
+Only in //pmda-bkh70w2/result/: 58.1956sinter TRIALS_565_chr.txt
+Only in //pmda-bkh70w2/result/: 58.1956sinter TRIALS_566_chr.txt
+Only in //pmda-bkh70w2/result/: 58.1956sinter TRIALS_567_chr.txt
+Only in //pmda-bkh70w2/result/: 58.1956sinter TRIALS_568_chr.txt
+Only in //pmda-bkh70w2/result/: 58.9933.9930 coining back taper_131_chr.txt
+Only in //pmda-bkh70w2/result/: 58.9933.9930 coining back taper_132_chr.txt
+Only in //pmda-bkh70w2/result/: 58.9933.9930 coining back taper_133_chr.txt
+Only in //pmda-bkh70w2/result/: 58.9933.9930 coining back taper_134_chr.txt
+Only in //pmda-bkh70w2/result/: 58.9933.9930 coining back taper_135_chr.txt
+Only in //pmda-bkh70w2/result/: 58.9933.9930 coining back taper_136_chr.txt
+Only in //pmda-bkh70w2/result/: 58.9933.9930 coining taper_150_chr.txt
+Only in //pmda-bkh70w2/result/: 58.9933.9930 coining taper_151_chr.txt
+Only in //pmda-bkh70w2/result/: 58.9933.9930 coining taper_152_chr.txt
+Only in //pmda-bkh70w2/result/: 58.9933.9930 coining taper_153_chr.txt
+Only in //pmda-bkh70w2/result/: 58.9933.9930 coining taper_154_chr.txt
+Only in //pmda-bkh70w2/result/: 58.9933.9930 coining taper_155_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining 1st off_75_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining 1st off_76_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining 1st off_77_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining 1st off_78_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining 1st off_79_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining 1st off_80_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining 1st off_81_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining 1st off_82_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining 1st off_83_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining 1st off_84_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining 1st off_85_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining 1st off_86_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_306_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_307_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_308_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_309_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_310_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_311_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_312_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_313_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_314_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_315_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_316_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_317_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_318_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_319_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_320_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_321_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_322_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_323_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_324_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_325_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_326_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_327_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_328_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_329_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_330_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_331_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_332_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_333_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_334_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_335_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_336_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_337_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_338_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_339_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_340_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_341_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_342_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_343_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_344_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_345_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_346_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_347_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_348_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_349_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_350_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_351_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_352_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_353_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_354_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_355_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_356_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_357_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_358_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 coining in process_359_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_715_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_716_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_717_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_718_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_719_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_720_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_721_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_722_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_723_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_724_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_725_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_726_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_727_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_728_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_729_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_730_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_731_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_732_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_733_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_734_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_735_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_736_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_737_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_738_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_739_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_740_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_741_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_742_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_743_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_744_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_745_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_746_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_747_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_748_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_749_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_750_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_751_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_752_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_753_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_754_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_755_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_756_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_757_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_758_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_759_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_760_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_761_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_762_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_763_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_764_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_765_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_766_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_767_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_768_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_769_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_770_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_771_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_772_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_773_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_774_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_775_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_776_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_777_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_778_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_779_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_780_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_781_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_782_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_783_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_784_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_785_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_786_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_787_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_788_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_789_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_790_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_791_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_792_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_793_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_794_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_795_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_796_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_797_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_798_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_799_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_800_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_801_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_802_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_803_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_804_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_805_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_806_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_807_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_808_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_809_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_810_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_811_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_812_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_813_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_814_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_815_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_816_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_817_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_818_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_819_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_820_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_821_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_822_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_823_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_824_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_825_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_826_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_827_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_828_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_829_chr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_833_chr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_833_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_833_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_834_chr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_834_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_834_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_835_chr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_835_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_835_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_836_chr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_836_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_836_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_837_chr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_837_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_837_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_838_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_838_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_839_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_839_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_840_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_840_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_841_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_841_hdr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_842_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_843_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 compact in process_844_chr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_937_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_937_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_938_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_938_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_940_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_940_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_941_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_941_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_942_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_942_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_943_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_943_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_944_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_944_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_945_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_945_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_946_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_946_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_947_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_947_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_948_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_948_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_949_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_949_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_950_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_950_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_951_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_951_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_952_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_952_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_953_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_953_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_954_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_954_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_955_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_955_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_956_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_956_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_957_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_957_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_958_chr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_958_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_958_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_959_chr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_959_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_959_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_960_chr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_960_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.0536 compact in process_960_hdr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 Grinding_781_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 Grinding_782_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 Grinding_783_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 Grinding_784_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 Grinding_785_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 sinter_263_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 sinter_264_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 sinter_265_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 sinter_266_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 sinter_267_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 sinter_268_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 sinter_269_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 sinter_270_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 sinter_271_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 sinter_272_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 sinter_273_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 sinter_274_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 sinter_275_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 sinter_276_chr.txt
+Only in //pmda-bkh70w2/result/: 70.0536 sinter_277_chr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate back_10377_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate back_10377_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate back_10378_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate back_10378_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate back_10379_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate back_10379_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate back_10408_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate back_10408_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate back_10409_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate back_10409_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate back_10410_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate back_10410_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate back_10411_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate back_10411_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate back_10412_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate back_10412_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate back_10413_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate back_10413_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate back_10414_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate back_10414_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate back_10415_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate back_10415_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate back_10416_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate back_10416_hdr.txt
+Only in //pmda-bkh70w2/result/: 70.1005calibrate back_1047_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1005calibrate back_1048_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1005calibrate back_1049_chr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate_272_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate_272_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate_273_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate_273_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate_274_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate_274_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate_306_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate_306_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate_307_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate_307_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate_308_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate_308_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate_309_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate_309_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate_310_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate_310_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate_311_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate_311_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate_312_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate_312_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate_313_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate_313_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate_314_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate_314_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate_315_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate_315_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate_316_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate_316_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate_317_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.1005calibrate_317_hdr.txt
+Only in //pmda-bkh70w2/result/: 70.1005calibrate_38_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1005calibrate_39_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1005calibrate_40_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1005sinter back_7897_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1005sinter_7_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Calibrate_459_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Calibrate_460_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Calibrate_461_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Calibrate_462_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Calibrate_463_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Calibrate_464_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Compact In Process_316_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Compact In Process_317_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Compact In Process_318_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Compact In Process_319_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Compact In Process_320_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Compact In Process_321_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Compact In Process_322_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Compact In Process_323_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Compact In Process_324_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Compact In Process_325_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Compact In Process_326_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Compact In Process_327_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Compact In Process_328_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Compact In Process_329_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Compact In Process_330_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Compact In Process_331_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Compact In Process_332_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Compact In Process_333_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Compact In Process_334_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Compact In Process_335_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Compact In Process_336_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Compact In Process_337_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Compact In Process_338_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Compact In Process_339_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Compact In Process_340_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Compact In Process_341_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Compact In Process_342_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Compact In Process_343_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Compact In Process_344_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Compact In Process_345_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Compact In Process_346_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Compact In Process_347_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Compact In Process_348_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Compact In Process_349_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Compact In Process_350_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Compact In Process_351_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Compact In Process_352_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Compact In Process_353_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Compact In Process_354_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Compact In Process_355_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Compact In Process_356_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Compact In Process_357_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Compact In Process_358_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Compact In Process_359_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Compact In Process_360_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Compact In Process_361_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Compact In Process_362_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Compact In Process_363_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Compact In Process_364_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Compact In Process_365_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Compact In Process_366_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Sinter Back_310_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Sinter Back_311_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Sinter Back_312_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Sinter Back_313_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Sinter Back_314_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Sinter Back_315_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Sinter Back_316_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Sinter Back_317_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Sinter Back_318_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Sinter_144_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Sinter_145_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Sinter_146_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Sinter_147_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Sinter_148_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Sinter_149_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Sinter_150_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Sinter_151_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Sinter_152_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Sinter_153_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Sinter_154_chr.txt
+Only in //pmda-bkh70w2/result/: 70.1508 Sinter_155_chr.txt
+Only in //pmda-bkh70w2/result/: 70.2129 coining 1st off_248_chr.txt
+Only in //pmda-bkh70w2/result/: 70.2129 coining 1st off_249_chr.txt
+Only in //pmda-bkh70w2/result/: 70.2129 coining 1st off_250_chr.txt
+Only in //pmda-bkh70w2/result/: 70.2129 Coining In Process_152_chr.txt
+Only in //pmda-bkh70w2/result/: 70.2129 Coining In Process_153_chr.txt
+Only in //pmda-bkh70w2/result/: 70.2129 Coining In Process_154_chr.txt
+Only in //pmda-bkh70w2/result/: 70.2129 Coining In Process_155_chr.txt
+Only in //pmda-bkh70w2/result/: 70.2129 Coining In Process_156_chr.txt
+Only in //pmda-bkh70w2/result/: 70.2129 Coining In Process_157_chr.txt
+Only in //pmda-bkh70w2/result/: 70.2129 Coining In Process_158_chr.txt
+Only in //pmda-bkh70w2/result/: 70.2129 Coining In Process_159_chr.txt
+Only in //pmda-bkh70w2/result/: 70.2129 Coining In Process_160_chr.txt
+Only in //pmda-bkh70w2/result/: 70.2661 calibrate back_1741_chr.txt
+Only in //pmda-bkh70w2/result/: 70.2661 calibrate back_1742_chr.txt
+Only in //pmda-bkh70w2/result/: 70.2661 calibrate back_1743_chr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.2661 calibrate back_1747_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.2661 calibrate back_1747_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.2661 calibrate back_1748_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.2661 calibrate back_1748_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.2661 calibrate back_1749_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.2661 calibrate back_1749_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.2661 calibrate back_1750_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.2661 calibrate back_1750_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.2661 calibrate back_1751_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.2661 calibrate back_1751_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.2661 calibrate back_1752_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.2661 calibrate back_1752_hdr.txt
+Only in //pmda-bkh70w2/result/: 70.2661 calibrate_167_chr.txt
+Only in //pmda-bkh70w2/result/: 70.2661 calibrate_168_chr.txt
+Only in //pmda-bkh70w2/result/: 70.2661 calibrate_169_chr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.2661 calibrate_172_chr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.2661 calibrate_172_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.2661 calibrate_172_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.2661 calibrate_173_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.2661 calibrate_173_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.2661 calibrate_174_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.2661 calibrate_174_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.2661 calibrate_175_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.2661 calibrate_175_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.2661 calibrate_176_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.2661 calibrate_176_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.2661 calibrate_177_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.2661 calibrate_177_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.2661 calibrate_178_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.2661 calibrate_178_hdr.txt
+Only in //pmda-bkh70w2/result/: 70.2661 compact 1st off_285_chr.txt
+Only in //pmda-bkh70w2/result/: 70.2661 compact 1st off_286_chr.txt
+Only in //pmda-bkh70w2/result/: 70.2661 compact 1st off_287_chr.txt
+Only in //pmda-bkh70w2/result/: 70.2661 compact back_117_chr.txt
+Only in //pmda-bkh70w2/result/: 70.2661 compact back_118_chr.txt
+Only in //pmda-bkh70w2/result/: 70.2661 compact back_119_chr.txt
+Only in //pmda-bkh70w2/result/: 70.2661 compact in process_217_chr.txt
+Only in //pmda-bkh70w2/result/: 70.2661 compact in process_218_chr.txt
+Only in //pmda-bkh70w2/result/: 70.2661 compact in process_219_chr.txt
+Only in //pmda-bkh70w2/result/: 70.2661 compact in process_220_chr.txt
+Only in //pmda-bkh70w2/result/: 70.2661 compact in process_221_chr.txt
+Only in //pmda-bkh70w2/result/: 70.2661 compact in process_222_chr.txt
+Only in //pmda-bkh70w2/result/: 70.2661 compact in process_223_chr.txt
+Only in //pmda-bkh70w2/result/: 70.2661 compact in process_224_chr.txt
+Only in //pmda-bkh70w2/result/: 70.2661 compact in process_225_chr.txt
+Only in //pmda-bkh70w2/result/: 70.2661 compact in process_226_chr.txt
+Only in //pmda-bkh70w2/result/: 70.2661 compact in process_227_chr.txt
+Only in //pmda-bkh70w2/result/: 70.2661 compact in process_228_chr.txt
+Only in //pmda-bkh70w2/result/: 70.2661 compact in process_229_chr.txt
+Only in //pmda-bkh70w2/result/: 70.2661 compact in process_230_chr.txt
+Only in //pmda-bkh70w2/result/: 70.2661 compact in process_231_chr.txt
+Only in //pmda-bkh70w2/result/: 70.2661 compact in process_232_chr.txt
+Only in //pmda-bkh70w2/result/: 70.2661 compact in process_233_chr.txt
+Only in //pmda-bkh70w2/result/: 70.2661 compact in process_234_chr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.2661 compact in process_253_chr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.2661 compact in process_253_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.2661 compact in process_253_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.2661 compact in process_254_chr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.2661 compact in process_254_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.2661 compact in process_254_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.2661 compact in process_255_chr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.2661 compact in process_255_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.2661 compact in process_255_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.2661 compact in process_256_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.2661 compact in process_256_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.2661 compact in process_257_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.2661 compact in process_257_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.2661 compact in process_258_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.2661 compact in process_258_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.2661 compact in process_259_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.2661 compact in process_259_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.2661 compact in process_260_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.2661 compact in process_260_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.2661 compact in process_261_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.2661 compact in process_261_hdr.txt
+Only in //pmda-bkh70w2/result/: 70.2661 compact in process_286_chr.txt
+Only in //pmda-bkh70w2/result/: 70.2661 compact in process_287_chr.txt
+Only in //pmda-bkh70w2/result/: 70.2661 compact in process_288_chr.txt
+Only in //pmda-bkh70w2/result/: 70.2661 compact in process_289_chr.txt
+Only in //pmda-bkh70w2/result/: 70.2661 compact in process_290_chr.txt
+Only in //pmda-bkh70w2/result/: 70.2661 compact in process_291_chr.txt
+Only in //pmda-bkh70w2/result/: 70.2661 compact in process_292_chr.txt
+Only in //pmda-bkh70w2/result/: 70.2661 compact in process_293_chr.txt
+Only in //pmda-bkh70w2/result/: 70.2661 compact in process_294_chr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_355_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_355_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_356_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_356_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_357_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_357_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_358_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_358_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_359_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_359_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_360_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_360_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_361_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_361_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_362_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_362_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_363_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_363_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_364_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_364_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_365_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_365_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_366_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_366_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_367_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_367_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_368_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_368_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_369_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_369_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_370_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_370_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_371_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_371_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_372_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_372_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_373_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_373_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_374_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_374_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_375_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_375_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_376_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_376_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_377_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_377_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_378_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_378_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_379_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_379_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_380_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_380_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_381_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_381_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_382_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.3161 Coining In Process_382_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5153 compact 1st off_4_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5153 compact 1st off_4_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5153 compact 1st off_5_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5153 compact 1st off_5_hdr.txt
+Only in //pmda-bkh70w2/result/: 70.5153 compact in process_40_chr.txt
+Only in //pmda-bkh70w2/result/: 70.5153 compact in process_41_chr.txt
+Only in //pmda-bkh70w2/result/: 70.5153 compact in process_42_chr.txt
+Only in //pmda-bkh70w2/result/: 70.5153 compact in process_43_chr.txt
+Only in //pmda-bkh70w2/result/: 70.5153 compact in process_44_chr.txt
+Only in //pmda-bkh70w2/result/: 70.5153 compact in process_45_chr.txt
+Only in //pmda-bkh70w2/result/: 70.5153 compact in process_46_chr.txt
+Only in //pmda-bkh70w2/result/: 70.5153 compact in process_47_chr.txt
+Only in //pmda-bkh70w2/result/: 70.5153 compact in process_48_chr.txt
+Only in //pmda-bkh70w2/result/: 70.5153 compact in process_49_chr.txt
+Only in //pmda-bkh70w2/result/: 70.5153 compact in process_50_chr.txt
+Only in //pmda-bkh70w2/result/: 70.5153 compact in process_51_chr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5153 compact in process_788_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5153 compact in process_788_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5153 compact in process_789_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5153 compact in process_789_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5153 compact in process_790_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5153 compact in process_790_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5153 compact in process_791_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5153 compact in process_791_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5153 compact in process_792_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5153 compact in process_792_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5153 compact in process_793_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5153 compact in process_793_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5153 compact in process_794_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5153 compact in process_794_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5153 compact in process_795_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5153 compact in process_795_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5153 compact in process_796_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5153 compact in process_796_hdr.txt
+Only in //pmda-bkh70w2/result/: 70.5153 compact in process_797_chr.txt
+Only in //pmda-bkh70w2/result/: 70.5153 compact in process_798_chr.txt
+Only in //pmda-bkh70w2/result/: 70.5153 compact in process_799_chr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5153 compact in process_800_chr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5153 compact in process_800_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5153 compact in process_800_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5153 compact in process_801_chr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5153 compact in process_801_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5153 compact in process_801_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5153 compact in process_802_chr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5153 compact in process_802_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5153 compact in process_802_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5153_compact back_1035_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5153_compact back_1035_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5153_compact back_1036_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5153_compact back_1036_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5153_compact back_1037_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5153_compact back_1037_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5318 coining in process_707_chr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5318 coining in process_707_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5318 coining in process_707_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5318 coining in process_708_chr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5318 coining in process_708_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5318 coining in process_708_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5318 coining in process_709_chr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5318 coining in process_709_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5318 coining in process_709_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5318 coining in process_710_chr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5318 coining in process_710_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5318 coining in process_710_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5318 coining in process_711_chr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5318 coining in process_711_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5318 coining in process_711_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5318 coining in process_712_chr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5318 coining in process_712_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5318 coining in process_712_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5318 coining in process_713_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5318 coining in process_713_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5318 coining in process_714_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5318 coining in process_714_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5318 coining in process_715_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5318 coining in process_715_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5318 coining in process_716_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5318 coining in process_716_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5318 coining in process_717_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5318 coining in process_717_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5318 coining in process_718_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5318 coining in process_718_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5318 coining in process_719_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5318 coining in process_719_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5318 coining in process_720_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5318 coining in process_720_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5318 coining in process_721_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5318 coining in process_721_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5318 coining in process_722_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5318 coining in process_722_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5318 coining in process_723_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5318 coining in process_723_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5318 coining in process_724_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.5318 coining in process_724_hdr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 Before Burnishing_85_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 Before Burnishing_86_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 Before Burnishing_87_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 burnishing first off_54_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 burnishing first off_55_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 burnishing first off_56_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 burnishing first off_57_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 burnishing first off_58_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 burnishing first off_59_chr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.7031 Burnishing In Process_1210_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.7031 Burnishing In Process_1210_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.7031 Burnishing In Process_1213_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.7031 Burnishing In Process_1213_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.7031 Burnishing In Process_1214_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.7031 Burnishing In Process_1214_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.7031 Burnishing In Process_1215_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.7031 Burnishing In Process_1215_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.7031 Burnishing In Process_1216_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.7031 Burnishing In Process_1216_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.7031 Burnishing In Process_1217_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.7031 Burnishing In Process_1217_hdr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 compact back_4410_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 compact back_4411_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 compact back_4412_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 compact back_4413_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 compact back_4414_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 compact back_4415_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 compact back_4416_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 compact back_4417_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 compact back_4418_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 compact back_4419_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 compact back_4420_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 compact back_4421_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 compact back_4422_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 compact back_4423_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 compact back_4424_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 compact back_4425_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 Compact Core rod_660_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 Compact In Process_4042_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 Compact In Process_4043_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 Compact In Process_4044_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 Compact In Process_4045_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 Compact In Process_4046_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 Compact In Process_4047_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 Compact In Process_4048_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 Compact In Process_4049_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 Compact In Process_4050_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 Compact In Process_4051_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 Compact In Process_4052_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 Compact In Process_4053_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 Compact In Process_4054_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 Compact In Process_4055_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 Compact In Process_4056_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 Compact In Process_4057_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 Grinding 1st Off_1382_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 Grinding 1st Off_1383_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 Grinding 1st Off_1384_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 Steaming_1158_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 Steaming_1159_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 Steaming_1160_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 Steaming_1161_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 Steaming_1162_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 Steaming_1163_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 Steaming_1164_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 Steaming_1165_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 Steaming_1166_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 Steaming_1167_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 Steaming_1168_chr.txt
+Only in //pmda-bkh70w2/result/: 70.7031 Steaming_1169_chr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.7031 Steaming_1170_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.7031 Steaming_1170_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.7031 Steaming_1171_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.7031 Steaming_1171_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.7031 Steaming_1172_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.7031 Steaming_1172_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.7031 Steaming_398_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.7031 Steaming_398_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.7031 Steaming_399_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.7031 Steaming_399_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.7031 Steaming_400_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 70.7031 Steaming_400_hdr.txt
+Only in //pmda-bkh70w2/result/: 72.0049 compact in process_7349_chr.txt
+Only in //pmda-bkh70w2/result/: 72.0049 compact in process_7350_chr.txt
+Only in //pmda-bkh70w2/result/: 72.0049 compact in process_7351_chr.txt
+Only in //pmda-bkh70w2/result/: 72.0049 compact in process_7352_chr.txt
+Only in //pmda-bkh70w2/result/: 72.0049 compact in process_7353_chr.txt
+Only in //pmda-bkh70w2/result/: 72.0049 compact in process_7354_chr.txt
+Only in //pmda-bkh70w2/result/: 72.0049 compact in process_7355_chr.txt
+Only in //pmda-bkh70w2/result/: 72.0049 compact in process_7356_chr.txt
+Only in //pmda-bkh70w2/result/: 72.0049 compact in process_7357_chr.txt
+Only in //pmda-bkh70w2/result/: 72.0049 compact in process_7358_chr.txt
+Only in //pmda-bkh70w2/result/: 72.0049 compact in process_7359_chr.txt
+Only in //pmda-bkh70w2/result/: 72.0049 compact in process_7360_chr.txt
+Only in //pmda-bkh70w2/result/: 72.0049 compact in process_7361_chr.txt
+Only in //pmda-bkh70w2/result/: 72.0049 compact in process_7362_chr.txt
+Only in //pmda-bkh70w2/result/: 72.0049 compact in process_7363_chr.txt
+Only in //pmda-bkh70w2/result/: 72.0049 compact in process_7364_chr.txt
+Only in //pmda-bkh70w2/result/: 72.0049 compact in process_7365_chr.txt
+Only in //pmda-bkh70w2/result/: 72.0049 compact in process_7366_chr.txt
+Only in //pmda-bkh70w2/result/: 72.0049 compact in process_7367_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing 1st off Pallet A_620_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing 1st off Pallet A_621_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing 1st off Pallet A_622_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing 1st off Pallet B_620_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing 1st off Pallet B_621_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing 1st off Pallet B_622_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet A_1446_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet A_1447_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet A_1448_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet A_1449_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet A_1450_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet A_1451_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet A_1452_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet A_1453_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet A_1454_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet A_1455_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet A_1456_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet A_1457_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet A_1458_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet A_1459_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet A_1460_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet A_1461_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet A_1462_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet A_1463_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet A_1464_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet A_1465_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet A_1466_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet A_1467_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet A_1468_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet A_1469_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet A_1470_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet A_1482_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet A_1483_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet A_1484_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet A_1485_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet A_1486_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet A_1487_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet A_1488_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet A_1489_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet A_1490_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet A_1491_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet A_1492_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet A_1493_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet A_1494_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet A_1495_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet A_1496_chr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 72.1077 Burnishing In Process Pallet A_1542_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 72.1077 Burnishing In Process Pallet A_1542_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 72.1077 Burnishing In Process Pallet A_1543_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 72.1077 Burnishing In Process Pallet A_1543_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 72.1077 Burnishing In Process Pallet A_1544_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 72.1077 Burnishing In Process Pallet A_1544_hdr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet B_1446_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet B_1447_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet B_1448_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet B_1449_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet B_1450_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet B_1451_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet B_1452_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet B_1453_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet B_1454_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet B_1455_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet B_1456_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet B_1457_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet B_1458_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet B_1459_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet B_1460_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet B_1461_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet B_1462_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet B_1463_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet B_1464_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet B_1465_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet B_1466_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet B_1467_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet B_1468_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet B_1469_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet B_1470_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet B_1471_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet B_1472_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet B_1473_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet B_1474_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet B_1475_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Burnishing In Process Pallet B_1476_chr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 72.1077 Burnishing In Process Pallet B_1551_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 72.1077 Burnishing In Process Pallet B_1551_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 72.1077 Burnishing In Process Pallet B_1552_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 72.1077 Burnishing In Process Pallet B_1552_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 72.1077 Burnishing In Process Pallet B_1553_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 72.1077 Burnishing In Process Pallet B_1553_hdr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining 1st Off_214_chr.txt
+Files //pmda-bkh70w2/result/72.1077 Coining 1st Off_214_fet.txt and //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/72.1077 Coining 1st Off_214_fet.txt differ
+Files //pmda-bkh70w2/result/72.1077 Coining 1st Off_214_hdr.txt and //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/72.1077 Coining 1st Off_214_hdr.txt differ
+Only in //pmda-bkh70w2/result/: 72.1077 Coining 1st Off_215_chr.txt
+Files //pmda-bkh70w2/result/72.1077 Coining 1st Off_215_fet.txt and //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/72.1077 Coining 1st Off_215_fet.txt differ
+Files //pmda-bkh70w2/result/72.1077 Coining 1st Off_215_hdr.txt and //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/72.1077 Coining 1st Off_215_hdr.txt differ
+Only in //pmda-bkh70w2/result/: 72.1077 Coining 1st Off_216_chr.txt
+Files //pmda-bkh70w2/result/72.1077 Coining 1st Off_216_fet.txt and //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/72.1077 Coining 1st Off_216_fet.txt differ
+Files //pmda-bkh70w2/result/72.1077 Coining 1st Off_216_hdr.txt and //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/72.1077 Coining 1st Off_216_hdr.txt differ
+Only in //pmda-bkh70w2/result/: 72.1077 Coining 1st Off_217_chr.txt
+Files //pmda-bkh70w2/result/72.1077 Coining 1st Off_217_fet.txt and //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/72.1077 Coining 1st Off_217_fet.txt differ
+Files //pmda-bkh70w2/result/72.1077 Coining 1st Off_217_hdr.txt and //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/72.1077 Coining 1st Off_217_hdr.txt differ
+Only in //pmda-bkh70w2/result/: 72.1077 Coining 1st Off_218_chr.txt
+Files //pmda-bkh70w2/result/72.1077 Coining 1st Off_218_fet.txt and //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/72.1077 Coining 1st Off_218_fet.txt differ
+Files //pmda-bkh70w2/result/72.1077 Coining 1st Off_218_hdr.txt and //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/72.1077 Coining 1st Off_218_hdr.txt differ
+Only in //pmda-bkh70w2/result/: 72.1077 Coining 1st Off_219_chr.txt
+Files //pmda-bkh70w2/result/72.1077 Coining 1st Off_219_fet.txt and //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/72.1077 Coining 1st Off_219_fet.txt differ
+Files //pmda-bkh70w2/result/72.1077 Coining 1st Off_219_hdr.txt and //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/72.1077 Coining 1st Off_219_hdr.txt differ
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 72.1077 Coining 1st Off_220_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 72.1077 Coining 1st Off_220_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 72.1077 Coining 1st Off_221_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 72.1077 Coining 1st Off_221_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 72.1077 Coining 1st Off_222_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 72.1077 Coining 1st Off_222_hdr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining Eng Trials_152_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining Eng Trials_153_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining Eng Trials_154_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining Eng Trials_155_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining Eng Trials_156_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining Eng Trials_157_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining Eng Trials_158_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining Eng Trials_159_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining Eng Trials_160_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining Eng Trials_161_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining Eng Trials_162_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining Eng Trials_163_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining Eng Trials_164_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining Eng Trials_165_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining Eng Trials_166_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining Eng Trials_167_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining Eng Trials_168_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining Eng Trials_169_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining Eng Trials_170_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining Eng Trials_171_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining Eng Trials_172_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining Eng Trials_173_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining Eng Trials_174_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining Eng Trials_175_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining Eng Trials_176_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining Eng Trials_177_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining Eng Trials_178_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining Eng Trials_179_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining In Process_1287_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining In Process_1288_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining In Process_1289_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining In Process_1290_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining In Process_1291_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining In Process_1292_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining In Process_1293_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining In Process_1294_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining In Process_1295_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining In Process_1296_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining In Process_1297_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining In Process_1298_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining In Process_1299_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining In Process_1300_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining In Process_1301_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining In Process_1302_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining In Process_1303_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining In Process_1304_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining In Process_1305_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining In Process_1306_chr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 72.1077 Coining In Process_1307_chr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 72.1077 Coining In Process_1307_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 72.1077 Coining In Process_1307_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 72.1077 Coining In Process_1308_chr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 72.1077 Coining In Process_1308_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 72.1077 Coining In Process_1308_hdr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 72.1077 Coining In Process_1309_chr.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 72.1077 Coining In Process_1309_fet.txt
+Only in //pmda-bkh70w2/data/cmm/watchedoutput/qccalc/: 72.1077 Coining In Process_1309_hdr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining In Process_1310_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining In Process_1311_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining In Process_1312_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining In Process_1313_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining In Process_1314_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining In Process_1315_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining In Process_1316_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining In Process_1317_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining In Process_1318_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining In Process_1319_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining In Process_1320_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining In Process_1321_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining In Process_1322_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining In Process_1323_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining In Process_1324_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining In Process_1325_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining In Process_1326_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining In Process_1327_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining In Process_1328_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining In Process_1329_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining In Process_1330_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining In Process_1331_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining In Process_1332_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining In Process_1333_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining In Process_1334_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining In Process_1335_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining In Process_1336_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Coining In Process_1337_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Compact 1st Off_1357_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Compact 1st Off_1358_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Compact 1st Off_1359_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Compact 1st Off_1360_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Compact 1st Off_1361_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Compact 1st Off_1362_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Compact 1st Off_1363_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Compact 1st Off_1364_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Compact 1st Off_1365_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Compact 1st Off_1366_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Compact 1st Off_1367_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Compact 1st Off_1368_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Compact 1st Off_1369_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Compact 1st Off_1370_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Compact 1st Off_1371_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Compact 1st Off_1372_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Compact 1st Off_1373_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Compact 1st Off_1374_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Compact 1st Off_1375_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Compact 1st Off_1376_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Compact 1st Off_1377_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Compact 1st Off_1378_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Compact 1st Off_1379_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Compact Adjustment_1316_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Compact Adjustment_1317_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 Compact Adjustment_1318_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3684_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3685_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3686_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3687_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3688_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3689_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3690_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3691_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3692_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3693_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3694_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3695_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3696_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3697_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3698_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3699_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3700_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3701_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3702_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3703_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3704_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3705_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3706_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3707_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3708_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3709_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3710_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3711_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3712_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3713_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3714_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3715_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3716_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3717_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3718_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3719_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3720_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3721_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3722_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3723_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3724_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3725_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3726_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3727_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3728_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3729_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3730_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3731_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3732_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3733_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3734_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3735_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3736_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3737_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3738_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3739_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3740_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3741_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3742_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3743_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3744_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3745_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3746_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3747_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3748_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3749_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3750_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3751_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3752_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3753_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3754_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3755_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3756_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3757_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3758_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3759_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3760_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3761_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3762_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3763_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3764_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3765_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3766_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3767_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3768_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3769_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3770_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3771_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3772_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3773_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3774_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3775_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3776_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3777_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3778_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3779_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3780_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3781_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3782_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3783_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3784_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3785_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3786_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3787_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3788_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3789_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3790_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3791_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3792_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3793_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3794_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3795_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3796_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3797_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3798_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3799_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3800_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3801_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3802_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3803_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3804_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3805_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3806_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3807_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3808_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3809_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3810_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3811_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3812_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3813_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3814_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3815_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3816_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3817_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3818_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3819_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3820_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3821_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3822_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3823_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3824_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3825_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3826_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3827_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3828_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3829_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3830_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3831_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3832_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3833_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3834_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3835_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3836_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3837_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3838_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3839_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3840_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3841_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3842_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3843_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3844_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3845_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3846_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3847_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3848_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3849_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3850_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3851_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3852_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3853_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3854_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3855_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3856_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3857_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3858_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3859_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3860_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3861_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3862_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3863_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3864_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3865_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3866_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3867_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3868_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3869_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3870_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3871_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3872_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3873_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3874_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3875_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3876_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3877_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3878_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3879_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3880_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3881_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3882_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3883_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3884_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3885_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3886_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3887_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3888_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3889_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3890_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3891_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3892_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3893_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3894_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3895_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3896_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3897_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3898_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3899_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3900_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3901_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3902_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3903_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3904_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3905_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3906_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3907_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3908_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3909_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3910_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3911_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3912_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3913_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3914_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3915_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3916_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3917_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3918_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3919_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3920_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3921_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3922_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3923_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3924_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3925_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3926_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3927_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3928_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3929_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3930_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3931_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3932_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3933_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3934_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3935_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3936_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3937_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3938_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3939_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3940_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3941_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3942_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3943_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3944_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3945_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3946_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3947_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3948_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3949_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3950_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3951_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3952_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3953_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3954_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3955_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3956_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3957_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3958_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3959_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3960_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3961_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3962_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3963_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3964_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3965_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3966_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3967_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3968_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3969_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3970_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3971_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3972_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3973_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3974_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3975_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3976_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3977_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3978_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3979_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3980_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3981_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3982_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3983_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3984_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3985_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3986_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3987_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3988_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3989_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3990_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3991_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3992_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3993_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3994_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3995_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3996_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3997_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3998_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_3999_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4000_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4001_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4002_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4003_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4004_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4005_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4006_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4007_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4008_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4009_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4010_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4011_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4012_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4013_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4014_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4015_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4016_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4017_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4018_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4019_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4020_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4021_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4022_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4023_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4024_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4025_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4026_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4027_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4028_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4029_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4030_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4031_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4032_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4033_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4034_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4035_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4036_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4037_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4038_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4039_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4040_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4041_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4042_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4043_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4044_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4045_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4046_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4047_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4048_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4049_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4050_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4051_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4052_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4053_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4054_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4055_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4056_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4057_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4058_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4059_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4060_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4061_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4062_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4063_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4064_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4065_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4066_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4067_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4068_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4069_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4070_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4071_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4072_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4073_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4074_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4075_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4076_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4077_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4078_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4079_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4080_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4081_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4082_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4083_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4084_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4085_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4086_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4087_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4088_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4089_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4090_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4091_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4092_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4093_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4094_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4095_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4096_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4097_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4098_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4099_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4100_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4101_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4102_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4103_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4104_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4105_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4106_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4107_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4108_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4109_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4110_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4111_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4112_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4113_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4114_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4115_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4116_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4117_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4118_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4119_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4120_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4121_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4122_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4123_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4124_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4125_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4126_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4127_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4128_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4129_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4130_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4131_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4132_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4133_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4134_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4135_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4136_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4137_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4138_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4139_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4140_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4141_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4142_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4143_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4144_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4145_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4146_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4147_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4148_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4149_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4150_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4151_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4152_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4153_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4154_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4155_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4156_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4157_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4158_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4159_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4160_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4161_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4162_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4163_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4164_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4165_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4166_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4167_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4168_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4169_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4170_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4171_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4172_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4173_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4174_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4175_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4176_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4177_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4178_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4179_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4180_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4181_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4182_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4183_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4184_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4185_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4186_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4187_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4188_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4189_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4190_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4191_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4192_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4193_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4194_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4195_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4196_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4197_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4198_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4199_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4200_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4201_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4202_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4203_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4204_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4205_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4206_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4207_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4208_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4209_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4210_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4211_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4212_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4213_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4214_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4215_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4216_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4217_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4218_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4219_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4220_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4221_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4222_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4223_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4224_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4225_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4226_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4227_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4228_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4229_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4230_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4231_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4232_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4233_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4234_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4235_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4236_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4237_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4238_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4239_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4240_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4241_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4242_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4243_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4244_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4245_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4246_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4247_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4248_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4249_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4250_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4251_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4252_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4253_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4254_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4255_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4256_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4257_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4258_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4259_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4260_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4261_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4262_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4263_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4264_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4265_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4266_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4267_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4268_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4269_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4270_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4271_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4272_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4273_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4274_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4275_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4276_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4277_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4278_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4279_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4280_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4281_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4282_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4283_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4284_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4285_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4286_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4287_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4288_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4289_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4290_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4291_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4292_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4293_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4294_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4295_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4296_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4297_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4298_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4299_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4300_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4301_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4302_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4303_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4304_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4305_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4306_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4307_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4308_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4309_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4310_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4311_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4312_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4313_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4314_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4315_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4316_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4317_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4318_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4319_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4320_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4321_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4322_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4323_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4324_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4325_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4326_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4327_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4328_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4329_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4330_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4331_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4332_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4333_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4334_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4335_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4336_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4337_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4338_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4339_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4340_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4341_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4342_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4343_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4344_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4345_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4346_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4347_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4348_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4349_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4350_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4351_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4352_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4353_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4354_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4355_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4356_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4357_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4358_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4359_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4360_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4361_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4362_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4363_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4364_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4365_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4366_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4367_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4368_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4369_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4370_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4371_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4372_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4373_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4374_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4375_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4376_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4377_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4378_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4379_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4380_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4381_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4382_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4383_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4384_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4385_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4386_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4387_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4388_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4389_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4390_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4391_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4392_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4393_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4394_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4395_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4396_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4397_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4398_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4399_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4400_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4401_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4402_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4403_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4404_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4405_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4406_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4407_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4408_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4409_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4410_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4411_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4412_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4413_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4414_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4415_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4416_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4417_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4418_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4419_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4420_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4421_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4422_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4423_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4424_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4425_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4426_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4427_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4428_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4429_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4430_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4431_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4432_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4433_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4434_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4435_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4436_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4437_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4438_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4439_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4440_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4441_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4442_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4443_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4444_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4445_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4446_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4447_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4448_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4449_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4450_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4451_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4452_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4453_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4454_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4455_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4456_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4457_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4458_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4459_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4460_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4461_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4462_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4463_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4464_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4465_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4466_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4467_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4468_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4469_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4470_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4471_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4472_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4473_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4474_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4475_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4476_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4477_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4478_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4479_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4480_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4481_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4482_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4483_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4484_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4485_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4486_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4487_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4488_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4489_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4490_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4491_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4492_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4493_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4494_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4495_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4496_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4497_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4498_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4499_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4500_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4501_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4502_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4503_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4504_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4505_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4506_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4507_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4508_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4509_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4510_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4511_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4512_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4513_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4514_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4515_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4516_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4517_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4518_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4519_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4520_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4521_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4522_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4523_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4524_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4525_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4526_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4527_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4528_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4529_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4530_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4531_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4532_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4533_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4534_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4535_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4536_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4537_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4538_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4539_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4540_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4541_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4542_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4543_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4544_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4545_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4546_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4547_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4548_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4549_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4550_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4551_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4552_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4553_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4554_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4555_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4556_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4557_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4558_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4559_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4560_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4561_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4562_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4563_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4564_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4565_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4566_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4567_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4568_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4569_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4570_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4571_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4572_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4573_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4574_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4575_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4576_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4577_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4578_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4579_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4580_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4581_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4582_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4583_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4584_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4585_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4586_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4587_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4588_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4589_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4590_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4591_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4592_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4593_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4594_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4595_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4596_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4597_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4598_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4599_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4600_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4601_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4602_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4603_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4604_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4605_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4606_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4607_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4608_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4609_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4610_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4611_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4612_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4613_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4614_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4615_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4616_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4617_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4618_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4619_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4620_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4621_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4622_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4623_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4624_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4625_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4626_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4627_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4628_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4629_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4630_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4631_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4632_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4633_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4634_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4635_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4636_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4637_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4638_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4639_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4640_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4641_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4642_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4643_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4644_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4645_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4646_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4647_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4648_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4649_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4650_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4651_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4652_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4653_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4654_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4655_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4656_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4657_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4658_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4659_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4660_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4661_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4662_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4663_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4664_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4665_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4666_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4667_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4668_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4669_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4670_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4671_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4672_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4673_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4674_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4675_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4676_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4677_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4678_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4679_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4680_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4681_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4682_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4683_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4684_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4685_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4686_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4687_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4688_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4689_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4690_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4691_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4692_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4693_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4694_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4695_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4696_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4697_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4698_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4699_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4700_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4701_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4702_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4703_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4704_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4705_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4706_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4707_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4708_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4709_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4710_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4711_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4712_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4713_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4714_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4715_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4716_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4717_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4718_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4719_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4720_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4721_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4722_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4723_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4724_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4725_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4726_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4727_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4728_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4729_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4730_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4731_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4732_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4733_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4734_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4735_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4736_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4737_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4738_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4739_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4740_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4741_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4742_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4743_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4744_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4745_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4746_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4747_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4748_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4749_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4750_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4751_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4752_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4753_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4754_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4755_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4756_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4757_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4758_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4759_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4760_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4761_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4762_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4763_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4764_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4765_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4766_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4767_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4768_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4769_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4770_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4771_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4772_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4773_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4774_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4775_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4776_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4777_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4778_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4779_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4780_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4781_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4782_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4783_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4784_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4785_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4786_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4787_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4788_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4789_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4790_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4791_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4792_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4793_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4794_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4795_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4796_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4797_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4798_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4799_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4800_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4801_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4802_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4803_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4804_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4805_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4806_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4807_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4808_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4809_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4810_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4811_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4812_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4813_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4814_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4815_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4816_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4817_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4818_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4819_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4820_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4821_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4822_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4823_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4824_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4825_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4826_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4827_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4828_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4829_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4830_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4831_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4832_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4833_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4834_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4835_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4836_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4837_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4838_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4839_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4840_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4841_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4842_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4843_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4844_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4845_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4846_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4847_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4848_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4849_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4850_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4851_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4852_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4853_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4854_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4855_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4856_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4857_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4858_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4859_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4860_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4861_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4862_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4863_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4864_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4865_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4866_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4867_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4868_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4869_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4870_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4871_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4872_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4873_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4874_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4875_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4876_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4877_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4878_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4879_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4880_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4881_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4882_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4883_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4884_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4885_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4886_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4887_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4888_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4889_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4890_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4891_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4892_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4893_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4894_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4895_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4896_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4897_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4898_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4899_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4900_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4901_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4902_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4903_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4904_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4905_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4906_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4907_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4908_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4909_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4910_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4911_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4912_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4913_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4914_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4915_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4916_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4917_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4918_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4919_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4920_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4921_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4922_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4923_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4924_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4925_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4926_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4927_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4928_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4929_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4930_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4931_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4932_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4933_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4934_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4935_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4936_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4937_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4938_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4939_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4940_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4941_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4942_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4943_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4944_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4945_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4946_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4947_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4948_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4949_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4950_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4951_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4952_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4953_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4954_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4955_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4956_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4957_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4958_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4959_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4960_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4961_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4962_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4963_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4964_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4965_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4966_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4967_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4968_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4969_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4970_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4971_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4972_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4973_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4974_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4975_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4976_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4977_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4978_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4979_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4980_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4981_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4982_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4983_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4984_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4985_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4986_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4987_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4988_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4989_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4990_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4991_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4992_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4993_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4994_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4995_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4996_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4997_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4998_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_4999_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5000_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5001_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5002_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5003_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5004_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5005_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5006_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5007_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5008_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5009_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5010_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5011_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5012_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5013_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5014_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5015_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5016_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5017_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5018_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5019_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5020_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5021_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5022_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5023_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5024_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5025_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5026_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5027_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5028_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5029_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5030_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5031_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5032_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5033_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5034_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5035_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5036_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5037_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5038_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5039_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5040_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5041_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5042_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5043_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5044_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5045_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5046_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5047_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5048_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5049_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5050_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5051_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5052_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5053_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5054_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5055_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5056_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5057_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5058_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5059_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5060_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5061_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5062_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5063_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5064_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5065_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5066_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5067_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5068_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5069_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5070_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5071_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5072_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5073_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5074_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5075_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5076_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5077_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5078_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5079_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5080_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5081_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5082_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5083_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5084_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5085_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5086_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5087_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5088_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5089_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5090_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5091_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5092_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5093_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5094_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5095_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5096_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5097_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5098_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5099_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5100_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5101_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5102_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5103_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5104_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5105_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5106_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5107_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5108_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5109_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5110_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5111_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5112_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5113_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5114_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5115_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5116_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5117_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5118_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5119_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5120_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5121_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5122_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5123_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5124_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5125_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5126_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5127_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5128_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5129_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5130_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5131_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5132_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5133_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5134_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5135_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5136_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5137_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5138_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5139_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5140_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5141_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5142_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5143_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5144_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5145_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5146_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5147_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5148_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5149_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5150_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5151_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5152_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5153_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5154_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5155_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5156_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5157_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5158_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5159_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5160_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5161_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5162_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5163_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5164_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5165_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5166_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5167_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5168_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5169_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5170_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5171_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5172_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5173_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5174_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5175_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5176_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5177_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5178_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5179_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5180_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5181_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5182_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5183_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5184_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5185_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5186_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5187_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5188_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5189_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5190_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5191_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5192_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5193_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5194_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5195_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5196_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5197_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5198_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5199_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5200_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5201_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5202_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5203_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5204_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5205_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5206_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5207_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5208_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5209_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5210_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5211_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5212_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5213_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5214_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5215_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5216_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5217_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5218_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5219_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5220_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5221_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5222_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5223_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5224_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5225_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5226_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5227_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5228_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5229_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5230_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5231_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5232_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5233_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5234_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5235_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5236_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5237_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5238_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5239_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5240_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5241_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5242_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5243_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5244_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5245_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5246_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5247_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5248_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5249_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5250_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5251_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5252_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5253_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5254_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5255_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5256_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5257_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5258_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5259_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5260_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5261_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5262_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5263_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5264_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5265_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5266_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5267_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5268_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5269_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5270_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5271_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5272_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5273_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5274_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5275_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5276_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5277_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5278_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5279_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5280_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5281_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5282_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5283_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5284_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5285_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5286_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5287_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5288_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5289_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5290_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5291_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5292_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5293_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5294_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5295_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5296_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5297_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5298_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5299_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5300_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5301_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5302_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5303_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5304_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5305_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5306_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5307_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5308_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5309_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5310_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5311_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5312_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5313_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5314_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5315_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5316_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5317_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5318_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5319_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5320_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5321_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5322_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5323_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5324_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5325_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5326_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5327_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5328_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5329_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5330_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5331_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5332_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5333_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5334_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5335_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5336_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5337_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5338_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5339_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5340_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5341_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5342_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5343_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5344_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5345_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5346_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5347_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5348_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5349_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5350_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5351_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5352_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5353_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5354_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5355_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5356_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5357_chr.txt
+Only in //pmda-bkh70w2/result/: 72.1077 EPC_5358_chr.txt

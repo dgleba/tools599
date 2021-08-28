@@ -30,7 +30,7 @@ timeout 9
 robocopy \\PMDA-BKH70W2\data\script  \\PMDA-BKH70W2\data\backup\PMDA-BKH70W2\c_data_script  /e  /xf *._sync* /xd libre  /dst /fft /xo /ndl /np /r:0 /w:0 /tee /eta /log:%logf4%_10001_%random%"
 
 
-robocopy c:\data\script\tools599    \\PMDA-BKH70W2\data\script\tools599  /e /L   /xf watch598settings.conf /xd libre /xf *_T_*  /dst /fft /xo /ndl /np /r:2 /w:2 /tee /eta /log:%logf4%_10001d_%random%"
+robocopy c:\data\script\tools599    \\PMDA-BKH70W2\data\script\tools599  /e /L   /xf *._sync* /xd libre /xf *_T_*  /dst /fft /xo /ndl /np /r:2 /w:2 /tee /eta /log:%logf4%_10001d_%random%"
 
 timeout  132
 robocopy \\PMDA-BKH70W2\data\script\tools599  c:\data\script\tools599     /e   /L /xf *._sync* /xd libre /xf *_T_*  /dst /fft /xo /ndl /np /r:2 /w:2 /tee /eta /log:%logf4%_10001d_%random%"

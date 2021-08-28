@@ -1,0 +1,25 @@
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#
+# Once per day stop-start transcript log.
+#
+# Run between two times - x sec window
+  [int]$shr = 00
+  [int]$smin = 00
+  $min = Get-Date ("{0}:{1}:00" -f $shr, $smin)
+  $max = Get-Date ("{0}:{1}:00" -f $shr, ($smin+1)) 
+  $now = Get-Date
+  # Write-Host "$min $max "
+  # check if it is time to run it.
+  if ( $now.TimeOfDay -ge $min.TimeOfDay  -and $now.TimeOfDay -le $max.TimeOfDay ) {
+    Write-host "once daily Run it now. stop-start transcript.."
+    Stop-Transcript
+    # Start-Sleep 1
+    Start-Transcript -Path c:\data\logs\watch598cmmresults\debug\watch598_debugtranscrpt_$((Get-Date).toString("yyyy-MM-dd_HH.mm.ss")).log
+  }
+# .end. run between two times - x sec window
+#
+    
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  

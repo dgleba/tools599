@@ -79,7 +79,7 @@ Add-Content  -Path $script:processmonitor598_runlog -Value (Get-Date)
 
 # Get all files containing fet from folder A
 # $filesForA = Get-ChildItem $global:PathToMonitor -Filter '*fet.txt*' | Where-Object {$f.LastWriteTime -lt (Get-Date).AddMinutes(-2)} | Where-Object {$f.LastWriteTime -gt (Get-Date).AddMinutes(-122)}
-$filesForA = Get-ChildItem $global:PathToMonitor -Filter '*fet.txt*' | Where-Object {$_.LastWriteTime -lt (Get-Date).AddMinutes(-3) -and $_.LastWriteTime -ge (Get-Date).AddMinutes(-475)} 
+$filesForA = Get-ChildItem $global:PathToMonitor -Filter '*fet.txt*' | Where-Object {$_.LastWriteTime -lt (Get-Date).AddMinutes(-3) -and $_.LastWriteTime -ge (Get-Date).AddMinutes(-300)} 
 $mts = (Get-Date).toString("yyyyMMdd_HH.mm.ss")
 (Get-Date) | Out-File $script:debuglogpath\pm598_$mts.txt -Append
 # Check if file > 1 minute old in A is also in general (WORKING I THINK)

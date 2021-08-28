@@ -1,0 +1,19 @@
+Number: -2146233088
+
+Description: NET Desc: The UPDATE statement conflicted with the FOREIGN KEY constraint "FK_rt_monitor_qcc_file". The conflict occurred in database "QC_Calc_CMM", table "dbo.qcc_file", column 'qcc_file_id'.
+The statement has been terminated.
+
+Occurred In: .Net SqlClient Data Provider
+
+   at Prolink.Utils.DBFunctions.RunScalarQuery(SqlConnection activeConnection, SqlTransaction trnActive, SQLQuery poQuery)
+   at Prolink.Utils.DALManagerWrapper.RunScalarQuery(IDbConnection activeConnection, IDbTransaction activeTransations, SQLQuery poQuery)
+   at Prolink.DataAccess.DataProviderBase.SaveRTMonitoringItem(RTMonitoringItem toSave)
+   at ProlinkUtils.DALRTMonitor.SaveMonitoringEntry(Int32 connectionId, String qccalcLocation, String serialNumber, String model, Int32 currentQCCFileId, String rtDescription, String machineName, Boolean isRunning)
+
+Source: CCurrentFiles-SaveQCCalcAndFileInfo
+ProlinkUtils40
+
+
+RealTimePlots 4.0.70
+
+2021-08-26 1:53:34 PM

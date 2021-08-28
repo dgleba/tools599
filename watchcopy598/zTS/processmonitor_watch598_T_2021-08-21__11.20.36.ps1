@@ -75,11 +75,11 @@ Add-Content  -Path $script:processmonitor598_runlog -Value (Get-Date)
 
 #  Main code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-# Itterate through folder A looking for files older than 3 minute
+# Itterate through folder A looking for files older than 2 minute
 
 # Get all files containing fet from folder A
 # $filesForA = Get-ChildItem $global:PathToMonitor -Filter '*fet.txt*' | Where-Object {$f.LastWriteTime -lt (Get-Date).AddMinutes(-2)} | Where-Object {$f.LastWriteTime -gt (Get-Date).AddMinutes(-122)}
-$filesForA = Get-ChildItem $global:PathToMonitor -Filter '*fet.txt*' | Where-Object {$_.LastWriteTime -lt (Get-Date).AddMinutes(-3) -and $_.LastWriteTime -ge (Get-Date).AddMinutes(-475)} 
+$filesForA = Get-ChildItem $global:PathToMonitor -Filter '*fet.txt*' | Where-Object {$_.LastWriteTime -lt (Get-Date).AddMinutes(-2) -and $_.LastWriteTime -ge (Get-Date).AddMinutes(-180)} 
 $mts = (Get-Date).toString("yyyyMMdd_HH.mm.ss")
 (Get-Date) | Out-File $script:debuglogpath\pm598_$mts.txt -Append
 # Check if file > 1 minute old in A is also in general (WORKING I THINK)
@@ -146,26 +146,6 @@ if ($filesForA.Length -gt 0) {
         }  Write-Host $filesForA.Length
     }
 }
-
-
-
-
-#  run at specified time frame ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-# run between two times @ ..
-  [int]$shr = 22
-  [int]$smin = 53
-  $min = Get-Date ( "{0}:{1}:00" -f $shr, $smin )
-  $max = Get-Date ( "{0}:{1}:00" -f $shr, ($smin+5) ) 
-  $now = Get-Date
-  # Write-Host $min $max 
-  Write-Host "times: now $now  min $min  max $max"
-  if ( $now.TimeOfDay -ge $min.TimeOfDay  -and $now.TimeOfDay -le $max.TimeOfDay ) {
-    Write-host "Run it now.."
-    Write-Host " running task - now =  $((Get-Date).toString("yyyy-MM-dd_HH.mm.ss"))"
-  }
-# end. run between two times
 
 
 

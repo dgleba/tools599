@@ -53,6 +53,9 @@ $mtsymd = (Get-Date).toString("yyyy-MM-dd")
 # =================================================
 
 
+$otherScriptInstances=Get-WmiObject Win32_Process -Filter "Name='powershell.exe' AND CommandLine LIKE '%watch598b.ps1%'"
+write-host "others $otherScriptInstances"
+
 
 # =================================================
 # =================================================
@@ -62,4 +65,4 @@ $mtsymd = (Get-Date).toString("yyyy-MM-dd")
 
 cmd /c timeout 3
 # Start-Sleep -Seconds 1
-timeout 4
+timeout 433
