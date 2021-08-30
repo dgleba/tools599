@@ -93,7 +93,7 @@ Invoke-expression $cmd
 
 # find all files that have a modification time older than n minutes and move them to interim folder. 
 # Don't move fresh files that might be unfinished.
-get-childitem -Path $PathToMonitor -Filter '*.txt'| Where-Object { $_.LastWriteTime -lt (Get-Date).AddMinutes(-2) }  |
+get-childitem -Path $PathToMonitor -Filter '*.txt'| Where-Object { $_.LastWriteTime -lt (Get-Date).AddMinutes(-1) }  |
     move-item -destination $interimfolder -verbose
 
 Start-Sleep 2
