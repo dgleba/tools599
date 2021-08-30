@@ -44,9 +44,9 @@ cmd /c mkdir $logpath
 cmd /c mkdir $logpath\debug
 #
 # start transcript logging... 
-Start-Transcript -Path c:\data\logs\watch598cmmresults\debug\watch598e_debugtranscrpt_$((Get-Date).toString("yyyy-MM-dd")).log -Append -NoClobber
+Start-Transcript -Path c:\data\logs\watch598cmmresults\debug\watch598e_debugtranscrpt_$((Get-Date).toString("yyyy-MM-dd_HH")).log -Append -NoClobber
 
-write-host "Starting $thisNickName $(Get-date)  ----------"
+write-host "Starting $thisNickName $(Get-date)  $((Get-Date).toString("yyyyMMdd_HH.mm.ss")) Version 21  ----------"
 
 
 
@@ -56,13 +56,15 @@ write-host "Starting $thisNickName $(Get-date)  ----------"
 
 # noworky: $otherScriptInstances=get-wmiobject win32_process | where{$_.processname -eq 'powershell.exe' -and $_.ProcessId -ne $pid -and $_.commandline -match $($MyInvocation.MyCommand.Path)}
 
-$otherScriptInstances=Get-WmiObject Win32_Process -Filter "Name='powershell.exe' AND CommandLine LIKE '%watch598b.ps1%'" | where{$_.ProcessId -ne $pid }
+$otherScriptInstances=Get-WmiObject Win32_Process -Filter "Name='powershell.exe' AND CommandLine LIKE '%watch598e.ps1%'" | where{$_.ProcessId -ne $pid }
 
 write-host "others:$otherScriptInstances , pid:$pid"
 
 if ($otherScriptInstances -ne $null)
 {
+    $mts = (Get-Date).toString("yyyyMMdd_HH.mm.ss")
     "Already running another instance. This will exit now."
+    "$mts Already running another instance. This will exit now." | Out-File $global:logpath\watch598e_oneinstancelog_$((Get-Date).toString("yyyy-MM-dd")).log.txt -Append -NoClobber
     timeout 15
     exit
 }else
@@ -82,7 +84,7 @@ cmd /c mkdir $copyToGeneral
 cmd /c mkdir $global:copyToLitmus
 
 $mts = (Get-Date).toString("yyyyMMdd_HH.mm.ss")
-$cmd = "cmd /c echo Starting watch598e at $mts>>$logpath\$(gc env:computername)-$thisNickName--run-log.txt"
+$cmd = "cmd /c echo Starting watch598e at $mts>>$logpath\$(gc env:computername)-$thisNickName--run-log_$((Get-Date).toString("yyyy-MM-dd")).txt"
 Invoke-expression $cmd
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -91,23 +93,25 @@ Invoke-expression $cmd
 
 # find all files that have a modification time older than n minutes and move them to interim folder. 
 # Don't move fresh files that might be unfinished.
-get-childitem -Path $PathToMonitor -Filter '*.txt'| Where-Object { $_.LastWriteTime -lt (Get-Date).AddMinutes(-1) }  |
+get-childitem -Path $PathToMonitor -Filter '*.txt'| Where-Object { $_.LastWriteTime -lt (Get-Date).AddMinutes(-3) }  |
     move-item -destination $interimfolder -verbose
 
 Start-Sleep 2
 
 # copy chr,hdr from B to E
-robocopy $interimfolder $copyToLitmus '*chr.txt*' '*hdr.txt*' /xo /is
+cmd /c robocopy $interimfolder $copyToLitmus '*chr.txt*' '*hdr.txt*' /xo /is |  C:\prg\cygwin64\bin\grep.exe  -v '*EXTRA File'
 Start-Sleep 2
 
 # Copy all from B to C
-robocopy $interimfolder $copyToGeneral '*chr.txt*' '*hdr.txt*' '*fet.txt*' /xo
+cmd /c robocopy $interimfolder $copyToGeneral '*chr.txt*' '*hdr.txt*' '*fet.txt*' /xo  |  C:\prg\cygwin64\bin\grep.exe  -v '*EXTRA File'
 Start-Sleep 2
 
 # Move all from B to D
 $mts = (Get-Date).toString("yyyyMMdd_HH.mm.ss")
-#robocopy $interimfolder $copyToQCcalc '*chr.txt*' '*hdr.txt*' '*fet.txt*' /mov /is /R:3 /W:4 /tee /log:$global:logpath\debug\robocopy.qcc_$mts.txt
-robocopy $interimfolder $copyToQCcalc  '*chr.txt*' '*hdr.txt*' '*fet.txt*' /mov /is /R:3 /W:4
+#cmd /c robocopy $interimfolder $copyToQCcalc  '*chr.txt*' '*hdr.txt*' '*fet.txt*' /mov /is /R:3 /W:4      /log:$global:logpath\debug\robocopy.qcc_$mts.txt |  C:\prg\cygwin64\bin\grep.exe  -v '*EXTRA File'
+#cmd /c robocopy $interimfolder $copyToQCcalc  '*chr.txt*' '*hdr.txt*' '*fet.txt*' /mov /is /R:3 /W:4 /tee /log:$global:logpath\debug\robocopy.qcc_$mts.txt
+cmd /c robocopy $interimfolder $copyToQCcalc  '*chr.txt*' '*hdr.txt*' '*fet.txt*' /mov /is /R:3 /W:4 | C:\prg\cygwin64\bin\grep.exe  -v '*EXTRA File'
 Start-Sleep 2
   
-timeout 1
+Stop-Transcript
+timeout 8

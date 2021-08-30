@@ -73,10 +73,44 @@ Add-Content  -Path $script:processmonitor598_runlog -Value (Get-Date)
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+#  Main code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+# Itterate through folder A looking for files older than 3 minute
 
-function task598restart {
-                write-host "taskrestt"
+# Get all files containing fet from folder A
+# $filesForA = Get-ChildItem $global:PathToMonitor -Filter '*fet.txt*' | Where-Object {$f.LastWriteTime -lt (Get-Date).AddMinutes(-2)} | Where-Object {$f.LastWriteTime -gt (Get-Date).AddMinutes(-122)}
+$filesForA = Get-ChildItem $global:PathToMonitor -Filter '*fet.txt*' | Where-Object {$_.LastWriteTime -lt (Get-Date).AddMinutes(-5) -and $_.LastWriteTime -ge (Get-Date).AddMinutes(-475)} 
+$mts = (Get-Date).toString("yyyyMMdd_HH.mm.ss")
+(Get-Date) | Out-File $script:debuglogpath\pm598_$mts.txt -Append
+# Check if file > 1 minute old in A is also in general (WORKING I THINK)
+if ($filesForA.Length -gt 0) {
+    foreach ($f in $filesForA) {
+        
+        # 2021-08-14 dgleba: i think adding single and double quote fixed it. It may have been not working with file names with spaces in them.
+        # $testpath = "'C:\data\cmm\watchedoutput\general\{0}'" -f $f
+        # or maybe not. dgleba 2021-08-15_Sun_12.27-PM
+        $testpath = "C:\data\cmm\watchedoutput\general\{0}" -f $f
+        write-host "dollarf: $f"
+        "dollarf: $f"  | Out-File $script:debuglogpath\pm598_$mts.txt -Append
+        
+        # If file is found in A that is not in General, An error will occur
+        if ((Test-Path -Path $testpath -PathType Leaf) -eq $false) {
+            $print = "Error Occured at {0} with file {1}" -f (Get-Date), $f
+            $print | Out-File $script:errorLogs -Append
+            write-host $print
+            "$print"  | Out-File $script:debuglogpath\pm598_$mts.txt -Append
+             
+            # Read lastEmailSend from LastErrorEmailSent.txt and assign it to variable
+            $lastEmailSend = [IO.File]::ReadAllText($script:lastErrorEmailSent)
+            # Convert lastEmailSend to a date object
+            $lastEmailSendDate = [datetime]$lastEmailSend
+
+            # If error is found, and time is greater than lastEmailSendDate + errorEmailFrequencyMinutes, send email and update lastemailsend textfile
+            if ((Get-Date) -gt $lastEmailSendDate.AddMinutes([int]$errorEmailFrequencyMinutes)) {
+                # If error is detected and time is greater than lastemailsend + errorfrequencyminutes, send email and update file
+                send-mailmessage -subject "Warning: error detected by processmonitor_watch598." -body "An error (File $f was not found in General) was detected. Please check it. `n`nRef: this msg from computer: $(gc env:computername)  file: C:\data\script\tools599\watchcopy598\processmonitor_watch598.ps1" -to @("dgleba@stackpole.com") -dno onFailure -smtpServer MESG06.stackpole.ca -from 'dgleba@stackpole.com'
+                Set-Content  -Path $script:lastErrorEmailSent -Value (Get-Date)
+                
                 $taskName = "Watch598"
                 # If task is still running but error occurs
                 if (($task=Get-ScheduledTask $taskName).State -eq "Running"){
@@ -105,51 +139,6 @@ function task598restart {
                 } else {
                     continue
                 }
-}
-
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-#  Main code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-# Itterate through folder A looking for files older than 3 minute
-
-# Get all files containing fet from folder A
-# $filesForA = Get-ChildItem $global:PathToMonitor -Filter '*fet.txt*' | Where-Object {$f.LastWriteTime -lt (Get-Date).AddMinutes(-2)} | Where-Object {$f.LastWriteTime -gt (Get-Date).AddMinutes(-122)}
-$filesForA = Get-ChildItem $global:PathToMonitor -Filter '*fet.txt*' | Where-Object {$_.LastWriteTime -lt (Get-Date).AddMinutes(-11) -and $_.LastWriteTime -ge (Get-Date).AddMinutes(-475)} 
-$mts = (Get-Date).toString("yyyyMMdd_HH.mm.ss")
-$mts2 = (Get-Date).toString("yyyyMMdd_HH")
-(Get-Date) | Out-File $script:debuglogpath\pm598_$mts2.txt -Append
-# Check if file > 1 minute old in A is also in general (WORKING I THINK)
-if ($filesForA.Length -gt 0) {
-    foreach ($f in $filesForA) {
-        
-        # 2021-08-14 dgleba: i think adding single and double quote fixed it. It may have been not working with file names with spaces in them.
-        # $testpath = "'C:\data\cmm\watchedoutput\general\{0}'" -f $f
-        # or maybe not. dgleba 2021-08-15_Sun_12.27-PM
-        $testpath = "C:\data\cmm\watchedoutput\general\{0}" -f $f
-        write-host "dollarf: $f"
-        "dollarf: $f"  | Out-File $script:debuglogpath\pm598_$mts2.txt -Append
-        
-        # If file is found in A that is not in General, An error will occur
-        if ((Test-Path -Path $testpath -PathType Leaf) -eq $false) {
-            $print = "Error Occured at {0} with file {1}" -f (Get-Date), $f
-            $print | Out-File $script:errorLogs -Append
-            write-host $print
-            "$print"  | Out-File $script:debuglogpath\pm598_$mts2.txt -Append
-             
-            # Read lastEmailSend from LastErrorEmailSent.txt and assign it to variable
-            $lastEmailSend = [IO.File]::ReadAllText($script:lastErrorEmailSent)
-            # Convert lastEmailSend to a date object
-            $lastEmailSendDate = [datetime]$lastEmailSend
-
-            # If error is found, and time is greater than lastEmailSendDate + errorEmailFrequencyMinutes, send email and update lastemailsend textfile
-            if ((Get-Date) -gt $lastEmailSendDate.AddMinutes([int]$errorEmailFrequencyMinutes)) {
-                # If error is detected and time is greater than lastemailsend + errorfrequencyminutes, send email and update file
-                send-mailmessage -subject "Warning: error detected by processmonitor_watch598." -body "An error (File $f was not found in General) was detected. Please check it. `n`nRef: this msg from computer: $(gc env:computername)  file: C:\data\script\tools599\watchcopy598\processmonitor_watch598.ps1" -to @("dgleba@stackpole.com") -dno onFailure -smtpServer MESG06.stackpole.ca -from 'dgleba@stackpole.com'
-                Set-Content  -Path $script:lastErrorEmailSent -Value (Get-Date)
-
-                # turnedoff 2021-08-29_Sun_13.23-PM..  task598restart
                 
                 Write-Host ""
 

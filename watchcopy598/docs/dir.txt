@@ -1,0 +1,77 @@
+
+=================================================
+2021-08-29_Sun_11.22-AM
+
+was in result.
+ dir  /s "72.1077 EPC_8542_hdr*"
+
+
+dgleba@SICS-GZPJL13 //pmda-bkh70w2/result
+$ ll
+total 48
+drwxrwx---+ 1 ymei           Domain Users    0 Aug 29 11:29  .
+dr-xr-xr-x  1 dgleba         Domain Users    0 Aug 29 11:30  ..
+-rwxrwx---+ 1 Administrators Domain Users 1166 Aug 29 00:15 '72.1077 EPC_6776_chr.txt'
+-rwxrwx---+ 1 Administrators Domain Users 4268 Aug 29 00:15 '72.1077 EPC_6776_fet.txt'
+-rwxrwx---+ 1 Administrators Domain Users 1508 Aug 29 00:15 '72.1077 EPC_6776_hdr.txt'
+-rwxrwx---+ 1 ymei           Domain Users 1166 Aug 28 23:07 '72.1077 EPC_8542_chr.txt'
+-rwxrwx---+ 1 ymei           Domain Users 4271 Aug 28 23:07 '72.1077 EPC_8542_fet.txt'
+-rwxrwx---+ 1 ymei           Domain Users 1517 Aug 28 23:07 '72.1077 EPC_8542_hdr.txt'
+-rwxrwx---+ 1 ymei           Domain Users 1166 Aug 28 23:10 '72.1077 EPC_8543_chr.txt'
+-rwxrwx---+ 1 ymei           Domain Users 4267 Aug 28 23:10 '72.1077 EPC_8543_fet.txt'
+-rwxrwx---+ 1 ymei           Domain Users 1517 Aug 28 23:10 '72.1077 EPC_8543_hdr.txt'
+dgleba@SICS-GZPJL13 //pmda-bkh70w2/result
+
+
+dgleba@SICS-GZPJL13 //pmda-bkh70w2/data/logs/watch598cmmresults
+$ grep -rin EPC_8542 *
+
+
+
+dgleba@SICS-GZPJL13 //pmda-bkh70w2/data/logs/watch598cmmresults
+$ grep -rin EPC_8542 *
+
+dgleba@SICS-GZPJL13 //pmda-bkh70w2/data/logs/watch598cmmresults
+$ grep -in EPC_8542 *
+grep: debug: Is a directory
+PMDA-BKH70W2-watch598-b-cmm-ps1--run-log.txt:14758:C:\result\72.1077 EPC_8542_hdr.txt Changed 08/28/2021 23:09:52
+PMDA-BKH70W2-watch598-b-cmm-ps1--run-log.txt:14759:C:\result\72.1077 EPC_8542_hdr.txt Created 08/28/2021 23:09:52
+PMDA-BKH70W2-watch598-b-cmm-ps1--run-log.txt:14760:C:\result\72.1077 EPC_8542_chr.txt Created 08/28/2021 23:09:52
+PMDA-BKH70W2-watch598-b-cmm-ps1--run-log.txt:14761:C:\result\72.1077 EPC_8542_fet.txt Changed 08/28/2021 23:09:52
+PMDA-BKH70W2-watch598-b-cmm-ps1--run-log.txt:14764:C:\result\72.1077 EPC_8542_fet.txt Created 08/28/2021 23:09:52
+PMDA-BKH70W2-watch598-b-cmm-ps1--run-log.txt:18382:C:\result\72.1077 EPC_8542_hdr.txt Created 08/29/2021 11:23:08
+
+_____________
+
+
+
+dgleba@SICS-GZPJL13 //pmda-bkh70w2/data/logs/watch598cmmresults
+$ grep -rin EPC_8542 *
+debug/watch598_debugtranscrpt_2021-08-28_00.00.03.log:43756:C:\result\72.1077 EPC_8542_hdr.txt was Changed at 2021-08-28 11:09:52 PM 2021-08-28 11:09:52 PM
+debug/watch598_debugtranscrpt_2021-08-28_00.00.03.log:43758:72.1077 EPC_8542_hdr.txt
+debug/watch598_debugtranscrpt_2021-08-28_00.00.03.log:43759:DEBUG: 2021-08-28_23.09.53, namesliced:72.1077 EPC_8542_ , filechr:72.1077 EPC_8542_chr.txt , chrfound:False, pathtemp3file:C:\data\cmm\system\temp3file\72.1077 EPC_8542_
+debug/watch598_debugtranscrpt_2021-08-28_00.00.03.log:43761:C:\result\72.1077 EPC_8542_hdr.txt was Created at 2021-08-28 11:09:52 PM 2021-08-28 11:09:54 PM
+debug/watch598_debugtranscrpt_2021-08-28_00.00.03.log:43763:72.1077 EPC_8542_hdr.txt
+debug/watch598_debugtranscrpt_2021-08-28_00.00.03.log:43765:C:\result\72.1077 EPC_8542_chr.txt was Created at 2021-08-28 11:09:52 PM 2021-08-28 11:09:54 PM
+debug/watch598_debugtranscrpt_2021-08-28_00.00.03.log:43767:72.1077 EPC_8542_chr.txt
+debug/watch598_debugtranscrpt_2021-08-28_00.00.03.log:43769:C:\result\72.1077 EPC_8542_fet.txt was Changed at 2021-08-28 11:09:52 PM 2021-08-28 11:09:54 PM
+debug/watch598_debugtranscrpt_2021-08-28_00.00.03.log:43771:72.1077 EPC_8542_fet.txt
+debug/watch598_debugtranscrpt_2021-08-28_00.00.03.log:43772:DEBUG: 2021-08-28_23.09.55, namesliced:72.1077 EPC_8542_ , filechr:72.1077 EPC_8542_chr.txt , chrfound:False, pathtemp3file:C:\data\cmm\system\temp3file\72.1077 EPC_8542_
+debug/watch598_debugtranscrpt_2021-08-28_00.00.03.log:43783:C:\result\72.1077 EPC_8542_fet.txt was Created at 2021-08-28 11:09:52 PM 2021-08-28 11:10:01 PM
+debug/watch598_debugtranscrpt_2021-08-28_00.00.03.log:43785:72.1077 EPC_8542_fet.txt
+debug/watch598_debugtranscrpt_2021-08-29_06.45.52.log:12339:C:\result\72.1077 EPC_8542_hdr.txt was Created at 2021-08-29 11:23:08 AM 2021-08-29 11:23:08 AM
+debug/watch598_debugtranscrpt_2021-08-29_06.45.52.log:12341:72.1077 EPC_8542_hdr.txt
+PMDA-BKH70W2-watch598-b-cmm-ps1--run-log.txt:14758:C:\result\72.1077 EPC_8542_hdr.txt Changed 08/28/2021 23:09:52
+PMDA-BKH70W2-watch598-b-cmm-ps1--run-log.txt:14759:C:\result\72.1077 EPC_8542_hdr.txt Created 08/28/2021 23:09:52
+PMDA-BKH70W2-watch598-b-cmm-ps1--run-log.txt:14760:C:\result\72.1077 EPC_8542_chr.txt Created 08/28/2021 23:09:52
+PMDA-BKH70W2-watch598-b-cmm-ps1--run-log.txt:14761:C:\result\72.1077 EPC_8542_fet.txt Changed 08/28/2021 23:09:52
+PMDA-BKH70W2-watch598-b-cmm-ps1--run-log.txt:14764:C:\result\72.1077 EPC_8542_fet.txt Created 08/28/2021 23:09:52
+PMDA-BKH70W2-watch598-b-cmm-ps1--run-log.txt:18382:C:\result\72.1077 EPC_8542_hdr.txt Created 08/29/2021 11:23:08
+
+dgleba@SICS-GZPJL13 //pmda-bkh70w2/data/logs/watch598cmmresults
+$
+
+
+
+
+=================================================

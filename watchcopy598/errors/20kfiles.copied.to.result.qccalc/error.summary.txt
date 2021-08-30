@@ -1,0 +1,18 @@
+
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+#@  
+#@  
+#@  
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@   2021-08-26
+
+20k files were copied into result folder of calypso.
+
+There should have been 20k creation events recorded in the created log. There were only about 2k events logged.
+There were fewer changed events logged. So 18k files were never handled.
+
+see other files here with details.
+
+_____________
+
+
+

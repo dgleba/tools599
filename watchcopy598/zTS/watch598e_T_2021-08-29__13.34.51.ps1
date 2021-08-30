@@ -56,13 +56,15 @@ write-host "Starting $thisNickName $(Get-date)  ----------"
 
 # noworky: $otherScriptInstances=get-wmiobject win32_process | where{$_.processname -eq 'powershell.exe' -and $_.ProcessId -ne $pid -and $_.commandline -match $($MyInvocation.MyCommand.Path)}
 
-$otherScriptInstances=Get-WmiObject Win32_Process -Filter "Name='powershell.exe' AND CommandLine LIKE '%watch598b.ps1%'" | where{$_.ProcessId -ne $pid }
+$otherScriptInstances=Get-WmiObject Win32_Process -Filter "Name='powershell.exe' AND CommandLine LIKE '%watch598e.ps1%'" | where{$_.ProcessId -ne $pid }
 
 write-host "others:$otherScriptInstances , pid:$pid"
 
 if ($otherScriptInstances -ne $null)
 {
+    $mts = (Get-Date).toString("yyyyMMdd_HH.mm.ss")
     "Already running another instance. This will exit now."
+    "$mts Already running another instance. This will exit now." | Out-File $global:logpath\watch598e_oneinstancelog_$((Get-Date).toString("yyyy-MM-dd")).log.txt -Append -NoClobber
     timeout 15
     exit
 }else
@@ -91,7 +93,7 @@ Invoke-expression $cmd
 
 # find all files that have a modification time older than n minutes and move them to interim folder. 
 # Don't move fresh files that might be unfinished.
-get-childitem -Path $PathToMonitor -Filter '*.txt'| Where-Object { $_.LastWriteTime -lt (Get-Date).AddMinutes(-1) }  |
+get-childitem -Path $PathToMonitor -Filter '*.txt'| Where-Object { $_.LastWriteTime -lt (Get-Date).AddMinutes(-2) }  |
     move-item -destination $interimfolder -verbose
 
 Start-Sleep 2
@@ -110,4 +112,4 @@ $mts = (Get-Date).toString("yyyyMMdd_HH.mm.ss")
 robocopy $interimfolder $copyToQCcalc  '*chr.txt*' '*hdr.txt*' '*fet.txt*' /mov /is /R:3 /W:4
 Start-Sleep 2
   
-timeout 1
+timeout 8

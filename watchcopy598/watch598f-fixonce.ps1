@@ -2,7 +2,7 @@
 
 # Status: 
 
-# Purpose:  move/copy files from windows task scheduler run once per minute.
+# Purpose:  move/copy files watch598 files once
 
 
 #  SETTINGS  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -15,12 +15,12 @@ $global:copyToQCcalc =  "C:\data\cmm\watchedoutput\qccalc"
 $global:copyToGeneral = "C:\data\cmm\watchedoutput\general"
 $global:copyToLitmus = "C:\data\cmm\watchedoutput\litmus"
 
-$global:thisNickName = "watch598e"
+$global:thisNickName = "watch598f"
 
 $global:logpath="c:\data\logs\watch598cmmresults"
 $global:pathPMRL = 'C:\data\logs\watch598cmmresults\processmonitor598e-runlog.txt'
 #
-$global:translogpath = "c:\data\logs\watch598cmmresults\debug\watch598e_debugtranscrpt"
+$global:translogpath = "c:\data\logs\watch598cmmresults\debug\watch598f_debugtranscrpt"
 
 #  SETTINGS end ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -44,7 +44,7 @@ cmd /c mkdir $logpath
 cmd /c mkdir $logpath\debug
 #
 # start transcript logging... 
-Start-Transcript -Path c:\data\logs\watch598cmmresults\debug\watch598e_debugtranscrpt_$((Get-Date).toString("yyyy-MM-dd")).log -Append -NoClobber
+Start-Transcript -Path c:\data\logs\watch598cmmresults\debug\watch598f_debugtranscrpt_$((Get-Date).toString("yyyy-MM-dd")).log -Append -NoClobber
 
 write-host "Starting $thisNickName $(Get-date)  ----------"
 
@@ -82,7 +82,7 @@ cmd /c mkdir $copyToGeneral
 cmd /c mkdir $global:copyToLitmus
 
 $mts = (Get-Date).toString("yyyyMMdd_HH.mm.ss")
-$cmd = "cmd /c echo Starting watch598e at $mts>>$logpath\$(gc env:computername)-$thisNickName--run-log.txt"
+$cmd = "cmd /c echo Starting watch598f at $mts>>$logpath\$(gc env:computername)-$thisNickName--run-log.txt"
 Invoke-expression $cmd
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -91,23 +91,10 @@ Invoke-expression $cmd
 
 # find all files that have a modification time older than n minutes and move them to interim folder. 
 # Don't move fresh files that might be unfinished.
-get-childitem -Path $PathToMonitor -Filter '*.txt'| Where-Object { $_.LastWriteTime -lt (Get-Date).AddMinutes(-1) }  |
+get-childitem -Path $PathToMonitor -Filter '*.txt'| Where-Object { $_.LastWriteTime -lt (Get-Date).AddMinutes(-10) }  |
     move-item -destination $interimfolder -verbose
 
 Start-Sleep 2
 
-# copy chr,hdr from B to E
-robocopy $interimfolder $copyToLitmus '*chr.txt*' '*hdr.txt*' /xo /is
-Start-Sleep 2
-
-# Copy all from B to C
-robocopy $interimfolder $copyToGeneral '*chr.txt*' '*hdr.txt*' '*fet.txt*' /xo
-Start-Sleep 2
-
-# Move all from B to D
-$mts = (Get-Date).toString("yyyyMMdd_HH.mm.ss")
-#robocopy $interimfolder $copyToQCcalc '*chr.txt*' '*hdr.txt*' '*fet.txt*' /mov /is /R:3 /W:4 /tee /log:$global:logpath\debug\robocopy.qcc_$mts.txt
-robocopy $interimfolder $copyToQCcalc  '*chr.txt*' '*hdr.txt*' '*fet.txt*' /mov /is /R:3 /W:4
-Start-Sleep 2
   
 timeout 1

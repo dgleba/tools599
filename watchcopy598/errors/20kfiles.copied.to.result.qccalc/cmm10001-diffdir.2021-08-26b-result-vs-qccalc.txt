@@ -8,6 +8,10 @@ https://serverfault.com/questions/177001/find-files-in-one-directory-not-in-anot
 
 good:
 
+in cygwin terminal:
+
+dir1='//pmda-bkh70w2/result'
+dir2='//pmda-bkh70w2/data/cmm/watchedoutput/qccalc'
 diff --brief  $dir1/ $dir2/  | tee /cygdrive/c/temp/cmm10001-diffdir.2021-08-26b.txt
 
 
