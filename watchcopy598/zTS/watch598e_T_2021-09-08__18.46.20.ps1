@@ -66,7 +66,7 @@ if ($otherScriptInstances -ne $null)
     "Already running another instance. This will exit now."
     "$mts Already running another instance. This will exit now." | Out-File $global:logpath\watch598e_oneinstancelog_$((Get-Date).toString("yyyy-MM-dd")).log.txt -Append -NoClobber
     timeout 15
-    exit  
+    exit
 }else
 {
     "No other instances running. Continue.."
@@ -105,16 +105,14 @@ if ($isfile.Length -gt 0) {
     Start-Sleep 4
 
     # copy chr,hdr from B to E
-    # remove all whitelines
-    (Get-Content watch598set-litmus.filecopy.list.conf )  -match '\S'  | Where { $_ } | Set-Content  $global:logpath\litmusfilecopylist.txt
-    foreach ($item in Get-Content $global:logpath\litmusfilecopylist.txt) {
-        # write-host  $item
+    foreach ($item in Get-Content watch598set-litmus.filecopy.list.conf) {
+        $item
         if (Test-Path $interimfolder\$item -PathType leaf) {
-            write-host "found: $item. Copying.."
+            write-host "found $item. copying.."
             cmd /c robocopy $interimfolder $copyToLitmus "$item" /xo /is |  C:\prg\cygwin64\bin\grep.exe  -v '*EXTRA File'
         }
         else {
-            write-host "NOT found: $item . do nothing."
+            write-host "NOT found $item. do nothing."
         }
         #cmd /c robocopy $interimfolder $copyToLitmus '72.7018*chr.txt*' '72.7018*hdr.txt*' /xo /is |  C:\prg\cygwin64\bin\grep.exe  -v '*EXTRA File'
         #cmd /c robocopy $interimfolder $copyToLitmus '72.1077*chr.txt*' '72.1077*hdr.txt*' /xo /is |  C:\prg\cygwin64\bin\grep.exe  -v '*EXTRA File'
@@ -135,7 +133,7 @@ if ($isfile.Length -gt 0) {
 }
 
 Stop-Transcript
-timeout 6
+timeout 3
 
 
 

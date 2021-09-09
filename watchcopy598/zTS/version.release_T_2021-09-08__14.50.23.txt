@@ -10,5 +10,5 @@ v6 - 2021-08-22_Sat_11.23-AM - added debugging
 v7 - 2021-08-24_Tue_08.52-AM - change log file name of created, changed.
 v8 - 2021-08-26_Thu_07.19-AM - adj change event.
 v9 - 2021-09-08_Wed_14.49-PM - filter files going to litmus.
-v10 - 2021-09-08_Wed_18.50-PM - change filter for litmus.
+
 

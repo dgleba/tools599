@@ -110,11 +110,11 @@ if ($isfile.Length -gt 0) {
     foreach ($item in Get-Content $global:logpath\litmusfilecopylist.txt) {
         # write-host  $item
         if (Test-Path $interimfolder\$item -PathType leaf) {
-            write-host "found: $item. Copying.."
+            write-host "found $item. copying.."
             cmd /c robocopy $interimfolder $copyToLitmus "$item" /xo /is |  C:\prg\cygwin64\bin\grep.exe  -v '*EXTRA File'
         }
         else {
-            write-host "NOT found: $item . do nothing."
+            write-host "NOT found $item. do nothing."
         }
         #cmd /c robocopy $interimfolder $copyToLitmus '72.7018*chr.txt*' '72.7018*hdr.txt*' /xo /is |  C:\prg\cygwin64\bin\grep.exe  -v '*EXTRA File'
         #cmd /c robocopy $interimfolder $copyToLitmus '72.1077*chr.txt*' '72.1077*hdr.txt*' /xo /is |  C:\prg\cygwin64\bin\grep.exe  -v '*EXTRA File'

@@ -165,8 +165,8 @@ if ($filesForA.Length -gt 0) {
 
 
 # run between two times @ ..
-  [int]$shr = 23
-  [int]$smin = 44
+  [int]$shr = 22
+  [int]$smin = 53
   $min = Get-Date ( "{0}:{1}:00" -f $shr, $smin )
   $max = Get-Date ( "{0}:{1}:00" -f $shr, ($smin+5) ) 
   $now = Get-Date

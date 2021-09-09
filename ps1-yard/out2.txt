@@ -1,0 +1,19 @@
+~~~~~~~~~~THERE.MUST.BE.NO.EMPTY.LINES~~~~~That.could.copy.all.files~~~~~~~~~~~~2
+72.1077 Coining 1st Off*_chr.txt
+72.1077 Coining 1st Off*_hdr.txt
+~~~~~~~~~~separator.just.for.visual.helper~~~~~~~~~~~~
+72.1077 Coining In Process*_chr.txt
+72.1077 Coining In Process*_hdr.txt
+~~~~~~~~~~separator.just.for.visual.helper~~~~~~~~~~~~
+72.7018 Coining 1st Off*_chr.txt
+72.7018 Coining 1st Off*_hdr.txt
+~~~~~~~~~~separator.just.for.visual.helper~~~~~~~~~~~~
+72.7018 Coining In Process*_chr.txt
+72.7018 Coining In Process*_hdr.txt
+~~~~~~~~~~separator.just.for.visual.helper~~~~~~~~~~~~
+72.9623 Coining 1st Off*_chr.txt
+72.9623 Coining 1st Off*_hdr.txt
+~~~~~~~~~~separator.just.for.visual.helper~~~~~~~~~~~~
+72.9623 Coining In Process*_chr.txt
+72.9623 Coining In Process*_hdr.txt
+~~~~~~~~~~last.line.in.file~~~NO.EMPTY.LINE.IS.ALLOWED.AFTER.THIS.LINE~~~That.could.copy.all.files~~~~~~~~~~~~

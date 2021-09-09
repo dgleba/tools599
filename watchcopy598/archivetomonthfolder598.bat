@@ -11,7 +11,7 @@ set sourcefolder=C:\result
 :: c:\data\archive\cmm
 
 
-:: date ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+:: get date ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 :: using powershell
@@ -33,15 +33,15 @@ echo ts_mon ... is %ts_mon%
 
 ::Move files older than minage. minage:30 is 30 days..
 
-robocopy %sourcefolder% C:\data\archive\cmm\calypso-c-result-archive\%ts_yr%-%ts_mon%-minus_lag /s /MOVE  /xf merge__*.txt /xf *.TMP /MINAGE:20 /IS /xo /R:3 /W:4  /tee /log:"C:\data\logs\watch598cmmresults\debug\rb-archi-calyp-%ts_dhms%-%random%"
+robocopy %sourcefolder% C:\data\archive\cmm\calypso-c-result-archive\%ts_yr%-%ts_mon%-minus_lag /s /MOVE  /xf merge__*.txt /xf *.TMP /MINAGE:21 /IS /xo /R:3 /W:4  /tee /log:"C:\data\logs\watch598cmmresults\debug\rb-archi-calyp-%ts_dhms%-%random%"
 
-robocopy C:\data\cmm\watchedoutput\general C:\data\archive\cmm\watch598data-archive-general\%ts_yr%-%ts_mon%-minus_lag /s /MOVE  /MINAGE:20 /IS /xo /R:3 /W:4  /tee /log:"C:\data\logs\watch598cmmresults\debug\rb-archi-general-%ts_dhms%-%random%"
+robocopy C:\data\cmm\watchedoutput\general C:\data\archive\cmm\watch598data-archive-general\%ts_yr%-%ts_mon%-minus_lag /s /MOVE  /MINAGE:15 /IS /xo /R:3 /W:4  /tee /log:"C:\data\logs\watch598cmmresults\debug\rb-archi-general-%ts_dhms%-%random%"
 
-robocopy C:\data\cmm\watchedoutput\qccalc C:\data\archive\cmm\watch598data-archive-qccalc\%ts_yr%-%ts_mon%-minus_lag /s /MOVE  /MINAGE:20 /IS /xo /R:3 /W:4  /tee /log:"C:\data\logs\watch598cmmresults\debug\rb-archi-qccalc-%ts_dhms%-%random%"
+robocopy C:\data\cmm\watchedoutput\qccalc C:\data\archive\cmm\watch598data-archive-qccalc\%ts_yr%-%ts_mon%-minus_lag /s /MOVE  /MINAGE:21 /IS /xo /R:3 /W:4  /tee /log:"C:\data\logs\watch598cmmresults\debug\rb-archi-qccalc-%ts_dhms%-%random%"
 
-robocopy C:\data\logs C:\data\archive\data\logs\%ts_yr%-%ts_mon%-minus_lag /s /MOVE  /MINAGE:10 /IS /xo /R:3 /W:4  /tee /log:"C:\data\logs\watch598cmmresults\debug\rb-archi-qccalc-%ts_dhms%-%random%"
+robocopy C:\data\logs C:\data\archive\data\logs\%ts_yr%-%ts_mon%-minus_lag /s /MOVE  /MINAGE:10 /IS /xo /R:3 /W:4  /tee /log:"C:\data\logs\watch598cmmresults\debug\rb-archi-logs-%ts_dhms%-%random%"
 
 
 
-timeout 55
+timeout 15
 
