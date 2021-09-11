@@ -47,7 +47,7 @@ cmd /c mkdir $logpath\debug
 # start transcript logging... 
 Start-Transcript -Path c:\data\logs\watch598cmmresults\debug\watch598e_debugtranscrpt_$((Get-Date).toString("yyyy-MM-dd_HH")).log -Append -NoClobber
 
-write-host "Starting $thisNickName $(Get-date)  $((Get-Date).toString("yyyyMMdd_HH.mm.ss")) Version 25  ----------"
+write-host "Starting $thisNickName $(Get-date)  $((Get-Date).toString("yyyyMMdd_HH.mm.ss")) Version 23  ----------"
 
 
 
