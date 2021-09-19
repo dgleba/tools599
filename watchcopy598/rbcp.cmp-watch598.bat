@@ -26,11 +26,11 @@ rem ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ dropbox to seaf mir
 set logf4="c:\temp\log\%ymd%\rb-move_wtch598_bu-%dhms%
 
 REM timeout  132
-robocopy \\PMDA-BKH70W2\data\script\tools599  c:\data\script\tools599     /e   /L /xf watch598settings.conf /xd xlibre /xf *_T_*  /dst /fft /xo /ndl /np /r:2 /w:2 /tee /eta /log:%logf4%_10001e_%random%"
+robocopy \\PMDA-BKH70W2\data\script\tools599  c:\data\script\tools599     /e   /L /xf watch598settings.conf /xd xlibre  /xd ".git" /xf *_T_*  /dst /fft /xo /ndl /np /r:2 /w:2 /tee /eta /log:%logf4%_10001e_%random%"
 
 
 
-robocopy c:\data\script\tools599    \\PMDA-BKH70W2\data\script\tools599  /e /L   /xf watch598settings.conf /xd xlibre /xf *_T_*  /dst /fft /xo /ndl /np /r:2 /w:2 /tee /eta /log:%logf4%_10001d_%random%"
+robocopy c:\data\script\tools599    \\PMDA-BKH70W2\data\script\tools599  /e /L   /xf watch598settings.conf /xd xlibre  /xd ".git" /xf *_T_*  /dst /fft /xo /ndl /np /r:2 /w:2 /tee /eta /log:%logf4%_10001d_%random%"
 
 @echo off 
 echo.
@@ -55,7 +55,7 @@ pause
 timeout 9871
 
 
-robocopy c:\data\script\tools599    \\PMDA-BKH70W2\data\script\tools599  /e      /xf watch598settings.conf /xd xlibre /xf *_T_*  /dst /fft /xo /ndl /np /r:2 /w:2 /tee /eta /log:%logf4%_10001d_%random%"
+robocopy c:\data\script\tools599    \\PMDA-BKH70W2\data\script\tools599  /e      /xf watch598settings.conf /xd xlibre  /xd .git /xf *_T_*  /dst /fft /xo /ndl /np /r:2 /w:2 /tee /eta /log:%logf4%_10001d_%random%"
 
 
 

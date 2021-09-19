@@ -15,4 +15,4 @@ v11 - 2021-09-09_Thu_08.49-AM - change file filter for litmus folder.
 v12 - 2021-09-09_Thu_23.11-PM - add litmust3 folder.
 v26 - 2021-09-10_Fri_07.16-AM - cleaning
 v27 - 2021-09-11_Sat_13.57-PM - cleaning
-v28 - 2021-09-19_Sun_09.51-AM - add:  where-object fullname -notlike "merge_*.txt" to # Make a list of files N minutes old. approx line#109 of watch598e.ps1.
+

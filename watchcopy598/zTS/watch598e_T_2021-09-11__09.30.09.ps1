@@ -9,7 +9,7 @@
 
 cmd /c cd 
 
-$global:watchversion='28'
+$global:watchversion='26'
 
 
 # Number of minutes old the modified timestamp is on the files to handle.
@@ -20,22 +20,14 @@ $global:interimfolder =  "C:\data\cmm\system\interimfolder"
 $global:copyToQCcalc =  "C:\data\cmm\watchedoutput\qccalc"
 $global:copyToGeneral = "C:\data\cmm\watchedoutput\general"
 $global:copyToLitmus = "C:\data\cmm\watchedoutput\litmus2"
-
 # temporarily copy some files here for my interest.
 $global:copyToLitmust3 = "C:\data\cmm\system\litmust3"
 
 $global:thisNickName = "watch598e"
 
-# log paths..
-
+$global:logpath="c:\data\logs\watch598cmmresults"
 $global:pathPMRL = 'C:\data\logs\watch598cmmresults\processmonitor598e-runlog.txt'
 #
-$global:logpath="c:\data\logs\watch598cmmresults"
-#
-# start transcript logging... 
-# I cannot get this to accept $logpath. Only accepting hard coded path..
-Start-Transcript -Path c:\data\logs\watch598cmmresults\debug\watch598e_debugtranscrpt_$((Get-Date).toString("yyyy-MM-dd_HH")).log -Append -NoClobber
-
 $global:translogpath = "c:\data\logs\watch598cmmresults\debug\watch598e_debugtranscrpt"
 
 #  SETTINGS end ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -58,6 +50,9 @@ $global:watch_file_filter = $s_watch_file_filter
 
 cmd /c mkdir $logpath
 cmd /c mkdir $logpath\debug
+#
+# start transcript logging... 
+Start-Transcript -Path c:\data\logs\watch598cmmresults\debug\watch598e_debugtranscrpt_$((Get-Date).toString("yyyy-MM-dd_HH")).log -Append -NoClobber
 
 write-host "Starting $thisNickName $(Get-date)  $((Get-Date).toString("yyyyMMdd_HH.mm.ss")) Version $watchversion  ----------"
 
@@ -106,7 +101,7 @@ Invoke-expression $cmd
 #  Main code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # Make a list of files N minutes old.
-$isfile = get-childitem -Path $PathToMonitor -Filter '*.txt'| Where-Object { $_.LastWriteTime -lt (Get-Date).AddMinutes($minutesold) } | where-object fullname -notlike "merge_*.txt"
+$isfile = get-childitem -Path $PathToMonitor -Filter '*.txt'| Where-Object { $_.LastWriteTime -lt (Get-Date).AddMinutes($minutesold) } 
 
 # if there are files to process, then do so..
 if ($isfile.Length -gt 0) {

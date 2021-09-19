@@ -9,7 +9,7 @@
 
 cmd /c cd 
 
-$global:watchversion='28'
+$global:watchversion='27'
 
 
 # Number of minutes old the modified timestamp is on the files to handle.
@@ -106,7 +106,7 @@ Invoke-expression $cmd
 #  Main code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # Make a list of files N minutes old.
-$isfile = get-childitem -Path $PathToMonitor -Filter '*.txt'| Where-Object { $_.LastWriteTime -lt (Get-Date).AddMinutes($minutesold) } | where-object fullname -notlike "merge_*.txt"
+$isfile = get-childitem -Path $PathToMonitor -Filter '*.txt'| Where-Object { $_.LastWriteTime -lt (Get-Date).AddMinutes($minutesold) } 
 
 # if there are files to process, then do so..
 if ($isfile.Length -gt 0) {
