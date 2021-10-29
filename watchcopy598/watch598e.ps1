@@ -9,7 +9,7 @@
 
 cmd /c cd 
 
-$global:watchversion='28'
+$global:watchversion='30'
 
 
 # Number of minutes old the modified timestamp is on the files to handle.
@@ -22,7 +22,7 @@ $global:copyToGeneral = "C:\data\cmm\watchedoutput\general"
 $global:copyToLitmus = "C:\data\cmm\watchedoutput\litmus2"
 
 # temporarily copy some files here for my interest.
-$global:copyToLitmust3 = "C:\data\cmm\system\litmust3"
+$global:copyToLitmust3 = "C:\data\cmm\system\litmus_tmp3"
 
 $global:thisNickName = "watch598e"
 
@@ -37,6 +37,17 @@ $global:logpath="c:\data\logs\watch598cmmresults"
 Start-Transcript -Path c:\data\logs\watch598cmmresults\debug\watch598e_debugtranscrpt_$((Get-Date).toString("yyyy-MM-dd_HH")).log -Append -NoClobber
 
 $global:translogpath = "c:\data\logs\watch598cmmresults\debug\watch598e_debugtranscrpt"
+
+
+# list of hosts to move litmus files to one cmm to be picked up by litmus - cmm 10001 is \\pmda-bkh70w2 (its an array)
+# just use $global:litmusMoveHostList = "this_turned_off" if you don't want to use this feature.
+# "SICS-GZPJL13" is dgleba laptop for testing.
+$global:litmusMoveHostArray = "pma-cmm1","nextcmmnamehere"
+#
+# destination host for litmus files.
+$global:litmusDestinationHost = "pmda-bkh70w2"
+
+
 
 #  SETTINGS end ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -138,6 +149,12 @@ if ($isfile.Length -gt 0) {
     }
     # copy all PSP part numbers to t3 for my reference temporarily. dgleba. 2021-09-09
     cmd /c robocopy $interimfolder $copyToLitmust3  '72.1077*.txt*' '72.7018*.txt*' '72.9623*.txt*' /xo  |  C:\prg\cygwin64\bin\grep.exe  -v '*EXTRA File'
+    
+    # if these settings are present around line 44 of this file, move the litmus files to destination computer for litmus to pick them up. 
+    if ( $global:litmusMoveHostArray.contains($(gc env:computername)) ) {
+      echo 'moving to cmm 10001...'
+      robocopy $copyToLitmus  "\\$global:litmusDestinationHost\litmus-data-cmm "  /mov /is /R:3 /W:4 | C:\prg\cygwin64\bin\grep.exe  -v '*EXTRA File'
+    }
     
     Start-Sleep 1
 

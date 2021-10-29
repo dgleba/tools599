@@ -17,3 +17,6 @@ v26 - 2021-09-10_Fri_07.16-AM - cleaning
 v27 - 2021-09-11_Sat_13.57-PM - cleaning
 v28 - 2021-09-19_Sun_09.51-AM - add:  where-object fullname -notlike "merge_*.txt" to # Make a list of files N minutes old. approx line#109 of watch598e.ps1.
 v29 - 2021-10-14_Thu_13.30-PM - edit sched task xml files to remove user id.
+v30 - 2021-10-29_Fri_18.38-PM - add move litmus from other hosts to cmm10001 feature.
+v31 - 2021-10-29_Fri_19.28-PM - version increment.
+
