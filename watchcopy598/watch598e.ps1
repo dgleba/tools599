@@ -9,7 +9,7 @@
 
 cmd /c cd 
 
-$global:watchversion='30'
+$global:watchversion='35'
 
 
 # Number of minutes old the modified timestamp is on the files to handle.
@@ -19,7 +19,7 @@ $global:interimfolder =  "C:\data\cmm\system\interimfolder"
 
 $global:copyToQCcalc =  "C:\data\cmm\watchedoutput\qccalc"
 $global:copyToGeneral = "C:\data\cmm\watchedoutput\general"
-$global:copyToLitmus = "C:\data\cmm\watchedoutput\litmus2"
+$global:copyToLitmus = "C:\data\cmm\watchedoutput\litmus"
 
 # temporarily copy some files here for my interest.
 $global:copyToLitmust3 = "C:\data\cmm\system\litmus_tmp3"
@@ -39,25 +39,33 @@ Start-Transcript -Path c:\data\logs\watch598cmmresults\debug\watch598e_debugtran
 $global:translogpath = "c:\data\logs\watch598cmmresults\debug\watch598e_debugtranscrpt"
 
 
-# list of hosts to move litmus files to one cmm to be picked up by litmus - cmm 10001 is \\pmda-bkh70w2 (its an array)
-# just use $global:litmusMoveHostList = "this_turned_off" if you don't want to use this feature.
-# "SICS-GZPJL13" is dgleba laptop for testing.
-$global:litmusMoveHostArray = "pma-cmm1","nextcmmnamehere"
-#
-# destination host for litmus files.
-$global:litmusDestinationHost = "pmda-bkh70w2"
-
-
-
 #  SETTINGS end ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 # settings-from-file ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-# get path to monitor from settings file..
+
+# definitions:
+
+# 1.
+# if you want some cmm's to have their litmus files moved to a particular cmm for ingestion to litmus..
+#
+# s_litmus_destination_host=@("pma-cmm1","nextcmmnamehere")
+#
+# list of hosts to move litmus files to one cmm to be picked up by litmus - cmm 10001 is \\pmda-bkh70w2 (its an array)
+# just use s_litmus_destination_host="this_turned_off" and s_litmus_destination_host="this_turned_off"  if you don't want to use this feature.
+# "SICS-GZPJL13" is dgleba laptop for testing.
+#
+# 2.
+# s_litmus_destination_host="pmda-bkh70w2"
+#
+# destination host to move litmus files.
+
+
+# get variables from settings file..
 Get-Content watch598settings.conf | Foreach-Object{
    $var = $_.Split('=')
-   New-Variable -Name $var[0] -Value $var[1]
+   New-Variable -Name $var[0] -Value $var[1] -Scope "global" -Force
 }
 
 $global:PathToMonitor = "$s_PathToMonitor"
@@ -150,12 +158,13 @@ if ($isfile.Length -gt 0) {
     # copy all PSP part numbers to t3 for my reference temporarily. dgleba. 2021-09-09
     cmd /c robocopy $interimfolder $copyToLitmust3  '72.1077*.txt*' '72.7018*.txt*' '72.9623*.txt*' /xo  |  C:\prg\cygwin64\bin\grep.exe  -v '*EXTRA File'
     
-    # if these settings are present around line 44 of this file, move the litmus files to destination computer for litmus to pick them up. 
-    if ( $global:litmusMoveHostArray.contains($(gc env:computername)) ) {
+    # if these settings refer to valid hosts present in your system, move the litmus files to destination computer for litmus to pick them up. 
+    if ( $global:s_litmus_move_from_host_array.contains($(gc env:computername)) ) {
       echo 'moving to cmm 10001...'
-      robocopy $copyToLitmus  "\\$global:litmusDestinationHost\litmus-data-cmm "  /mov /is /R:3 /W:4 | C:\prg\cygwin64\bin\grep.exe  -v '*EXTRA File'
+      robocopy $copyToLitmus  "\\\\$s_litmus_destination_host\litmus-data-cmm\"  /mov /is /R:3 /W:4 | C:\prg\cygwin64\bin\grep.exe  -v '*EXTRA File'
     }
-    
+
+
     Start-Sleep 1
 
     # Copy all from B to C

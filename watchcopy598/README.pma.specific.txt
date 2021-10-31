@@ -26,7 +26,7 @@ run  C:\data\script\tools599\watchcopy598\copy.initial.config.bat
 
 modify qccalc to pick up files from "C:\data\cmm\watchedoutput\qccalc"
 
-import tasks
+import tasks to task scheduler
 
 
 =================================================

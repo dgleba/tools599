@@ -38,7 +38,7 @@ copy watch598set-litmus.filecopy.list.conf backup\watch598set-litmus.filecopy.li
 
 
 copy watch598set-litmus.filecopy.list_example.conf watch598set-litmus.filecopy.list.conf
-copy watch598settings_example.conf watch598settings.conf
+copy watch598settings_pma-base.conf watch598settings.conf
 
 
 echo. 

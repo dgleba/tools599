@@ -19,4 +19,7 @@ v28 - 2021-09-19_Sun_09.51-AM - add:  where-object fullname -notlike "merge_*.tx
 v29 - 2021-10-14_Thu_13.30-PM - edit sched task xml files to remove user id.
 v30 - 2021-10-29_Fri_18.38-PM - add move litmus from other hosts to cmm10001 feature.
 v31 - 2021-10-29_Fri_19.28-PM - version increment.
+v32 - 2021-10-29_Fri_20.05-PM - change to litmus from litmus2.
+v34 - 2021-10-31_Sun_10.58-AM - move litmus host list to settings file.  cygwin copy.
+v35 - 2021-10-31_Sun_11.43-AM - fix
 

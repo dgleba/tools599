@@ -39,6 +39,23 @@ set logf4="c:\temp\log\%ymd%\rb-move_wtch598_bu-%dhms%
 :: /L option =  dry run.
 robocopy  "\\PMDA-FS01\Dept Shares\Engineering\0000_File transfer\dgleba\script\tools599 " c:\data\script\tools599   /e  /xf watch598settings.conf /xf watch598set-litmus.filecopy.list.conf /xd libre /xf *_T_*  /dst /fft /xo /ndl /np /r:2 /w:2 /tee /eta /log:%inst-updat%_engd_%random%"
 
+
+
+:: cygwin64 
+
+if exist "C:\prg\cygwin64\bin\grep.exe" (
+echo grep exists. OK. continuing..
+goto ending
+)
+
+copy  "\\PMDA-FS01\Dept Shares\Engineering\0000_File transfer\dgleba\script\cygwin64_smal_zipofinstalled_cygrunsrv.rsync.ssh_2021-08-30-c.zip" c:\prg 
+
+powershell Expand-Archive -Path c:\prg\cygwin64_smal_zipofinstalled_cygrunsrv.rsync.ssh_2021-08-30-c.zip -DestinationPath C:\prg
+
+
+
+
+:ending
 echo. 
 echo. 
 echo Reached end of install or update.
