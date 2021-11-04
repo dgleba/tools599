@@ -38,6 +38,7 @@ cmd /c echo "hello " $ma " 23 "2>&1>>c:\data\logs\test\15writeb.txt
 cmd /c echo `"hello 2,$ma, 33 ,`" 2>&1>>c:\data\logs\test\15writeb.txt
 cmd /c echo hello 4","$ma"," 44 2>&1>>c:\data\logs\test\15writeb.txt
 
+echo " test $ma 35"
 
 # =================================================
 

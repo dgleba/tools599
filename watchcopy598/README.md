@@ -27,13 +27,15 @@ This is called watch598 for two reasons.
 It was `watch` because it was using a built-in powershell file watching system. That was problematic. It missed most of the files
 when some thousands of files were dropped into the folder.
 
-2. 
-I use naming with a word and a number. It makes a unique name so I know what I am working on.
-
 Now it simply moves files more than X minutes old when it is run once.
 When run every minute from task scheduler, it does almost the same thing and it is more reliable.
 
 The `previously` folder has a version that used the file watch system.
+
+
+2. 
+I use naming with a word and a number. It makes a unique name so I know what I am working on.
+So, 598 is simply the next number in my list. I can more easily find my files for this project searching for watch 598 in my stuff.
 
 
  

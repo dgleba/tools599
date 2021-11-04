@@ -48,6 +48,8 @@ echo grep exists. OK. continuing..
 goto ending
 )
 
+echo copying grep. This may take a few minutes...
+
 copy  "\\PMDA-FS01\Dept Shares\Engineering\0000_File transfer\dgleba\script\cygwin64_smal_zipofinstalled_cygrunsrv.rsync.ssh_2021-08-30-c.zip" c:\prg 
 
 powershell Expand-Archive -Path c:\prg\cygwin64_smal_zipofinstalled_cygrunsrv.rsync.ssh_2021-08-30-c.zip -DestinationPath C:\prg

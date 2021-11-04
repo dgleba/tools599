@@ -1,0 +1,24 @@
+
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+#@  
+#@  Solved
+#@  
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@   2021-11-01[Nov-Mon]15-07PM 
+
+I used the security tab and added pmdacmm user there.
+
+
+=================================================
+=================================================
+
+Hi TJ,
+
+I get an error - see pic error-share.jpg.
+
+I want to write text files to  \\pmda-bkh70w2\result [cmm10001] 
+from 
+pma-cmm1 [cmm10000].
+
+result is shared - see result-share_bkh70w2.jpg
+
+Can you help?

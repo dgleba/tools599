@@ -22,4 +22,12 @@ v31 - 2021-10-29_Fri_19.28-PM - version increment.
 v32 - 2021-10-29_Fri_20.05-PM - change to litmus from litmus2.
 v34 - 2021-10-31_Sun_10.58-AM - move litmus host list to settings file.  cygwin copy.
 v35 - 2021-10-31_Sun_11.43-AM - fix
+v36 - 2021-10-31_Sun_11.43-AM - readme
+v37 - 2021-11-01_Mon_12.44-PM - adjust updater. copy litmus to cmm10001 \result
+v38 - 2021-11-01_Mon_16.56-PM - copy litmus to cmm10001 \litmus-data-cmm to avoid duplication in qccalc
+v39 - 2021-11-02_Tue_16.37-PM - litmus-from-other-cmms
+v40 - 2021-11-02_Tue_16.37-PM - fix bug
+v41 - 2021-11-03_Wed_17.27-PM - adj
+v42 - 2021-11-04_Thu_12.11-PM - add PMC-PRISMO1 to pma-base conf
+
 
