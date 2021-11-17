@@ -7,21 +7,22 @@ try
 		Write-Host "loop." -NoNewline
 		
 		$mts=(Get-Date).toString("yyyy-MM-dd_HH.mm.ss")
+		$fpname='n11dgleba-prismo'
 		
 		$ts2=(Get-Date).toString("mm.ss")
-		$ff = "C:\data\cmm\results from calypso\n11dgleba.{0}___{1}_chr.txt" -f $mts, $ts2
+		$ff = "C:\data\cmm\results from calypso\{0}.{1}___{2}_chr.txt" -f $fpname, $mts, $ts2
 		"$mts Victor $ma $nickname  Ashiedu $mts" | Out-File $ff  -Append
 		# cmd /c "echo $mts>>C:\data\cmm\results from calypso\n11.$mts_chr.txt"
 		timeout 1
 
 		# $ts2=(Get-Date).toString("mm.ss")
-		$ff = "C:\data\cmm\results from calypso\n11dgleba.{0}___{1}_hdr.txt" -f $mts, $ts2
+		$ff = "C:\data\cmm\results from calypso\{0}.{1}___{2}_hdr.txt" -f $fpname, $mts, $ts2
 		"$mts Victor $ma $nickname  Ashiedu $mts" | Out-File $ff  -Append
 		# echo $mts>>"C:\data\cmm\results from calypso\n11.$mts_hdr.txt"
 		timeout 1
 
 		# $ts2=(Get-Date).toString("mm.ss")
-		$ff = "C:\data\cmm\results from calypso\n11dgleba.{0}___{1}_fet.txt" -f $mts, $ts2
+		$ff = "C:\data\cmm\results from calypso\{0}.{1}___{2}_fet.txt" -f $fpname, $mts, $ts2
 		"$mts Victor $ma $nickname  Ashiedu $mts" | Out-File $ff  -Append
 		# echo $mts>>"C:\data\cmm\results from calypso\n11.$mts_fet.txt"
 		timeout 1

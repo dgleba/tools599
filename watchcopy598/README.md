@@ -102,7 +102,7 @@ There is a task scheduler export `watch_598_process_monitor.xml`. That can be im
  
     Run this..
     ```
-    Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
+    powershell Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
     ```
     This can be run without admin rights and works permanently as far as my experience goes.
 

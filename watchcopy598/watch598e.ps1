@@ -9,7 +9,7 @@
 
 cmd /c cd 
 
-$global:watchversion='42'
+$global:watchversion='44'
 
 
 # Number of minutes old the modified timestamp is on the files to handle.
@@ -24,6 +24,7 @@ $global:litmusfromother = "C:\data\cmm\system\litmus-from-other-cmm"
 
 # temporarily copy some files here for my interest.
 $global:copyToLitmust3 = "C:\data\cmm\system\litmus_tmp3"
+$global:copyToLitmust4 = "C:\data\cmm\system\litmus_tmp4"
 
 $global:thisNickName = "watch598e"
 
@@ -148,7 +149,8 @@ if ($isfile.Length -gt 0) {
         # write-host  $item
         if (Test-Path $interimfolder\$item -PathType leaf) {
             write-host "found: $item. Copying.."
-            cmd /c robocopy $interimfolder $copyToLitmus "$item" /xo /is |  C:\prg\cygwin64\bin\grep.exe  -v '*EXTRA File'
+            cmd /c robocopy $interimfolder $copyToLitmus   "$item" /xo /is |  C:\prg\cygwin64\bin\grep.exe  -v '*EXTRA File'
+            cmd /c robocopy $interimfolder $copyToLitmust4 "$item" /xo /is |  C:\prg\cygwin64\bin\grep.exe  -v '*EXTRA File'
         }
         else {
             write-host "NOT found: $item . do nothing."

@@ -29,5 +29,7 @@ v39 - 2021-11-02_Tue_16.37-PM - litmus-from-other-cmms
 v40 - 2021-11-02_Tue_16.37-PM - fix bug
 v41 - 2021-11-03_Wed_17.27-PM - adj
 v42 - 2021-11-04_Thu_12.11-PM - add PMC-PRISMO1 to pma-base conf
+v43 - 2021-11-04_Thu_14.13-PM - litmust4
+v44 - 2021-11-17_Wed_10.12-AM - update docs
 
 

@@ -49,3 +49,10 @@ _____________
 
 =================================================
 
+
+Machine	System	Gauge	hostname	IP Address	whoami	QC-Gauge Spec Plan Name	Litmus file watcher Function
+Duramax CMM Lab	CMM Computer (Duramax)	CMM	PMDA-DuramaxCMM	10.4.110.89		QC-Calc	not using this 
+CMM10000	CMM Computer (10000)	CMM	PMA-CMM1	10.4.72.5	stackpole\pmdacmm	QC-Calc	copies litmus files to cmm10001
+CMM10001	CMM Computer (10001)	CMM	PMDA-BKH70W2	10.4.71.61	stackpole\ymei	QC-Calc	Other CMMs copy litmus files to this one
+CMM10100	CMM Computer (10100)	CMM	PMC-PRISMO1	10.4.72.10	prismo1	QC-Calc	copies litmus files to cmm10001
+CMM10099	CMM Computer (10099)	CMM	PMDA-BKJ50W2	10.4.71.213		QC-Calc	DO NOT install watcher. It copies all files to to cmm10001 \result folder
