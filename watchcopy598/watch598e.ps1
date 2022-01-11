@@ -9,7 +9,7 @@
 
 cmd /c cd 
 
-$global:watchversion='44'
+$global:watchversion='47'
 
 
 # Number of minutes old the modified timestamp is on the files to handle.
@@ -64,7 +64,8 @@ $global:translogpath = "c:\data\logs\watch598cmmresults\debug\watch598e_debugtra
 # destination host to move litmus files.
 
 
-# get variables from settings file..
+# get variables from settings file..     
+# (Get-Content watch598settings.conf)  -match '\S'  | Where { $_ } | Foreach-Object{
 Get-Content watch598settings.conf | Foreach-Object{
    $var = $_.Split('=')
    New-Variable -Name $var[0] -Value $var[1] -Scope "global" -Force
@@ -168,7 +169,7 @@ if ($isfile.Length -gt 0) {
       echo 'moving to cmm 10001...'
       # copying to cmm10001 \result means that qccalc will ingest the files twice. once on on the source cmm and once on the destination.
       # copy to \litmus-data-cmm
-      robocopy $copyToLitmus  "\\\\$s_litmus_destination_host\litmus-from-other-cmm\"  /mov /is /R:3 /W:4 | C:\prg\cygwin64\bin\grep.exe  -v '*EXTRA File'
+      robocopy $copyToLitmus  "\\$s_litmus_destination_host\litmus-from-other-cmm\"  /mov /is /R:3 /W:4 | C:\prg\cygwin64\bin\grep.exe  -v '*EXTRA File'
     }
     else {
       echo 'Not moving litmus to central pc.'

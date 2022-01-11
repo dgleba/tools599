@@ -1,0 +1,12 @@
+
+-----Original Message-----
+From: dgleba@stackpole.com <dgleba@stackpole.com> 
+Sent: Wednesday, November 24, 2021 1:38 PM
+To: Dave Gleba <DGleba@stackpole.com>
+Subject: Warning: error detected by processmonitor_watch598.
+
+An error (File 8F24 Body 100%_rev3.3_15723_fet.txt was not found in General) was detected. Please check it. 
+
+Ref: this msg from computer: PMC-PRISMO1  file: C:\data\script\tools599\watchcopy598\processmonitor_watch598.ps1
+
+

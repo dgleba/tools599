@@ -116,10 +116,15 @@ function task598restart {
 
 # Get all files containing fet from folder A
 # $filesForA = Get-ChildItem $global:PathToMonitor -Filter '*fet.txt*' | Where-Object {$f.LastWriteTime -lt (Get-Date).AddMinutes(-2)} | Where-Object {$f.LastWriteTime -gt (Get-Date).AddMinutes(-122)}
-$filesForA = Get-ChildItem $global:PathToMonitor -Filter '*fet.txt*' | Where-Object {$_.LastWriteTime -lt (Get-Date).AddMinutes(-12) -and $_.LastWriteTime -ge (Get-Date).AddMinutes(-675)} 
+$filesForA = Get-ChildItem $global:PathToMonitor -Filter '*fet.txt*' | Where-Object {$_.LastWriteTime -lt (Get-Date).AddMinutes(-30) -and $_.LastWriteTime -ge (Get-Date).AddMinutes(-125)} 
+
 $mts = (Get-Date).toString("yyyyMMdd_HH.mm.ss")
 $mts2 = (Get-Date).toString("yyyyMMdd_HH")
+
 (Get-Date) | Out-File $script:debuglogpath\pm598_$mts2.txt -Append
+echo "filesfora = $filesForA lt= $((Get-Date).AddMinutes(-30)) ge= $((Get-Date).AddMinutes(-125))"| Out-File $script:debuglogpath\pm598_$mts2.txt -Append
+echo "filesfora = $filesForA lt= $((Get-Date).AddMinutes(-30)) ge= $((Get-Date).AddMinutes(-125))"
+
 # Check if file > 1 minute old in A is also in general (WORKING I THINK)
 if ($filesForA.Length -gt 0) {
     foreach ($f in $filesForA) {
@@ -181,4 +186,4 @@ if ($filesForA.Length -gt 0) {
 # end. run between two times
 
 
-timeout 35
+timeout 235

@@ -31,5 +31,7 @@ v41 - 2021-11-03_Wed_17.27-PM - adj
 v42 - 2021-11-04_Thu_12.11-PM - add PMC-PRISMO1 to pma-base conf
 v43 - 2021-11-04_Thu_14.13-PM - litmust4
 v44 - 2021-11-17_Wed_10.12-AM - update docs
-
+v45 - 2021-11-22_Mon_20.39-PM - fix path, change processmonitor check time range
+v46 - 2021-11-24_Wed_15.18-PM - add to process monitor log
+v47	- 2022-01-04_Tue_16.57-PM - bump version.
 
