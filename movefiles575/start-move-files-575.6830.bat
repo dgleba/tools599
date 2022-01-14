@@ -46,8 +46,14 @@ timeout 3
 
 
 ::REM c:\prg\cygwin64\bin\cygstart.exe --showminimized   c:\prg\cygwin64\bin\bash.exe -l -c "/cygdrive/c/data/script/movefiles575/move_files_to_nas575.sh>/cygdrive/c/temp/moveimg/sched_rsynclog.log 2>&1"
-c:\prg\cygwin64\bin\bash.exe -l -c "/cygdrive/c/data/script/movefiles575/move_files_to_nas575.6830.sh>/cygdrive/c/temp/moveimg/sched_rsynclog.log 2>&1"
+c:\prg\cygwin64\bin\bash.exe -l -c "/cygdrive/c/data/script/tools599/movefiles575/move_files_to_nas575.6830.sh>/cygdrive/c/temp/moveimg/sched_rsynclog.log 2>&1"
 timeout 4
+
+set timea=%TIME: =0%
+:: dhms2
+set ymd=%date:~12,2%%date:~4,2%%date:~7,2%&set dhms2=%date:~12,2%%date:~4,2%%date:~7,2%_%timea:~0,2%%timea:~3,2%%timea:~6,2%
+echo %dhms% ending move575 %dhms2%>>c:\temp\moveimg\startmovefile575.6830.log.txt 
+timeout 3
 
 goto end
 

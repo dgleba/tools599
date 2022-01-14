@@ -33,11 +33,11 @@ cd "${ssc}"
 # https://www.timeanddate.com/date/timeduration.html
 # find . -type f  -mtime +2 > ${tfc}
 #find . -type f  -mmin +1920 > ${tfc}
-find . -type f  -mtime +360 > ${tfc}
+find . -type f  -mtime +107 > ${tfc}
 echo file list..
 cat ${tfc}
 
-s=1 ; read  -rsp $"Wait $s seconds or press Escape-key or Arrow key to continue..." -t $s -d $'\e'; echo;echo;
+s=31 ; read  -rsp $"Wait $s seconds or press Escape-key or Arrow key to continue..." -t $s -d $'\e'; echo;echo;
 
 # REM :movefiles
 echo moving files..
@@ -50,7 +50,8 @@ rsync -avv --ignore-existing --remove-source-files --log-file=${tempdir}/rsynclo
 # find ${ssc}/  -mindepth 1  -mtime +3  -type d -empty -delete
 # find "${ssc}/"  -mindepth 1  -mmin +4310 -type d -empty -delete
 echo removing older empty folders..
-find "${ssc}/"  -mindepth 1  -mmin +$((2*60*24-1)) -type d -empty -delete
+# find "${ssc}/"  -mindepth 1  -mmin +$((2*60*24-1)) -type d -empty -delete
+find "${ssc}/"  -mindepth 1  -mmin +$((180*60*24-1)) -type d -empty -delete
  
 }
 
@@ -140,26 +141,27 @@ cp ${tempdir}/sched_rsynclog.log ${tempdir}/rsynclog${timestart}.wtasksch.log
 
 # remove old log files. +60 is older than 60 days ..
 # find ${tempdir} -mtime +60 -iname "*" -exec rm {} \;
-find ${tempdir} -mtime +60  -exec rm {} \;
+find ${tempdir} -mtime +90  -exec rm {} \;
 
-
-# put back empty camera name folders just in case they are not created if not exists.
-cd "${ssc}"
-c1='S1 Inner Rim'
-c2='S1 Outer Surface'
-c3='S1 Top View'
-c4='S2 Inner Rim'
-c5='S2 Top View'
-mkdir -p  "${c1}"
-mkdir -p  "${c2}"
-mkdir -p  "${c3}"
-mkdir -p  "${c4}"
-mkdir -p  "${c5}"
-touch "${ssc}"/"${c1}"/.keep
-touch "${ssc}"/"${c2}"/.keep
-touch "${ssc}"/"${c3}"/.keep
-touch "${ssc}"/"${c4}"/.keep
-touch "${ssc}"/"${c5}"/.keep
+mkdirbase() {
+  # put back empty camera name folders just in case they are not created if not exists.
+  cd "${ssc}"
+  c1='S1 Inner Rim'
+  c2='S1 Outer Surface'
+  c3='S1 Top View'
+  c4='S2 Inner Rim'
+  c5='S2 Top View'
+  mkdir -p  "${c1}"
+  mkdir -p  "${c2}"
+  mkdir -p  "${c3}"
+  mkdir -p  "${c4}"
+  mkdir -p  "${c5}"
+  touch "${ssc}"/"${c1}"/.keep
+  touch "${ssc}"/"${c2}"/.keep
+  touch "${ssc}"/"${c3}"/.keep
+  touch "${ssc}"/"${c4}"/.keep
+  touch "${ssc}"/"${c5}"/.keep
+}
 
 #Remove the lock directory
 if rmdir ${LOCKDIR}; then
