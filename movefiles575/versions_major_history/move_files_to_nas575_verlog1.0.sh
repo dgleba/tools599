@@ -32,7 +32,7 @@ cd "${ssc}"
 # find must be run from . current folder to get the list formated for rsync to use it.
 # https://www.timeanddate.com/date/timeduration.html
 # find . -type f  -mtime +2 > ${tfc}
-find . -type f  -mmin +2000 > ${tfc}
+find . -type f  -mmin +1920 > ${tfc}
 echo file list..
 cat ${tfc}
 
@@ -113,7 +113,7 @@ fi
 function dobootcheck {
 
 echo Run the boottime check..
-	echo "=============          At:   $timestart">>${tempdir}/boottime.log
+	echo "=============   At:   $timestart">>${tempdir}/boottime.log
 	systeminfo|grep "Boot Time">>${tempdir}/boottime.log
 uptime_seconds=`cat /proc/uptime | cut -f1 -d'.'`
 
@@ -121,7 +121,7 @@ echo uptime_seconds: $uptime_seconds
 # 370000 seconds is about 4.3 days.
 if [ $uptime_seconds -ge 370000 ]; then
 echo "sending error email uptime, ${usep}% on ${HOSTNAME} ..."
-/cygdrive/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe 'send-mailmessage -subject "Warning: uptime too long" -body "There seems to be more than 4 days uptime. Please check it. `n`nRef: this msg from 6365 IPC C:\data\script\movefiles575\move_files_to_nas575.sh" -to @("dgleba@stackpole.com") -dno onFailure -smtpServer MESG01.stackpole.ca -from "dgleba@stackpole.com"'
+/cygdrive/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe 'send-mailmessage -subject "Warning: uptime too long. 6365 vision." -body "There seems to be more than 4 days uptime. Please check it. `n`nRef: this msg from 6365 IPC C:\data\script\movefiles575\move_files_to_nas575.sh" -to @("dgleba@stackpole.com") -dno onFailure -smtpServer MESG01.stackpole.ca -from "dgleba@stackpole.com"'
 fi
 
 }
@@ -180,6 +180,8 @@ s=16 ; read  -rsp $"Wait $s seconds or press Escape-key or Arrow key to continue
 
 #  start here
 
+trap "cleanup" EXIT
+
 # cd to a temp folder in case some command is wrongly set to work on current folder.
 cd /tmp ;mkdir -p ~/tmp; cd ~/tmp; pwd
 
@@ -197,7 +199,8 @@ ssc=/cygdrive/c/Users/pmdacameras/My\ Documents/LabVIEW\ Data/SGE\ Rotor\ Vision
 
 
 # REM :destination dir
-ddc="//pmda-sgenas01/PMDA-SGE/image_data/SGE_Rotor_6365"
+# temporary change to d drive 2021-07-19 ---  ddc="//pmda-sgenas01/PMDA-SGE/image_data/SGE_Rotor_6365"
+ddc="/cygdrive/d/image_data/SGE_Rotor_6365"
 mkdir -p ${ddc}
 
 # REM :tempfile
@@ -210,41 +213,49 @@ checkdiskspace
 # this will run something only at a specified hour.
 onetimeperday
 
+
 function_one
+
 
 #
 # set lockdir so that script will only run one instance..
 #
-LOCKDIR=/cygdrive/c/temp/lockdir_oneinstance_lockdir_sgemove
-if mkdir ${LOCKDIR}; then
+# LOCKDIR=/cygdrive/c/temp/lockdir_oneinstance_lockdir_sgemove
+# if mkdir ${LOCKDIR}; then
     # Ensure that if we "grabbed a lock", we release it # Works for SIGTERM and SIGINT(Ctrl-C)
-    trap "cleanup" EXIT
+    # trap "cleanup" EXIT
     #echo "Acquired one-instance-only lock, running the content.."
-    echo "disabled, but made one-instance-only lock, running the content.."
+    # echo "disabled, but made one-instance-only lock, running the content.."
     #
     # Main Processing starts here
     #
     #disabled - using window title:   function_one
-else
+# else
 	# 2021-05-27 having trouble. lockdir too often is not removed.
 	# disabled here by running function_one no matter what.
 	# see C:\data\script\movefiles575\start-move-files-575.bat
 	# echo "Could not create one-instance lock directory '$LOCKDIR'. Is it already running?"
 	# echo "Could not create one-instance lock directory '$LOCKDIR' at  $(date +"_%Y.%m.%d_%H.%M.%S")">> ${tempdir}/one_instance$(date +"_%Y.%m.%d").log
     # exit 1
-fi
+# fi
+
+
 
 # -----------------------------------------
 # -----------------------------------------
 # -----------------------------------------
 # -----------------------------------------
 # -----------------------------------------
+
 
 
 # History:
 
+# 2021-07-27 r39  edit subject of uptime email, line ~124
+# 2021-07-19 r38  change to d drive due to nas full. ~line 202
+# 2021-07-06 r37  line 35 was 2000, now find . -type f  -mmin +1920 > ${tfc}
+#					change cleanup call to line 183
 # 2021-07-06 r36 minor changes
-
 # 2021-07-05 r35  ~line 140 was: remove old log files.. find ${tempdir} -mtime +60 -iname "*" -exec rm {} \;
 # 2021-07-05 r34  add boot time check
 # 2021-06-24 reduce minutes of images  saved to 2000 from 2880. change space check to 85%.

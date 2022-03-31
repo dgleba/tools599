@@ -33,7 +33,8 @@ cd "${ssc}"
 # https://www.timeanddate.com/date/timeduration.html
 # find . -type f  -mtime +2 > ${tfc}
 #find . -type f  -mmin +1920 > ${tfc}
-find . -type f  -mtime +107 > ${tfc}
+# find . -type f  -mmin +99339 > ${tfc}
+# find . -type f  -mtime +70 > ${tfc}
 echo file list..
 cat ${tfc}
 
@@ -42,7 +43,8 @@ s=31 ; read  -rsp $"Wait $s seconds or press Escape-key or Arrow key to continue
 # REM :movefiles
 echo moving files..
 set -vx # echo on
-rsync -avv --ignore-existing --remove-source-files --log-file=${tempdir}/rsynclog${timestart}.log  --files-from=${tfc} . ${ddc} 
+#-a was not preserving mod time stamp on nas#2. 2022-01-16 dgleba.
+rsync  -vtlr --ignore-existing --remove-source-files --log-file=${tempdir}/rsynclog${timestart}.log  --files-from=${tfc} . ${ddc} 
 # rsync -avv --ignore-existing --remove-source-files   --files-from=${tfc} . ${ddc} 
 
 #remove empty folders because rsync does not

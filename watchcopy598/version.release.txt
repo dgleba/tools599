@@ -34,4 +34,5 @@ v44 - 2021-11-17_Wed_10.12-AM - update docs
 v45 - 2021-11-22_Mon_20.39-PM - fix path, change processmonitor check time range
 v46 - 2021-11-24_Wed_15.18-PM - add to process monitor log
 v47	- 2022-01-04_Tue_16.57-PM - bump version.
-
+v48 - 2022-02-13_Sun_17.09-PM - alter process mon due to slow prismo1 computer.
+v49 - 2022-02-13_Sun_21.48-PM - alter process mon due to slow prismo1 computer. add oneinstance log write.

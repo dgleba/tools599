@@ -23,6 +23,8 @@ rem ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ run tasks on yoga c740
 
 REM @echo off
 
+:prevent more than one instance from running at the same time..
+
 :: Window title must be unique.
 set batch_title=start-move-files-575_bat
 :: Run tasklist in verbose mode (which returns window titles) and search for the window title of this batch file:

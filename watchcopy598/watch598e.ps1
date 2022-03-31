@@ -9,7 +9,7 @@
 
 cmd /c cd 
 
-$global:watchversion='47'
+$global:watchversion='49'
 
 
 # Number of minutes old the modified timestamp is on the files to handle.
