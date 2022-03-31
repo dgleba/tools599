@@ -19,7 +19,7 @@ rem ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ dropbox to seaf mir
 :main
 
 set logf4="c:\temp\log\%ymd%\rb-move_575_bu-%dhms%-%random%"
-robocopy C:\data\script  \\pmda-sgenas01\PMDA-SGE\backup\mc6365_c_data_script  /e   /xf *._sync* /xd libre  /dst /fft /xo /ndl /np /r:0 /w:0 /tee /eta /log:%logf4%
+robocopy C:\data\script  \\pmda-sgenas01\PMDA-SGE\backup\mc6365_c_data_script  /e   /xf *._sync* /xd libre 6830_xml_to_csv_env /dst /fft /xo /ndl /np /r:0 /w:0 /tee /eta /log:%logf4%
 
 
 
