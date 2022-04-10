@@ -1,5 +1,5 @@
 
-::# see revision history at bottom.
+::# move files.  rev: 3   David Gleba daterange: 2021-05-28 -- 2021-05-28_Fri_08.49-AM
 
 ::# purpose: startup -  move_files_to_nas575.sh
 
@@ -23,8 +23,6 @@ rem ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ run tasks on yoga c740
 
 REM @echo off
 
-
-
 :: Window title must be unique.
 set batch_title=start-move-files-575_bat
 :: Run tasklist in verbose mode (which returns window titles) and search for the window title of this batch file:
@@ -42,20 +40,14 @@ title %batch_title%
 echo Start main routine
 
 :loop
-echo %dhms% starting move575>>c:\temp\moveimg\startmovefile575.6830.log.txt
+echo %dhms% starting move575>>c:\temp\moveimg\startmovefile575.log.txt
 timeout 3
 ::goto loop
 
 
 ::REM c:\prg\cygwin64\bin\cygstart.exe --showminimized   c:\prg\cygwin64\bin\bash.exe -l -c "/cygdrive/c/data/script/movefiles575/move_files_to_nas575.sh>/cygdrive/c/temp/moveimg/sched_rsynclog.log 2>&1"
-c:\prg\cygwin64\bin\bash.exe -l -c "/cygdrive/c/data/script/tools599/movefiles575/move_files_to_nas575.6830.sh>/cygdrive/c/temp/moveimg/sched_rsynclog.log 2>&1"
+c:\prg\cygwin64\bin\bash.exe -l -c "/cygdrive/c/data/script/movefiles575/move_files_to_nas575.sh>/cygdrive/c/temp/moveimg/sched_rsynclog.log 2>&1"
 timeout 4
-
-set timea=%TIME: =0%
-:: dhms2
-set ymd=%date:~12,2%%date:~4,2%%date:~7,2%&set dhms2=%date:~12,2%%date:~4,2%%date:~7,2%_%timea:~0,2%%timea:~3,2%%timea:~6,2%
-echo %dhms% ending move575 %dhms2%>>c:\temp\moveimg\startmovefile575.6830.log.txt 
-timeout 11
 
 goto end
 
@@ -80,18 +72,13 @@ goto end
 
 :AlreadyRunning
 echo.
-echo %dhms% one.instance enforcement was invoked by tasklist window title checking.>>c:\temp\moveimg\one.instance.enforcement.log.txt
+echo %dhms% one.instance enforcement was invoked by tasklist window title checking.>>c:\temp\moveimg\one.instance.enforcement.%ymd%.log.txt
 
 echo This cmd batch file is already running. exiting..
-timeout 14
+timeout 6
 endlocal
 
 :end
 
-
 :: History:
-
-
-:: 2021-07-06 r4  line ~75 renamed to one.instance.enforcement.log.txt
-:: 2021-05-28     add one.instance.enforcement.%ymd%.log.txt
-:: # move files.  rev:  David Gleba daterange: 2021-05-28 -- 
+:: 2021-05-28 add one.instance.enforcement.%ymd%.log.txt
