@@ -35,7 +35,7 @@ cd "${ssc}"
 # find . -type f  -mmin +1920 > ${tfc}
 # find . -type f  -mmin +99339 > ${tfc}
 # find . -type f  -mtime +100 > ${tfc}
-find . -type f  -mtime +52 > ${tfc}
+find . -type f  -mtime +51 > ${tfc}
 echo file list..
 cat ${tfc}
 
@@ -48,8 +48,9 @@ set -vx # echo on
 rsync  -vtlr -u --remove-source-files --log-file=${tempdir}/rsynclog${timestart}.log  --files-from=${tfc} . ${ddc} 
 # rsync -avv --ignore-existing --remove-source-files   --files-from=${tfc} . ${ddc} 
 
+# sometimes with mindepth 1 it doesn't touch/delete them. but it did with mindepth removed. 2022-04-11.
 echo "some empty folders may have newer dates than they should. touching.."
-find "${ssc}/" -mindepth 1  -type d -empty -exec touch -t 202101010101  {} \;
+find "${ssc}/"  -mindepth 1 -type d -empty -exec touch -t 202101010101  {} \;
 
 #remove empty folders because rsync does not
 # find "${ssc}" -type d -empty -delete -mtime +3 
@@ -58,7 +59,7 @@ find "${ssc}/" -mindepth 1  -type d -empty -exec touch -t 202101010101  {} \;
 # find "${ssc}/"  -mindepth 1  -mmin +$((2*60*24-1)) -type d -empty -delete
 # find "${ssc}/"  -mindepth 1  -mmin +$((135*60*24-1)) -type d -empty -delete
 echo removing older empty folders..
-find "${ssc}/" -mindepth 2  -mtime +67 -type d -empty -delete
+find "${ssc}/" -mindepth 2  -mtime +53 -type d -empty -delete
   
 }
 
