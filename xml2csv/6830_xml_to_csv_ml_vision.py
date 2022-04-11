@@ -50,6 +50,7 @@ yesterdays_datetime = current_datetime - datetime.timedelta(days=1)
 yesterdays_datetime_string = str(yesterdays_datetime)
 report_filename = '6830_xml_to_csv_report' + '--' + yesterdays_datetime_string[0:10] + '.csv'
 
+
 print('Generating report, please wait...')
 
 xml_data = open(report_filename, 'w', newline='') #open a file for writing
@@ -111,14 +112,16 @@ for file_pathways in current_file_path_list:
         # this code creates the code for the first row on the first iteration of the for loop
         # after the header is created, the count = 1, and so 'if count ==0' gets bypassed, and each new row gets appended
                     if count == 0:
-                        Pathway = header.append('Path Way')
-                        Filename = header.append('File Name')
+                        Pathway = header.append('Full_Path_Way')
+                        Basepath = header.append('Base_Path')
+                        Filename = header.append('File_Name')
                         Camera = header.append('Camera')
                         Datetime = header.append('Datetime')
+                        Datetime_slice = header.append('ISO_8601')
                         Width = header.append('Width')
                         Height = header.append('Height')
                         Depth = header.append('Depth')
-                        Defecttype = header.append('Defect Type')
+                        Defecttype = header.append('Defect_Type')
                         Xmin = header.append('xmin')
                         Ymin = header.append('ymin')
                         Xmax = header.append('xmax')
@@ -131,7 +134,9 @@ for file_pathways in current_file_path_list:
 
                 #Need to append filename in first column before variables from xml file are pulled
                     xml_file_name.append(current_file_path)
+                    xml_file_name.append(subdirs)
                     xml_file_name.append(filename)
+
                     count = count + 1
                     # print(str(count) + current_file_path, object_tag[0].text)
 
@@ -147,20 +152,26 @@ for file_pathways in current_file_path_list:
                     for character in filename:
                         if character.isnumeric():
                             datetime_stamp.append(character)
-                    
                     year_month_day = str(''.join(datetime_stamp[0:6]))
-                    hour_minute_second = str(''.join(datetime_stamp[7:]))
+                    hour_minute_second = str(''.join(datetime_stamp[6:]))
 
                     datetime_stamp_string = str(year_month_day + '  ' + hour_minute_second)
-                    
+
                     datetime_object = datetime.datetime.strptime(datetime_stamp_string, '%y%m%d %H%M%S')
                     datetime_object_string = str(datetime_object)
+                    
 
                     for character in datetime_object_string:
                         if character == ' ':
                             extra_space_in_datetime_string = datetime_object_string[0:11] + ' ' + datetime_object_string[11:]
+                            
 
                     xml_file_name.append(extra_space_in_datetime_string)
+
+                    datetime_from_filename = filename[-17:-4]
+                    xml_file_name.append(datetime_from_filename)
+
+                    #xml_file_name.append(ext)
 
                 # Size of defect?
                     size = root.find('size')
@@ -184,7 +195,7 @@ for file_pathways in current_file_path_list:
                     xml_file_name.append(defecttype)
 
                     bndbox = object_tag[4]
-
+                    
                     xmin = bndbox[0].text
                     xml_file_name.append(xmin)
 
@@ -201,13 +212,13 @@ for file_pathways in current_file_path_list:
                     xml_file_name.append(score)
 
                     try:
-                        if xml_file_name[13] in xml_file_name:
-                            del xml_file_name[0:13]
+                        if xml_file_name[15] in xml_file_name:
+                            del xml_file_name[0:15]
                             # print(xml_file_name) #this prints whenever it finds more than one defect in a file
 
                     except:
                         pass
-
+                    print(xml_file_name)
                     csvwriter.writerow(xml_file_name)
                     x = re.search(filename, current_file_path)
                 
