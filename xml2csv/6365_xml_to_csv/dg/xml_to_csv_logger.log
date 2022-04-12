@@ -1,0 +1,15 @@
+[Tue, 25 Jan 2022 12:48:12] DEBUG [6365_xml_to_csv_by_folder-dg1.py,hello_logger:24] Debug means: Detailed information, typically of interest only when diagnosing problems.
+[Tue, 25 Jan 2022 12:48:12] INFO [6365_xml_to_csv_by_folder-dg1.py,hello_logger:25] Info means: Confirmation that things are working as expected.
+[Tue, 25 Jan 2022 12:48:12] WARNING [6365_xml_to_csv_by_folder-dg1.py,hello_logger:26] Warning means: An indication that something unexpected happened, or indicative of some problem in the near future. Software working as expected.
+[Tue, 25 Jan 2022 12:48:12] ERROR [6365_xml_to_csv_by_folder-dg1.py,hello_logger:27] Error means: Due to a more serious problem, the software has not been able to perform some function.
+[Tue, 25 Jan 2022 12:48:12] CRITICAL [6365_xml_to_csv_by_folder-dg1.py,hello_logger:28] Critical means: A serious error, indicating that the program itself may be unable to continue running.
+[Tue, 25 Jan 2022 12:53:12] DEBUG [6365_xml_to_csv_by_folder-dg1.py,hello_logger:24] Debug means: Detailed information, typically of interest only when diagnosing problems.
+[Tue, 25 Jan 2022 12:53:12] INFO [6365_xml_to_csv_by_folder-dg1.py,hello_logger:25] Info means: Confirmation that things are working as expected.
+[Tue, 25 Jan 2022 12:53:12] WARNING [6365_xml_to_csv_by_folder-dg1.py,hello_logger:26] Warning means: An indication that something unexpected happened, or indicative of some problem in the near future. Software working as expected.
+[Tue, 25 Jan 2022 12:53:12] ERROR [6365_xml_to_csv_by_folder-dg1.py,hello_logger:27] Error means: Due to a more serious problem, the software has not been able to perform some function.
+[Tue, 25 Jan 2022 12:53:12] CRITICAL [6365_xml_to_csv_by_folder-dg1.py,hello_logger:28] Critical means: A serious error, indicating that the program itself may be unable to continue running.
+[Tue, 25 Jan 2022 12:56:08] DEBUG [6365_xml_to_csv_by_folder-dg1.py,hello_logger:24] Debug means: Detailed information, typically of interest only when diagnosing problems.
+[Tue, 25 Jan 2022 12:56:08] INFO [6365_xml_to_csv_by_folder-dg1.py,hello_logger:25] Info means: Confirmation that things are working as expected.
+[Tue, 25 Jan 2022 12:56:08] WARNING [6365_xml_to_csv_by_folder-dg1.py,hello_logger:26] Warning means: An indication that something unexpected happened, or indicative of some problem in the near future. Software working as expected.
+[Tue, 25 Jan 2022 12:56:08] ERROR [6365_xml_to_csv_by_folder-dg1.py,hello_logger:27] Error means: Due to a more serious problem, the software has not been able to perform some function.
+[Tue, 25 Jan 2022 12:56:08] CRITICAL [6365_xml_to_csv_by_folder-dg1.py,hello_logger:28] Critical means: A serious error, indicating that the program itself may be unable to continue running.

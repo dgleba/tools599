@@ -1,0 +1,50 @@
+[Thu, 18 Nov 2021 10:51:44] DEBUG [kat_xml_to_csv_final.py,hello_logger:24] Debug means: Detailed information, typically of interest only when diagnosing problems.
+[Thu, 18 Nov 2021 10:51:44] INFO [kat_xml_to_csv_final.py,hello_logger:25] Info means: Confirmation that things are working as expected.
+[Thu, 18 Nov 2021 10:51:44] WARNING [kat_xml_to_csv_final.py,hello_logger:26] Warning means: An indication that something unexpected happened, or indicative of some problem in the near future. Software working as expected.
+[Thu, 18 Nov 2021 10:51:44] ERROR [kat_xml_to_csv_final.py,hello_logger:27] Error means: Due to a more serious problem, the software has not been able to perform some function.
+[Thu, 18 Nov 2021 10:51:44] CRITICAL [kat_xml_to_csv_final.py,hello_logger:28] Critical means: A serious error, indicating that the program itself may be unable to continue running.
+[Thu, 18 Nov 2021 11:12:32] DEBUG [kat_xml_to_csv_final_production_files.py,hello_logger:24] Debug means: Detailed information, typically of interest only when diagnosing problems.
+[Thu, 18 Nov 2021 11:12:32] INFO [kat_xml_to_csv_final_production_files.py,hello_logger:25] Info means: Confirmation that things are working as expected.
+[Thu, 18 Nov 2021 11:12:32] WARNING [kat_xml_to_csv_final_production_files.py,hello_logger:26] Warning means: An indication that something unexpected happened, or indicative of some problem in the near future. Software working as expected.
+[Thu, 18 Nov 2021 11:12:32] ERROR [kat_xml_to_csv_final_production_files.py,hello_logger:27] Error means: Due to a more serious problem, the software has not been able to perform some function.
+[Thu, 18 Nov 2021 11:12:32] CRITICAL [kat_xml_to_csv_final_production_files.py,hello_logger:28] Critical means: A serious error, indicating that the program itself may be unable to continue running.
+[Thu, 18 Nov 2021 11:20:49] DEBUG [6830_xml_to_csv_final.py,hello_logger:24] Debug means: Detailed information, typically of interest only when diagnosing problems.
+[Thu, 18 Nov 2021 11:20:49] INFO [6830_xml_to_csv_final.py,hello_logger:25] Info means: Confirmation that things are working as expected.
+[Thu, 18 Nov 2021 11:20:49] WARNING [6830_xml_to_csv_final.py,hello_logger:26] Warning means: An indication that something unexpected happened, or indicative of some problem in the near future. Software working as expected.
+[Thu, 18 Nov 2021 11:20:49] ERROR [6830_xml_to_csv_final.py,hello_logger:27] Error means: Due to a more serious problem, the software has not been able to perform some function.
+[Thu, 18 Nov 2021 11:20:49] CRITICAL [6830_xml_to_csv_final.py,hello_logger:28] Critical means: A serious error, indicating that the program itself may be unable to continue running.
+[Thu, 18 Nov 2021 11:21:45] DEBUG [6830_xml_to_csv_final.py,hello_logger:24] Debug means: Detailed information, typically of interest only when diagnosing problems.
+[Thu, 18 Nov 2021 11:21:45] INFO [6830_xml_to_csv_final.py,hello_logger:25] Info means: Confirmation that things are working as expected.
+[Thu, 18 Nov 2021 11:21:45] WARNING [6830_xml_to_csv_final.py,hello_logger:26] Warning means: An indication that something unexpected happened, or indicative of some problem in the near future. Software working as expected.
+[Thu, 18 Nov 2021 11:21:45] ERROR [6830_xml_to_csv_final.py,hello_logger:27] Error means: Due to a more serious problem, the software has not been able to perform some function.
+[Thu, 18 Nov 2021 11:21:45] CRITICAL [6830_xml_to_csv_final.py,hello_logger:28] Critical means: A serious error, indicating that the program itself may be unable to continue running.
+[Thu, 18 Nov 2021 11:22:30] DEBUG [6830_xml_to_csv_final.py,hello_logger:24] Debug means: Detailed information, typically of interest only when diagnosing problems.
+[Thu, 18 Nov 2021 11:22:30] INFO [6830_xml_to_csv_final.py,hello_logger:25] Info means: Confirmation that things are working as expected.
+[Thu, 18 Nov 2021 11:22:30] WARNING [6830_xml_to_csv_final.py,hello_logger:26] Warning means: An indication that something unexpected happened, or indicative of some problem in the near future. Software working as expected.
+[Thu, 18 Nov 2021 11:22:30] ERROR [6830_xml_to_csv_final.py,hello_logger:27] Error means: Due to a more serious problem, the software has not been able to perform some function.
+[Thu, 18 Nov 2021 11:22:30] CRITICAL [6830_xml_to_csv_final.py,hello_logger:28] Critical means: A serious error, indicating that the program itself may be unable to continue running.
+[Thu, 18 Nov 2021 11:23:42] DEBUG [6830_xml_to_csv_final.py,hello_logger:24] Debug means: Detailed information, typically of interest only when diagnosing problems.
+[Thu, 18 Nov 2021 11:23:42] INFO [6830_xml_to_csv_final.py,hello_logger:25] Info means: Confirmation that things are working as expected.
+[Thu, 18 Nov 2021 11:23:42] WARNING [6830_xml_to_csv_final.py,hello_logger:26] Warning means: An indication that something unexpected happened, or indicative of some problem in the near future. Software working as expected.
+[Thu, 18 Nov 2021 11:23:42] ERROR [6830_xml_to_csv_final.py,hello_logger:27] Error means: Due to a more serious problem, the software has not been able to perform some function.
+[Thu, 18 Nov 2021 11:23:42] CRITICAL [6830_xml_to_csv_final.py,hello_logger:28] Critical means: A serious error, indicating that the program itself may be unable to continue running.
+[Thu, 18 Nov 2021 11:25:22] DEBUG [6830_xml_to_csv_final.py,hello_logger:24] Debug means: Detailed information, typically of interest only when diagnosing problems.
+[Thu, 18 Nov 2021 11:25:22] INFO [6830_xml_to_csv_final.py,hello_logger:25] Info means: Confirmation that things are working as expected.
+[Thu, 18 Nov 2021 11:25:22] WARNING [6830_xml_to_csv_final.py,hello_logger:26] Warning means: An indication that something unexpected happened, or indicative of some problem in the near future. Software working as expected.
+[Thu, 18 Nov 2021 11:25:22] ERROR [6830_xml_to_csv_final.py,hello_logger:27] Error means: Due to a more serious problem, the software has not been able to perform some function.
+[Thu, 18 Nov 2021 11:25:22] CRITICAL [6830_xml_to_csv_final.py,hello_logger:28] Critical means: A serious error, indicating that the program itself may be unable to continue running.
+[Thu, 18 Nov 2021 11:26:27] DEBUG [6830_xml_to_csv_final.py,hello_logger:24] Debug means: Detailed information, typically of interest only when diagnosing problems.
+[Thu, 18 Nov 2021 11:26:27] INFO [6830_xml_to_csv_final.py,hello_logger:25] Info means: Confirmation that things are working as expected.
+[Thu, 18 Nov 2021 11:26:27] WARNING [6830_xml_to_csv_final.py,hello_logger:26] Warning means: An indication that something unexpected happened, or indicative of some problem in the near future. Software working as expected.
+[Thu, 18 Nov 2021 11:26:27] ERROR [6830_xml_to_csv_final.py,hello_logger:27] Error means: Due to a more serious problem, the software has not been able to perform some function.
+[Thu, 18 Nov 2021 11:26:27] CRITICAL [6830_xml_to_csv_final.py,hello_logger:28] Critical means: A serious error, indicating that the program itself may be unable to continue running.
+[Fri, 03 Dec 2021 11:19:05] DEBUG [6830_xml_to_csv_final.py,hello_logger:24] Debug means: Detailed information, typically of interest only when diagnosing problems.
+[Fri, 03 Dec 2021 11:19:05] INFO [6830_xml_to_csv_final.py,hello_logger:25] Info means: Confirmation that things are working as expected.
+[Fri, 03 Dec 2021 11:19:05] WARNING [6830_xml_to_csv_final.py,hello_logger:26] Warning means: An indication that something unexpected happened, or indicative of some problem in the near future. Software working as expected.
+[Fri, 03 Dec 2021 11:19:05] ERROR [6830_xml_to_csv_final.py,hello_logger:27] Error means: Due to a more serious problem, the software has not been able to perform some function.
+[Fri, 03 Dec 2021 11:19:05] CRITICAL [6830_xml_to_csv_final.py,hello_logger:28] Critical means: A serious error, indicating that the program itself may be unable to continue running.
+[Wed, 08 Dec 2021 13:53:39] DEBUG [6365_xml_to_csv_with_scores_datetime_camera_previous_days_data.py,hello_logger:27] Debug means: Detailed information, typically of interest only when diagnosing problems.
+[Wed, 08 Dec 2021 13:53:39] INFO [6365_xml_to_csv_with_scores_datetime_camera_previous_days_data.py,hello_logger:28] Info means: Confirmation that things are working as expected.
+[Wed, 08 Dec 2021 13:53:39] WARNING [6365_xml_to_csv_with_scores_datetime_camera_previous_days_data.py,hello_logger:29] Warning means: An indication that something unexpected happened, or indicative of some problem in the near future. Software working as expected.
+[Wed, 08 Dec 2021 13:53:39] ERROR [6365_xml_to_csv_with_scores_datetime_camera_previous_days_data.py,hello_logger:30] Error means: Due to a more serious problem, the software has not been able to perform some function.
+[Wed, 08 Dec 2021 13:53:39] CRITICAL [6365_xml_to_csv_with_scores_datetime_camera_previous_days_data.py,hello_logger:31] Critical means: A serious error, indicating that the program itself may be unable to continue running.

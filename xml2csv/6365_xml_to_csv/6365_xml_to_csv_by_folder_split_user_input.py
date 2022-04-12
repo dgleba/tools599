@@ -8,9 +8,8 @@ import logging
 import os.path
 from pathlib import Path
 import re
+import time
 import datetime
-import subprocess
-import shutil
 #----------------------------------------------------------------------------
 # THIS IS THE SETTINGS SECTION
 logger = logging.getLogger('')
@@ -35,63 +34,27 @@ if __name__ == "__main__":
     print('')
 
 #go to logger module docs
-#D:\data\vision_6830\image_data\outer_surface\nok\211202\flag
 
-#month subfolder 'YYMMDD' or ex. 211202 is December 2, 2021
-# ----------------------------------------
-#ASK USER FOR INPUT DIRECTORY AND DESIRED FILENAME
-root_directory = input("Type the directory you want to generate a .csv report for: ")
-# root_directory = r'D:\data\vision_6830\image_data'
-current_working_directory = os.getcwd()
+directory_input_from_user = input('List the directory you want to parse: ')
+output_text_file = input('What would you like to call the .csv report that you are about to generate? Format does not include file extension, ex. type test_file, and it will generate test_file.csv: ')
+
+main_folder_raw_input = directory_input_from_user
+main_folder = Path(main_folder_raw_input)
 extensions = ('.xml')
-report_destination_folder = r'D:\data\vision_6830\xml_to_csv_reports\xml_to_csv_reports_general'
-current_datetime = datetime.datetime.now()
-current_datetime_string = str(current_datetime)
-current_datetime_string_replaced = current_datetime_string.replace(':', '-')
-report_filename = '6830_xml_to_csv_report' + '--' + current_datetime_string_replaced[0:19] + '.csv'
 
+report_filename = Path(output_text_file + '.csv')
+xml_data = open(report_filename, 'w', newline='')#open a file for writing
 print('Generating report, please wait...')
 
-xml_data = open(report_filename, 'w', newline='') #open a file for writing
-
-current_file_path_list = []
-#----------------------------------------------------------------------------
-# THIS SECTION EXTRACTS THE RIGHT DATE FOLDERS, converts to datetime object. Today's datetime - 1 day = folder we want to access
-def get_yesterdays_folder_pathways():
-    for subdirs, dirs, files in os.walk(root_directory):
-        # print(subdirs, len(subdirs))
-        root_dir_sliced = subdirs[31:]
-        folder_datestamp = []
-        for character in root_dir_sliced:
-            if character.isnumeric():
-                folder_datestamp.append(character)
-
-        current_datetime = datetime.datetime.now()
-        yesterdays_datetime = current_datetime - datetime.timedelta(days=1)
-
-        yesterdays_datetime_string = str(yesterdays_datetime)
-        slice_yesterdays_datetime_string = yesterdays_datetime_string[2:10]
-
-        removed_dashes = slice_yesterdays_datetime_string.replace('-', '')
-
-
-        for folders in dirs:
-            if removed_dashes == folders:
-                current_file_path = subdirs + '\\' + removed_dashes
-                current_file_path_list.append(current_file_path)
-    return (current_file_path_list)
-
-# get_yesterdays_folder_pathways()
 #----------------------------------------------------------------------------
 # THIS IS THE XML TO CSV CONVERTER CODE 
 
 # create the csv writer object
 csvwriter = csv.writer(xml_data)
 header = []
-count = 0
 
-# for file_pathways in current_file_path_list:
-for subdirs, dirs, files in os.walk(Path(root_directory)):
+count = 0
+for subdirs, dirs, files in os.walk(main_folder):
     for filename in files:
         ext = os.path.splitext(filename)[-1].lower()
 
@@ -123,9 +86,6 @@ for subdirs, dirs, files in os.walk(Path(root_directory)):
                     Ymin = header.append('ymin')
                     Xmax = header.append('xmax')
                     Ymax = header.append('ymax')
-                    Score = header.append('Score')
-
-                    # print(header)
                     csvwriter.writerow(header)
                     count = count + 1
 
@@ -134,33 +94,32 @@ for subdirs, dirs, files in os.walk(Path(root_directory)):
                 xml_file_name.append(filename)
                 count = count + 1
                 # print(str(count) + current_file_path, object_tag[0].text)
+                        #iterate through filename string until we hit a number, then collect that information
 
-
-            ## Here we need to get the camera name, and append it, and datetime, and append that before we append anything else.
-            #let's slice the filename BACK by outer_surface_211123T0 9 2 6 0 2 . x m l
-                                        #                 123456789101112131415161718 --> there's 18 characters that make up the _ + date/time stamp + file extension
-                camera_name = filename[:-18]
+                camera_name = filename[:-20]
                 xml_file_name.append(camera_name)
 
-                #iterate through filename string until we hit a number, then collect that information
-                datetime_stamp = []
-                for character in filename:
-                    if character.isnumeric():
-                        datetime_stamp.append(character)
+                datetime_from_filename = filename[-19:-4]
+                xml_file_name.append(datetime_from_filename)
                 
-                year_month_day = str(''.join(datetime_stamp[0:6]))
-                hour_minute_second = str(''.join(datetime_stamp[7:]))
+                # datetime_stamp = []
+                # for character in filename:
+                #     if character.isnumeric():
+                #         datetime_stamp.append(character)
 
-                datetime_stamp_string = str(year_month_day + '  ' + hour_minute_second)
+                # year_month_day = str(''.join(datetime_stamp[1:9]))
+                # hour_minute_second = str(''.join(datetime_stamp[9:]))
+
+                # datetime_stamp_string = str(year_month_day + '  ' + hour_minute_second)
                 
-                datetime_object = datetime.datetime.strptime(datetime_stamp_string, '%y%m%d %H%M%S')
-                datetime_object_string = str(datetime_object)
+                # datetime_object = datetime.datetime.strptime(datetime_stamp_string, '%Y%m%d  %H%M%S')
+                # datetime_object_string = str(datetime_object)
 
-                for character in datetime_object_string:
-                    if character == ' ':
-                        extra_space_in_datetime_string = datetime_object_string[0:11] + ' ' + datetime_object_string[11:]
+                # for character in datetime_object_string:
+                #     if character == ' ':
+                #         extra_space_in_datetime_string = datetime_object_string[0:11] + ' ' + datetime_object_string[11:]
 
-                xml_file_name.append(extra_space_in_datetime_string)
+                # xml_file_name.append(extra_space_in_datetime_string)
 
             # Size of defect?
                 size = root.find('size')
@@ -197,18 +156,16 @@ for subdirs, dirs, files in os.walk(Path(root_directory)):
                 ymax = bndbox[3].text
                 xml_file_name.append(ymax)
 
-                score = object_tag[3].text
-                xml_file_name.append(score)
-
                 try:
-                    if xml_file_name[13] in xml_file_name:
-                        del xml_file_name[0:13]
-                        # print(xml_file_name) #this prints whenever it finds more than one defect in a file
+                    if xml_file_name[12] in xml_file_name:
+                        del xml_file_name[0:12]
+                        # print(xml_file_name)
 
                 except:
                     pass
 
                 csvwriter.writerow(xml_file_name)
+
                 x = re.search(filename, current_file_path)
             
                 if x is True:
@@ -216,21 +173,5 @@ for subdirs, dirs, files in os.walk(Path(root_directory)):
                     break
 xml_data.close()
 
-generated_pathway = Path(current_working_directory + '\\' + report_filename)
-destination_file_pathway = Path(report_destination_folder + '\\' + report_filename)
-
-if generated_pathway.exists() and destination_file_pathway.exists():
-    # If 'exists()' means if the file is there
-    # First, check if both files are already there. If they are, remove from generated folder.
-    print('This report already ran and generated a summary from production yesterday.')
-    print('The report\'s filename is: ' + report_filename)
-    print('It is located at: ' + report_destination_folder)
-    os.remove(generated_pathway)
-
-elif generated_pathway.exists() and destination_file_pathway.exists() is False:
-    # If 'exists() is False' means if the file is not there
-    # Checking if the file was generated, but not moved to destination folder yet.
-    print('Report has been generated.')
-    print('The report\'s filename is: ' + report_filename)
-    print('It is located at: ' + report_destination_folder)
-    shutil.move(os.path.join(current_working_directory, report_filename), report_destination_folder)
+print('Report has been generated.')
+print('The report\'s filename is: ' + str(report_filename))
