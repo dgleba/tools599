@@ -1,14 +1,11 @@
 # Import Modules
-from os import path
 import xml.etree.ElementTree as ET 
 import csv
 import time
 import os.path
 from datetime import datetime, timedelta
 import yaml
-from pathlib import Path
 
-print('Running report...please wait.')
 # ---------------------------Functions---------------------------------
 # YAML LOADER
 def loadYaml(filepath):
@@ -27,8 +24,15 @@ def formatReportTime(dateInput):
 
 # GET ONLY FILENAME FROM FULL FILENAME
 def getFileNameDate(filename):
+    print(filename)
+    print(filepath)
     nameDate = filename.split(".")[-2]
     return int(nameDate[-15:].replace("T", ""))
+    # nameDate_remove_T = nameDate[-15:].replace("T", "")
+    # print(nameDate_remove_T)
+    # nameDate_int = int(nameDate_remove_T)
+    # return nameDate_int
+
 
 # GET CAMERA FROM FILENAME
 def getCameraFromFile(filename):
@@ -70,18 +74,22 @@ def getShiftNumber(fileTime):
         return 3
 
 # Get Filename from path
-def getFileName(filepath):
-    filename = filepath.rsplit("\\",1)
+def getFileName(filePath):
+    filename = filePath.rsplit("\\",1)
     return filename
 
 # ---------------------------Setup Global Variables---------------------------------
     
 # Load Yaml Data
-filepath = "config.yaml"
+current_working_directory = os.getcwd()
+print(current_working_directory)
+config_file = "config.yaml"
+current_filepath = current_working_directory + '\\' + config_file
+filepath = current_filepath
 yamlFileContents = loadYaml(filepath)
 
 # Assign Yaml Data to Variables
-pathToFolder = Path(yamlFileContents.get('path')) 
+pathToFolder = str(yamlFileContents.get('path')) 
 partNumber = str(yamlFileContents.get('productNumber'))
 timeRange = yamlFileContents.get("timeRange")
 # get timeRange value in Days
@@ -107,7 +115,6 @@ dateIso = dateIso.replace(":", "")
 xmlData = open(f'vision_performance_tracker_report{dateIso}.csv', 'w', newline='')
 csvwriter = csv.writer(xmlData)
 extensions = ('.png', '.xml')
-Debug_folder = 'Debug'
 xmlFiles = []
 pngFiles = []
     
@@ -153,39 +160,38 @@ headerLongComment = headers.append('long_comment')
 csvwriter.writerow(headers)
 # -------------------------Itterate Files Creating Lists-----------------------------
 for subdirs, dirs, files in os.walk(pathToFolder):
-    if Debug_folder in subdirs:
-        next
-    else:
-        for filename in files:
-            # Set Extension for PNG Files
-            ext = os.path.splitext(filename)[-1].lower()
-            if ext in extensions:
-                fileNameDate = getFileNameDate(filename)
-                
-                # Check if fileNameDate is within range of search
-                if fileNameDate >= reportOldest and fileNameDate <= reportNewest:
-                        # If File is XML
-                        if ext == extensions[0]:
-                            # Get currentFilePath of PNG File and Append to pngFiles List
-                            currentFilePath = (subdirs + "\\" + filename)
-                            pngFiles.append(currentFilePath)
-                            # Get Date Of PNG and Append to Dates
-                            date = filename[-19:-11]
-                            if date not in dates:
-                                dates.append(date)
-                        # If File is XML append to xmlFiles list
-                        elif ext == extensions[1]:
-                            currentFilePath = (subdirs + "\\" + filename)
-                            xmlFiles.append(currentFilePath)
-                            # Find Unique Cameras
-                            camera = getCameraFromFile(filename)
-                            if camera not in cameras:
-                                cameras.append(camera)
-                            # Find all Unique Defects
-                            fileDefects = getDefectFromFile(currentFilePath)
-                            for defect in fileDefects:
-                                if defect not in defects:
-                                    defects.append(defect)
+    for filename in files:
+        
+            
+        # Set Extension for PNG Files
+        ext = os.path.splitext(filename)[-1].lower()
+        if ext in extensions:
+            fileNameDate = getFileNameDate(filename)
+            
+            # Check if fileNameDate is within range of search
+            if fileNameDate >= reportOldest and fileNameDate <= reportNewest:
+                    # If File is XML
+                    if ext == extensions[0]:
+                        # Get currentFilePath of PNG File and Append to pngFiles List
+                        currentFilePath = (subdirs + "\\" + filename)
+                        pngFiles.append(currentFilePath)
+                        # Get Date Of PNG and Append to Dates
+                        date = filename[-19:-11]
+                        if date not in dates:
+                            dates.append(date)
+                    # If File is XML append to xmlFiles list
+                    elif ext == extensions[1]:
+                        currentFilePath = (subdirs + "\\" + filename)
+                        xmlFiles.append(currentFilePath)
+                        # Find Unique Cameras
+                        camera = getCameraFromFile(filename)
+                        if camera not in cameras:
+                            cameras.append(camera)
+                        # Find all Unique Defects
+                        fileDefects = getDefectFromFile(currentFilePath)
+                        for defect in fileDefects:
+                            if defect not in defects:
+                                defects.append(defect)
 
 # --------------------------Main Script for organizing data-----------------------------
 for date in sorted(dates):
@@ -329,7 +335,7 @@ for date in sorted(dates):
 # Close File
 xmlData.close()
 
-print('Report has been generated.')
+
                     
 
 

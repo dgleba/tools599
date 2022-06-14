@@ -49,11 +49,33 @@ current_datetime = datetime.datetime.now()
 yesterdays_datetime = current_datetime - datetime.timedelta(days=1)
 yesterdays_datetime_string = str(yesterdays_datetime)
 report_filename = '6830_xml_to_csv_report' + '--' + yesterdays_datetime_string[0:10] + '.csv'
+print(report_filename)
 
+
+generated_pathway = Path(current_working_directory + '\\' + report_filename)
+destination_file_pathway = Path(report_destination_folder + '\\' + report_filename)
+
+
+if destination_file_pathway.exists():
+    # If 'exists()' means if the file is there
+    # First, check if both files are already there. If they are, remove from generated folder.
+    print('This report already ran and generated a summary from production yesterday.')
+    print('The report\'s filename is: ' + report_filename)
+    print('It is located at: ' + report_destination_folder)
+    sys.exit()
+
+elif generated_pathway.exists() and destination_file_pathway.exists() is False:
+    # If 'exists() is False' means if the file is not there
+    # Checking if the file was generated, but not moved to destination folder yet.
+    print('Report has already been generated. Moving it to appropriate location.')
+    print('The report\'s filename is: ' + report_filename)
+    print('It is located at: ' + report_destination_folder)
+    shutil.move(os.path.join(current_working_directory, report_filename), report_destination_folder)
+    sys.exit()
+
+xml_data = open(destination_file_pathway, 'w', newline='') #open a file for writing
 
 print('Generating report, please wait...')
-
-xml_data = open(report_filename, 'w', newline='') #open a file for writing
 
 current_file_path_list = []
 #----------------------------------------------------------------------------
@@ -82,7 +104,12 @@ def get_yesterdays_folder_pathways():
                 current_file_path_list.append(current_file_path)
     return (current_file_path_list)
 
+
 get_yesterdays_folder_pathways()
+
+
+
+
 #----------------------------------------------------------------------------
 # THIS IS THE XML TO CSV CONVERTER CODE 
 
@@ -117,7 +144,9 @@ for file_pathways in current_file_path_list:
                         Filename = header.append('File_Name')
                         Camera = header.append('Camera')
                         Datetime = header.append('Datetime')
+                        Dateonly = header.append('DateOnly')
                         Datetime_slice = header.append('ISO_8601')
+                        #Width = header.append('Extension')
                         Width = header.append('Width')
                         Height = header.append('Height')
                         Depth = header.append('Depth')
@@ -126,6 +155,9 @@ for file_pathways in current_file_path_list:
                         Ymin = header.append('ymin')
                         Xmax = header.append('xmax')
                         Ymax = header.append('ymax')
+                        xdelta = header.append('xdelta')
+                        ydelta = header.append('ydelta')
+                        Area = header.append('Area')
                         Score = header.append('Score')
 
                         # print(header)
@@ -164,9 +196,10 @@ for file_pathways in current_file_path_list:
                     for character in datetime_object_string:
                         if character == ' ':
                             extra_space_in_datetime_string = datetime_object_string[0:11] + ' ' + datetime_object_string[11:]
-                            
+   
 
                     xml_file_name.append(extra_space_in_datetime_string)
+                    xml_file_name.append(datetime_object_string[0:11])
 
                     datetime_from_filename = filename[-17:-4]
                     xml_file_name.append(datetime_from_filename)
@@ -208,17 +241,27 @@ for file_pathways in current_file_path_list:
                     ymax = bndbox[3].text
                     xml_file_name.append(ymax)
 
+                    deltax = int(xmax) - int(xmin)
+                    xml_file_name.append(deltax)
+
+                    deltay = int(ymax) - int(ymin)
+                    xml_file_name.append(deltay)
+
+                    box_area = int(deltax)*int(deltay)
+                    xml_file_name.append(box_area)
+                    
+
                     score = object_tag[3].text
                     xml_file_name.append(score)
 
                     try:
-                        if xml_file_name[15] in xml_file_name:
-                            del xml_file_name[0:15]
-                            # print(xml_file_name) #this prints whenever it finds more than one defect in a file
+                        if xml_file_name[19] in xml_file_name:
+                            del xml_file_name[0:19]
+                            print(xml_file_name) #this prints whenever it finds more than one defect in a file
 
                     except:
                         pass
-                    print(xml_file_name)
+                    #print(xml_file_name)
                     csvwriter.writerow(xml_file_name)
                     x = re.search(filename, current_file_path)
                 
@@ -227,21 +270,5 @@ for file_pathways in current_file_path_list:
                         break
 xml_data.close()
 
-generated_pathway = Path(current_working_directory + '\\' + report_filename)
-destination_file_pathway = Path(report_destination_folder + '\\' + report_filename)
+print("Report Generated")
 
-if generated_pathway.exists() and destination_file_pathway.exists():
-    # If 'exists()' means if the file is there
-    # First, check if both files are already there. If they are, remove from generated folder.
-    print('This report already ran and generated a summary from production yesterday.')
-    print('The report\'s filename is: ' + report_filename)
-    print('It is located at: ' + report_destination_folder)
-    os.remove(generated_pathway)
-
-elif generated_pathway.exists() and destination_file_pathway.exists() is False:
-    # If 'exists() is False' means if the file is not there
-    # Checking if the file was generated, but not moved to destination folder yet.
-    print('Report has been generated.')
-    print('The report\'s filename is: ' + report_filename)
-    print('It is located at: ' + report_destination_folder)
-    shutil.move(os.path.join(current_working_directory, report_filename), report_destination_folder)

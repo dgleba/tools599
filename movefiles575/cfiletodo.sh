@@ -13,7 +13,7 @@ cd "${ssc}"
 # files older than -mtime 67days - show oldest files last...
 
 # number of days to report on..
-tnum=+50
+tnum=+27
 echo $tnum
 #
 find . -type f  -mtime $tnum  -print0 | xargs -0 stat --printf='%.16y\t%A %a %h \t%s\t%n\n' |sort -n -r  | tee -a ${tfc}
