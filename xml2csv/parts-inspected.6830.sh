@@ -25,16 +25,20 @@ echo $fmin
 
 rdate=$(date +"_%Y.%m.%d_%H.%M.%S")
 
+# list the parts..
 find . -mmin $fmin -type f -iname *.png -printf '%TY-%Tm-%Td %TH:%TM:%TS,%TY-%Tm-%Td-%TH,%f,%h\n'  | sort >${ddc}/detail/parts-inspected___filelist$rdate.csv
 
+# sum/count by hour..
 find . -mmin $fmin -type f -iname *.png -printf ',%TY-%Tm-%Td_%TH,%TY-%Tm-%Td,%TH\n'   | sort | uniq -c>>${ddc}/detail/partsinspectedbyhour$rdate.csv
 
+# divide by 2 since there are 2 pics per part.
 echo "cdatehour,cdate,chour,count_parts_inspected">>${ddc}/detail/partsinspectedbyhour.5$rdate.csv
 find . -mmin $fmin -type f -iname *.png -printf '%TY-%Tm-%Td_%TH,%TY-%Tm-%Td,%TH,\n'   | sort | uniq -c | awk '{(val=$1/2);  print $2,int(val)}'>>${ddc}/detail/partsinspectedbyhour.5$rdate.csv
 
 ydate=$(date -d "yesterday 13:00" '+%Y-%m-%d')
 echo $ydate
 
+# filter by date for the final report..
 cat ${ddc}/detail/partsinspectedbyhour.5$rdate.csv|grep $ydate  >${ddc}/partsinspectedbyhour.5_$ydate.csv
 
 }

@@ -108,8 +108,8 @@ def get_all_folder_pathways():
 
 if main_folder_raw_input == dv62_directory:
     get_yesterdays_folder_pathways()
-    filepath = r'D:\data\vision_6830\image_data\config_7031.yaml'
-    report_filename = '7031_xml_to_csv_report' + '--' + yesterdays_datetime_string[2:10] + '.csv'
+    filepath = r'C:\data\script\tools599\xml2csv\config_7031.yaml'
+    report_filename = '7031_xml_to_csv_report' + '--' + yesterdays_datetime_string[2:10] + '_any.csv'
     yamlFileContents = loadYaml(filepath)
     partNumber = str(yamlFileContents.get('productNumber'))
     machineNumber = str(yamlFileContents.get('machineNumber'))

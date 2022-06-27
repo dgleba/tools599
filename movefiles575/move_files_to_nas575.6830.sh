@@ -35,7 +35,7 @@ cd "${ssc}"
 # find . -type f  -mmin +1920 > ${tfc}
 # find . -type f  -mmin +99339 > ${tfc}
 # find . -type f  -mtime +100 > ${tfc}
-find . -type f  -mtime +20 > ${tfc}
+find . -type f  -mtime +14 > ${tfc}
 echo file list..
 cat ${tfc}
 

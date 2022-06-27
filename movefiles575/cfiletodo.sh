@@ -12,8 +12,8 @@ cd "${ssc}"
 # find . -type f  -mtime +67 > ${tfc}
 # files older than -mtime 67days - show oldest files last...
 
-# number of days to report on..
-tnum=+27
+# number of days to report on. files older than 17 days = tnum= +17..
+tnum=+1
 echo $tnum
 #
 find . -type f  -mtime $tnum  -print0 | xargs -0 stat --printf='%.16y\t%A %a %h \t%s\t%n\n' |sort -n -r  | tee -a ${tfc}
