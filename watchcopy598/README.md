@@ -69,6 +69,30 @@ Set the task scheduler
 
 There is a task scheduler export `watch598e.xml`. This can be imported to the windows task scheduler or you can read it and create a task based on the contents you can read in the xml file.
 
+## Handling some files to go to Litmus
+
+Files from each cmm go to one cmm for ingestion to Litmus. The destination at the time of writing is `s_litmus_destination_host=PMDA-BKH70W2`
+
+If you want the files on the cmm you are installing to go to litmus, edit the settings below..
+
+`watch598settings.conf`
+
+Include the cmm host name in the setting below.
+
+```
+s_litmus_move_from_host_array=@("PMA-CMM1","PMC-PRISMO1")
+```
+
+Reference: This is the code..
+```    
+# to litmus-from-other-cmm
+# if these settings refer to valid hosts present in your system, move the litmus files to destination computer for litmus to pick them up. 
+if ( $global:s_litmus_move_from_host_array.contains($(gc env:computername)) ) {
+  echo 'moving to cmm 10001...'
+  # copy to \litmus-data-cmm
+  robocopy $copyToLitmus  "\\$s_litmus_destination_host\litmus-from-other-cmm\"  /mov /is /R:3 /W:4 | C:\prg\cygwin64\bin\grep.exe  -v '*EXTRA File'
+```
+
 
 ## cygwin
 
