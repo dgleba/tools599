@@ -1,0 +1,12 @@
+
+D:\data\vision_6830\image_data\inner_rim\nok
+
+Python D:\data\gleba\infer611\run_inference.py --model_path D:\DV6\dv6_innerrim_v2\models\dv_innerrim_v2_96461.pb --image_paths D:\data\vision_6830\image_data\inner_rim\nok --mem_frac 0.55
+
+
+Python D:\data\gleba\infer611\run_inference.py --model_path D:\DV6\dv6_innerrim_v2\models\dv_innerrim_v2_96461.pb --image_paths D:\data\gleba\infer611\nok --mem_frac 0.55
+
+
+from pathlib import Path
+# Search the directory
+list(Path('testDir').glob('*.*'))

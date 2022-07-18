@@ -1,0 +1,58 @@
+
+Python D:\data\script\tools599\infer599\tf1_run_inference.py  --mem_frac 0.55 --model_path D:\data\inference\test\dv_innerrim_v2_96461.pb --image_paths D:\data\inference\test\image-sample
+
+
+C:\Users\Vision>cmd /c "Python D:\data\script\tools599\infer599\tf1_run_inference.py  --mem_frac 0.55 --model_path D:\data\inference\test\dv_innerrim_v2_96461.pb --image_paths D:\data\inference\test\image-sample"
+c:\users\vision\appdata\local\programs\python\python37\lib\site-packages\tensorflow\python\framework\dtypes.py:516: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
+c:\users\vision\appdata\local\programs\python\python37\lib\site-packages\tensorflow\python\framework\dtypes.py:517: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
+c:\users\vision\appdata\local\programs\python\python37\lib\site-packages\tensorflow\python\framework\dtypes.py:518: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
+c:\users\vision\appdata\local\programs\python\python37\lib\site-packages\tensorflow\python\framework\dtypes.py:519: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
+c:\users\vision\appdata\local\programs\python\python37\lib\site-packages\tensorflow\python\framework\dtypes.py:520: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
+c:\users\vision\appdata\local\programs\python\python37\lib\site-packages\tensorflow\python\framework\dtypes.py:525: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  np_resource = np.dtype([("resource", np.ubyte, 1)])
+c:\users\vision\appdata\local\programs\python\python37\lib\site-packages\tensorboard\compat\tensorflow_stub\dtypes.py:541: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
+c:\users\vision\appdata\local\programs\python\python37\lib\site-packages\tensorboard\compat\tensorflow_stub\dtypes.py:542: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
+c:\users\vision\appdata\local\programs\python\python37\lib\site-packages\tensorboard\compat\tensorflow_stub\dtypes.py:543: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
+c:\users\vision\appdata\local\programs\python\python37\lib\site-packages\tensorboard\compat\tensorflow_stub\dtypes.py:544: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
+c:\users\vision\appdata\local\programs\python\python37\lib\site-packages\tensorboard\compat\tensorflow_stub\dtypes.py:545: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
+c:\users\vision\appdata\local\programs\python\python37\lib\site-packages\tensorboard\compat\tensorflow_stub\dtypes.py:550: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  np_resource = np.dtype([("resource", np.ubyte, 1)])
+['D:\\data\\inference\\test\\image-sample']
+[WindowsPath('D:/data/inference/test/image-sample/inner_rim_210805T103931.png'), WindowsPath('D:/data/inference/test/image-sample/inner_rim_210916T152935.png')]
+WARNING:tensorflow:From D:\data\script\tools599\infer599\tf1_run_inference.py:53: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+WARNING:tensorflow:From D:\data\script\tools599\infer599\tf1_run_inference.py:55: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+2022-07-15 09:44:40.216505: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+2022-07-15 09:44:40.222628: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library nvcuda.dll
+2022-07-15 09:44:40.713899: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties:
+name: NVIDIA GeForce RTX 2070 SUPER major: 7 minor: 5 memoryClockRate(GHz): 1.77
+pciBusID: 0000:06:00.0
+2022-07-15 09:44:40.714068: I tensorflow/stream_executor/platform/default/dlopen_checker_stub.cc:25] GPU libraries are statically linked, skip dlopen check.
+2022-07-15 09:44:40.715411: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1763] Adding visible gpu devices: 0
+2022-07-15 09:44:41.147331: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1181] Device interconnect StreamExecutor with strength 1 edge matrix:
+2022-07-15 09:44:41.147486: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1187]      0
+2022-07-15 09:44:41.148677: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 0:   N
+2022-07-15 09:44:41.152466: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1326] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 4505 MB memory) -> physical GPU (device: 0, name: NVIDIA GeForce RTX 2070 SUPER, pci bus id: 0000:06:00.0, compute capability: 7.5)
+WARNING:tensorflow:From D:\data\script\tools599\infer599\tf1_run_inference.py:56: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+
+Load Model: 1438 ms
+Load Image: 315 ms
+Load Image: 230 ms
+[('Chip', 0.998338, (1, 6773, 179, 6981)), ('Crack', 0.034675542, (0, 6759, 179, 6982)), ('Crack', 0.030395288, (14, 6808, 166, 6963)), ('Chip', 0.0013411979, (0, 6674, 191, 6993)), ('Crack', 0.00015656323, (0, 6835, 127, 6979)), ('Crack', 1.1240316e-05, (17, 6892, 82, 6975)), ('Chip', 6.720627e-06, (0, 6431, 194, 7100)), ('Crack', 5.451642e-06, (0, 6684, 217, 6952)), ('Crack', 5.4322486e-06, (1, 6735, 174, 6901)), ('Chip', 4.8099555e-06, (0, 6713, 224, 7075))]
+Inference: 5053 ms
+[('Crack', 7.796685e-09, (3, 11, 260, 76)), ('Crack', 1.76566e-09, (0, 1419, 231, 1570)), ('Crack', 9.557324e-10, (0, 26, 260, 237)), ('Crack', 8.88065e-10, (0, 16, 260, 151)), ('Crack', 7.556875e-10, (0, 7626, 234, 7913)), ('Crack', 5.728783e-10, (0, 1480, 204, 1619)), ('Crack', 5.3162463e-10, (0, 7246, 213, 7379)), ('Chip', 4.080588e-10, (0, 0, 252, 283)), ('Crack', 3.9977946e-10, (21, 51, 260, 356)), ('Crack', 3.7904974e-10, (0, 1385, 260, 1525))]
+Inference: 131 ms
+Close Model: 30 ms
+
+C:\Users\Vision>
