@@ -111,14 +111,15 @@ timestart=$(date +"%Y.%m.%d_%H.%M.%S")
 # ssc="//10.4.65.190/Images/mc_6830_vision/image_data"
 # ssc="//10.4.65.190/Images/mc_6830_vision/image_data/inner_rim/nok/210602"
 # ssc="/mnt/nas2_ip10-4-56-190/mcdata"
-ssc="/mnt/nas2_ip10-4-56-190/mcdata"
+ssc=/mnt/nas2_ip10-4-56-190/mcdata
 
 # REM :destination dir
 # temporary change to d drive 2021-07-19 ---  ddc="//pmda-sgenas01/PMDA-SGE/image_data/SGE_Rotor_6365"
 # ddc="/cygdrive/d/image_data/SGE_Rotor_6365"
 #ddc=/cygdrive/d/0/wdir/vision_6830/image_data
 # ddc=albe@10.4.168.94:/media/albe/vi641-001/test_mcdata/image_data/t3
-ddc=/media/albe/vi641-001/mcdata/image_data
+ddc=/media/albe/vi641-001/mcdata
+
 mkdir -p ${ddc}
 
 # REM :tempfile
