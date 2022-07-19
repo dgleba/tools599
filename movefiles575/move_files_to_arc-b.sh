@@ -4,7 +4,8 @@
 
 # purpose: move older images to archive (drive dock for example)
 
-# usage:          /cygdrive/d/data/script/tools599/movefiles575/move_files_to_arc-a.sh
+# usage:          bash /crib/tools599/movefiles575/move_files_to_arc-a.sh
+
 
 # History of this file:
 # 2022-07-18 see bottom of file for history.
@@ -22,19 +23,19 @@ cd "${ssc}"
 # find . -type f  -mtime +100 > ${tfc}
 #
 #the regex: -P=perl regex. "_22\d{4}T\d{6}" finds  date starting with _22 in the filename example: ./outer_surface_220501T235918.png
-find . -type f  -mtime +120 |grep -P "_21\d{4}T\d{6}" | sort -n > ${tfc}
+find . -type f  -mtime +150 |grep -P "_21\d{4}T\d{6}" | sort -n > ${tfc}
 
 echo file list..
 cat ${tfc}
 
-s=631 ; read  -rsp $"Wait $s seconds or press Escape-key or Arrow key to continue..." -t $s -d $'\e'; echo;echo;
+s=31 ; read  -rsp $"Wait $s seconds or press Escape-key or Arrow key to continue..." -t $s -d $'\e'; echo;echo;
 
 # REM :movefiles
 echo moving files..
 set -vx # echo on
 #-a was not preserving mod time stamp on nas#2. 2022-01-16 dgleba.
 # --remove-source-files
-rsync  -vtlr  --log-file=${tempdir}/rsynclog${timestart}.log  --files-from=${tfc} . ${ddc} 
+rsync  -vtlr  --remove-source-files --log-file=${tempdir}/rsynclog${timestart}.log  --files-from=${tfc} . ${ddc} 
 
 # sometimes with mindepth 1 it doesn't touch/delete them. but it did with mindepth removed. 2022-04-11.
 echo "some empty folders may have newer dates than they should. touching.."
@@ -98,14 +99,14 @@ timestart=$(date +"%Y.%m.%d_%H.%M.%S")
 # ssc="//10.4.65.190/Images/mc_6830_vision/image_data"
 # ssc="//10.4.65.190/Images/mc_6830_vision/image_data/inner_rim/nok/210602"
 ssc="/mnt/nas2_ip10-4-56-190/mc_6830_vision/image_data/inner_rim/nok/210602"
-ssc="/mnt/nas2_ip10-4-56-190/mc_6830_vision"
+ssc="/mnt/nas2_ip10-4-56-190/mcdata"
 
 # REM :destination dir
 # temporary change to d drive 2021-07-19 ---  ddc="//pmda-sgenas01/PMDA-SGE/image_data/SGE_Rotor_6365"
 # ddc="/cygdrive/d/image_data/SGE_Rotor_6365"
 #ddc=/cygdrive/d/0/wdir/vision_6830/image_data
 # ddc=albe@10.4.168.94:/media/albe/vi641-001/test_mcdata/image_data/t3
-ddc=/media/albe/vi641-001/test_mcdata/image_data/t4
+ddc=/media/albe/vi641-001/mcdata
 mkdir -p ${ddc}
 
 # REM :tempfile
