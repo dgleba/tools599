@@ -38,7 +38,7 @@ echo moving files..
 set -vx # echo on
 #-a was not preserving mod time stamp on nas#2. 2022-01-16 dgleba.
 # --remove-source-files
-rsync  -vtlr --remove-source-files  --log-file=${tempdir}/rsynclog${timestart}.log  --files-from=${tfc} . ${ddc} 
+rsync  -vtlr --remove-source-files  --log-file=${tempdir}/rsynclog${rslognamepart}${timestart}.log  --files-from=${tfc} . ${ddc} 
 
 # sometimes with mindepth 1 it doesn't touch/delete them. but it did with mindepth removed. 2022-04-11.
 echo "some empty folders may have newer dates than they should. touching.."
@@ -97,12 +97,14 @@ s=16 ; read  -rsp $"Wait $s seconds or press Escape-key or Arrow key to continue
 cd /tmp ;mkdir -p ~/tmp; cd ~/tmp; pwd
 
 
+
+# -----------------------------------------
+
 # settings 
 
+#Check the find statement around line 29 to see what files it will select for moving..
+# example: find . -type f  -mtime +120 |grep -P "_21\d{4}T\d{6}" | sort -n > ${tfc}
 
-tempdir=/tmp/moveimg
-mkdir -p ${tempdir}
-timestart=$(date +"%Y.%m.%d_%H.%M.%S")
 
 # REM :source dir
 # ssc="/cygdrive/c/0/t1"
@@ -114,7 +116,6 @@ timestart=$(date +"%Y.%m.%d_%H.%M.%S")
 ssc=/mnt/nas2_ip10-4-56-190/mcdata/mc_6830_vision/image_data/inner_bore
 
 
-
 # REM :destination dir
 # temporary change to d drive 2021-07-19 ---  ddc="//pmda-sgenas01/PMDA-SGE/image_data/SGE_Rotor_6365"
 # ddc="/cygdrive/d/image_data/SGE_Rotor_6365"
@@ -124,9 +125,17 @@ ddc=/media/albe/vi641-001/mcdata/mc_6830_vision/image_data/inner_bore
 
 mkdir -p ${ddc}
 
-# REM :tempfile
-# mkdir -p ~/temp
-tfc=${tempdir}/rsyncfiles${timestart}.txt
+
+tempdir=/tmp/moveimg
+mkdir -p ${tempdir}
+timestart=$(date +"%Y.%m.%d_%H.%M.%S")
+rslognamepart=_arc-c
+tfc=${tempdir}/rsyncfiles_arc-${timestart}.txt
+
+
+# end settings.
+# -----------------------------------------
+
 
 #
 # set lockdir so that script will only run one instance..
