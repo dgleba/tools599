@@ -224,7 +224,7 @@ ssc=/cygdrive/d/data/vision_6830/image_data
 # REM :destination dir
 # temporary change to d drive 2021-07-19 ---  ddc="//pmda-sgenas01/PMDA-SGE/image_data/SGE_Rotor_6365"
 # ddc="/cygdrive/d/image_data/SGE_Rotor_6365"
-ddc="//10.4.65.190/Images/mc_6830_vision/image_data"
+ddc="//10.4.65.190/Images/mcdata/mc_6830_vision/image_data"
 mkdir -p ${ddc}
 
 # REM :tempfile
@@ -292,5 +292,7 @@ function_one
 # 2021-05-26 check number of instance lock errors.
 # 2021-05-27 changed to bat file with title check in tasklist for one-instance logic
 #            David Gleba started: 2021-03-29
+# 2022-07-19 add mcdata in line: ddc="//10.4.65.190/Images/mcdata/mc_6830_vision/image_data"
+
 
 # -----------------------------------------
