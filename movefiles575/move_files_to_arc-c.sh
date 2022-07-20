@@ -51,7 +51,7 @@ find "${ssc}/"  -mindepth 1 -type d -empty -exec touch -t 202101010101  {} \;
 # find "${ssc}/"  -mindepth 1  -mmin +$((2*60*24-1)) -type d -empty -delete
 # find "${ssc}/"  -mindepth 1  -mmin +$((135*60*24-1)) -type d -empty -delete
 echo removing older empty folders..
-find "${ssc}/" -mindepth 2  -mtime +370 -type d -empty -delete
+find "${ssc}/" -mindepth 2  -mtime +120 -type d -empty -delete
 
 }
 
