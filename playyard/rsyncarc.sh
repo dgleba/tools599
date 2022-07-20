@@ -27,13 +27,10 @@
 echo "-+-+--+-+--+-+--+-+--+-+-  Starting running  $0 at  $(date +"_%Y.%m.%d_%H.%M.%S")"
 
 # -----------------------------------------
+# -----------------------------------------
 
 # Settings:
 
-
-tempdir=/tmp/moveimg
-mkdir -p ${tempdir}
-timestart=$(date +"%Y.%m.%d_%H.%M.%S")
 
 # REM :source dir
 # src_base=/mnt/nas2_ip10-4-56-190
@@ -46,12 +43,18 @@ dest_base=/cygdrive/c/0/tarch
 # common_part=/mcdata/mc_6830_vision/image_data/inner_bore
 common_part=/t/m1
 
+
 mkdir -p ${dest_base}${common_part}
+
+tempdir=/tmp/move-to-archiv
+mkdir -p ${tempdir}
+timestart=$(date +"%Y.%m.%d_%H.%M.%S")
 
 tfc=${tempdir}/rsyncfiles${timestart}.txt
 
 
 
+# -----------------------------------------
 # -----------------------------------------
 
 function_one() {
