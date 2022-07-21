@@ -2,13 +2,10 @@
 
 # see version info at bottom.
 
-# purpose: move older images to archive (drive dock for example)
+# purpose: TEST folder only...  move older images to archive (drive dock for example)
 
 # usage:          bash /crib/tools599/movefiles575/move_files_to_arc-a-test02.sh
 
-
-# History of this file:
-# 2022-07-18 see bottom of file for history.
 
 
 echo "-+-+--+-+--+-+--+-+--+-+-  Starting $0 base:$(basename -- "$0") at  $(date +"_%Y.%m.%d_%H.%M.%S")"
@@ -29,8 +26,8 @@ cd "${ssc}"
 #find . -type f  -mtime +120 |grep -P "_20\d{4}T\d{6}" | sort -n > ${tfc}
 # doing find all then grep sort after was less than one hour vs. 10 hour in the above command..
 find . -type f  > ${tfc}.a
-echo "  start b $(basename -- "$0")  $(date +"_%Y.%m.%d_%H.%M.%S")" >> ${tempdir}/$(basename -- "$0")$(date +"_%Y.%m.%d").log
-cat ${tfc}.a |grep -P "_20\d{4}T\d{6}" | sort -n  > ${tfc}
+echo "  start b $(basename -- "$0")  $(date +"_%Y.%m.%d_%H.%M.%S")" >> $logf
+cat ${tfc}.a |grep -P "_2201\d{2}T\d{6}" | sort -n  > ${tfc}
 
 
 echo file list..
@@ -43,11 +40,11 @@ echo moving files..
 set -vx # echo on
 #-a was not preserving mod time stamp on nas#2. 2022-01-16 dgleba.
 # --remove-source-files
-rsync  -vtlr --remove-source-files  --log-file=${tempdir}/rsynclog${rslognamepart}${timestart}.log  --files-from=${tfc} . ${ddc} 
+rsync  -vtlr --remove-source-files  --log-file=$logf  --files-from=${tfc} . ${ddc} 
 
 # sometimes with mindepth 1 it doesn't touch/delete them. but it did with mindepth removed. 2022-04-11.
 echo "some empty folders may have newer dates than they should. touching.."
-# find "${ssc}/"  -mindepth 1 -type d -empty -exec touch -t 202101010101  {} \;
+#find "${ssc}/"  -mindepth 1 -type d -empty -exec touch -t 202101010101  {} \;
 
 #remove empty folders because rsync does not
 # find "${ssc}" -type d -empty -delete -mtime +3 
@@ -56,8 +53,7 @@ echo "some empty folders may have newer dates than they should. touching.."
 # find "${ssc}/"  -mindepth 1  -mmin +$((2*60*24-1)) -type d -empty -delete
 # find "${ssc}/"  -mindepth 1  -mmin +$((135*60*24-1)) -type d -empty -delete
 echo removing older empty folders..
-# find "${ssc}/" -mindepth 2  -mtime +120 -type d -empty -delete
-
+find "${ssc}/" -mindepth 2  -mtime +120 -type d -empty -delete
 }
 
 
@@ -119,8 +115,7 @@ cd /tmp ;mkdir -p ~/tmp; cd ~/tmp; pwd
 # ssc="//10.4.65.190/Images/mc_6830_vision/image_data/inner_rim/nok/210602"
 # ssc="/mnt/nas2_ip10-4-56-190/mcdata"
 # ssc=/mnt/nas2_ip10-4-56-190/mcdata/mc_6830_vision/image_data/inner_bore
-ssc=/mnt/nas2_ip10-4-56-190/mcdata
-
+ssc=/mnt/nas2_ip10-4-56-190/test
 
 # REM :destination dir
 # temporary change to d drive 2021-07-19 ---  ddc="//pmda-sgenas01/PMDA-SGE/image_data/SGE_Rotor_6365"
@@ -128,7 +123,7 @@ ssc=/mnt/nas2_ip10-4-56-190/mcdata
 #ddc=/cygdrive/d/0/wdir/vision_6830/image_data
 # ddc=albe@10.4.168.94:/media/albe/vi641-001/test_mcdata/image_data/t3
 # ddc=/media/albe/vi641-001/mcdata/mc_6830_vision/image_data/inner_bore
-ddc=/media/albe/vi641-001/mcdata
+ddc=/media/albe/vi641-001/test_mcdata
 
 mkdir -p ${ddc}
 
@@ -136,8 +131,9 @@ mkdir -p ${ddc}
 tempdir=/tmp/moveimg
 mkdir -p ${tempdir}
 timestart=$(date +"%Y.%m.%d_%H.%M.%S")
-rslognamepart=_$(basename -- "$0")_
+rslognamepart=$(basename -- "$0")
 tfc=${tempdir}/rsyncfiles_${rslognamepart}_${timestart}.txt
+logf=${tempdir}/rsynclog_${rslognamepart}_${timestart}.log
 
 
 # end settings.
@@ -174,7 +170,7 @@ fi
 
 # History:
 
-# 2022-07-21 r02  use -d version instead. it has latest code.
+# 2022-07-21 r02  just a test folder.
 # 2022-07-18 r01  start
 
 # -----------------------------------------

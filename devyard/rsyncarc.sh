@@ -15,9 +15,7 @@
 #       You may want -u option of avoid overwriting newer destination files.
 #       But, that may leave orphans in the source.
 
-# - moves files to destination but doesn't erase other files in the destination.
-#
-
+# - moves files to destination but doesn't erase other existing files in the destination.
 
 # usage:          bash /crib/tools599/movefiles575/rsyncarc.sh
 
@@ -43,14 +41,14 @@ dest_base=/cygdrive/c/0/tarch
 # common_part=/mcdata/mc_6830_vision/image_data/inner_bore
 common_part=/t/m1
 
-
 mkdir -p ${dest_base}${common_part}
 
 tempdir=/tmp/move-to-archiv
 mkdir -p ${tempdir}
 timestart=$(date +"%Y.%m.%d_%H.%M.%S")
-rslognamepart=_arc-c
+rslognamepart=_$(basename -- "$0")_
 tfc=${tempdir}/rsyncfiles${rslognamepart}${timestart}.txt
+logf=${tempdir}/rsynclog_${rslognamepart}_${timestart}.txt
 
 
 
@@ -73,7 +71,7 @@ cd "${src_base}${common_part}"
 # find . -type f  -mtime +120 |grep -P "_20\d{4}T\d{6}" | sort -n > ${tfc}
 # doing find all then grep sort after was less than one hour vs. 10 hour in the above command..
 find . -type f  > ${tfc}.a
-echo "  start b $(basename -- "$0")  $(date +"_%Y.%m.%d_%H.%M.%S")" >> ${tempdir}/"$0"$(date +"_%Y.%m.%d").log
+echo "  start b $(basename -- "$0")  $(date +"_%Y.%m.%d_%H.%M.%S")" >> $logf
 cat ${tfc}.a |grep -P "_20\d{4}T\d{6}" | sort -n  > ${tfc}
 
 echo file list..
@@ -86,7 +84,7 @@ echo moving files..
 set -vx # echo on
 #-a was not preserving mod time stamp on nas#2. 2022-01-16 dgleba.
 # --remove-source-files
-rsync  -vtlr --remove-source-files  --log-file=${tempdir}/rsynclog${rslognamepart}${timestart}.log  --files-from=${tfc} . ${dest_base}${common_part} 
+rsync  -vtlr --remove-source-files  --log-file=$logf  --files-from=${tfc} . ${dest_base}${common_part} 
 
 # sometimes with mindepth 1 it doesn't touch/delete them. but it did with mindepth removed. 2022-04-11.
 #

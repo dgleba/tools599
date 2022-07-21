@@ -7,10 +7,6 @@
 # usage:          bash /crib/tools599/movefiles575/move_files_to_arc-a-test02.sh
 
 
-# History of this file:
-# 2022-07-18 see bottom of file for history.
-
-
 echo "-+-+--+-+--+-+--+-+--+-+-  Starting  $0  base:$(basename -- "$0") at  $(date +"_%Y.%m.%d_%H.%M.%S")"
 
 
@@ -168,6 +164,8 @@ fi
 
 # History:
 
+# 2022-07-21 r02  use -c instead it is newer code.
 # 2022-07-18 r01  start
+
 
 # -----------------------------------------
