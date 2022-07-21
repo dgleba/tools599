@@ -11,7 +11,7 @@
 # 2022-07-18 see bottom of file for history.
 
 
-echo "-+-+--+-+--+-+--+-+--+-+-  Starting running  $0 at  $(date +"_%Y.%m.%d_%H.%M.%S")"
+echo "-+-+--+-+--+-+--+-+--+-+-  Starting  $0 _$(basename -- "$0") at  $(date +"_%Y.%m.%d_%H.%M.%S")"
 
 
 
@@ -129,7 +129,7 @@ tfc=${tempdir}/rsyncfiles${timestart}.txt
 #
 # set lockdir so that script will only run one instance..
 #
-LOCKDIR=/tmp/lockdir_oneinstance_lockdir_$(basename -- "$0")
+LOCKDIR=/tmp/lockdir_oneinstance_$(basename -- "$0")
 if mkdir ${LOCKDIR}; then
     Ensure that if we "grabbed a lock", we release it # Works for SIGTERM and SIGINT(Ctrl-C)
     trap "cleanup" EXIT

@@ -11,7 +11,7 @@
 # 2022-07-18 see bottom of file for history.
 
 
-echo "-+-+--+-+--+-+--+-+--+-+-  Starting running  $0 at  $(date +"_%Y.%m.%d_%H.%M.%S")"
+echo "-+-+--+-+--+-+--+-+--+-+-  Starting  $0  base:$(basename -- "$0") at  $(date +"_%Y.%m.%d_%H.%M.%S")"
 
 
 # -----------------------------------------
@@ -38,7 +38,7 @@ echo moving files..
 set -vx # echo on
 #-a was not preserving mod time stamp on nas#2. 2022-01-16 dgleba.
 # --remove-source-files
-rsync  -vtlr --remove-source-files  --log-file=${tempdir}/rsynclog${timestart}.log  --files-from=${tfc} . ${ddc} 
+rsync  -vtlr --remove-source-files  --log-file=${tempdir}/rsynclog${rslognamepart}${timestart}.log  --files-from=${tfc} . ${ddc} 
 
 # sometimes with mindepth 1 it doesn't touch/delete them. but it did with mindepth removed. 2022-04-11.
 echo "some empty folders may have newer dates than they should. touching.."
@@ -51,7 +51,7 @@ find "${ssc}/"  -mindepth 1 -type d -empty -exec touch -t 202101010101  {} \;
 # find "${ssc}/"  -mindepth 1  -mmin +$((2*60*24-1)) -type d -empty -delete
 # find "${ssc}/"  -mindepth 1  -mmin +$((135*60*24-1)) -type d -empty -delete
 echo removing older empty folders..
-find "${ssc}/" -mindepth 2  -mtime +370 -type d -empty -delete
+find "${ssc}/" -mindepth 2  -mtime +70 -type d -empty -delete
 
 }
 
@@ -97,12 +97,15 @@ s=16 ; read  -rsp $"Wait $s seconds or press Escape-key or Arrow key to continue
 cd /tmp ;mkdir -p ~/tmp; cd ~/tmp; pwd
 
 
+
+# -----------------------------------------
+
 # settings 
 
+#Check the find statement around line 29 to see what files it will select for moving..
+# example: find . -type f  -mtime +120 |grep -P "_21\d{4}T\d{6}" | sort -n > ${tfc}
 
-tempdir=/tmp/moveimg
-mkdir -p ${tempdir}
-timestart=$(date +"%Y.%m.%d_%H.%M.%S")
+
 
 # REM :source dir
 # ssc="/cygdrive/c/0/t1"
@@ -122,14 +125,23 @@ ddc=/media/albe/vi641-001/mcdata
 
 mkdir -p ${ddc}
 
-# REM :tempfile
-# mkdir -p ~/temp
-tfc=${tempdir}/rsyncfiles${timestart}.txt
+
+tempdir=/tmp/moveimg
+mkdir -p ${tempdir}
+timestart=$(date +"%Y.%m.%d_%H.%M.%S")
+rslognamepart=_arc-b
+tfc=${tempdir}/rsyncfiles${rslognamepart}${timestart}.txt
+
+
+# end settings.
+# -----------------------------------------
+
 
 #
 # set lockdir so that script will only run one instance..
 #
-LOCKDIR=/tmp/lockdir_oneinstance_lockdir_move_files_to_arc-b.sh
+#                                        move_files_to_arc-b.sh
+LOCKDIR=/tmp/lockdir_oneinstance_lockdir_$(basename -- "$0")
 if mkdir ${LOCKDIR}; then
     Ensure that if we "grabbed a lock", we release it # Works for SIGTERM and SIGINT(Ctrl-C)
     trap "cleanup" EXIT

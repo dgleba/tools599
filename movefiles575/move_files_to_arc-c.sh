@@ -11,7 +11,7 @@
 # 2022-07-18 see bottom of file for history.
 
 
-echo "-+-+--+-+--+-+--+-+--+-+-  Starting running  $0 at  $(date +"_%Y.%m.%d_%H.%M.%S")"
+echo "-+-+--+-+--+-+--+-+--+-+-  Starting $0 base:$(basename -- "$0") at  $(date +"_%Y.%m.%d_%H.%M.%S")"
 
 
 # -----------------------------------------
@@ -26,7 +26,12 @@ cd "${ssc}"
 # find . -type f  -mtime +100 > ${tfc}
 #
 #the regex: -P=perl regex. "_22\d{4}T\d{6}" finds  date starting with _22 in the filename example: ./outer_surface_220501T235918.png
-find . -type f  -mtime +120 |grep -P "_21\d{4}T\d{6}" | sort -n > ${tfc}
+#find . -type f  -mtime +120 |grep -P "_20\d{4}T\d{6}" | sort -n > ${tfc}
+# doing find all then grep sort after was less than one hour vs. 10 hour in the above command..
+find . -type f  > ${tfc}.a
+echo "  start b $(basename -- "$0")  $(date +"_%Y.%m.%d_%H.%M.%S")" >> ${tempdir}/"$0"$(date +"_%Y.%m.%d").log
+cat ${tfc}.a |grep -P "_20\d{4}T\d{6}" | sort -n  > ${tfc}
+
 
 echo file list..
 cat ${tfc}
@@ -113,7 +118,8 @@ cd /tmp ;mkdir -p ~/tmp; cd ~/tmp; pwd
 # ssc="//10.4.65.190/Images/mc_6830_vision/image_data"
 # ssc="//10.4.65.190/Images/mc_6830_vision/image_data/inner_rim/nok/210602"
 # ssc="/mnt/nas2_ip10-4-56-190/mcdata"
-ssc=/mnt/nas2_ip10-4-56-190/mcdata/mc_6830_vision/image_data/inner_bore
+# ssc=/mnt/nas2_ip10-4-56-190/mcdata/mc_6830_vision/image_data/inner_bore
+ssc=/mnt/nas2_ip10-4-56-190/mcdata
 
 
 # REM :destination dir
@@ -121,7 +127,8 @@ ssc=/mnt/nas2_ip10-4-56-190/mcdata/mc_6830_vision/image_data/inner_bore
 # ddc="/cygdrive/d/image_data/SGE_Rotor_6365"
 #ddc=/cygdrive/d/0/wdir/vision_6830/image_data
 # ddc=albe@10.4.168.94:/media/albe/vi641-001/test_mcdata/image_data/t3
-ddc=/media/albe/vi641-001/mcdata/mc_6830_vision/image_data/inner_bore
+# ddc=/media/albe/vi641-001/mcdata/mc_6830_vision/image_data/inner_bore
+ddc=/media/albe/vi641-001/mcdata
 
 mkdir -p ${ddc}
 
@@ -130,7 +137,7 @@ tempdir=/tmp/moveimg
 mkdir -p ${tempdir}
 timestart=$(date +"%Y.%m.%d_%H.%M.%S")
 rslognamepart=_arc-c
-tfc=${tempdir}/rsyncfiles_arc-${timestart}.txt
+tfc=${tempdir}/rsyncfiles_${rslognamepart}_${timestart}.txt
 
 
 # end settings.
