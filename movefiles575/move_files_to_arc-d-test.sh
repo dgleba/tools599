@@ -25,19 +25,9 @@ cd "${ssc}"
 #the regex: -P=perl regex. "_22\d{4}T\d{6}" finds  date starting with _22 in the filename example: ./outer_surface_220501T235918.png
 #find . -type f  -mtime +120 |grep -P "_20\d{4}T\d{6}" | sort -n > ${tfc}
 # doing find all then grep sort after was less than one hour vs. 10 hour in the above command..
-
-
-# findall using next line. or just read the daily find.
 find . -type f  > ${tfc}.a
 echo "  start b $(basename -- "$0")  $(date +"_%Y.%m.%d_%H.%M.%S")" >> $logf
-# cat ${tfc}.a |grep -P "_19\d{4}T\d{6}|_20\d{4}T\d{6}|_21\d{4}T\d{6}|_2201\d{2}T\d{6}" | sort -n  > ${tfc}
-cat ${tfc}.a |grep -P "_19\d{4}T\d{6}|_20\d{4}T\d{6}|_21\d{4}T\d{6}|_2201\d{2}T\d{6}"  | sort -n  > ${tfc}
-
-#or
-
-#  or just read the daily find.
-# echo "  start b $(basename -- "$0")  $(date +"_%Y.%m.%d_%H.%M.%S")" >> $logf
-# cat ${tempdir}/findallnas2_ip10-4-56-190.txt |grep -P "_19\d{4}T\d{6}|_20\d{4}T\d{6}|_21\d{4}T\d{6}|_220104T\d{6}" | sort -n  > ${tfc}
+cat ${tfc}.a |grep -P "_19\d{4}T\d{6}|_20\d{4}T\d{6}|_21\d{4}T\d{6}|_2201\d{2}T\d{6}" | sort -n  > ${tfc}
 
 
 echo file list..
@@ -123,9 +113,9 @@ cd /tmp ;mkdir -p ~/tmp; cd ~/tmp; pwd
 #ssc="//10.4.65.190/Images/mc_6830_vision/image_data"
 # ssc="//10.4.65.190/Images/mc_6830_vision/image_data"
 # ssc="//10.4.65.190/Images/mc_6830_vision/image_data/inner_rim/nok/210602"
+# ssc="/mnt/nas2_ip10-4-56-190/mcdata"
 # ssc=/mnt/nas2_ip10-4-56-190/mcdata/mc_6830_vision/image_data/inner_bore
-# ssc=/mnt/nas2_ip10-4-56-190/test
-ssc="/mnt/nas2_ip10-4-56-190/mcdata"
+ssc=/mnt/nas2_ip10-4-56-190/test
 
 # REM :destination dir
 # temporary change to d drive 2021-07-19 ---  ddc="//pmda-sgenas01/PMDA-SGE/image_data/SGE_Rotor_6365"
@@ -133,8 +123,7 @@ ssc="/mnt/nas2_ip10-4-56-190/mcdata"
 #ddc=/cygdrive/d/0/wdir/vision_6830/image_data
 # ddc=albe@10.4.168.94:/media/albe/vi641-001/test_mcdata/image_data/t3
 # ddc=/media/albe/vi641-001/mcdata/mc_6830_vision/image_data/inner_bore
-# ddc=/media/albe/vi641-001/test_mcdata
-ddc=/media/albe/vi641-001/mcdata
+ddc=/media/albe/vi641-001/test_mcdata
 
 mkdir -p ${ddc}
 
