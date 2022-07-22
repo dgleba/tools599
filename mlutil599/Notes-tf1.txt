@@ -1,0 +1,48 @@
+PC IP address: 10.4.111.73
+username: fpsavision
+password: Stackpole1310
+
+conda activate tf1
+cd tf1_master
+
+Set pythonpath if needed
+export PYTHONPATH=/home/fpsavision/tf1_master/tensorflow_models/research
+export PYTHONPATH=/home/fpsavision/tf1_master/tensorflow_models/research/slim
+
+xml to csv:
+python xml_to_csv.py
+
+csv to tf.records:
+Update class names at processed_data/labelmap.pbtxt first
+python -m generate_tfrecord --csv_input=processed_data/train_labels.csv --image_dir=processed_data/images/train --output_path=processed_data/train.record
+python -m generate_tfrecord --csv_input=processed_data/eval_labels.csv --image_dir=processed_data/images/eval --output_path=processed_data/eval.record
+
+# Model training 1 GPU. Make sure number of batches=1 in config file:
+# empty out training folder..
+d:
+mkdir D:\crib\traintf1-01\training
+cd d:\crib\traintf1-01
+python model_main.py --logtostderr --train_dir=training/ --pipeline_config_path=faster_rcnn_inception_v2_pets.config --model_dir=training/ 2>&1|D:\data\script\tools599\mlutil599\tee -a training\trainout.txt
+
+
+Run evaluation:
+#python eval.py --logtostderr --checkpoint_dir=training --pipeline_config_path=training/faster_rcnn_resnet101_coco.config --eval_dir=images/eval
+python eval.py --logtostderr --checkpoint_dir=training --pipeline_config_path=/home/fpsavision/tf1_train_master/faster_rcnn_inception_v2_pets.config --eval_dir=images/eval
+
+Export model:
+export PYTHONPATH=/home/fpsavision/tf1_master/tensorflow_models/research/slim
+python export_inference_graph.py --input_type image_tensor --pipeline_config_path faster_rcnn_inception_v2_pets.config --trained_checkpoint_prefix training/model.ckpt-7232 --output_directory trained_frozen_models_7232
+
+tensorboard --logdir=training
+
+Issue - ImportError: No module named “Nets”.
+Solution -
+step 1 - cd into tensorflow/models/research
+step 2 - run the command python setup.py build.
+step 3 - run the command python setup.py install.
+
+
+Ubuntu - To copy a non empty directory from the remote computer to your computer:
+scp -r remoteusername@192.168.1.56:/home/vrc/Desktop/www /home/ourusername/Desktop
+To copy a file just exclude the -r option:
+scp remoteusername@192.168.1.56:/home/vrc/Desktop/file1 /home/ourusername/Desktop
