@@ -1,3 +1,4 @@
+#!/bin/bash
 echo "-+-+--+-+--+-+--+-+--+-+-  Starting  $0 _$(basename -- "$0") at  $(date +"_%Y.%m.%d_%H.%M.%S")"
 date
 find  /tmp/alogs -mtime -7 -type f -print0 | xargs -0 stat --printf='%.16y\t%A %a %h %U %u %G %g\t%s\t%n\n'  |  grep -v '.git/' |  sort -n | tail -n1254
@@ -6,5 +7,6 @@ date
 find  /tmp/moveimg -mtime -.5 -type f -print0 | xargs -0 stat --printf='%.16y\t%A %a %h %U %u %G %g\t%s\t%n\n'  |  grep -v '.git/' |  sort -n | tail -n1254
 sleep 1
 tail  /tmp/alogs/move-arc-b.log
-tail -f /tmp/alogs/move-arc-b-2022-07-20.log
+@REM tail  /tmp/alogs/move-arc-b-2022-07-20.log
+tail  -f /tmp/albelogs/move-arc-d.log
 
