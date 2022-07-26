@@ -9,13 +9,29 @@ Set pythonpath if needed
 export PYTHONPATH=/home/fpsavision/tf1_master/tensorflow_models/research
 export PYTHONPATH=/home/fpsavision/tf1_master/tensorflow_models/research/slim
 
+_____________
+
+
 xml to csv:
+
 python xml_to_csv.py
 
+_____________
+
+
 csv to tf.records:
+
 Update class names at processed_data/labelmap.pbtxt first
+
 python -m generate_tfrecord --csv_input=processed_data/train_labels.csv --image_dir=processed_data/images/train --output_path=processed_data/train.record
+
 python -m generate_tfrecord --csv_input=processed_data/eval_labels.csv --image_dir=processed_data/images/eval --output_path=processed_data/eval.record
+
+_____________
+
+check pipeline config.
+
+_____________
 
 # Model training 1 GPU. Make sure number of batches=1 in config file:
 # empty out training folder..
