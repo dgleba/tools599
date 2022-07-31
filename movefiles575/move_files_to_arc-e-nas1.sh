@@ -28,16 +28,16 @@ cd "${ssc}"
 
 
 # findall using next line. or just read the daily find.
-find . -type f  > ${tfc}.a
-echo "  start b $(basename -- "$0")  $(date +"_%Y.%m.%d_%H.%M.%S")" >> $logf
-# cat ${tfc}.a |grep -P "_19\d{4}T\d{6}|_20\d{4}T\d{6}|_21\d{4}T\d{6}|_2201\d{2}T\d{6}" | sort -n  > ${tfc}
-cat ${tfc}.a |grep -P "_19\d{4}T\d{6}|_20\d{4}T\d{6}|_21\d{4}T\d{6}|_2201\d{2}T\d{6}|_2202\d{2}T\d{6}|_2203\d{2}T\d{6}|_2204\d{2}T\d{6}|_2205\d{2}T\d{6}|_2206\d{2}T\d{6}"  | sort -n  > ${tfc}
+# find . -type f  > ${tfc}.a
+# echo "  start b $(basename -- "$0")  $(date +"_%Y.%m.%d_%H.%M.%S")" >> $logf
+  # cat ${tfc}.a |grep -P "_19\d{4}T\d{6}|_20\d{4}T\d{6}|_21\d{4}T\d{6}|_2201\d{2}T\d{6}" | sort -n  > ${tfc}
+# cat ${tfc}.a |grep -P "_19\d{4}T\d{6}"  | sort -n  > ${tfc}
 
 #or
 
 #  or just read the daily find.
-# echo "  start b $(basename -- "$0")  $(date +"_%Y.%m.%d_%H.%M.%S")" >> $logf
-# cat ${tempdir}/findallnas2_ip10-4-56-190.txt |grep -P "_19\d{4}T\d{6}|_20\d{4}T\d{6}|_21\d{4}T\d{6}|_220104T\d{6}" | sort -n  > ${tfc}
+echo "  start b $(basename -- "$0")  $(date +"_%Y.%m.%d_%H.%M.%S")" >> $logf
+cat ${tempdir}/findall_nas1_pmda-sgenas01.txt |grep -P "_19\d{4}T\d{6}|_20\d{4}T\d{6}" | sort -n  > ${tfc}
 
 
 echo file list..
@@ -63,6 +63,7 @@ echo "some empty folders may have newer dates than they should. touching.."
 # find "${ssc}/"  -mindepth 1  -mmin +$((2*60*24-1)) -type d -empty -delete
 # find "${ssc}/"  -mindepth 1  -mmin +$((135*60*24-1)) -type d -empty -delete
 echo removing older empty folders..
+# this seemed to take many many hours on the nas with lots of files...
 #find "${ssc}/" -mindepth 2  -mtime +120 -type d -empty -delete
 }
 
@@ -125,7 +126,7 @@ cd /tmp ;mkdir -p ~/tmp; cd ~/tmp; pwd
 # ssc="//10.4.65.190/Images/mc_6830_vision/image_data/inner_rim/nok/210602"
 # ssc=/mnt/nas2_ip10-4-56-190/mcdata/mc_6830_vision/image_data/inner_bore
 # ssc=/mnt/nas2_ip10-4-56-190/test
-ssc="/mnt/nas2_ip10-4-56-190/mcdata"
+ssc="/mnt/nas1_pmda-sgenas01/mcdata"
 
 # REM :destination dir
 # temporary change to d drive 2021-07-19 ---  ddc="//pmda-sgenas01/PMDA-SGE/image_data/SGE_Rotor_6365"
@@ -134,9 +135,7 @@ ssc="/mnt/nas2_ip10-4-56-190/mcdata"
 # ddc=albe@10.4.168.94:/media/albe/vi641-001/test_mcdata/image_data/t3
 # ddc=/media/albe/vi641-001/mcdata/mc_6830_vision/image_data/inner_bore
 # ddc=/media/albe/vi641-001/test_mcdata
-
-# ddc=/media/albe/vi641-001/mcdata
-ddc=/media/drivedock-pc/vi641-001/mcdata
+ddc=/media/albe/vi641-001/mcdata
 
 mkdir -p ${ddc}
 

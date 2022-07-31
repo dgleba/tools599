@@ -1,0 +1,78 @@
+./cfiletodo.bat
+./cyg home Vision - Shortcut.lnk
+./move_files_to_arc-d-test.sh
+./f.txt
+./xml_to_csv_logger.log
+./move_files_to_nas575.6830 - cleaning Copy.sh
+./task.manager.rsync.running.pmda-so5632.png
+./move_files_to_arc-a-test02.sh
+./move_files_to_nas575.6830.sh
+./start-move-files-575.bat
+./move_files_to_arc-c.sh
+./log-issue/log.txt
+./log-issue/pic.2021-03-26 09_00_29-Task Scheduler.jpg
+./log-issue/2021-03-26 09_02_29-C__temp_moveimg.jpg
+./log-issue/old/movefiles575a.2.xml
+./log-issue/old/move_files_to_nas575b - Copy.sh
+./log-issue/old/pic task.jpg
+./log-issue/old/move_files_to_nas575b - Copy.sh__20220322_121434.7z
+./log-issue/old/movefiles575a.xml
+./log-issue/old/pic.wtashsch.log.is.missing.jpg
+./log-issue/problem.wtashsch.log.is.missing..txt
+./log-issue/movefiles575a.xml
+./xml_to_csv_report.xml
+./README.md
+./versions_major_history/start-move-files-575_verlog1.0.bat
+./versions_major_history/move_files_to_nas575.6830_verlog1.0.sh
+./versions_major_history/start-move-files-575.bat__20220322_123541.7z
+./versions_major_history/start-move-files-575.6830_verlog1.0.bat
+./versions_major_history/move_files_to_nas575_verlog1.0.sh
+./versions_major_history/start-move-files-575.xml__20220322_123540.7z
+./versions_major_history/move_files_to_nas575.sh__20220322_123541.7z
+./versions_major_history/start-move-files-575.6830.xml__20220322_123541.7z
+./versions_major_history/move_files_to_nas575.6830.sh__20220322_123540.7z
+./versions_major_history/start-move-files-575.6830.bat__20220322_123541.7z
+./move_files_to_arc-a-test01-offline.sh
+./cfiletodo.sh
+./findnasall.sh
+./move_files_to_arc-b.sh
+./invisible.vbs
+./move_files_to_nas575.sh
+./zTS/start-move-files-575_T_2021-07-14__19.03.03.xml
+./zTS/older__20220322_121924.7z
+./task.manager.rsync.running.pmda-so5632-2.png
+./rbcp-575-nas-2c.bat
+./move_files_to_arc-d.sh
+./dev/move_files_to_nas575.sh
+./dev/start-move-files-575-dg-cdrv-test.bat
+./dev/diskfull.sh
+./dev/findnas3
+./dev/start-move-files-575-test.bat
+./dev/findnas4
+./dev/findnas2
+./testfind01.sh
+./sysinfo-bootuptime01.bat
+./docs/ps-ef-move-arc_example.txt
+./Cygwin.bat - Shortcut.lnk
+./start-move-files-575.xml
+./bkup-575_library-6365-sge-rotor.sh
+./start-move-files-575.6830.bat
+./start-move-files-575.6830.xml
+./rbcp-575.bat
+./older/start-move-files-575.r1.bat
+./older/move_files_to_nas575-24copy.sh
+./older/move_files_to_nas575.r31.sh
+./older/note.a.txt
+./older/start-move-files-575.bat_Shortcut.lnk
+./older/bkup-575f.sh
+./older/move_files_to_nas575__with.boot.check@set.hour.sh
+./older/start-move-files-575.r2.bat
+./older/move_files_to_nas575.2021-03-27-832.sh
+./older/move_files_to_nas575 - Copy 36.sh
+./older/startmovefile575.log.txt
+./older/move_files_to_nas575.r30.sh
+./older/start-move-files-575.r3.bat
+./older/move_files_to_nas575.r29.sh
+./task.sched.txt
+./tailb
+./move_files_to_arc-e-nas1.sh
