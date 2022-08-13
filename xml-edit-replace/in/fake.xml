@@ -1,0 +1,50 @@
+<annotation>
+	<folder>S1 Outer Surface</folder>
+	<filename>s1_outer_surface_20210219T111826.png</filename>
+	<path>C:\Project Images\sge_rotor_process_6365_NDT\prolucid_datasets\Temporary Folder\Corner Chip and Crack Samples\S1 Outer Surface\s1_outer_surface_20210219T111826.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	
+	<note>There are two size items here just to test it...</note>
+	
+	
+	<size>
+		<width>300</width>
+		<height>451</height>
+		<depth>3</depth>
+	</size>
+	
+	<size>
+		<width>300</width>
+		<height>45</height>
+		<depth>1</depth>
+	</size>
+	
+	
+	<segmented>0</segmented>
+	<object>
+		<name>Chip</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>4</xmin>
+			<ymin>2254</ymin>
+			<xmax>518</xmax>
+			<ymax>2405</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>Chip</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>436</xmin>
+			<ymin>1950</ymin>
+			<xmax>515</xmax>
+			<ymax>2195</ymax>
+		</bndbox>
+	</object>
+</annotation>

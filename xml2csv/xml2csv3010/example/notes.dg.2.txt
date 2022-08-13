@@ -1,0 +1,79 @@
+_____________
+
+report is empty.
+
+c:
+cd \0
+python D:\data\script\tools599\xml2csv\xml2csv3010\xmltocsv_any_prompts_argparse.py Z:\mcdata\mc_6365_vision\image_data c:\0 configa.yaml
+
+
+C:\0>c:
+C:\0>cd \0
+C:\0>python D:\data\script\tools599\xml2csv\xml2csv3010\xmltocsv_any_prompts_argparse.py Z:\mcdata\mc_6365_vision\image_data c:\0 configa.yaml
+Generating report, please wait...
+image_data-xml_to_csv_summary-2022-07-29-13-02-12.csv
+Report has been generated.
+C:\0>
+
+_____________
+
+_____________
+
+Worked:
+
+but: machine is `none`.
+
+c:
+cd \0 & md x21
+python D:\data\script\tools599\xml2csv\xml2csv3010\xmltocsv_any_prompts_argparse.py "D:\Dropbox (Stackpole)\lean_AI\2022-02-23\NG_250_each_defect" c:\0\x21 c:\0\configa.yaml
+
+reference:
+D:\Dropbox (Stackpole)\lean_AI\2022-02-23\NG_250_each_defect\outer_rim_cracks_with_other\from_train\s1_outer_surface_20210222T152907.xml
+
+
+Machine Number,Part Number,Full_Path_Way,Base_Path,File_Name,Camera,Datetime,DateOnly,ISO_8601,Extension,Width,Height,Depth,Defect Type,xmin,ymin,xmax,ymax,xdelta,ydelta,Area,Score
+None,None,D:\Dropbox (Stackpole)\lean_AI\2022-02-23\NG_250_each_defect\outer_rim_chips_with_other\from_prod\s1_outer_surface_20220119T234809.xml,D:\Dropbox (Stackpole)\lean_AI\2022-02-23\NG_250_each_defect\outer_rim_chips_with_other\from_prod,s1_outer_surface_20220119T234809.xml,s1_outer_surface,2022-01-19  23:48:09,2022-01-19 ,20220119T234809,.xml,,,,Chip,31,2255,124,2575,93,320,29760,0.9997
+None,None,D:\Dropbox (Stackpole)\lean_AI\2022-02-23\NG_250_each_defect\outer_rim_chips_with_other\from_prod\s1_outer_surface_20220202T003446.xml,D:\Dropbox (Stackpole)\lean_AI\2022-02-23\NG_250_each_defect\outer_rim_chips_with_other\from_prod,s1_outer_surface_20220202T003446.xml,s1_outer_surface,2022-02-02  00:34:46,2022-02-02 ,20220202T003446,.xml,,,,Chip,480,1553,515,1635,35,82,2870,0.9966
+None,None,D:\Dropbox (Stackpole)\lean_AI\2022-02-23\NG_250_each_defect\outer_rim_chips_with_other\from_train\s1_outer_surface_20210219T113212.xml,D:\Dropbox (Stackpole)\lean_AI\2022-02-23\NG_250_each_defect\outer_rim_chips_with_other\from_train,s1_outer_surface_20210219T113212.xml,s1_outer_surface,2021-02-19  11:32:12,2021-02-19 ,20210219T113212,.xml,550,4512,1,Chip,449,562,518,784,69,222,15318,Manual
+
+
+=================================================
+
+_____________
+
+
+
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+#@  
+#@  other..
+#@  
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@   2022-07-29[Jul-Fri]13-12PM 
+
+
+python D:\data\copyof\CORP-PM\people\DavidGleba\python-code2\2021-12-09-6830_6365_xml_csv_report_updates\xml_to_csv_reports\6365_xml_to_csv_ml_vision.py
+
+python D:\data\copyof\CORP-PM\people\DavidGleba\python-code2\2022-03-21-xml-to-csv\6365_xml_to_csv_by_folder_split_user_input_rev1.py
+
+python D:\yard\wkoofr2\lean_AI\imagedata\6365_xml_to_csv_by_folder_split_user_input_rev1.py 
+
+ Z:\mcdata\mc_6365_vision\image_data\S1 Inner Rim\20210330
+ 
+ 
+D:\data\copyof\CORP-PM\people\DavidGleba\python-code2\2021-12-09-6830_6365_xml_csv_report_updates\xml_to_csv_reports\6365_xml_to_csv_ml_vision.py
+
+
+
+C:\0>python D:\yard\wkoofr2\lean_AI\imagedata\6365_xml_to_csv_by_folder_split_user_input_rev1.py
+List the directory you want to parse in the format: Z:\mcdata\mc_6365_vision\image_data\
+Generating report, please wait...
+Traceback (most recent call last):
+  File "D:\yard\wkoofr2\lean_AI\imagedata\6365_xml_to_csv_by_folder_split_user_input_rev1.py", line 81, in <module>
+    tree = ET.parse(current_file_path)
+  File "C:\prg\python\lib\xml\etree\ElementTree.py", line 1229, in parse
+    tree.parse(source, parser)
+  File "C:\prg\python\lib\xml\etree\ElementTree.py", line 580, in parse
+    self._root = parser._parse_whole(source)
+xml.etree.ElementTree.ParseError: no element found: line 1, column 0
+
+
+python D:\data\script\tools599\xml2csv\xmltocsv_any_v03.py

@@ -1,0 +1,13 @@
+
+D:\data\script\config.yamlpath: 'D:\script_test_area\script_test\dv6.2_files_examples'
+productNumber: "70.7031"
+machineNumber: "6830"
+timeRange: 672
+reportEndTime: 630
+
+
+path2: 'D:\script_test_area\script_test\sge_files_examples'
+productNumber1: "70.2661"
+machineNumber1: "6365"
+timeRange1: 672
+reportEndTime1: 630

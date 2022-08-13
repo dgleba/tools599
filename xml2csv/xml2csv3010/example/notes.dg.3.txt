@@ -1,0 +1,74 @@
+
+python D:\data\script\xmltocsv_any_prompts_argparse.py \\10.4.65.190\Images\mcdata\mc_6365_vision\image_data D:\D:\6830_reports D:\data\script\config.yaml
+
+
+python D:\data\script\tools599\xml2csv\xml2csv3010\xmltocsv_any_prompts_argparse.py \\10.4.65.190\Images\mcdata\mc_6365_vision\image_data c:\0 D:\data\script\config.yaml
+
+
+note: i have no:  D:\data\script\config.yaml
+
+Microsoft Windows [Version 10.0.19044.1826]
+(c) Microsoft Corporation. All rights reserved.
+C:\Windows\system32>cd\0
+C:\0>python D:\data\script\tools599\xml2csv\xml2csv3010\xmltocsv_any_prompts_argparse.py \\10.4.65.190\Images\mcdata\mc_6365_vision\image_data c:\0 D:\data\script\config.yaml
+Generating report, please wait...
+
+
+
+=================================================
+
+python \\corp-fs01\CORP-PM\people\DavidGleba\python-code\2022-03-21-xml-to-csv\6365_xml_to_csv_by_PRODUCTION_folder_split_user_input_rev1.py
+
+python \\corp-fs01\CORP-PM\people\DavidGleba\python-code\2022-03-21-xml-to-csv\6365_xml_to_csv_by_folder_split_user_input_rev1.py
+
+python \\corp-fs01\CORP-PM\people\DavidGleba\python-code\2022-03-21-xml-to-csv\6830_xml_to_csv_pathway_inputs_from_user_rev1.py
+
+_____________
+
+
+
+python D:\data\script\tools599\xml2csv\6365_xml_to_csv\6365_xml_to_csv_by_folder_split_user_input_rev1.py
+
+Z:\mcdata\mc_6365_vision\image_data\S1 Outer Surface\20210401
+
+
+C:\0>python D:\data\script\tools599\xml2csv\6365_xml_to_csv\6365_xml_to_csv_by_folder_split_user_input_rev1.py
+List the directory you want to parse in the format: Z:\mcdata\mc_6365_vision\image_data
+Generating report, please wait...
+Traceback (most recent call last):
+  File "D:\data\script\tools599\xml2csv\6365_xml_to_csv\6365_xml_to_csv_by_folder_split_user_input_rev1.py", line 81, in <module>
+    tree = ET.parse(current_file_path)
+  File "C:\prg\python\lib\xml\etree\ElementTree.py", line 1229, in parse
+    tree.parse(source, parser)
+  File "C:\prg\python\lib\xml\etree\ElementTree.py", line 580, in parse
+    self._root = parser._parse_whole(source)
+xml.etree.ElementTree.ParseError: no element found: line 1, column 0
+
+_____________
+
+python D:\data\script\tools599\xml2csv\6365_xml_to_csv\6365_xml_to_csv_by_PRODUCTION_folder_split_user_input_rev1.py
+
+
+C:\0>python D:\data\script\tools599\xml2csv\6365_xml_to_csv\6365_xml_to_csv_by_PRODUCTION_folder_split_user_input_rev1.py
+
+List the directory you want to parse in the format: Z:\mcdata\mc_6365_vision\image_data\S1 Outer Surface
+Generating report, please wait...
+Traceback (most recent call last):
+  File "D:\data\script\tools599\xml2csv\6365_xml_to_csv\6365_xml_to_csv_by_PRODUCTION_folder_split_user_input_rev1.py", line 81, in <module>
+    tree = ET.parse(current_file_path)
+  File "C:\prg\python\lib\xml\etree\ElementTree.py", line 1229, in parse
+    tree.parse(source, parser)
+  File "C:\prg\python\lib\xml\etree\ElementTree.py", line 580, in parse
+    self._root = parser._parse_whole(source)
+xml.etree.ElementTree.ParseError: no element found: line 1, column 0
+
+C:\0>
+
+_____________
+
+
+
+
+=================================================
+
+

@@ -35,7 +35,7 @@ if __name__ == "__main__":
 
 #go to logger module docs
 
-root_directory = r'C:\Users\pmdacameras\Documents\LabVIEW Data\SGE Rotor Vision'
+root_directory = r'W:\mc_6365_vision\image_data\S1 Outer Surface'
 current_working_directory = os.getcwd()
 extensions = ('.xml')
 report_destination_folder = r'D:\data\xml_to_csv_reports'

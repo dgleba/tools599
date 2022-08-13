@@ -1,0 +1,3 @@
+config_2661.yaml is for the 6365 machine and for the time being the sge rotors.
+
+config_7031.yaml is for the 6830 machine and dv6.2 rotors.

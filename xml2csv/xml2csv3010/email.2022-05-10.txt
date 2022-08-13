@@ -1,0 +1,37 @@
+
+
+ 
+David Gleba P.Eng. | Senior Engineer - Predictive Engineering Analytics, Advanced Engineering
+Stackpole International | 128 Monteith | Stratford, ON N5A 2P5 | Canada
+C:  +1 226.921.7316     |  dgleba@stackpole.com  |  www.stackpole.com
+
+From: Parth Patel 
+Sent: May 10, 2022 2:26 PM
+To: Dave Gleba <DGleba@stackpole.com>
+Subject: RE: xml2csv
+
+Yes. For now any is to be looked at as SGE rotor and DV6.2 rotor xml file input. It may be glitchy for a datetime format that is different from the machine output of 6365 for SGE rotor and 6830 for DV6.2 rotor. See examples below.
+
+SGE example: s1_top_view_20210101T001122.xml
+DV6.2 example: outer_surface_220428T123456.xml
+
+If the formats differ from these inputs then there is a good chance it might not work properly, for the time being.
+
+From: Dave Gleba <DGleba@stackpole.com> 
+Sent: May 10, 2022 1:53 PM
+To: Parth Patel <ppatel@stackpole.com>
+Subject: xml2csv
+
+I moved and renamed.
+
+\\corp-fs01\CORP-PM\people\parthpatel\script-python\xml2csv\xmltocsv_any_prompts.py
+
+Any=any xml input file format
+
+Does what I did make sense?
+ 
+David Gleba P.Eng. | Senior Engineer - Predictive Engineering Analytics, Advanced Engineering
+Stackpole International | 128 Monteith | Stratford, ON N5A 2P5 | Canada
+C:  +1 226.921.7316     |  dgleba@stackpole.com  |  www.stackpole.com
+
+

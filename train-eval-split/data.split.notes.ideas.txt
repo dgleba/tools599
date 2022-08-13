@@ -1,0 +1,31 @@
+
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+#@  
+#@  
+#@  
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@   2022-06-20[Jun-Mon]11-49AM 
+
+
+
+
+12a,12d,12e
+\\10.4.100.207\pmda\6830Train_Data\innerrim\train
+\\10.4.100.207\pmda\6830Train_Data\innerrim\eval
+
+12b
+\\10.4.100.207\pmda\6830Train_Data\innerrim\autolabel(allinone)
+[png only]
+keep xml in corp  \\corp-fs01\CORP-PM\data_eng\ml_lib\ml_lib_6830\grp12_inner-rim\12b
+
+
+validate
+\\10.4.100.207\pmda\6830Validate\innerrim\
+verified_labels
+  [no split, with xml]
+unverified_labels
+[ no split, with xml]
+
+
+\\10.4.100.207\pmda\6830Validate\innerrim\verified_labels
+\\10.4.100.207\pmda\6830Validate\innerrim\unverified_labels
+
