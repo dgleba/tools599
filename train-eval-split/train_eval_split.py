@@ -180,9 +180,6 @@ for subdirs, dirs, files in os.walk(main):
                 if f.endswith('.png'):
                     directory_list.append(subdirs)
                     break
-print(directory_list)
-print(len(directory_list))
-sys.exit(1)
 for directory in directory_list:
     directory_path = Path(directory)
     files = os.listdir(directory_path)
