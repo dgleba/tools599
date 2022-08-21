@@ -1,0 +1,29 @@
+zip-lrg-folders.py - ver 11
+--- 0.0 seconds ---
+--- 53.00999999046326 seconds ---
+f: D:\Archive Record\images\year2021\Jun\Day22\Shift3\2960\Good
+D:\Archive Record\images\year2021\Jun\Day22\Shift3\2960\Good.zip
+zipedfilename:   D:\Archive Record\images\year2021\Jun\Day22\Shift3\2960\Good.zip
+--- 90.13800001144409 seconds ---
+f: D:\Archive Record\images\year2021\Jun\Day23\Shift2\7680\Bad
+D:\Archive Record\images\year2021\Jun\Day23\Shift2\7680\Bad.zip
+zipedfilename:   D:\Archive Record\images\year2021\Jun\Day23\Shift2\7680\Bad.zip
+--- 92.24000000953674 seconds ---
+f: D:\Archive Record\images\year2021\Jun\Day23\Shift2\7680\Good
+D:\Archive Record\images\year2021\Jun\Day23\Shift2\7680\Good.zip
+zipedfilename:   D:\Archive Record\images\year2021\Jun\Day23\Shift2\7680\Good.zip
+--- 189.5659999847412 seconds ---
+f: D:\Archive Record\images\year2021\Jun\Day23\Shift3\2960\Bad
+D:\Archive Record\images\year2021\Jun\Day23\Shift3\2960\Bad.zip
+zipedfilename:   D:\Archive Record\images\year2021\Jun\Day23\Shift3\2960\Bad.zip
+--- 190.17899990081787 seconds ---
+f: D:\Archive Record\images\year2021\Jun\Day23\Shift3\2960\Good
+Traceback (most recent call last):
+  File "\\10.4.65.190\Images\sw\copyof\data_script\tools599\movefiles575\zip-lrg-folders.py", line 62, in <module>
+    zipfn = shutil.make_archive(f, 'zip', f, )
+  File "shutil.py", line 1059, in make_archive
+  File "shutil.py", line 956, in _make_zipfile
+  File "zipfile.py", line 1776, in write
+  File "shutil.py", line 208, in copyfileobj
+  File "zipfile.py", line 1141, in write
+OSError: [Errno 12] Not enough space

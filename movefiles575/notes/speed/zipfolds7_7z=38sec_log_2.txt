@@ -1,0 +1,20 @@
+zip-lrg-folders7.py - ver 7-03
+--- 0.0 seconds ---
+--- 0.031248092651367188 seconds ---
+f: d:\0\Jun\aug-day03\Shift1\2960\Bad
+d:\0\Jun\aug-day03\Shift1\2960\Bad.7z
+zipedfilename:   d:\0\Jun\aug-day03\Shift1\2960\Bad.7z
+--- 0.15679121017456055 seconds ---
+f: d:\0\Jun\aug-day03\Shift1\2960\Good
+d:\0\Jun\aug-day03\Shift1\2960\Good.7z
+zipedfilename:   d:\0\Jun\aug-day03\Shift1\2960\Good.7z
+--- 18.70039677619934 seconds ---
+f: d:\0\Jun\aug-day03\Shift2\2956\Bad
+d:\0\Jun\aug-day03\Shift2\2956\Bad.7z
+zipedfilename:   d:\0\Jun\aug-day03\Shift2\2956\Bad.7z
+--- 23.811058282852173 seconds ---
+f: d:\0\Jun\aug-day03\Shift2\2956\Good
+d:\0\Jun\aug-day03\Shift2\2956\Good.7z
+zipedfilename:   d:\0\Jun\aug-day03\Shift2\2956\Good.7z
+--- 36.60288643836975 seconds ---
+--- REACHED--END. 36.60288643836975 sec. 0.010167468455102708 hours ---

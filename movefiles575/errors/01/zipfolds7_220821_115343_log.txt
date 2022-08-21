@@ -1,0 +1,18 @@
+zip-lrg-folders.py - ver 7-01
+--- 0.0 seconds ---
+Traceback (most recent call last):
+  File "\\10.4.65.190\Images\sw\copyof\data_script\tools599\movefiles575\zip-lrg-folders7.py", line 50, in <module>
+    folds=fast_scandir(src)
+  File "\\10.4.65.190\Images\sw\copyof\data_script\tools599\movefiles575\zip-lrg-folders7.py", line 47, in fast_scandir
+    subfolders.extend(fast_scandir(dirname))
+  File "\\10.4.65.190\Images\sw\copyof\data_script\tools599\movefiles575\zip-lrg-folders7.py", line 47, in fast_scandir
+    subfolders.extend(fast_scandir(dirname))
+  File "\\10.4.65.190\Images\sw\copyof\data_script\tools599\movefiles575\zip-lrg-folders7.py", line 47, in fast_scandir
+    subfolders.extend(fast_scandir(dirname))
+  [Previous line repeated 1 more time]
+  File "\\10.4.65.190\Images\sw\copyof\data_script\tools599\movefiles575\zip-lrg-folders7.py", line 45, in fast_scandir
+    subfolders= [f.path for f in os.scandir(dirname) if f.is_dir()]
+  File "\\10.4.65.190\Images\sw\copyof\data_script\tools599\movefiles575\zip-lrg-folders7.py", line 45, in <listcomp>
+    subfolders= [f.path for f in os.scandir(dirname) if f.is_dir()]
+KeyboardInterrupt
+^C

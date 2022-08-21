@@ -1,0 +1,15 @@
+zip-lrg-folders.py - ver 11
+--- 0.0 seconds ---
+
+
+System ERROR:
+Not enough storage is available to process this command.
+--- 52.23399996757507 seconds ---
+f: D:\Archive Record\images\year2021\Jun\Day22\Shift3\2960\Good
+D:\Archive Record\images\year2021\Jun\Day22\Shift3\2960\Good.7z
+Traceback (most recent call last):
+  File "\\10.4.65.190\Images\sw\copyof\data_script\tools599\movefiles575\zip-lrg-folders.py", line 69, in <module>
+    ret00 = subprocess.check_output([call00, 'a', "-m0=Copy", zipfn, f])
+  File "subprocess.py", line 415, in check_output
+  File "subprocess.py", line 516, in run
+subprocess.CalledProcessError: Command '['C:\\prg\\7-Zip\\7za.exe', 'a', '-m0=Copy', 'D:\\Archive Record\\images\\year2021\\Jun\\Day22\\Shift3\\2960\\Good.7z', 'D:\\Archive Record\\images\\year2021\\Jun\\Day22\\Shift3\\2960\\Good']' returned non-zero exit status 2.

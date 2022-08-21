@@ -7,7 +7,6 @@ uses:
 example usage: 
 
 python D:\data\script\tools599\movefiles575\zip-lrg-folders.py
-python D:\data\script\tools599\movefiles575\zip-lrg-folders.py >>d:\0\zipfolds_%dhms%_log_3.txt 2>&1
 
 
 Also refer to: 
@@ -18,7 +17,7 @@ import os, sys, random, shutil, time, glob, subprocess
 import logging
 logging.basicConfig(level=0)
 
-print("zip-lrg-folders.py - ver 12")
+print("zip-lrg-folders.py - ver 11")
 start_time = time.time()
 print("--- %s seconds ---" % (time.time() - start_time))
 sys.stdout.flush()
@@ -29,8 +28,8 @@ sys.stdout.flush()
 # top folder to delete from..
 # src=r"d:\copyof\corp-fs01\CORP-PM_xx"
 # src=r"d:\example-files\yr2021"
-src=r"D:\Archive Record\images\year2021\Jun"
 src=r"d:\0\Jun"
+src=r"D:\Archive Record\images\year2021\Jun"
 
 
 # list of strings to match in folder path..
@@ -69,7 +68,7 @@ for f in folds:
                 ### zipfn = f"{os.path.split(f)[0]}\{lastpathname}.7z"
                 print(zipfn)
                 # print(os.path.split(f)[0])
-                call00 = "C:\\prg\\7-Zip\\7z.exe"
+                call00 = "C:\\prg\\7-Zip\\7za.exe"
                 ### ret00 = subprocess.check_output([call00, 'a', "-m0=Copy", zipfn, f])
                 # print(ret00)
                 #

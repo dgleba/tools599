@@ -22,7 +22,7 @@ rem ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ run tasks
 :main01
 echo Start main routine
 
-c:\prg\python\python \\10.4.65.190\Images\sw\copyof\data_script\tools599\movefiles575\zip-lrg-folders.py >%logdir%\zipfolds_%dhms%_log.txt 2>&1
+c:\prg\python\python \\10.4.65.190\Images\sw\copyof\data_script\tools599\movefiles575\zip-lrg-folders7.py >%logdir%\zipfolds7_%dhms%_log.txt 2>&1
 
 REM c:\prg\python\python \\10.4.65.190\Images\sw\copyof\data_script\tools599\movefiles575\zip-lrg-folders-b.py >%logdir%\zipfolds-b_%dhms%_log.txt 2>&1
 REM c:\prg\python\python \\10.4.65.190\Images\sw\copyof\data_script\tools599\movefiles575\zip-lrg-folders.py 
