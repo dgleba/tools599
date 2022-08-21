@@ -23,7 +23,7 @@ robocopy d:\data\script\tools599  \\pmda-sgenas01\PMDA-SGE\backup\mc6365_c_data_
  /xf *._sync* /xd venv001 6830_xml_to_csv_env vision_performance_tracker_report_env zTS .git  /dst /fft /xo /ndl /np /r:0 /w:0 /tee /eta /log:%logf4%
 
 
-robocopy c:\data\script\tools599  \\pmda-sgenas01\PMDA-SGE\backup\mc6365_c_data_script\tools599  /e     ^
+robocopy d:\data\script\tools599  \\10.4.65.190\Images\sw\copyof\data_script\tools599  /e     ^
  /xf *._sync* /xd venv001 6830_xml_to_csv_env vision_performance_tracker_report_env zTS .git  /dst /fft /xo /ndl /np /r:0 /w:0 /tee /eta /log:%logf4%
 
 
