@@ -36,7 +36,7 @@ cd %fold00%
 for /D %%G in (%fold00%\*) DO ( 
 echo "---------- " %%~nxG
 echo %%G
-C:\prg\7-zip\7za a -sdel -m0=Copy %%~nxG.7z  "%%G"
+C:\prg\7-zip\7za a -sdel  %%~nxG.7z  "%%G"
 )
 
 
@@ -52,6 +52,12 @@ goto end
 
 
 notes:
+
+@REM C:\prg\7z1604\7za.exe u -r -bd  -m0=copy -v1g -mmt=off  %%~nxG.7z  %%G
+@REM C:\prg\7-zip\7za.exe u -r -bd  -m0=copy -v1g -mmt=off  %%~nxG.7z  %%G
+
+
+-m0=Copy
 
 
 @echo on

@@ -30,7 +30,9 @@ cd %fold00%
 for /D %%G in (%fold00%\*) DO ( 
 echo "---------- "%%~nxG
 echo %%G
-C:\prg\7-zip\7za a -sdel -m0=Copy %%~nxG.7z  %%G
+C:\prg\7za920\7za.exe u -r -bd  -m0=copy -v1g -mmt=off   %%~nxG.7z  %%G
+IF %ERRORLEVEL% NEQ 0 goto error01
+REM C:\prg\7-zip\7za a -sdel -m0=Copy %%~nxG.7z  %%G
 )
 
 
@@ -40,9 +42,40 @@ pause
 pause
 pause
 pause
+
+
+:error01
+
+
+echo.
+echo.
+echo.
+echo.
+echo.
+echo Error occured. exiting.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+
 goto end
 
+
 =================================================
+
+
+Notes:
+
+-mt=off
+
+-stl timestamp of newest archived file.
+
+=================================================
+
+test:
+
 
 @echo on
 d:
@@ -50,7 +83,8 @@ set tm01=%dhms%
 set fold00="D:\Archive Record\images\year2021\Jun\Day30\Shift3\2960"
 cd %fold00%
 cd&dir
-C:\prg\7-zip\7za a -m0=Copy bad0.7z  %fold00%\bad 
+C:\prg\7za920\7za.exe a -m0=Copy bad0.7z  %fold00%\bad 
+REM C:\prg\7-zip\7za a -m0=Copy bad0.7z  %fold00%\bad 
 dir
 @REM>%logdir%\zipfolds_%tm01%_log.txt 2>&1
 print %logdir%\zipfolds_%tm01%_log.txt
@@ -68,6 +102,8 @@ pause
 REM timeout 445
 
 goto end
+
+=================================================
 
 
 :end

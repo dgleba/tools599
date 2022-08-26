@@ -22,7 +22,7 @@ rem ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ run tasks
 :main01
 echo Start main routine
 
-c:\prg\python\python \\10.4.65.190\Images\sw\copyof\data_script\tools599\movefiles575\del-rand-keep-n.py
+c:\prg\python\python \\10.4.65.190\Images\sw\copyof\data_script\tools599\movefiles575\del-rand-keep-n.py>%logdir%\delkeeprandn_%dhms%_log.txt 2>&1
 
 timeout 45
 

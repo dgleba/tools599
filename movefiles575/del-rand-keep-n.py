@@ -8,20 +8,23 @@
 
 # top folder to delete from..
 # src=r"d:\copyof\corp-fs01\CORP-PM\x123123"
-# src=r"d:\example-files\yr2021"
-src=r"D:\Archive Record\images\year2021\Jun"
+# src=r"D:\Archive Record\images\year2021\Jun"
+# src=r"D:\Archive Record\images\year2021"
+src=r"d:\0\Jun"
 
 # number of files to keep in each folder
-numtokeep = 9000
+numtokeep = 10000
 
 # list of strings to match in folder path..
-lista = ['Good', 'Jul']
+# lista = ['Good', 'Jul']
+lista = ['Good']
 
 
 # end Settings. =================================================
 
 
-import os, random
+import os, sys, random, shutil, time, glob, subprocess
+sys.stdout.flush()
 
 
 # get list of folders
@@ -50,6 +53,7 @@ for f in folds:
             for num in random.sample(list(range(0,len(lsdir))), delnum):
                 # print(num)
                 os.remove(os.path.join(f, lsdir[num]))
+            sys.stdout.flush()
 
 
 
