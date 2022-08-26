@@ -16,9 +16,8 @@ logf=${tempdir}/findallnas2_ip10-4-56-190.$(date +"_%Y.%m.%d").log
 
 echo "-+-+--+-+-  Starting  $0  $(date +"_%Y.%m.%d_%H.%M.%S")" >> $logf
 
-# -----------------------------------------
 
-#  start here
+function_one() {
 
 cd "${ssc}"
 #find . -type f  |grep -P "_20\d{4}T\d{6}" | sort -n > ${tfc}
@@ -36,15 +35,17 @@ echo file list..
 echo "  end $(basename -- "$0")  $(date +"_%Y.%m.%d_%H.%M.%S")" >> $logf
 
 
-
-echo "  start date $(basename -- "$0")  $(date +"_%Y.%m.%d_%H.%M.%S")" >> $logf
-cat ${tfc}  | xargs  -I{} stat {} --printf='%.16y\t%n\n' | grep "^2022-06"  > ${tfc}.dategrep3
-echo "  end date $(basename -- "$0")  $(date +"_%Y.%m.%d_%H.%M.%S")" >> $logf
+#this takes too long
+# echo "  start date $(basename -- "$0")  $(date +"_%Y.%m.%d_%H.%M.%S")" >> $logf
+# cat ${tfc}  | xargs  -I{} stat {} --printf='%.16y\t%n\n' | grep "^2022-06"  > ${tfc}.dategrep3
+# echo "  end date $(basename -- "$0")  $(date +"_%Y.%m.%d_%H.%M.%S")" >> $logf
 
 
 echo "  start 365 $(basename -- "$0")  $(date +"_%Y.%m.%d_%H.%M.%S")" >> $logf
 find . -type f  -mtime +365 > ${tfc}.365
 echo "  end 365 $(basename -- "$0")  $(date +"_%Y.%m.%d_%H.%M.%S")" >> $logf
+
+}
 
 
 
@@ -67,3 +68,59 @@ cat ${tfc}  | xargs  -I{} stat {} --printf='%.16y\t%n\n' | grep "^2022-06"  > ${
 
 }
 
+
+
+# -----------------------------------------
+
+
+function cleanup {
+
+# copy log file created in windows scheduler to timestamped file..
+set -x
+
+#Remove the lock directory
+if rmdir ${LOCKDIR}; then
+	echo "Finished"
+	sleep 1
+else
+	echo "Failed to remove lock directory '$LOCKDIR'"
+	exit 1
+fi
+
+echo "cleanup running at  $(date +"_%Y.%m.%d_%H.%M.%S")"
+echo "cleanup running at  $(date +"_%Y.%m.%d_%H.%M.%S")">> ${logf}
+s=16 ; read  -rsp $"Wait $s seconds or press Escape-key or Arrow key to continue..." -t $s -d $'\e'; echo;echo;
+}
+
+
+
+# -----------------------------------------
+# -----------------------------------------
+# -----------------------------------------
+
+
+
+#  start here
+
+
+#
+# set lockdir so that script will only run one instance..
+#
+LOCKDIR=/tmp/lockdir_oneinstance_$(basename -- "$0")
+if mkdir ${LOCKDIR}; then
+    #Ensure that if we "grabbed a lock", we release it # Works for SIGTERM and SIGINT(Ctrl-C)
+    trap "cleanup" EXIT
+    echo "Acquired one-instance-only lock, running the content at $(date +"_%Y.%m.%d_%H.%M.%S").."
+    ## echo "disabled, but made one-instance-only lock using windows window-title, running the content.."
+    
+    #Main Processing starts here 
+    function_one
+else
+    #I had problems in cygwin. See how it goes in ubuntu. I think it has been good in the past..
+	#2021-05-27 having trouble. lockdir too often is not removed.
+	#disabled here by running function_one no matter what.
+	#see C:\data\script\movefiles575\start-move-files-575.bat
+	echo "Could not create one-instance lock directory '$LOCKDIR'. at  $(date +"_%Y.%m.%d_%H.%M.%S"). Is it already running?"
+	echo "Could not create one-instance lock directory '$LOCKDIR' at  $(date +"_%Y.%m.%d_%H.%M.%S")">> ${tempdir}/one_instance$(date +"_%Y.%m.%d").log
+    exit 1
+fi

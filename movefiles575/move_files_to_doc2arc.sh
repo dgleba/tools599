@@ -2,7 +2,7 @@
 
 # see version info at bottom.
 
-# purpose: TEST folder only...  move older images to archive (drive dock for example)
+# purpose: dock was not mounted so files went to internal drive. this moves them to dock.
 
 # usage:          bash /crib/tools599/movefiles575/move_files_to_arc-a-test02.sh
 
@@ -52,7 +52,7 @@ echo moving files..
 set -vx # echo on
 #-a was not preserving mod time stamp on nas#2. 2022-01-16 dgleba.
 # --remove-source-files
-rsync  -vtlr --remove-source-files  --log-file=$logf  --files-from=${tfc} . ${ddc} 
+rsync  -vtlr --remove-source-files --bwlimit=1G --log-file=$logf  --files-from=${tfc} . ${ddc} 
 
 # sometimes with mindepth 1 it doesn't touch/delete them. but it did with mindepth removed. 2022-04-11.
 echo "some empty folders may have newer dates than they should. touching.."
@@ -127,7 +127,7 @@ cd /tmp ;mkdir -p ~/tmp; cd ~/tmp; pwd
 # ssc="//10.4.65.190/Images/mc_6830_vision/image_data/inner_rim/nok/210602"
 # ssc=/mnt/nas2_ip10-4-56-190/mcdata/mc_6830_vision/image_data/inner_bore
 # ssc=/mnt/nas2_ip10-4-56-190/test
-ssc="/mnt/nas2_ip10-4-56-190/mcdata"
+ssc="/media/drivedock-pc/vi641-001/mcdata"
 
 # REM :destination dir
 # temporary change to d drive 2021-07-19 ---  ddc="//pmda-sgenas01/PMDA-SGE/image_data/SGE_Rotor_6365"
