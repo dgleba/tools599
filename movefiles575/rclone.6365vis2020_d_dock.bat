@@ -21,7 +21,7 @@ REM @echo off
 
 :: allow only one copy of this to run at one time..
 :: Window title must be unique.
-set batch_title=rclone_move6670vis1-2-nas2_180d
+set batch_title=rclone_move6365vis0-nas2_d-dockssh
 :: Run tasklist in verbose mode (which returns window titles) and search for the window title of this batch file:
 tasklist /V /NH /FI "imagename eq cmd.exe"| find /I /C "%batch_title%" > nul
 :: If the window title is found then the errorlevel variable will be 0, which means the process is already running:
@@ -37,12 +37,12 @@ echo Start main routine
 
 @echo on
 
-c:\prg\rclone\rclone move --min-age=180d  --max-age=999d --delete-empty-src-dirs  "D:\Archive Record\images" \\10.4.65.190\Images\mcdata\mc_6670_vision\image_data\vision-1\images -v --log-file=%logdir%\rclone_%dhms%.log.txt
+set pth=c:\prg\rclone\
+%pth%\rclone move --delete-empty-src-dirs  D:\image_data\SGE_Rotor_6365 dock-vi641-ssh:/media/albe/vi641-001/mcdata/mc_6365_vision/image_data -v 2>&1|%pth%\tee %logdir%\rclonedockssh_%dhms%.log.txt
+
+::--log-file=%logdir%\rclonedockssh_%dhms%.log.txt
 
 
-REM --log-level NOTICE --order-by modtime,ascending --progress
-
-@rem --log-level INFO
  
 timeout 145
 
@@ -50,19 +50,28 @@ goto end
 
 
 
+:create-rclone-sshs-sftp-connection
+
+set pth=c:\prg\rclone\
+%pth%\rclone config create dock-vi641-ssh sftp host 10.4.168.141 user albe pass Stackpole1325
+
+
+
 :notes
 
-::c:\prg\fastcopy\FastCopy.exe /cmd=move  /from_date=-499D /to_date=-10D /no_ui /include="Bad\" /force_start=2 /filelog /no_confirm_stop /skip_empty_dir 
-/logfile=%logdir%\fastlog%dhms%.log.txt  "D:\Archive Record\images" /to=\\10.4.65.190\Images\mcdata\mc_6670_vision\image_data\vision-1\images 
-::c:\prg\fastcopy\FastCopy.exe /cmd=move  /from_date=-21D /to_date=-10D /no_ui /force_start=2 /filelog /no_confirm_stop /skip_empty_dir /logfile=%logdir%\fastlog%dhms%.log.txt  "D:\Archive Record\images" /to=\\10.4.65.190\Images\mcdata\mc_6670_vision\image_data\vision-1\images 
+rclone copy C:\prg\xsearch dock-vi641-ssh:/tmp/rclonetst -vu
 
-	wmic process where "name like '%cmd%'" get processid,commandline
+sftp://10.4.168.141/media/albe/vi641-001/mcdata/mc_6365_vision/image_data
 
-		C:\Windows\system32>wmic process where "name like '%cmd%'" get processid,commandline
-		CommandLine                                                      ProcessId
-		C:\Windows\system32\cmd.exe /c ""C:\prg\cygwin64\Cygwin.bat" "   13452
-		C:\Windows\system32\cmd.exe /c ""C:\0\one.instance1d527a.cmd" "  25488
-		"C:\Windows\system32\cmd.exe"                                    20312
+
+REM --log-level NOTICE --order-by modtime,ascending --progress
+
+--bwlimit=333k
+
+@rem --log-level INFO
+
+REM c:\prg\rclone\rclone move --min-age=180d  --max-age=999d --delete-empty-src-dirs  "D:\Archive Record\images" \\10.4.65.190\Images\mcdata\mc_6670_vision\image_data\vision-1\images -v --log-file=%logdir%\rclone_%dhms%.log.txt
+
 
 :endnotes
 

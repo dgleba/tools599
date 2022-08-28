@@ -24,8 +24,10 @@ echo Start main routine
 
 @echo on
 
-c:\prg\tail -f C:\Temp\log\%ymd%\rclone_220826_172027.log.txt>tailed.txt
+set pth=c:\prg\rclone
+%pth%\tail C:\Temp\log\220826\rclone_220826_230515.log.txt
 
+REM c:\prg\tail -f C:\Temp\log\%ymd%\rclone_220826_230515.log.txt>tailed.txt
 
 timeout 145
 

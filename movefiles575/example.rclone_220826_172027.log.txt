@@ -1,6 +1,30 @@
 ﻿c:\prg\tail -f C:\Temp\log\220826\rclone_220826_172027.log.txt
 
 
+=================================================
+
+2022/08/26 18:30:29 INFO  : year2022/Feb/Day02/Shift2/7680/Good/C3_T3_161240_7680_0_10.jpg: Copied (new)
+2022/08/26 18:30:29 INFO  : year2022/Feb/Day02/Shift2/7680/Good/C3_T3_161240_7680_0_10.jpg: Deleted
+2022/08/26 18:30:29 INFO  : 
+Transferred:   	    1.283 GiB / 1.421 GiB, 90%, 330.467 KiB/s, ETA 7m16s
+Checks:            214254 / 214258, 100%
+Deleted:           107128 (files), 0 (dirs)
+Renamed:           107127
+Transferred:       107128 / 117138, 91%
+Elapsed time:    1h10m0.0s
+Checking:
+ * year2022/Feb/Day01/Shi…_072648_2956_0_157.jpg: checking
+ * year2022/Feb/Day04/Shi…_081047_7680_0_186.jpg:  0% /20.095Ki, 0/s, -
+Transferring:
+ * year2022/Feb/Day01/Shi…_154958_2956_0_110.jpg:100% /24.388Ki, 0/s, -
+ * year2022/Feb/Day03/Shi…7_094052_7680_0_21.jpg:  0% /11.173Ki, 0/s, -
+
+2022/08/26 18:30:29 INFO  : year2022/Feb/Day01/Shift1/2956/Good/C10_T1_072648_2956_0_157.jpg: Deleted
+2022/08/26 18:30:29 INFO  : year2022/Feb/Day01/Shift2/2956/Good/C8_T1_154958_2956_0_110.jpg: Copied (new)
+
+
+=================================================
+
 2022/08/26 17:20:29 NOTICE: Config file "C:\\Users\\VISION_G1\\AppData\\Roaming\\rclone\\rclone.conf" not found - using defaults
 2022/08/26 17:20:39 INFO  : year2022/Feb/Day02/Shift1/7680/Good/C1_T10_115715_7680_0_46.jpg: Copied (new)
 2022/08/26 17:20:39 INFO  : year2022/Feb/Day02/Shift1/7680/Good/C1_T10_115715_7680_0_46.jpg: Deleted

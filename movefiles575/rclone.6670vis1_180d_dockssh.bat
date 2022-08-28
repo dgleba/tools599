@@ -37,21 +37,39 @@ echo Start main routine
 
 @echo on
 
-c:\prg\rclone\rclone move --min-age=180d  --max-age=999d --delete-empty-src-dirs  "D:\Archive Record\images" \\10.4.65.190\Images\mcdata\mc_6670_vision\image_data\vision-1\images -v --log-file=%logdir%\rclone_%dhms%.log.txt
+
+set pth=c:\prg\rclone\
+%pth%\rclone move --delete-empty-src-dirs --min-age=150d  --max-age=999d "D:\Archive Record\images" dock-vi641-ssh:/media/albe/vi641-001/mcdata/mc_6670_vision/image_data/vision-1/images -v 2>&1|%pth%\tee %logdir%\rclonedockssh_%dhms%.log.txt
 
 
-REM --log-level NOTICE --order-by modtime,ascending --progress
 
-@rem --log-level INFO
- 
+
 timeout 145
 
 goto end
 
 
 
+
+:create-rclone-sshs-sftp-connection
+
+set pth=c:\prg\rclone\
+%pth%\rclone config create dock-vi641-ssh sftp host 10.4.168.141 user albe pass Stackpole1325
+
+
+
+
 :notes
 
+ --bwlimit=29k
+ 
+::c:\prg\rclone\rclone move --min-age=180d  --max-age=999d --delete-empty-src-dirs  "D:\Archive Record\images" \\10.4.65.190\Images\mcdata\mc_6670_vision\image_data\vision-1\images -v --log-file=%logdir%\rclone_%dhms%.log.txt
+
+REM --log-level NOTICE --order-by modtime,ascending --progress
+
+@rem --log-level INFO
+ 
+ 
 ::c:\prg\fastcopy\FastCopy.exe /cmd=move  /from_date=-499D /to_date=-10D /no_ui /include="Bad\" /force_start=2 /filelog /no_confirm_stop /skip_empty_dir 
 /logfile=%logdir%\fastlog%dhms%.log.txt  "D:\Archive Record\images" /to=\\10.4.65.190\Images\mcdata\mc_6670_vision\image_data\vision-1\images 
 ::c:\prg\fastcopy\FastCopy.exe /cmd=move  /from_date=-21D /to_date=-10D /no_ui /force_start=2 /filelog /no_confirm_stop /skip_empty_dir /logfile=%logdir%\fastlog%dhms%.log.txt  "D:\Archive Record\images" /to=\\10.4.65.190\Images\mcdata\mc_6670_vision\image_data\vision-1\images 
