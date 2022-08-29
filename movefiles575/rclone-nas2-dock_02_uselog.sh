@@ -4,9 +4,10 @@
 
 # purpose: rclone  move older images to archive (drive dock for example)
 
-# usage:          bash /crib/tools599/movefiles575/rclone-nas2-dock_01.sh
+# use --log-file instead of tee..  sftp://10.4.168.141/crib/tools599/movefiles575/rclone-nas2-dock_02_uselog.sh
 
-# tail -f /crib/log/albelogs/rclonenas2-dock01.log
+# usage:         nohup bash /crib/tools599/movefiles575/rclone-nas2-dock_02_uselog.sh &
+
 
 
 
@@ -42,11 +43,9 @@ function_one() {
 
 echo "function_one ${pwd}"
 
-# ldir=/crib/log/rclone
-# mkdir -p $ldir
-# logf=movemcdata$(date +"__%Y.%m.%d_%b-%a_%H.%M.%S").log.txt
-rclone move --min-age=250d  --max-age=999d --delete-empty-src-dirs --order-by modtime,ascending  -v \
-  /mnt/nas2_ip10-4-56-190/mcdata /media/albe/vi641-001/mcdata  
+
+rclone move --min-age=248d  --max-age=999d --delete-empty-src-dirs --order-by modtime,ascending  -v \
+  /mnt/nas2_ip10-4-56-190/mcdata /media/albe/vi641-001/mcdata   --log-file=$logf 
 
 #   --log-file=$logf --log-level INFO
 
