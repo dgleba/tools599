@@ -51,9 +51,9 @@ REM Move files from 6670 vision #1 to nas 2.
 REM 6670 vision1 pc is 32 bit. Not using cygin64 as 32 bit cygwin is nolonger supported.
 
 @echo on
-c:\prg\fastcopy\FastCopy.exe /cmd=move  /from_date=-365D /to_date=-10D /no_ui /include="Bad\" /force_start=2 /filelog /no_confirm_stop /skip_empty_dir /logfile=%logdir%\fastlog%dhms%.log.txt  "D:\Archive Record\images" /to=\\10.4.65.190\Images\mcdata\mc_6670_vision\image_data\vision-1\images 
+c:\prg\fastcopy\FastCopy.exe /cmd=move  /from_date=-499D /to_date=-10D /no_ui /include="Bad\" /force_start=2 /filelog /no_confirm_stop /skip_empty_dir /logfile=%logdir%\fastlog%dhms%.log.txt  "D:\Archive Record\images" /to=\\10.4.65.190\Images\mcdata\mc_6670_vision\image_data\vision-1\images 
 
-c:\prg\fastcopy\FastCopy.exe /cmd=move  /from_date=-18D /to_date=-10D /no_ui /force_start=2 /filelog /no_confirm_stop /skip_empty_dir /logfile=%logdir%\fastlog%dhms%.log.txt  "D:\Archive Record\images" /to=\\10.4.65.190\Images\mcdata\mc_6670_vision\image_data\vision-1\images 
+c:\prg\fastcopy\FastCopy.exe /cmd=move  /from_date=-21D /to_date=-10D /no_ui /force_start=2 /filelog /no_confirm_stop /skip_empty_dir /logfile=%logdir%\fastlog%dhms%.log.txt  "D:\Archive Record\images" /to=\\10.4.65.190\Images\mcdata\mc_6670_vision\image_data\vision-1\images 
 
 
 

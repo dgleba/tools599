@@ -8,12 +8,12 @@
 
 # top folder to delete from..
 # src=r"d:\copyof\corp-fs01\CORP-PM\x123123"
+# src=r"d:\example-files\yr2021"
 # src=r"D:\Archive Record\images\year2021\Jun"
-# src=r"D:\Archive Record\images\year2021"
-src=r"d:\0\Jun"
+src=r"D:\Archive Record\images\year2021"
 
 # number of files to keep in each folder
-numtokeep = 10000
+numtokeep = 20000
 
 # list of strings to match in folder path..
 # lista = ['Good', 'Jul']
@@ -54,7 +54,6 @@ for f in folds:
                 # print(num)
                 os.remove(os.path.join(f, lsdir[num]))
             sys.stdout.flush()
-
 
 
 

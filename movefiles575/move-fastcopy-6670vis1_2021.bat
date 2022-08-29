@@ -44,15 +44,15 @@ timeout 3
 ::goto loop
 
 
-::REM c:\prg\cygwin64\bin\cygstart.exe --showminimized   c:\prg\cygwin64\bin\bash.exe -l -c "/cygdrive/c/data/script/movefiles575/move_files_to_nas575.sh>/cygdrive/c/temp/moveimg/sched_rsynclog.log 2>&1"
+::REM c:\prg\cygwin64\bin\cygstart.exe --showminimized  c:\prg\cygwin64\bin\bash.exe -l -c "/cygdrive/c/data/script/movefiles575/move_files_to_nas575.sh>/cygdrive/c/temp/moveimg/sched_rsynclog.log 2>&1"
 ::c:\prg\cygwin64\bin\bash.exe -l -c "/cygdrive/c/data/script/movefiles575/move_files_to_nas575.sh>/cygdrive/c/temp/moveimg/sched_rsynclog.log 2>&1"
 
 REM Move files from 6670 vision #1 to nas 2.
 REM 6670 vision1 pc is 32 bit. Not using cygin64 as 32 bit cygwin is nolonger supported.
 
 @echo on
-c:\prg\fastcopy\FastCopy.exe /cmd=move /to_date=20220101 /no_ui /no_confirm_stop /skip_empty_dir/filelog /logfile=%logdir%\fastlog%dhms%.log.txt "D:\Archive Record\images" /to=\\10.4.65.190\Images\mcdata\mc_6670_vision\image_data\vision-1\images 
-  
+c:\prg\fastcopy\FastCopy.exe /cmd=move /to_date=-150D /no_ui /no_confirm_stop /skip_empty_dir/filelog /logfile=%logdir%\fastlog%dhms%.log.txt "D:\Archive Record\images" /to=\\10.4.65.190\Images\mcdata\mc_6670_vision\image_data\vision-1\images 
+
 
 
 timeout 345
@@ -64,6 +64,8 @@ goto end
 
 
 :notes
+
+REM c:\prg\fastcopy\FastCopy.exe /cmd=move /to_date=20220301 /no_ui /no_confirm_stop /skip_empty_dir/filelog /logfile=%logdir%\fastlog%dhms%.log.txt "D:\Archive Record\images" /to=\\10.4.65.190\Images\mcdata\mc_6670_vision\image_data\vision-1\images 
 
 	wmic process where "name like '%cmd%'" get processid,commandline
 
