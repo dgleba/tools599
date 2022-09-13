@@ -2,11 +2,11 @@
 
 # see version info at bottom.
 
-# purpose: rclone  move older images to archive (drive dock for example)
+# purpose: rclone  for PMDA-Nas#1 move older images to archive (drive dock for example)
 
 # use --log-file instead of tee..  sftp://10.4.168.141/crib/tools599/movefiles575/rclone-nas2-dock_02_uselog.sh
 
-# usage:         nohup bash /crib/tools599/movefiles575/rclone-nas2-dock_02_uselog.sh &
+# usage:         nohup bash /crib/tools599/movefiles575/rclone-nas1-dock_02_uselog.sh &
 
 
 
@@ -29,8 +29,8 @@ tempdir=/crib/log/rclone
 mkdir -p ${tempdir}
 timestart=$(date +"%Y.%m.%d_%H.%M.%S")
 rslognamepart=$(basename -- "$0")
-tfc=${tempdir}/rcfiles_${rslognamepart}_${timestart}.txt
-logf=${tempdir}/rclog_${rslognamepart}_${timestart}.log
+tfc=${tempdir}/rclonefiles_${rslognamepart}_${timestart}.txt
+logf=${tempdir}/rclonelog_${rslognamepart}_${timestart}.log
 
 
 # end settings.
@@ -44,12 +44,19 @@ function_one() {
 echo "function_one ${pwd}"
 
 
-rclone move --min-age=150d  --max-age=1999d --delete-empty-src-dirs --order-by modtime,ascending  -v \
-  /mnt/nas2_ip10-4-56-190/mcdata /media/albe/vi641-001/mcdata   --log-file=$logf 
+rclone move --min-age=300d  --max-age=1999d --delete-empty-src-dirs --order-by modtime,ascending  -v \
+  /mnt/nas1_pmda-sgenas01/mcdata /media/albe/vi641-001/mcdata   --log-file=$logf 
+
+}
+
+# notes:
+
+# sftp://10.4.168.141/mnt/nas1_pmda-sgenas01/mcdata
+# sftp://10.4.168.141/mnt/nas1_pmda-sgenas01/training_library_in_development  /media/albe/vi641-001/mcdata/nas_1/training_library_in_development
+# sftp://10.4.168.141/mnt/nas1_pmda-sgenas01/training_library_SGE-Rotor6365  /media/albe/vi641-001/mcdata/nas_1/training_library_SGE-Rotor6365
 
 #   --log-file=$logf --log-level INFO
 
-}
 
 # -----------------------------------------
 
