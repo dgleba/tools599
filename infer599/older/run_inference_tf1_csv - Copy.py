@@ -9,8 +9,6 @@ import shutil
 import os
 import datetime
 import os.path
-import itertools
-
 
 session = None
 tensor_dict = None
@@ -19,9 +17,9 @@ image_tensor = None
 
 def get_defect_type_name(defect_id):
     if defect_id == 1:
-        return 'Crack'
-    elif defect_id == 2:
         return 'Chip'
+    elif defect_id == 2:
+        return 'Crack'
     elif defect_id == 3:
         return 'Contamination'
     elif defect_id == 4:
@@ -137,10 +135,8 @@ if __name__ == "__main__":
     # Load images
     images = []
     pics = []
-    cam_name = []
     #for image_path in image_paths:
     for image_path in imgs:
-        pic = os.path.basename(image_path)
         pics.append(str(image_path))
         start = time()
         image = Image.open(image_path).convert('L')
@@ -149,21 +145,13 @@ if __name__ == "__main__":
         time_dif = time() - start
         print('Load Image: {} ms'.format(round(time_dif*1000)))
 
-    for n in pic:
-        if n != '2':
-            cam_name.append(n)
-        else:
-            break
-    
-    cam_name = ''.join(cam_name)
     datetime_now = datetime.datetime.now()
     datetime_now_format = datetime_now.strftime('%Y-%m-%d-%H-%M-%S')
-    csv_filename = str(cam_name) + 'inference_' + str(datetime_now_format) + '.csv'
+    csv_filename = 'inference_sge_outer-' + str(datetime_now_format) + '.csv'
     csv_filepath = Path(csv_path + '\\' + csv_filename)
     csv_file = open(csv_filepath, 'w', newline='')
     csvwriter = csv.writer(csv_file)
     header = []
-    Files = header.append('Filepath')
     Defecttype = header.append('Defect Type')
     Score = header.append('Score')
     Xmin = header.append('xmin')
@@ -171,22 +159,19 @@ if __name__ == "__main__":
     Xmax = header.append('xmax')
     Ymax = header.append('ymax')
 
-
-
-
     csvwriter.writerow(header)
     defect_row = []
     i = 0
-
+    
     # Run inference
     for image in images:
         start = time()
         defects = run_inference(image)
         for defect in defects:
-            defect_row = [pics[i], defect[0], defect[1], defect[2][0],
+            defect_row = [defect[0], defect[1], defect[2][0],
                           defect[2][1],defect[2][2],defect[2][3]]
             csvwriter.writerow(defect_row)
-            
+        csvwriter.writerow([pics[i]])
         i = i + 1
         print(defects)
         time_dif = time() - start
