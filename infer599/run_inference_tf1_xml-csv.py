@@ -10,7 +10,8 @@ import os
 import datetime
 import os.path
 import itertools
-
+import xml.etree.ElementTree as ET
+import sys
 
 session = None
 tensor_dict = None
@@ -137,24 +138,30 @@ if __name__ == "__main__":
     # Load images
     images = []
     pics = []
+    image_width = []
+    image_height = []
     cam_name = []
-    #for image_path in image_paths:
     for image_path in imgs:
-        pic = os.path.basename(image_path)
-        pics.append(str(image_path))
-        start = time()
-        image = Image.open(image_path).convert('L')
-        (im_width, im_height) = image.size
-        images.append(np.array(image.getdata()).reshape((im_height, im_width)).astype(np.uint8))
-        time_dif = time() - start
-        print('Load Image: {} ms'.format(round(time_dif*1000)))
+        ext = os.path.splitext(image_path)[1]
+        if ext == '.png':
+            pic = os.path.basename(image_path)
+            pics.append(str(image_path))
+            start = time()
+            image = Image.open(image_path).convert('L')
+            (im_width, im_height) = image.size
+            image_width.append(im_width)
+            image_height.append(im_height)
+            images.append(np.array(image.getdata()).reshape((im_height, im_width)).astype(np.uint8))
+            time_dif = time() - start
+            print('Load Image: {} ms'.format(round(time_dif*1000)))
 
+            
     for n in pic:
         if n != '2':
             cam_name.append(n)
         else:
             break
-    
+
     cam_name = ''.join(cam_name)
     datetime_now = datetime.datetime.now()
     datetime_now_format = datetime_now.strftime('%Y-%m-%d-%H-%M-%S')
@@ -164,6 +171,7 @@ if __name__ == "__main__":
     csvwriter = csv.writer(csv_file)
     header = []
     Files = header.append('Filepath')
+    Camera = header.append('Camera')
     Defecttype = header.append('Defect Type')
     Score = header.append('Score')
     Xmin = header.append('xmin')
@@ -171,27 +179,52 @@ if __name__ == "__main__":
     Xmax = header.append('xmax')
     Ymax = header.append('ymax')
 
-
-
-
     csvwriter.writerow(header)
-    defect_row = []
+    
     i = 0
-
+    elem_list = []
+    defect_row = []
+    xml_path = os.path.dirname(pics[i])
     # Run inference
     for image in images:
-        start = time()
-        defects = run_inference(image)
-        for defect in defects:
-            defect_row = [pics[i], defect[0], defect[1], defect[2][0],
-                          defect[2][1],defect[2][2],defect[2][3]]
-            csvwriter.writerow(defect_row)
-            
-        i = i + 1
-        print(defects)
-        time_dif = time() - start
-        print('Inference: {} ms'.format(round(time_dif*1000)))
+        if pics[i].endswith('png'):
+            start = time()
+            defects = run_inference(image)
+            xml_name = str(os.path.basename(os.path.splitext(pics[i])[0])) + '.xml'
+            xml_file = Path(os.path.join(xml_path, xml_name))
+            root = ET.Element("annotation")
+            ET.SubElement(root, "filename").text = str(os.path.basename(pics[i]))
+            ET.SubElement(root, "path").text = pics[i]
+            size = ET.SubElement(root, "size")
+            ET.SubElement(size, "width").text = str(image_width[i])
+            ET.SubElement(size, "height").text = str(image_height[i])
+            ET.SubElement(size, "depth").text = "1"
+            tree = ET.ElementTree(root)
 
+
+            for defect in defects:
+                if float(defect[1]) >= 0.050:
+                    obj = ET.SubElement(root, "object")
+                    ET.SubElement(obj, "name").text = str(defect[0])
+                    ET.SubElement(obj, "score").text = str(defect[1])
+                    bndbox = ET.SubElement(obj, "bndbox")
+                    ET.SubElement(bndbox, "xmin").text = str(defect[2][0])
+                    ET.SubElement(bndbox, "ymin").text = str(defect[2][1])
+                    ET.SubElement(bndbox, "xmax").text = str(defect[2][2])
+                    ET.SubElement(bndbox, "ymax").text = str(defect[2][3])
+
+                    tree = ET.ElementTree(root)
+                    tree.write(xml_file)
+                    
+                defect_row = [pics[i], cam_name, defect[0], defect[1], defect[2][0],
+                          defect[2][1],defect[2][2],defect[2][3]]
+                csvwriter.writerow(defect_row)
+                
+            i = i + 1
+            print(defects)
+            time_dif = time() - start
+            print('Inference: {} ms'.format(round(time_dif*1000)))
+                
     # Close model
     start = time()
     close_model()
