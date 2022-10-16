@@ -4,7 +4,7 @@
 
 # Purpose:  this will be a script to check that watch598 is working correctly.
 
- # - This will be a task scheduler running every 15 minutes. It is separate from watch598
+ # - This will be a task scheduler running every 5 minutes. It is separate from watch598
  # - it runs once and stops. 
  # - check that files are present in destination compared to source. 
  # - send email upon failure. write marker file saying email was sent. send it only once per n minutes. use setting for frequency.
@@ -42,35 +42,6 @@ $script:debuglogpath = 'C:\data\logs\debug\'
 $script:processmonitor598_runlog = 'C:\data\logs\watch598cmmresults\processmonitor598-runlog.txt'
 
 #  SETTINGS end ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-# Check for other instances running. Limit to only one....
-
-# noworky: $otherScriptInstances=get-wmiobject win32_process | where{$_.processname -eq 'powershell.exe' -and $_.ProcessId -ne $pid -and $_.commandline -match $($MyInvocation.MyCommand.Path)}
-
-$otherScriptInstances=Get-WmiObject Win32_Process -Filter "Name='powershell.exe' AND CommandLine LIKE '%processmonitor_watch598.ps1%'" | where{$_.ProcessId -ne $pid }
-
-write-host "PID:$pid , others:$otherScriptInstances ."
-echo "PID:$pid , others:$otherScriptInstances ."| Out-File $script:debuglogpath\pm598_$mts2.txt -Append
-
-
-if ($otherScriptInstances -ne $null)
-{
-    $mts = (Get-Date).toString("yyyyMMdd_HH.mm.ss")
-    "Already running another instance. This will exit now."
-    "$mts Already running another instance. This will exit now." | Out-File $global:logpath\processmonitor_oneinstancelog_$((Get-Date).toString("yyyy-MM-dd")).log.txt -Append -NoClobber
-    timeout 15
-    exit  
-}else
-{
-    "No other instances running. Continue.."
-    timeout 9
-}
- 
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 # Prep ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -141,23 +112,26 @@ function task598restart {
 #  Main code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-# Itterate through folder A looking for files older than x minute
+# Itterate through folder A looking for files older than 3 minute
 
 # Get all files containing fet from folder A
-$filesForA = Get-ChildItem $global:PathToMonitor -Filter '*fet.txt*' | Where-Object {$_.LastWriteTime -lt (Get-Date).AddMinutes(-60) -and $_.LastWriteTime -ge (Get-Date).AddMinutes(-100)} 
+# $filesForA = Get-ChildItem $global:PathToMonitor -Filter '*fet.txt*' | Where-Object {$f.LastWriteTime -lt (Get-Date).AddMinutes(-2)} | Where-Object {$f.LastWriteTime -gt (Get-Date).AddMinutes(-122)}
+$filesForA = Get-ChildItem $global:PathToMonitor -Filter '*fet.txt*' | Where-Object {$_.LastWriteTime -lt (Get-Date).AddMinutes(-30) -and $_.LastWriteTime -ge (Get-Date).AddMinutes(-125)} 
 
 $mts = (Get-Date).toString("yyyyMMdd_HH.mm.ss")
 $mts2 = (Get-Date).toString("yyyyMMdd_HH")
 
 (Get-Date) | Out-File $script:debuglogpath\pm598_$mts2.txt -Append
-echo "filesfora = $filesForA lt= $((Get-Date).AddMinutes(-60)) ge= $((Get-Date).AddMinutes(-105))"| Out-File $script:debuglogpath\pm598_$mts2.txt -Append
-echo "filesfora = $filesForA lt= $((Get-Date).AddMinutes(-60)) ge= $((Get-Date).AddMinutes(-105))"
+echo "filesfora = $filesForA lt= $((Get-Date).AddMinutes(-30)) ge= $((Get-Date).AddMinutes(-125))"| Out-File $script:debuglogpath\pm598_$mts2.txt -Append
+echo "filesfora = $filesForA lt= $((Get-Date).AddMinutes(-30)) ge= $((Get-Date).AddMinutes(-125))"
 
-# Check if file > x minute old in A is also in general (WORKING I THINK)
+# Check if file > 1 minute old in A is also in general (WORKING I THINK)
 if ($filesForA.Length -gt 0) {
     foreach ($f in $filesForA) {
         
-
+        # 2021-08-14 dgleba: i think adding single and double quote fixed it. It may have been not working with file names with spaces in them.
+        # $testpath = "'C:\data\cmm\watchedoutput\general\{0}'" -f $f
+        # or maybe not. dgleba 2021-08-15_Sun_12.27-PM
         $testpath = "C:\data\cmm\watchedoutput\general\{0}" -f $f
         write-host "dollarf: $f"
         "dollarf: $f"  | Out-File $script:debuglogpath\pm598_$mts2.txt -Append
@@ -196,10 +170,11 @@ if ($filesForA.Length -gt 0) {
 
 
 # run between two times @ ..
-  [int]$shr = 23
-  [int]$smin = 44
+  [int]$shr = 21
+  [int]$smin = 11
+  # If this runs every 5 minutes, then max should be +5 so it should run it once per day.
   $min = Get-Date ( "{0}:{1}:00" -f $shr, $smin )
-  $max = Get-Date ( "{0}:{1}:00" -f $shr, ($smin+15) ) 
+  $max = Get-Date ( "{0}:{1}:00" -f $shr, ($smin+10) ) 
   $now = Get-Date
   # Write-Host $min $max 
   Write-Host "times: now $now  min $min  max $max"
@@ -212,6 +187,4 @@ if ($filesForA.Length -gt 0) {
 # end. run between two times
 
 
-# pause for 11 minutes so it will only run every 15 minutes.
-# this is all thanks to how slow prismo1 cmm computer is.
-timeout 680
+timeout 55

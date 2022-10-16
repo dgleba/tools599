@@ -1,0 +1,26 @@
+### This is a directory/file filter for WinMerge
+name: gitignore++
+desc: Ignore .git and IDE-specific files and directories
+
+## Select if filter is inclusive or exclusive
+## Inclusive (loose) filter lets through all items not matching rules
+## Exclusive filter lets through only items that match to rule
+## include or exclude
+def: include
+
+## Filters for filenames begin with f:
+## Filters for directories begin with d:
+## (Inline comments begin with " ##" and extend to the end of the line)
+
+f: \.iml$
+f: \.buildpath$
+f: \.classpath$
+f: \.project$
+f: nbactions\.xml$
+f: nb-configuration\.xml$
+
+d: \\\.git$
+d: \\\.idea$
+d: \\\.settings$
+d: \\nbproject$
+d: \\target$
