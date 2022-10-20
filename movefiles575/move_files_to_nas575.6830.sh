@@ -35,7 +35,7 @@ cd "${ssc}"
 # find . -type f  -mmin +1920 > ${tfc}
 # find . -type f  -mmin +99339 > ${tfc}
 # find . -type f  -mtime +100 > ${tfc}
-find . -type f  -mtime +14 > ${tfc}
+find . -type f  -mtime +11 > ${tfc}
 echo file list..
 cat ${tfc}
 
@@ -50,7 +50,7 @@ rsync  -vtlr -u --remove-source-files --log-file=${tempdir}/rsynclog${timestart}
 
 # sometimes with mindepth 1 it doesn't touch/delete them. but it did with mindepth removed. 2022-04-11.
 echo "some empty folders may have newer dates than they should. touching.."
-find "${ssc}/"  -mindepth 1 -type d -empty -exec touch -t 202101010101  {} \;
+# 2022-09-27 11:02PM commented out dgleba..  find "${ssc}/"  -mindepth 1 -type d -empty -exec touch -t 202101010101  {} \;
 
 #remove empty folders because rsync does not
 # find "${ssc}" -type d -empty -delete -mtime +3 
@@ -60,6 +60,8 @@ find "${ssc}/"  -mindepth 1 -type d -empty -exec touch -t 202101010101  {} \;
 # find "${ssc}/"  -mindepth 1  -mmin +$((135*60*24-1)) -type d -empty -delete
 echo removing older empty folders..
 find "${ssc}/" -mindepth 2  -mtime +40 -type d -empty -delete
+mkdir -p /cygdrive/d/data/vision_6830/image_data/inner_bore/ok
+mkdir -p /cygdrive/d/data/vision_6830/image_data/inner_bore/nok
   
 }
 

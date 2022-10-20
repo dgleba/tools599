@@ -1,0 +1,176 @@
+
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+#@  
+#@  leanai2drive
+#@  
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@   2022-10-16[Oct-Sun]07-01AM 
+
+rclone config.
+
+
+summary:
+
+
+Storage> 18
+client_id>
+client_secret>
+scope> 1
+service_account_file>
+Edit advanced config? n) No (default)
+Use auto config y) Yes (default)
+Configure this as a Shared Drive (Team Drive)?  y/n> y
+
+Press Enter for the default (0ADOMJqCY2CsQUk9PVA).
+ 1 / Stackpole Images    \ (0ADOMJqCY2CsQUk9PVA)
+config_team_drive> 1
+
+Keep this "leanai2drive" remote? y) Yes this is OK (default)
+
+
+
+
+=================================================
+
+detailed:
+
+...
+s) Set configuration password
+q) Quit config
+e/n/d/r/c/s/q> n
+
+Enter name for new remote.
+name> leanai2drive
+
+Option Storage.
+Type of storage to configure.
+Choose a number from below, or type in your own value.
+ 1 / 1Fichier
+   \ (fichier)
+16 / FTP
+   \ (ftp)
+17 / Google Cloud Storage (this is not Google Drive)
+   \ (google cloud storage)
+18 / Google Drive
+   \ (drive)
+19 / Google Photos
+   \ (google photos)
+49 / seafile
+   \ (seafile)
+Storage> 18
+
+Option client_id.
+Google Application Client Id
+Setting your own is recommended.
+See https://rclone.org/drive/#making-your-own-client-id for how to create your own.
+If you leave this blank, it will use an internal key which is low performance.
+Enter a value. Press Enter to leave empty.
+client_id>
+
+Option client_secret.
+OAuth Client Secret.
+Leave blank normally.
+Enter a value. Press Enter to leave empty.
+client_secret>
+
+Option scope.
+Scope that rclone should use when requesting access from drive.
+Choose a number from below, or type in your own value.
+Press Enter to leave empty.
+ 1 / Full access all files, excluding Application Data Folder.
+   \ (drive)
+ 2 / Read-only access to file metadata and file contents.
+   \ (drive.readonly)
+   / Access to files created by rclone only.
+ 3 | These are visible in the drive website.
+   | File authorization is revoked when the user deauthorizes the app.
+   \ (drive.file)
+   / Allows read and write access to the Application Data folder.
+ 4 | This is not visible in the drive website.
+   \ (drive.appfolder)
+   / Allows read-only access to file metadata but
+ 5 | does not allow any access to read or download file content.
+   \ (drive.metadata.readonly)
+scope> 1
+
+Option service_account_file.
+Service Account Credentials JSON file path.
+Leave blank normally.
+Needed only if you want use SA instead of interactive login.
+Leading `~` will be expanded in the file name as will environment variables such as `${RCLONE_CONFIG_DIR}`.
+Enter a value. Press Enter to leave empty.
+service_account_file>
+
+Edit advanced config?
+y) Yes
+n) No (default)
+y/n>
+
+Use auto config?
+ * Say Y if not sure
+ * Say N if you are working on a remote or headless machine
+
+y) Yes (default)
+n) No
+y/n>
+
+2022/10/16 07:00:17 NOTICE: If your browser doesn't open automatically go to the following link: http://127.0.0.1:53682/auth?state=F4a7Kob0hHPkOQ45uq0DSA
+2022/10/16 07:00:17 NOTICE: Log in and authorize rclone for access
+2022/10/16 07:00:17 NOTICE: Waiting for code...
+2022/10/16 07:00:25 NOTICE: Got code
+Configure this as a Shared Drive (Team Drive)?
+
+y) Yes
+n) No (default)
+y/n> y
+
+Option config_team_drive.
+Shared Drive
+Choose a number from below, or type in your own string value.
+Press Enter for the default (0ADOMJqCY2CsQUk9PVA).
+ 1 / Stackpole Images
+   \ (0ADOMJqCY2CsQUk9PVA)
+config_team_drive> 1
+
+Configuration complete.
+Options:
+- type: drive
+- scope: drive
+- token: {"access_token":"ya29.a0Aa4xrXPFFAgzDO-Bi2QN edited  vRaCgYKATASARISFQEjDvL9QmMg4Qi_921MB-6cWn0PbQ0163","token_type":"Bearer","refresh_token":"1//04IdyNRwBoQKPCgYIARAAGAQSNwF-L9Ir4lKPFWX8wB-LyED6bEvH0frOT7Hsu_aIy7LuBD02MInwAksEx3IMHOfJdFyONa2p9Yk","expiry":"2022-10-16T08:00:24.4713473-04:00"}
+- team_drive: 0ADOMJqCY2CsQUk9PVA
+- root_folder_id:
+Keep this "leanai2drive" remote?
+y) Yes this is OK (default)
+e) Edit this remote
+d) Delete this remote
+y/e/d>
+
+Current remotes:
+
+Name                 Type
+====                 ====
+dock-vi641-ssh       sftp
+leanai2drive         drive
+
+e) Edit existing remote
+n) New remote
+d) Delete remote
+r) Rename remote
+c) Copy remote
+s) Set configuration password
+q) Quit config
+e/n/d/r/c/s/q>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

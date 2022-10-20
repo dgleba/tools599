@@ -43,7 +43,8 @@ pciBusID: 0000:06:00.0
 2022-07-15 09:44:41.147331: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1181] Device interconnect StreamExecutor with strength 1 edge matrix:
 2022-07-15 09:44:41.147486: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1187]      0
 2022-07-15 09:44:41.148677: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 0:   N
-2022-07-15 09:44:41.152466: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1326] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 4505 MB memory) -> physical GPU (device: 0, name: NVIDIA GeForce RTX 2070 SUPER, pci bus id: 0000:06:00.0, compute capability: 7.5)
+2022-07-15 09:44:41.152466: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1326] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 4505 MB memory) -> physical
+ GPU (device: 0, name: NVIDIA GeForce RTX 2070 SUPER, pci bus id: 0000:06:00.0, compute capability: 7.5)
 WARNING:tensorflow:From D:\data\script\tools599\infer599\tf1_run_inference.py:56: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
 
 Load Model: 1438 ms
@@ -56,3 +57,74 @@ Inference: 131 ms
 Close Model: 30 ms
 
 C:\Users\Vision>
+
+_____________
+
+
+
+get validate  csv
+
+csv format:
+	use exact column names in mysql.
+	http://10.4.71.231:7414/  server=dbm  ( 10.4.71.231:6534 )
+	http://10.4.71.231:7414/index.php?route=/sql&server=1&db=aeppd01&table=vis_xml&pos=0
+	
+run on potential model > csv-inference
+
+
+xml view in imglabel
+	object
+	filename
+
+add threshold argument  
+
+_____________
+
+use case:
+
+1.
+compare new potential model to validate. our xml > csv
+compare our validate to csv-inference 
+
+	
+_____________
+	
+later:
+
+compare script or code the csv
+	use sql left join gt with csv-report
+		import both gt-csv and csv-report in to one table and join it on itself	
+
+create overlap box % report
+	https://pyimagesearch.com/2016/11/07/intersection-over-union-iou-for-object-detection/
+	
+_____________
+
+
+<?xml version="1.0" standalone="yes"?>
+<unnamed_cluster> annotation????
+  <folder>D:\data\vision_6830\image_data\outer_surface\nok\220413</folder>
+  <filename>outer_surface_220413T074047.png</filename>
+  <path>D:\data\vision_6830\image_data\outer_surface\nok\220413\outer_surface_220413T074047.png</path>
+x  <source>
+x    <database>Unknown</database>
+x  </source>
+  <size>
+    <width>500</width>
+    <height>7990</height>
+    <depth>1</depth>
+  </size>
+x  <segmented>0</segmented>
+  <object>
+    <name>Chip</name>
+    <pose>Unspecified</pose>
+    <trancated>0</trancated>
+    <score>0.99971657991409</score>
+    <bndbox>
+      <xmin>296</xmin>
+      <ymin>4250</ymin>
+      <xmax>405</xmax>
+      <ymax>5044</ymax>
+    </bndbox>
+  </object>
+</unnamed_cluster>	
