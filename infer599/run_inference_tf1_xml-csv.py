@@ -20,9 +20,9 @@ image_tensor = None
 
 def get_defect_type_name(defect_id):
     if defect_id == 1:
-        return 'Crack'
-    elif defect_id == 2:
         return 'Chip'
+    elif defect_id == 2:
+        return 'Crack'
     elif defect_id == 3:
         return 'Contamination'
     elif defect_id == 4:
