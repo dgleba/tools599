@@ -37,7 +37,8 @@ echo Start main routine
 
 @echo on
 
-c:\prg\rclone\rclone copy D:\data\vision_6365_1\image_data  leanai2drive:/mc6365/vis2/image_data/ --max-age=2022-10-13 -vu --progress --stats=30s --log-file=%logdir%\rclone_%~n0_%dhms%.log.txt  
+:: --max-age=2022-10-13 means copy files after 2022-10-13
+c:\prg\rclone\rclone copy D:\data\vision_6365_2\image_data  leanai2drive:/mc6365/vis2/image_data/ --max-age=2022-10-13 -vu --progress --stats=30s --log-file=%logdir%\rclone_%~n0_%dhms%.log.txt  
 
  
 timeout 145
