@@ -46,7 +46,7 @@ echo "function_one running."
 
 pwd; ls -la;
 rclone move --min-age=30d  --max-age=1999d --delete-empty-src-dirs --order-by modtime,ascending  -v \
-  /mnt/nas1_pmda-sgenas01/mcdata /media/albe/vi641-001/mcdata   --log-file=$logf 
+  /mnt/nas1_pmda-sgenas01/mcdata /media/albe/vi641-002/mcdata   --log-file=$logf 
 
 
 }
