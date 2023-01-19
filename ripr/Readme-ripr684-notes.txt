@@ -5,7 +5,8 @@
 #@  
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@   2023-01-15[Jan-Sun]13-59PM 
 
--  
+-  create cron or windows schedule entry to run ripr684.py every 15 minutes.
+
 
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 #@  
@@ -17,8 +18,27 @@
 how to install
 
 - make mysql db using sql below
-- set username = a and password = a to db
+- set `username = a and password = a ` to the db
 - test script using:   c:\prg\python\python C:\data\script\tools599\ripr\testripr.py
+
+
+=================================================
+
+
+#cron..  
+
+sudo crontab -u albe -l | grep -v 'tools599/ripr/ripr684.py'  | sudo crontab -u albe - #remove
+sudo crontab -u albe -l | { cat; echo "*/15 * * * 0-6 "python3 /crib/tools599/ripr/ripr684.py" "; } | sudo crontab -u albe -  #add
+
+sudo crontab -u albe -l  # list
+
+
+_____________
+
+
+
+Windows scheduler.
+
 
 
 
@@ -163,8 +183,6 @@ DELIMITER ;
 =================================================
 
 
-
-user a password a
 
 =================================================
 

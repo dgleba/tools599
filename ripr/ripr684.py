@@ -1,9 +1,15 @@
 '''
-status: 
 
-pip install SQLAlchemy pymysql getmac psutil
+status: 
+2023-01-19 works. mac address reporting may not be correct.
+
+
+pip install SQLAlchemy pymysql getmac psutil pandas 
 
 python C:\data\script\tools599\ripr\testripr.py
+
+python3 /crib/tools599/ripr/ripr684.py
+
 
 adminer
 http://10.4.71.231:7412/?server=dbm&username=a&db=ripr684&select=ripr
@@ -82,15 +88,15 @@ if results:
         print('ip has not changed')
     else:
         print('ip changed. write it to log and update cur-ip table')
-        stmt = f"INSERT INTO `ripr` (`host`, `ipaddr`, `macaddr`, `iface` ) VALUES ('{hostname}', '{ip_address}', 'notworkingyet', '{viface}' );"
+        stmt = f"INSERT INTO `ripr` (`host`, `ipaddr`, `macaddr`, `iface` ) VALUES ('{hostname}', '{ip_address}', 'maybe: {macad}', '{viface}' );"
         conn.execute(stmt)
 else:
     # no entry for this host so write one.
-    stmt = f"INSERT INTO `ripr` (`host`, `ipaddr`, `macaddr`, `iface` ) VALUES ('{hostname}', '{ip_address}', 'notworkingyet', '{viface}' );"
+    stmt = f"INSERT INTO `ripr` (`host`, `ipaddr`, `macaddr`, `iface` ) VALUES ('{hostname}', '{ip_address}', 'maybe: {macad}', '{viface}' );"
     conn.execute(stmt)
 
 # write info to log every time.
-stmt2 = f"INSERT INTO `ripr_log` (`host`, `ipaddr`, `macaddr`, `iface` ) VALUES ('{hostname}', '{ip_address}', 'notworkingyet', '{viface}' );"
+stmt2 = f"INSERT INTO `ripr_log` (`host`, `ipaddr`, `macaddr`, `iface` ) VALUES ('{hostname}', '{ip_address}', 'maybe: {macad}', '{viface}' );"
 conn.execute(stmt2)
 
 
