@@ -1,8 +1,9 @@
 :Prepare date and temp folders [ this silly stuff requires the region to be Enginsh United States so the datetime format is  M/d/yyyy ]
 set timea=%TIME: =0%
-set ymd=%date:~12,2%%date:~4,2%%date:~7,2%&set dhms=%date:~12,2%%date:~4,2%%date:~7,2%_%timea:~0,2%%timea:~3,2%%timea:~6,2%
+set ymd=%date:~8,2%%date:~3,2%%date:~0,2%&set dhms=%date:~8,2%%date:~3,2%%date:~0,2%_%timea:~0,2%%timea:~3,2%%timea:~6,2%
 c: & md c:\temp\ & cd c:\temp & md c:\temp\log & md c:\temp\log\"%ymd%"  & cd c:\temp\log\"%ymd%"
 set rand9=%random%  rem set one random for the whole job
+echo "%ymd%" "%dhms%"
 :main
 rem ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ dropbox to seaf mir
 
