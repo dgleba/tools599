@@ -37,6 +37,18 @@ _____________
 
 
 
+#cron..    /ap/script/tools599...
+
+sudo crontab -u albe -l | grep -v 'tools599/ripr/ripr684.py'  | sudo crontab -u albe - #remove
+sudo crontab -u albe -l | { cat; echo "*/10 * * * 0-6 "python3 /ap/script/tools599/ripr/ripr684.py" "; } | sudo crontab -u albe -  #add
+
+sudo crontab -u albe -l  # list
+
+
+_____________
+
+
+
 Windows scheduler.
 
 
