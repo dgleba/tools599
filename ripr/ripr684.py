@@ -3,8 +3,7 @@
 status: 
 2023-01-19 works. mac address reporting may not be correct.
 
-
-pip install SQLAlchemy pymysql getmac psutil pandas 
+Install per readme.md
 
 python C:\data\script\tools599\ripr\testripr.py
 

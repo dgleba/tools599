@@ -15,11 +15,15 @@ https://github.com/dgleba/tools599/tree/main/ripr
 # Install
 
 ```
-pip install SQLAlchemy pymysql getmac psutil pandas 
+pip install "SQLAlchemy<2" 
+pip install  pymysql getmac psutil pandas 
 
 - make mysql db `ripr684` 
 - make tables using sql below
 - set `username = a and password = a ` to the db [I am using it inside a local network]
+
+Review the settings around line 30 in ripr684.py. I have the db on port 7411 using docker. Adjust things to match your setup.
+
 
 ```
 
@@ -86,6 +90,9 @@ DELIMITER ;
 
 ```
 python3 /ap/script/tools599/ripr/ripr684.py
+
+python3 /home/albe/crib/script/tools599/ripr/ripr684.py
+
 ```
 
 # Optional: scheduler
@@ -101,6 +108,22 @@ sudo crontab -u albe -l | { cat; echo "*/15 * * * 0-6 "python3 /ap/script/tools5
 sudo crontab -u albe -l  # list
 
 ```
+
+or
+
+```
+sudo crontab -u albe -l | grep -v 'tools599/ripr/ripr684.py'  | sudo crontab -u albe - #remove
+sudo crontab -u albe -l | { cat; echo "*/15 * * * 0-6 "python3 /home/albe/crib/script/tools599/ripr/ripr684.py" "; } | sudo crontab -u albe -  #add
+
+sudo crontab -u albe -l  # list
+
+```
+
+
+# todo
+
+Use https://github.com/mevdschee/php-crud-api to add an api to the db so it can be access with http calls using curl, or many other tools.
+
 
 
 
