@@ -34,61 +34,7 @@ Review the settings around line 30 in ripr684.py. I have the db on port 7411 usi
 
 ## SQL
 
-```sql
-DROP TABLE IF EXISTS `ripr`;
-CREATE TABLE `ripr` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `updated_at` datetime DEFAULT NULL,
-  `host` varchar(99) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `ipaddr` varchar(99) DEFAULT NULL,
-  `note` varchar(299) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `macaddr` varchar(99) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `iface` varchar(299) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `touch` int DEFAULT '1',
-  `created_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
-DELIMITER ;;
-CREATE TRIGGER `00_notes_trigger_created` BEFORE INSERT ON `ripr` FOR EACH ROW
-BEGIN 
-      SET new.created_at := now();  
-      SET new.updated_at := now(); 
-      END;;
-CREATE TRIGGER `00_notes_trigger_updated` BEFORE UPDATE ON `ripr` FOR EACH ROW
-BEGIN 
-      SET new.updated_at := now();  
-      END;;
-DELIMITER ;
-
-```
-
-```sql
-DROP TABLE IF EXISTS `ripr_log`;
-CREATE TABLE `ripr_log` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `updated_at` datetime DEFAULT NULL,
-  `host` varchar(99) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `ipaddr` varchar(99) DEFAULT NULL,
-  `note` varchar(299) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `macaddr` varchar(99) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `iface` varchar(299) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `touch` int DEFAULT '1',
-  `created_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
-DELIMITER ;;
-CREATE TRIGGER `riperlog_trigger_created` BEFORE INSERT ON `ripr_log` FOR EACH ROW
-BEGIN 
-      SET new.created_at := now();  
-      SET new.updated_at := now(); 
-      END;;
-CREATE TRIGGER `riperlog_trigger_updated` BEFORE UPDATE ON `ripr_log` FOR EACH ROW
-BEGIN 
-      SET new.updated_at := now();  
-      END;;
-DELIMITER ;
-
-```
+The schema for the database is in the file `schema.sql`
 
 
 # Run it
@@ -102,6 +48,14 @@ python c:\data\script\tools599\ripr\ripr684.py
 
 
 ```
+
+
+# Web page
+
+Visit the url: http://10.4.71.231:7412/?server=dbm&username=a&db=ripr684&select=ripr
+
+There is an adminer page there where you can see the data.
+ 
 
 # Optional: scheduler
 
