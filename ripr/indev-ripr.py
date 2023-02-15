@@ -1,17 +1,17 @@
 '''
-
 status: 
-2023-01-19 works. mac address reporting may not be correct.
 
-Install per readme.md
+pip install SQLAlchemy pymysql getmac psutil
 
 python C:\data\script\tools599\ripr\testripr.py
 
-python3 /crib/tools599/ripr/ripr684.py
-
-
 adminer
 http://10.4.71.231:7412/?server=dbm&username=a&db=ripr684&select=ripr
+
+
+
+
+
 
 
 '''

@@ -11,12 +11,17 @@ This could be useful if the PC is using dns and pinging the hostname doesn't hel
 repo: 
 https://github.com/dgleba/tools599/tree/main/ripr
 
+git clone https://github.com/dgleba/tools599
+
 
 # Install
 
 ```
 pip install "SQLAlchemy<2" 
-pip install  pymysql getmac psutil pandas 
+pip install  pymysql 
+pip install  getmac 
+pip install  psutil  
+pip install  pandas 
 
 - make mysql db `ripr684` 
 - make tables using sql below
@@ -93,6 +98,9 @@ python3 /ap/script/tools599/ripr/ripr684.py
 
 python3 /home/albe/crib/script/tools599/ripr/ripr684.py
 
+python c:\data\script\tools599\ripr\ripr684.py
+
+
 ```
 
 # Optional: scheduler
@@ -122,7 +130,11 @@ sudo crontab -u albe -l  # list
 
 # todo
 
+1.
 Use https://github.com/mevdschee/php-crud-api to add an api to the db so it can be access with http calls using curl, or many other tools.
+
+2.
+add info column and put things like running OS
 
 
 
