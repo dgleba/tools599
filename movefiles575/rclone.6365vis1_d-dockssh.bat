@@ -21,7 +21,7 @@ REM @echo off
 
 :: allow only one copy of this to run at one time..
 :: Window title must be unique.
-set batch_title=rclone_move6365vis2-dockssh
+set batch_title=rclone_move6365vis1-dockssh
 :: Run tasklist in verbose mode (which returns window titles) and search for the window title of this batch file:
 tasklist /V /NH /FI "imagename eq cmd.exe"| find /I /C "%batch_title%" > nul
 :: If the window title is found then the errorlevel variable will be 0, which means the process is already running:
@@ -38,10 +38,10 @@ echo Start main routine
 @echo on
 
 set pth=c:\prg\rclone\
-%pth%\rclone move --delete-empty-src-dirs --min-age  2d -v --progress --stats=30s ^
- D:\data\vision_6365_2\image_data ^
- dock-vi641-ssh:/media/albe/vi641-002/mcdata/mc_6365_vision_2/image_data ^
- --log-file=%logdir%\rclone6365vis2-dockssh_%dhms%.log.txt 
+%pth%\rclone move --delete-empty-src-dirs --min-age 2d   -v --progress --stats=30s ^
+ D:\data\vision_6365_1\image_data  ^
+ dock-vi641-ssh:/media/albe/vi641-002/mcdata/mc_6365_vision_1  ^
+ --log-file=%logdir%\rclone6365vis1-dockssh_%dhms%.log.txt 
 
  ::2>&1|%pth%\tee %logdir%\rclonedockssh_%dhms%.log.txt
 

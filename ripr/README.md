@@ -81,6 +81,10 @@ sudo crontab -u albe -l  # list
 
 ```
 
+## for windows task scheduler
+
+import the task from  0_ripr684_ipaddress_reporter _invis.xml
+
 
 # todo
 
