@@ -38,7 +38,7 @@ function_one() {
 echo "function_one running."
 
 pwd; ls -la;
-rclone copy   /media/albe/vi641-002/mcdata   /media/albe/vi641-002b/mcdata   --log-file=$logf --log-level INFO \
+rclone copy   /media/albe/vi641-002   /media/albe/vi641-002b --log-file=$logf --log-level INFO \
     --multi-thread-cutoff 64M    --multi-thread-streams 12  --transfers=12
 
 }
