@@ -11,6 +11,10 @@ This could be useful if the PC is using dns and pinging the hostname doesn't hel
 repo: 
 https://github.com/dgleba/tools599/tree/main/ripr
 
+
+mkdir -p /ap/script
+cd /ap/script
+
 git clone https://github.com/dgleba/tools599
 
 
