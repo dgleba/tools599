@@ -39,6 +39,12 @@ robocopy C:\data\cmm\watchedoutput\general C:\data\archive\cmm\watch598data-arch
 
 robocopy C:\data\cmm\watchedoutput\qccalc C:\data\archive\cmm\watch598data-archive-qccalc\%ts_yr%-%ts_mon%-minus_lag /s /MOVE  /MINAGE:21 /IS /xo /R:3 /W:4  /tee /log:"C:\data\logs\watch598cmmresults\debug\rb-archi-qccalc-%ts_dhms%-%random%"
 
+
+robocopy c:\data\cmm\system\litmus_tmp3  C:\data\archive\cmm\litmus_tmp3\%ts_yr%-%ts_mon%-minus_lag /s /MOVE  /MINAGE:30 /IS /xo /R:3 /W:4  /tee /log:"C:\data\logs\watch598cmmresults\debug\rb-archi-litmus_tmp3-%ts_dhms%-%random%"
+
+robocopy c:\data\cmm\system\litmus_tmp4  C:\data\archive\cmm\litmus_tmp4\%ts_yr%-%ts_mon%-minus_lag /s /MOVE  /MINAGE:30 /IS /xo /R:3 /W:4  /tee /log:"C:\data\logs\watch598cmmresults\debug\rb-archi-litmus_tmp3-%ts_dhms%-%random%"
+
+
 robocopy C:\data\logs C:\data\archive\data\logs\%ts_yr%-%ts_mon%-minus_lag /s /MOVE  /MINAGE:10 /IS /xo /R:3 /W:4  /tee /log:"C:\data\logs\watch598cmmresults\debug\rb-archi-logs-%ts_dhms%-%random%"
 
 

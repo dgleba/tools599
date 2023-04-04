@@ -29,10 +29,11 @@ set logf4="c:\temp\log\%ymd%\rb-move_wtch598_bu-%dhms%
 
 
 :: /L option =  dry run.
-robocopy d:\data\script\tools599    "\\PMDA-FS01\Dept Shares\Engineering\0000_File transfer\dgleba\script\tools599 "  /e  ^
+robocopy c:\data\script\tools599    "\\PMDA-FS01\Dept Shares\Engineering\0000_File transfer\dgleba\script\tools599 "  /e  ^
 /xf watch598settings.conf /xf watch598set-litmus.filecopy.list.conf ^
 /xd .git /xf *_T_* /xd backup /xd .git  vision_performance_tracker_report_env ^
 /dst /fft /xo /ndl /np /r:2 /w:2 /tee /eta /log:%logf4%_engd_%random%"
+
 
 timeout   35
 
