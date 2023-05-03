@@ -26,6 +26,21 @@ pip install  pymysql
 pip install  getmac 
 pip install  psutil  
 pip install  pandas 
+pip install  "numpy >= 1.20.3"
+
+
+-------
+
+note versions used at one point:
+
+getmac==0.9.3
+numpy==1.24.2
+pandas==1.5.3
+PyMySQL==1.0.3
+psutil==5.9.4
+SQLAlchemy==1.4.47
+
+
 
 - make mysql db `ripr684` 
 - make tables using sql below
@@ -44,6 +59,7 @@ The schema for the database is in the file `schema.sql`
 # Run it
 
 ```
+Preferred:
 python3 /ap/script/tools599/ripr/ripr684.py
 
 python3 /home/albe/crib/script/tools599/ripr/ripr684.py
@@ -84,6 +100,22 @@ sudo crontab -u albe -l | { cat; echo "*/15 * * * 0-6 "python3 /home/albe/crib/s
 sudo crontab -u albe -l  # list
 
 ```
+
+# Permissions
+
+perms:
+
+
+dd=~/ap
+ug=docker
+#
+# set default acl on folder $dd   d: = default  g: $ug = linux group..
+    sudo setfacl -Rm d:g:$ug:rwx,g:$ug:rwx $dd
+# show
+     cd $dd ; getfacl $dd ;
+
+
+
 
 ## for windows task scheduler
 

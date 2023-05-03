@@ -36,3 +36,7 @@ v46 - 2021-11-24_Wed_15.18-PM - add to process monitor log
 v47	- 2022-01-04_Tue_16.57-PM - bump version.
 v48 - 2022-02-13_Sun_17.09-PM - alter process mon due to slow prismo1 computer.
 v49 - 2022-02-13_Sun_21.48-PM - alter process mon due to slow prismo1 computer. add oneinstance log write.
+v52 - 2023-04-08_Sat_14.10-PM - updates
+v53 - 2023-04-16_Sun_08.58-AM - increase robocopy retries.
+v54 - 2023-04-16_Sun_09.29-AM - (2023-04-16 removed `-minus_lag`)
+
