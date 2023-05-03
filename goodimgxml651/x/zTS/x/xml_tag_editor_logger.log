@@ -1,0 +1,110 @@
+[Tue, 04 Jan 2022 09:31:36] DEBUG [6830_xml_tag_editor_rev1.py,editing_tags:134] Confirmed. All instances of 'Misload' have been replaced with 'Chocolate'.
+[Tue, 04 Jan 2022 09:31:43] DEBUG [6830_xml_tag_editor_rev1.py,editing_tags:134] Confirmed. All instances of 'Chocolate' have been replaced with 'Misload'.
+[Tue, 04 Jan 2022 09:40:50] DEBUG [6830_xml_tag_editor.py,editing_tags:134] Confirmed. All instances of 'Misload' have been replaced with 'Chocolate'.
+[Tue, 04 Jan 2022 09:41:04] DEBUG [6830_xml_tag_editor.py,editing_tags:134] Confirmed. All instances of 'Chocolate' have been replaced with 'Misload'.
+[Tue, 04 Jan 2022 09:43:48] DEBUG [6830_xml_tag_editor.py,editing_tags:134] Confirmed. All instances of 'Stain' have been replaced with 'Chocolate'.
+[Tue, 04 Jan 2022 09:44:09] DEBUG [6830_xml_tag_editor.py,editing_tags:134] Confirmed. All instances of 'Chocolate' have been replaced with 'Stain'.
+[Tue, 04 Jan 2022 13:45:15] DEBUG [6830_xml_tag_editor.py,editing_tags:177] Confirmed. All instances of 'Damage' have been replaced with ' '.
+[Tue, 04 Jan 2022 13:45:24] DEBUG [6830_xml_tag_editor.py,editing_tags:177] Confirmed. All instances of 'Debris' have been replaced with ' '.
+[Tue, 04 Jan 2022 13:45:33] DEBUG [6830_xml_tag_editor.py,editing_tags:177] Confirmed. All instances of 'Stain' have been replaced with ' '.
+[Tue, 04 Jan 2022 13:49:22] DEBUG [6830_xml_tag_editor.py,editing_tags:177] Confirmed. All instances of 'Stain' have been replaced with ' '.
+[Tue, 04 Jan 2022 13:49:36] DEBUG [6830_xml_tag_editor.py,editing_tags:177] Confirmed. All instances of 'Debris' have been replaced with ' '.
+[Tue, 04 Jan 2022 13:49:41] DEBUG [6830_xml_tag_editor.py,editing_tags:177] Confirmed. All instances of 'Damage' have been replaced with ' '.
+[Tue, 04 Jan 2022 13:49:51] DEBUG [6830_xml_tag_editor.py,editing_tags:177] Confirmed. All instances of 'Chip' have been replaced with ' '.
+[Tue, 04 Jan 2022 13:50:04] DEBUG [6830_xml_tag_editor.py,editing_tags:177] Confirmed. All instances of 'Scratch' have been replaced with ' '.
+[Tue, 04 Jan 2022 13:50:11] DEBUG [6830_xml_tag_editor.py,editing_tags:177] Confirmed. All instances of 'Misload' have been replaced with ' '.
+[Tue, 04 Jan 2022 13:58:07] DEBUG [6830_xml_tag_editor.py,editing_tags:177] Confirmed. All instances of 'Damage' have been replaced with ' '.
+[Tue, 04 Jan 2022 13:58:17] DEBUG [6830_xml_tag_editor.py,editing_tags:177] Confirmed. All instances of 'Debris' have been replaced with ' '.
+[Tue, 04 Jan 2022 13:58:25] DEBUG [6830_xml_tag_editor.py,editing_tags:177] Confirmed. All instances of 'Stain' have been replaced with ' '.
+[Wed, 05 Jan 2022 14:35:18] DEBUG [6830_xml_tag_editor_with_zip_backups.py,editing_tags:149] Confirmed. All instances of 'Misload' have been replaced with 'Chocolate'.
+[Wed, 05 Jan 2022 14:39:30] DEBUG [6830_xml_tag_editor_with_zip_backups.py,editing_tags:149] Confirmed. All instances of 'Chocolate' have been replaced with 'Misload'.
+[Wed, 05 Jan 2022 14:49:09] DEBUG [6830_xml_tag_editor_with_zip_backups.py,editing_tags:148] Confirmed. All instances of 'Debris' have been replaced with 'Chocolate'.
+[Wed, 05 Jan 2022 14:51:09] DEBUG [6830_xml_tag_editor_with_zip_backups.py,editing_tags:148] Confirmed. All instances of 'Chocolate' have been replaced with 'Debris'.
+[Wed, 05 Jan 2022 15:02:57] DEBUG [6830_xml_tag_editor_with_zip_backups.py,editing_tags:159] Confirmed. All instances of 'Debris' have been replaced with 'Chocolate'.
+[Wed, 05 Jan 2022 15:03:52] DEBUG [6830_xml_tag_editor_with_zip_backups.py,editing_tags:159] Confirmed. All instances of 'Chocolate' have been replaced with 'Debris'.
+[Wed, 05 Jan 2022 15:20:23] DEBUG [6830_xml_tag_editor_with_zip_backups.py,editing_tags:180] Confirmed. All instances of 'Misload' have been replaced with 'Chocolate'.
+[Wed, 05 Jan 2022 15:22:08] DEBUG [6830_xml_tag_editor_with_zip_backups.py,editing_tags:180] Confirmed. All instances of 'Chocolate' have been replaced with 'Misload'.
+[Wed, 05 Jan 2022 15:33:08] DEBUG [6830_xml_tag_editor_with_zip_backups.py,editing_tags:181] Confirmed. All instances of 'Debris' have been replaced with 'Chocolate'.
+[Thu, 06 Jan 2022 09:11:03] DEBUG [6830_xml_tag_editor_with_zip_backups.py,editing_tags:182] Confirmed. All instances of 'Chocolate' have been replaced with 'Debris'.
+[Thu, 06 Jan 2022 09:13:09] DEBUG [6830_xml_tag_editor_with_zip_backups.py,editing_tags:182] Confirmed. All instances of 'Debris' have been replaced with 'Chocolate'.
+[Thu, 06 Jan 2022 09:20:48] DEBUG [6830_xml_tag_editor_with_zip_backups.py,editing_tags:180] Confirmed. All instances of 'Chocolate' have been replaced with 'Debris'.
+[Thu, 06 Jan 2022 09:21:19] DEBUG [6830_xml_tag_editor_with_zip_backups.py,editing_tags:180] Confirmed. All instances of 'Debris' have been replaced with 'Chocolate'.
+[Thu, 06 Jan 2022 09:24:55] DEBUG [6830_xml_tag_editor_with_zip_backups.py,editing_tags:181] Confirmed. All instances of 'Chocolate' have been replaced with 'Debris'.
+[Thu, 06 Jan 2022 09:25:40] DEBUG [6830_xml_tag_editor_with_zip_backups.py,editing_tags:181] Confirmed. All instances of 'Misload' have been replaced with 'Giraffes'.
+[Thu, 06 Jan 2022 09:28:08] DEBUG [6830_xml_tag_editor_rev3.py,editing_tags:181] Confirmed. All instances of 'Giraffes' have been replaced with 'Misload'.
+[Thu, 06 Jan 2022 09:28:33] DEBUG [6830_xml_tag_editor_rev3.py,editing_tags:181] Confirmed. All instances of 'Debris' have been replaced with 'Puppies'.
+[Thu, 06 Jan 2022 09:29:04] DEBUG [6830_xml_tag_editor_rev3.py,editing_tags:181] Confirmed. All instances of 'Stain' have been replaced with 'Chocolate'.
+[Thu, 06 Jan 2022 09:29:16] DEBUG [6830_xml_tag_editor_rev3.py,editing_tags:181] Confirmed. All instances of 'Damage' have been replaced with 'Giraffes'.
+[Thu, 06 Jan 2022 09:56:35] DEBUG [6830_xml_tag_editor_with_zip_backups.py,editing_tags:187] Confirmed. All instances of 'Debris' have been replaced with 'Puppies'.
+[Thu, 06 Jan 2022 09:58:43] DEBUG [6830_xml_tag_editor_with_zip_backups.py,editing_tags:187] Confirmed. All instances of 'Puppies' have been replaced with 'Giraffes'.
+[Mon, 10 Jan 2022 09:22:53] DEBUG [6830_xml_tag_editor_rev6.py,editing_tags:293] Confirmed. All instances of 'Scratch' have been replaced with ' '.
+[Mon, 10 Jan 2022 13:21:35] DEBUG [6830_xml_tag_editor_rev6.py,editing_tags:291] Confirmed. All instances of 'Scratch' have been replaced with ' '.
+[Mon, 10 Jan 2022 13:24:18] DEBUG [6830_xml_tag_editor_rev6.py,editing_tags:291] Confirmed. All instances of 'Unkown' have been replaced with ' '.
+[Mon, 10 Jan 2022 13:26:55] DEBUG [6830_xml_tag_editor_rev6.py,editing_tags:291] Confirmed. All instances of 'Debris' have been replaced with ' '.
+[Mon, 10 Jan 2022 13:29:33] DEBUG [6830_xml_tag_editor_rev6.py,editing_tags:291] Confirmed. All instances of 'Contamination' have been replaced with ' '.
+[Fri, 14 Jan 2022 12:18:14] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:312] Confirmed. All instances of 'Scratch' have been replaced with ' '.
+[Wed, 19 Jan 2022 15:54:59] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Crack-minor' have been replaced with ' '.
+[Wed, 19 Jan 2022 15:56:07] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Crack-outoffocus' have been replaced with ' '.
+[Wed, 19 Jan 2022 15:57:07] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Crack' have been replaced with ' '.
+[Wed, 19 Jan 2022 15:57:27] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Crack-rim' have been replaced with ' '.
+[Wed, 19 Jan 2022 15:57:41] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Chip' have been replaced with ' '.
+[Wed, 19 Jan 2022 16:29:56] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Crack-minor' have been replaced with ' '.
+[Wed, 19 Jan 2022 16:34:18] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Crack-outoffocus' have been replaced with ' '.
+[Wed, 19 Jan 2022 16:35:51] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Crack' have been replaced with ' '.
+[Wed, 19 Jan 2022 16:37:16] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Unknown' have been replaced with ' '.
+[Thu, 20 Jan 2022 09:14:25] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Crack-minor' have been replaced with ' '.
+[Thu, 20 Jan 2022 09:15:42] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Crack-outoffocus' have been replaced with ' '.
+[Thu, 20 Jan 2022 09:17:29] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Debris' have been replaced with ' '.
+[Thu, 20 Jan 2022 09:18:59] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Unkown' have been replaced with ' '.
+[Thu, 20 Jan 2022 09:20:09] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Unknown' have been replaced with ' '.
+[Thu, 20 Jan 2022 09:32:57] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Crack' have been replaced with ' '.
+[Thu, 20 Jan 2022 09:34:58] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Crack-minor' have been replaced with ' '.
+[Thu, 20 Jan 2022 09:35:52] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Crack-outoffocus' have been replaced with ' '.
+[Thu, 20 Jan 2022 09:36:48] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Crack-rim' have been replaced with ' '.
+[Thu, 20 Jan 2022 09:37:40] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Debris' have been replaced with ' '.
+[Thu, 20 Jan 2022 09:50:53] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Crack-outoffocus' have been replaced with ' '.
+[Thu, 20 Jan 2022 09:51:19] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Crack-minor' have been replaced with ' '.
+[Thu, 20 Jan 2022 09:51:45] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Crack-rim' have been replaced with ' '.
+[Thu, 20 Jan 2022 09:52:07] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Debris' have been replaced with ' '.
+[Thu, 20 Jan 2022 12:01:51] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Crack-minor' have been replaced with ' '.
+[Thu, 20 Jan 2022 12:02:00] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Crack-outoffocus' have been replaced with ' '.
+[Tue, 25 Jan 2022 11:40:05] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Crack' have been replaced with ' '.
+[Tue, 25 Jan 2022 11:40:16] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Crack-minor' have been replaced with ' '.
+[Tue, 25 Jan 2022 11:40:29] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Crack-outoffocus' have been replaced with ' '.
+[Tue, 25 Jan 2022 11:41:40] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Crack-minor' have been replaced with ' '.
+[Tue, 25 Jan 2022 11:41:55] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Crack-outoffocus' have been replaced with ' '.
+[Tue, 25 Jan 2022 11:42:07] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Crack' have been replaced with ' '.
+[Tue, 25 Jan 2022 11:42:21] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Crack-rim' have been replaced with ' '.
+[Tue, 25 Jan 2022 16:02:54] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Crack-minor' have been replaced with ' '.
+[Tue, 25 Jan 2022 16:05:46] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Crack-outoffocus' have been replaced with ' '.
+[Tue, 25 Jan 2022 16:08:30] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Crack' have been replaced with ' '.
+[Wed, 26 Jan 2022 11:48:46] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Crack-outoffocus' have been replaced with ' '.
+[Wed, 26 Jan 2022 12:02:08] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Crack-minor' have been replaced with ' '.
+[Wed, 26 Jan 2022 12:48:23] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Crack-outoffocus' have been replaced with ' '.
+[Wed, 26 Jan 2022 12:48:35] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Crack-minor' have been replaced with ' '.
+[Wed, 26 Jan 2022 12:49:30] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Crack-minor' have been replaced with ' '.
+[Wed, 26 Jan 2022 12:50:35] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Crack-minor' have been replaced with ' '.
+[Wed, 26 Jan 2022 12:50:44] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Crack-rim' have been replaced with ' '.
+[Wed, 26 Jan 2022 12:50:55] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Crack-outoffocus' have been replaced with ' '.
+[Wed, 26 Jan 2022 12:52:57] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Crack-minor' have been replaced with ' '.
+[Wed, 26 Jan 2022 12:54:22] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Crack-minor' have been replaced with ' '.
+[Wed, 26 Jan 2022 12:54:31] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Crack-rim' have been replaced with ' '.
+[Wed, 26 Jan 2022 12:54:41] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Crack-outoffocus' have been replaced with ' '.
+[Wed, 26 Jan 2022 12:54:54] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Debris' have been replaced with ' '.
+[Wed, 26 Jan 2022 12:55:01] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Misload' have been replaced with ' '.
+[Thu, 27 Jan 2022 09:55:21] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Crack-minor' have been replaced with ' '.
+[Thu, 27 Jan 2022 09:55:35] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Crack-rim' have been replaced with ' '.
+[Thu, 27 Jan 2022 09:55:52] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Crack-outoffocus' have been replaced with ' '.
+[Thu, 27 Jan 2022 09:56:04] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Debris' have been replaced with ' '.
+[Thu, 27 Jan 2022 10:01:55] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Damage' have been replaced with ' '.
+[Thu, 27 Jan 2022 10:02:13] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Misload' have been replaced with ' '.
+[Tue, 01 Feb 2022 11:42:48] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Scratch' have been replaced with ' '.
+[Tue, 01 Feb 2022 13:33:12] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Crack' have been replaced with ' '.
+[Tue, 01 Feb 2022 13:33:23] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Chip' have been replaced with ' '.
+[Tue, 01 Feb 2022 13:33:58] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Chip' have been replaced with ' '.
+[Tue, 01 Feb 2022 13:34:11] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Crack' have been replaced with ' '.
+[Tue, 01 Feb 2022 13:39:34] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Unkown' have been replaced with ' '.
+[Tue, 01 Feb 2022 13:39:42] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Crack' have been replaced with ' '.
+[Tue, 01 Feb 2022 13:40:03] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Void' have been replaced with ' '.
+[Tue, 15 Feb 2022 15:23:35] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:307] Confirmed. All instances of 'Chip' have been replaced with ' '.
+[Sun, 07 Aug 2022 15:57:25] DEBUG [6830_xml_tag_editor_rev9.py,editing_tags:266] Confirmed. All instances of 'Debris' have been replaced with 'GoodImage'.

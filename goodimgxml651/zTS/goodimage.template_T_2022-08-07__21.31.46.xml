@@ -1,0 +1,11 @@
+<annotation>
+	<object>
+		<name>GoodImage</name>
+		<bndbox>
+			<xmin>1</xmin>
+			<ymin>7248</ymin>
+			<xmax>212</xmax>
+			<ymax>7614</ymax>
+		</bndbox>
+	</object>
+</annotation>

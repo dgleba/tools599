@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<annotation>
+	<folder>outer_surface_ok_dec82021</folder>
+	<filename>outer_surface_211208T073242.png</filename>
+	<path>E:\projects\vision_systems\6830_dv6_rotor\6830_dv6.2_model_generation\6830_image_collection\outer_surface_relabelled_data\outer_surface_ok_dec82021\outer_surface_211208T073242.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>500</width>
+		<height>7990</height>
+		<depth>1</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>GoodImage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>0</xmin>
+			<ymin>0</ymin>
+			<xmax>300</xmax>
+			<ymax>7990</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>GoodImage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>0</xmin>
+			<ymin>0</ymin>
+			<xmax>300</xmax>
+			<ymax>7990</ymax>
+		</bndbox>
+	</object>
+	
+</annotation>

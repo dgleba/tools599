@@ -1,0 +1,70 @@
+_____________
+
+
+01.
+
+C:\prg\7-zip\7za a -sdel -m0=Copy "D:\Archive Record\images\year2021\Sep\Day01\Shift2\0755\good01.7z"  "D:\Archive Record\images\year2021\Sep\Day01\Shift2\0755\good"
+
+
+
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+C:\Users\VISION_G1>C:\prg\7-zip\7za a -sdel -m0=Copy "D:\Archive Record\images
+ear2021\Sep\Day01\Shift2\0755\good01.7z"  "D:\Archive Record\images\year2021\S
+\Day01\Shift2\0755\good"
+
+7-Zip (a) 22.01 (x86) : Copyright (c) 1999-2022 Igor Pavlov : 2022-07-15
+Scanning the drive:
+1 folder, 123010 files, 2444100515 bytes (2331 MiB)
+
+Creating archive: D:\Archive Record\images\year2021\Sep\Day01\Shift2\0755\good
+.7z
+
+Add new data to archive: 1 folder, 123010 files, 2444100515 bytes (2331 MiB)
+
+ERROR: Not enough storage is available to process this command.
+D:\Archive Record\images\year2021\Sep\Day01\Shift2\0755\Good\C10_T15_182741_07
+_0_152.jpg
+
+
+System ERROR: Not enough storage is available to process this command.
+
+C:\Users\VISION_G1>dir
+ Volume in drive C has no label.
+ Volume Serial Number is DC06-823B
+
+ Directory of C:\Users\VISION_G1
+
+01/14/2021  04:29 AM    <DIR>          .
+...
+07/22/2020  03:21 AM    <DIR>          Videos
+               0 File(s)              0 bytes
+              14 Dir(s)  96,608,632,832 bytes free
+
+C:\Users\VISION_G1>dir d:
+ Volume in drive D is Data
+ Volume Serial Number is 523E-7362
+
+ Directory of D:\
+
+02/08/2021  02:39 PM    <DIR>          Archive Record
+06/16/2022  10:15 AM    <DIR>          Backup
+08/17/2022  11:52 AM    <DIR>          data
+08/17/2022  10:53 AM    <DIR>          people
+08/22/2022  04:24 AM    <DIR>          RImages
+               0 File(s)              0 bytes
+               5 Dir(s)  368,635,289,600 bytes free
+
+C:\Users\VISION_G1>
+
+_____________
+
+02.
+
+C:\prg\7-zip\7za a -sdel -x=0 -d=8064b "D:\Archive Record\images\year2021\Sep\Day01\Shift2\0755\good01.7z"  "D:\Archive Record\images\year2021\Sep\Day01\Shift2\0755\good"
+
+
+
+
+
