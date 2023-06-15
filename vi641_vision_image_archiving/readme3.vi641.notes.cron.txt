@@ -42,10 +42,10 @@ sudo crontab -u albe -l  # list
 
 
 #cron.. leanai linux to dock rclone logfile not tee version
-sudo crontab -u albe -l | grep -v 'movefiles575/rclone-nas1-dock_v3_uselog'  | sudo crontab -u albe - #remove
-sudo crontab -u albe -l | { cat; echo "19 * * * 0-6 "bash /crib/tools599/movefiles575/rclone-6365leanailin-dock.sh" "; } | sudo crontab -u albe -  #add
+crontab -u albe -l | grep -v 'movefiles575/rclone-6365-leanailin'  | crontab -u albe - #remove
+crontab -u albe -l | { cat; echo "19 * * * 0-6 "bash /crib/tools599/movefiles575/rclone-6365-leanailin-dock.sh" "; } |  crontab -u albe -  #add
 
-sudo crontab -u albe -l  # list
+crontab -u albe -l  # list
 
 
 

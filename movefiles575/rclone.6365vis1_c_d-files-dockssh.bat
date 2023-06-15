@@ -1,4 +1,4 @@
-::# purpose: startup -  move_files_to_nas
+::# purpose:  copy c: and d: files except 
 
 :Prepare date and temp folders
 set timea=%TIME: =0%
@@ -21,7 +21,7 @@ REM @echo off
 
 :: allow only one copy of this to run at one time..
 :: Window title must be unique.
-set batch_title=rclone_move6365vis1-dockssh
+set batch_title=rclone_6365vis1_c_d_copy-dockssh
 :: Run tasklist in verbose mode (which returns window titles) and search for the window title of this batch file:
 tasklist /V /NH /FI "imagename eq cmd.exe"| find /I /C "%batch_title%" > nul
 :: If the window title is found then the errorlevel variable will be 0, which means the process is already running:
@@ -37,12 +37,18 @@ echo Start main routine
 
 @echo on
 
-set pth=c:\prg\rclone\
-%pth%\rclone move  --min-age 4h   -v --progress --stats=30s ^
- D:\data\vision_6365_1\image_data  ^
- dock-vi641-ssh:/media/albe/vi641-002/mcdata/mc_6365_vision_1  --transfers 2  ^
- --log-file=%logdir%\rclone6365vis1-dockssh_%dhms%.log.txt 
+call C:\was_on_d-drive\rbcopy-d-c.bat
 
+
+set pth=c:\prg\rclone
+%pth%\rclone copy  -v --progress --stats=30s ^
+ c:/    --exclude  "D:/data/vision_6365_1/image_data/**"  ^
+ dock-vi641-ssh:/media/albe/vi641-002/backup/m6365-5027-vis1  --transfers 2  ^
+  --log-file=%logdir%\rclone6365vis1-c-d_dockssh_%dhms%.log.txt 
+
+
+:: D:\data\vision_6365_1\image_data
+:: /media/albe/vi641-002/backup/vision_6365_win_1
 :: --delete-empty-src-dirs
 :: for nas2.. Z:\mcdata\mc_6365_vision_1 ^
 :: 2>&1|%pth%\tee %logdir%\rclonedockssh_%dhms%.log.txt

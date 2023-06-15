@@ -38,9 +38,16 @@ echo Start main routine
 @echo on
 
 
-set pth=c:\prg\rclone\
-%pth%\rclone move --delete-empty-src-dirs --min-age=150d  --max-age=999d "D:\Archive Record\images" dock-vi641-ssh:/media/albe/vi641-001/mcdata/mc_6670_vision/image_data/vision-1/images -v 2>&1|%pth%\tee %logdir%\rclonedockssh_%dhms%.log.txt
+:: note: dgleba change from 150d to 390d 2023-06-13_Tue_06.55-AM
 
+set pth=c:\prg\rclone\
+%pth%\rclone move  --min-age=390d  --max-age=999d --order-by modtime,ascending "D:\Archive Record\images" dock-vi641-ssh:/media/albe/vi641-002/mcdata/mc_6670_vision/image_data/vision-1/images -v 2>&1|%pth%\tee %logdir%\rclonedockssh_%dhms%.log.txt
+
+
+:: This option may not respect min-age --delete-empty-src-dirs.
+:: use python..
+
+c:\prg\python\python C:\data\script\tools599\movefiles575\rmdir-empty-dir-olderthan.py "D:\Archive Record\images"
 
 
 
@@ -51,10 +58,11 @@ goto end
 
 
 
+
 :create-rclone-sshs-sftp-connection
 
 set pth=c:\prg\rclone\
-%pth%\rclone config create dock-vi641-ssh sftp host 10.4.168.141 user albe pass Stackpole1325
+%pth%\rclone config create dock-vi641-ssh sftp host 10.4.64.7 user albe pass Stackpole1325
 
 
 
@@ -87,6 +95,7 @@ REM --log-level NOTICE --order-by modtime,ascending --progress
 
 
 :AlreadyRunning
+mkdir c:\temp\moveimg
 echo %dhms% one.instance enforcement was invoked by tasklist window title checking.>>c:\temp\moveimg\one.instance.enforcement.log.txt
 echo.
 echo.

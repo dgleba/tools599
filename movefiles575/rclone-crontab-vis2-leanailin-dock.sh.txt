@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Scheduler
+
+#cron.. leanai linux to dock rclone logfile not tee version
+
+crontab -u albe -l | grep -v 'tools599/movefiles575/rclone-6365-leanailin-vis1-dock.sh'  | crontab -u albe - #remove
+crontab -u albe -l | { cat; echo "17 * * * 0-6 "bash /ap/script/tools599/movefiles575/rclone-6365-leanailin-vis1-dock.sh" "; } | crontab -u albe -  #add
+
+crontab -u albe -l  # list
+
+
+
+
+crontab -u albe -l | grep -v 'tools599/movefiles575/rclone-6365-leanailin-vis2-dock.sh'  | crontab -u albe - #remove
+crontab -u albe -l | { cat; echo "17 * * * 0-6 "bash /ap/script/tools599/movefiles575/rclone-6365-leanailin-vis2-dock.sh" "; } | crontab -u albe -  #add
+
+crontab -u albe -l  # list
+
+------------
+
+install rclone from the rclone website using their instructions
+
+:create-rclone-sshs-sftp-connection
+
+# Windows
+set pth=c:\prg\rclone\
+%pth%\rclone config create dock-vi641-ssh sftp host 10.4.168.141 user albe pass password
+
+# linux
+
+rclone config create dock-vi641-ssh sftp host 10.4.168.141 user albe pass Stackpole1325

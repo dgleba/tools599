@@ -1,0 +1,8 @@
+#!/bin/bash
+
+
+ see other file in vis1.  rclone-crontab-notes.sh.txt
+
+------------
+
+
