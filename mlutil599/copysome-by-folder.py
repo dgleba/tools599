@@ -4,7 +4,7 @@ purpose: copy 100 files randomly from each subfolder containing good in the path
 
 
 python /crib/tools599/mlutil599/copysome-by-folder.py \
-  /media/albe/vi641-002/mcdata/mc_6670_vision/image_data/vision-1/images/year2023 /home/albe/tmp/y23m
+  /media/albe/vi641-002/mcdata/mc_6670_vision/image_data/vision-1/images/year2022 /home/albe/tmp/y23m
 
 
 """
