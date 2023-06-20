@@ -37,9 +37,9 @@ def copy_files(source_folder, destination_folder, train_percentage):
 
     # Iterate over the folders in the source folder tree
     for root, dirs, files in os.walk(source_folder):
-        print("root:")
-        print(root)
-        print(dirs, files)
+        # print("root:")
+        # print(root)
+        # print(dirs, files)
         # Skip the destination folder itself
         if root == destination_folder:
             continue
@@ -55,11 +55,8 @@ def copy_files(source_folder, destination_folder, train_percentage):
         # Shuffle the files randomly
         random.shuffle(files)
 
-
         # Check if the current folder should  ignore xml files..
-        #folder_name = os.path.basename(root)
         if any(igno_folder in root for igno_folder in IGNORED_FOLDERS):
-        #if folder_name in IGNORED_FOLDERS:
             # Copy picture files ignoring corresponding XML files
             for i, file in enumerate(files):
                 base_name, extension = os.path.splitext(file)
@@ -86,8 +83,10 @@ def copy_files(source_folder, destination_folder, train_percentage):
                     shutil.copy2(source_picture_path, destination_picture_path)
                     if os.path.exists(source_xml_path):
                         shutil.copy2(source_xml_path, destination_xml_path)
+                        print(".", end="")
                     else:
                         print(f"XML file not found: {source_xml_path}")
+                        #print("working")
 
 # Read command-line arguments
 if len(sys.argv) != 4:
