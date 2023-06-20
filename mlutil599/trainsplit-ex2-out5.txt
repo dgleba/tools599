@@ -1,0 +1,37 @@
+split5/eval/fr.png
+split5/eval/ok2.png
+split5/eval/ok4.png
+split5/eval/outer_surface_210804T142738.png
+split5/eval/outer_surface_210804T142738.xml
+split5/eval/outer_surface_210804T142756.png
+split5/eval/outer_surface_210804T142756.xml
+split5/eval/top_surface_211028T153922.png
+split5/eval/top_surface_211028T153922.xml
+split5/train/fl.png
+split5/train/inner_bore_220106T005310.png
+split5/train/inner_bore_220106T005310.xml
+split5/train/ok.png
+split5/train/ok3.png
+split5/train/ok5.png
+split5/train/oka (1).png
+split5/train/oka (2).png
+split5/train/oka (3).png
+split5/train/outer_surface_210804T142654.png
+split5/train/outer_surface_210804T142654.xml
+split5/train/outer_surface_210804T142702.png
+split5/train/outer_surface_210804T142702.xml
+split5/train/outer_surface_210804T142712.png
+split5/train/outer_surface_210804T142712.xml
+split5/train/outer_surface_210804T142721.png
+split5/train/outer_surface_210804T142721.xml
+split5/train/outer_surface_210804T142730.png
+split5/train/outer_surface_210804T142730.xml
+split5/train/outer_surface_210804T142748.png
+split5/train/outer_surface_210804T142748.xml
+split5/train/outer_surface_220324T163129.png
+split5/train/top_surface_211028T145652.png
+split5/train/top_surface_211028T145652.xml
+split5/train/top_surface_211102T084335.png
+split5/train/top_surface_211102T084335.xml
+split5/train/top_surface_211102T100331.png
+split5/train/top_surface_211102T100331.xml
