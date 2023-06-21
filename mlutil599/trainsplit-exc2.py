@@ -37,9 +37,9 @@ def copy_files(source_folder, destination_folder, train_percentage):
 
     # Iterate over the folders in the source folder tree
     for root, dirs, files in os.walk(source_folder):
-        # print("root:")
-        # print(root)
-        # print(dirs, files)
+        # print("root:", flush=True)
+        # print(root, flush=True)
+        # print(dirs, files, flush=True)
         # Skip the destination folder itself
         if root == destination_folder:
             continue
@@ -88,7 +88,6 @@ def copy_files(source_folder, destination_folder, train_percentage):
                         print(".", end="", flush=True)
                     else:
                         print(f"Info: No matching XML file for: {source_xml_path}", flush=True)
-                        #print("working")
 
 # Read command-line arguments
 if len(sys.argv) != 4:
