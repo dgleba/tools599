@@ -33,7 +33,7 @@ def copy_files(source_folder, destination_folder, train_percentage):
     os.makedirs(train_folder, exist_ok=True)
     os.makedirs(eval_folder, exist_ok=True)
 
-    IGNORED_FOLDERS = ['OK', 'ok','false_rejects', 'flag']
+    IGNORED_FOLDERS = ['ok','false_rejects', 'flag']
 
     # Iterate over the folders in the source folder tree
     for root, dirs, files in os.walk(source_folder):
@@ -56,7 +56,7 @@ def copy_files(source_folder, destination_folder, train_percentage):
         random.shuffle(files)
 
         # Check if the current folder should  ignore xml files..
-        if any(igno_folder in root for igno_folder in IGNORED_FOLDERS):
+        if any(igno_folder.lower() in root.lower() for igno_folder in IGNORED_FOLDERS):
             # Copy picture files ignoring corresponding XML files
             for i, file in enumerate(files):
                 base_name, extension = os.path.splitext(file)
