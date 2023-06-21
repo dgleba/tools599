@@ -25,11 +25,11 @@ example-ml-data-tree5/grp10_outer/10a/crack/outer_surface_210804T142748.xml
 example-ml-data-tree5/grp10_outer/10a/crack/outer_surface_210804T142756.png
 example-ml-data-tree5/grp10_outer/10a/crack/outer_surface_210804T142756.xml
 example-ml-data-tree5/grp10_outer/10a/OK/220324/flag/fl.png
- example-ml-data-tree5/grp10_outer/10a/OK/220324/flag/fl.xml
+- example-ml-data-tree5/grp10_outer/10a/OK/220324/flag/fl.xml
 example-ml-data-tree5/grp10_outer/10a/OK/220324/flag/outer_surface_220324T163129.png
- example-ml-data-tree5/grp10_outer/10a/OK/220324/flag/outer_surface_220324T163129.xml
+- example-ml-data-tree5/grp10_outer/10a/OK/220324/flag/outer_surface_220324T163129.xml
 example-ml-data-tree5/grp10_outer/10a/OK/220324/ok.png
- example-ml-data-tree5/grp10_outer/10a/OK/220324/ok.xml
+- example-ml-data-tree5/grp10_outer/10a/OK/220324/ok.xml
 example-ml-data-tree5/grp10_outer/10a/OK/220324/ok2.png
 example-ml-data-tree5/grp10_outer/10a/OK/220324/ok3.png
 example-ml-data-tree5/grp10_outer/10a/OK/220324/ok4.png
@@ -37,8 +37,8 @@ example-ml-data-tree5/grp10_outer/10a/OK/220324/ok5.png
 example-ml-data-tree5/grp10_outer/10a/OK/220324/oka (1).png
 example-ml-data-tree5/grp10_outer/10a/OK/220324/oka (2).png
 example-ml-data-tree5/grp10_outer/10a/OK/220324/oka (3).png
- example-ml-data-tree5/grp10_outer/exclude/excl.png
- example-ml-data-tree5/grp10_outer/exclude/excl.xml
+- example-ml-data-tree5/grp10_outer/exclude/excl.png
+- example-ml-data-tree5/grp10_outer/exclude/excl.xml
 example-ml-data-tree5/grp10_outer/false_rejects/fr.png
- example-ml-data-tree5/grp10_outer/false_rejects/fr.xml
+- example-ml-data-tree5/grp10_outer/false_rejects/fr.xml
 43 - 6 = 37

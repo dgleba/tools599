@@ -67,7 +67,7 @@ def copy_files(source_folder, destination_folder, train_percentage):
                     else:
                         destination_picture_path = os.path.join(eval_folder, file)
                     shutil.copy2(source_picture_path, destination_picture_path)
-                    print(",", end="")
+                    print(",", end="", flush=True)
         else:
             # Copy picture files and their corresponding XML files
             for i, file in enumerate(files):
@@ -82,12 +82,12 @@ def copy_files(source_folder, destination_folder, train_percentage):
                         destination_picture_path = os.path.join(eval_folder, file)
                         destination_xml_path = os.path.join(eval_folder, base_name + '.xml')
                     shutil.copy2(source_picture_path, destination_picture_path)
-                    print(":", end="")
+                    print(":", end="", flush=True)
                     if os.path.exists(source_xml_path):
                         shutil.copy2(source_xml_path, destination_xml_path)
-                        print(".", end="")
+                        print(".", end="", flush=True)
                     else:
-                        print(f"XML file not found: {source_xml_path}")
+                        print(f"Info: No matching XML file for: {source_xml_path}", flush=True)
                         #print("working")
 
 # Read command-line arguments
