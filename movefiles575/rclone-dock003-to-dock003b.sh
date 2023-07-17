@@ -2,14 +2,14 @@
 
 # see version info at bottom.
 
-# purpose: rclone  for PMDA-Nas#1 move older images to archive (drive dock for example)
+# purpose: duplicate disk 2 to 2b
 
+
+# usage:         nohup bash /crib/tools599/movefiles575/rclone-dock002-to-dock002b.sh &
+
+
+# note:
 # use --log-file instead of tee..  sftp://10.4.168.141/crib/tools599/movefiles575/rclone-nas2-dock_02_uselog.sh
-
-# usage:         nohup bash /crib/tools599/movefiles575/rclone-nas1-dock_02_uselog.sh &
-
-
-
 
 echo "-+-+--+-+--+-+--+-+--+-+-  Starting $0 base:$(basename -- "$0") at  $(date +"_%Y.%m.%d_%H.%M.%S")"
 
@@ -17,13 +17,6 @@ echo "-+-+--+-+--+-+--+-+--+-+-  Starting $0 base:$(basename -- "$0") at  $(date
 
 # settings 
 
-# REM :source dir
-# ssc="/mnt/nas2_ip10-4-56-190/mcdata"
-
-# REM :destination dir
-# ddc=/media/albe/vi641-001/mcdata
-
-# mkdir -p ${ddc}
 
 
 tempdir=/crib/log/rclone
@@ -45,13 +38,15 @@ function_one() {
 echo "function_one running."
 
 pwd; ls -la;
-rclone move --min-age=30d  --max-age=1999d --delete-empty-src-dirs --order-by modtime,ascending  -v \
-  /mnt/nas1_pmda-sgenas01/mcdata /media/albe/vi641-003/mcdata   --log-file=$logf 
+rclone copy   /media/albe/vi641-003   /media/albe/vi641-003b --log-file=$logf --log-level INFO 
 
+     #     --multi-thread-cutoff 64M    --multi-thread-streams 12  --transfers=12
 
 }
 
 # notes:
+
+# --min-age=300d  --max-age=302d  --bwlimit 5k  
 
 # sftp://10.4.168.141/mnt/nas1_pmda-sgenas01/mcdata
 # sftp://10.4.168.141/mnt/nas1_pmda-sgenas01/training_library_in_development  /media/albe/vi641-001/mcdata/nas_1/training_library_in_development

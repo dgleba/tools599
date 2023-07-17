@@ -48,7 +48,7 @@ minage=15
 srcdir=/leanai_data/leanai_aoi_outputs
 
 rclone move --min-age=${minage}d  --max-age=999d  --order-by modtime,ascending  -v ${srcdir} \
-dock-vi641-ssh:/media/albe/vi641-002/mcdata/mc_6365_vision_1/image_data  --log-file=$logf 
+dock-vi641-ssh:/media/albe/vi641-003/mcdata/mc_6365_vision_1/image_data  --log-file=$logf 
 
 # rclone  --delete-empty-src-dirs seemed to remove empty dirs newer than min-age. Use bash to rm empty dirs.
 echo removing older empty folders..

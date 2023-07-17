@@ -15,13 +15,13 @@ sudo crontab -u albe -l  # list
 
 #cron.. NAS#2 rclone logfile not tee version
 sudo crontab -u albe -l | grep -v 'movefiles575/rclone-nas2-dock_v3_uselog'  | sudo crontab -u albe - #remove
-sudo crontab -u albe -l | { cat; echo "27 19 * * 0-6 "bash /crib/tools599/movefiles575/rclone-nas2-dock_v3_uselog.sh" "; } | sudo crontab -u albe -  #add
+sudo crontab -u albe -l | { cat; echo "44 11 * * 0-6 "bash /crib/tools599/movefiles575/rclone-nas2-dock_v3_uselog.sh" "; } | sudo crontab -u albe -  #add
 
 sudo crontab -u albe -l  # list
 
 #cron..  NAS-1 rclone logfile not tee version
 sudo crontab -u albe -l | grep -v 'movefiles575/rclone-nas1-dock_v3_uselog'  | sudo crontab -u albe - #remove
-sudo crontab -u albe -l | { cat; echo "25 02 * * 0-6 "bash /crib/tools599/movefiles575/rclone-nas1-dock_v3_uselog.sh" "; } | sudo crontab -u albe -  #add
+sudo crontab -u albe -l | { cat; echo "17 11 * * 0-6 "bash /crib/tools599/movefiles575/rclone-nas1-dock_v3_uselog.sh" "; } | sudo crontab -u albe -  #add
 
 sudo crontab -u albe -l  # list
 
@@ -36,6 +36,13 @@ sudo crontab -u albe -l  # list
 #cron..  rclone-dock002-to-dock002b_uselog
 sudo crontab -u albe -l | grep -v 'movefiles575/rclone-dock002-to-dock002b'  | sudo crontab -u albe - #remove
 sudo crontab -u albe -l | { cat; echo "29 22 * * 0-6 "bash /crib/tools599/movefiles575/rclone-dock002-to-dock002b.sh" "; } | sudo crontab -u albe -  #add
+
+sudo crontab -u albe -l  # list
+
+
+#cron..  rclone-dock003-to-dock003b_uselog
+sudo crontab -u albe -l | grep -v 'movefiles575/rclone-dock003-to-dock003b'  | sudo crontab -u albe - #remove
+sudo crontab -u albe -l | { cat; echo "47 */2 * * 0-6 "bash /crib/tools599/movefiles575/rclone-dock003-to-dock003b.sh" "; } | sudo crontab -u albe -  #add
 
 sudo crontab -u albe -l  # list
 

@@ -23,7 +23,7 @@ echo "-+-+--+-+--+-+--+-+--+-+-  Starting $0 base:$(basename -- "$0") at  $(date
 # REM :destination dir
 # ddc=/media/albe/vi641-001/mcdata
 
-mkdir -p ${ddc}
+#mkdir -p ${ddc}
 
 tempdir=/crib/log/rclone
 mkdir -p ${tempdir}
@@ -45,7 +45,7 @@ echo "function_one ${pwd}"
 
 
 rclone move --min-age=119d  --max-age=1999d --delete-empty-src-dirs --order-by modtime,ascending  -v \
-  /mnt/nas2_ip10-4-56-190/mcdata /media/albe/vi641-002/mcdata   --log-file=$logf 
+  /mnt/nas2_ip10-4-56-190/mcdata /media/albe/vi641-003/mcdata   --log-file=$logf 
 
 #   --log-file=$logf --log-level INFO
 
