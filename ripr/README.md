@@ -26,6 +26,7 @@ pip install  pymysql
 pip install  getmac 
 pip install  psutil  
 pip install  pandas 
+pip install  numpy>1.20
 
 - make mysql db `ripr684` 
 - make tables using sql below
