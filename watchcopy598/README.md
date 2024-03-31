@@ -60,9 +60,9 @@ Edit the above files if needed.
  
 Read `watch598e.ps1`. Notice the folders it uses for interal use and the final folders. It is preferred that these folders remain unchanged, as unintended results may occur if these are changed.
  
-Run `watch598e.ps1` and it will copy files in the watched folder to the output folders on file changes in the folder.
+Run `watch598e.ps1` and it will copy files in the watched folder to the output folders once.
 
-Put the `watch598e.ps1` in a scheduled task to start on login.
+Put the `watch598e.ps1` in a scheduled task to run every minute.
 
 Set the task scheduler
     - run once per minute
@@ -86,7 +86,7 @@ s_litmus_move_from_host_array=@("PMA-CMM1","PMC-PRISMO1")
 Reference: This is the code..
 ```    
 # to litmus-from-other-cmm
-# if these settings refer to valid hosts present in your system, move the litmus files to destination computer for litmus to pick them up. 
+# if your hostname is in the array, move the litmus files to destination computer for litmus to pick them up. 
 if ( $global:s_litmus_move_from_host_array.contains($(gc env:computername)) ) {
   echo 'moving to cmm 10001...'
   # copy to \litmus-data-cmm

@@ -1,0 +1,29 @@
+#!/bin/sh
+
+function_offline () {
+# David Gleba
+
+# skip in favour of systemd timer
+if [ -d /run/systemd/system ]; then
+    exit 0
+fi
+
+# this cronjob persists removals (but not purges)
+if [ ! -x /usr/sbin/logrotate ]; then
+    exit 0
+fi
+}
+
+
+echo DavidGleba| tee -a /var/log/logrotatedglog 
+echo "running hourly logrotate.."
+tt="-+-+--+-+--+-+--+-+--+-+-  Starting $0 base:$(basename -- "$0") at  $(date +"_%Y.%m.%d_%H.%M.%S")"
+ff=/var/log/logrotatedglog
+echo $tt| tee -a $ff 
+/usr/sbin/logrotate -v /etc/logrotate.conf 2>&1 | tee -a $ff
+
+EXITVALUE=$?
+if [ $EXITVALUE != 0 ]; then
+    /usr/bin/logger -t logrotate "ALERT exited abnormally with [$EXITVALUE]"
+fi
+exit $EXITVALUE

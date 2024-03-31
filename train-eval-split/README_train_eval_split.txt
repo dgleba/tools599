@@ -11,6 +11,9 @@ Formats:
 		- one folder that has known defects and only defects for a false pass comparison to be done by GAA.
 		- other ones must be like allinone, where the xml files are to be removed.
 		- for now xml files to be removed manually in this folder as needed.
+  4.
+  - ignore entire 'exclude' folder.
+
 
 Usage:
 	python pyythonfile.py source_folder destination_folder [-options]

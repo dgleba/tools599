@@ -4,12 +4,13 @@
 
 # Purpose:  move/copy files from windows task scheduler run once per minute.
 
+# refer to: docs\plan06.test.txt for some ideas that we used in initial planning. It may help understand code below.
 
 #  SETTINGS  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 cmd /c cd 
 
-$global:watchversion='49'
+$global:watchversion='54'
 
 
 # Number of minutes old the modified timestamp is on the files to handle.
@@ -22,9 +23,10 @@ $global:copyToGeneral = "C:\data\cmm\watchedoutput\general"
 $global:copyToLitmus = "C:\data\cmm\watchedoutput\litmus"
 $global:litmusfromother = "C:\data\cmm\system\litmus-from-other-cmm"
 
-# temporarily copy some files here for my interest.
+# temporarily copy some files here for logging.
 $global:copyToLitmust3 = "C:\data\cmm\system\litmus_tmp3"
 $global:copyToLitmust4 = "C:\data\cmm\system\litmus_tmp4"
+$global:copyToLitmust5 = "C:\data\cmm\system\litmus_tmp5from"
 
 $global:thisNickName = "watch598e"
 
@@ -40,8 +42,6 @@ Start-Transcript -Path c:\data\logs\watch598cmmresults\debug\watch598e_debugtran
 
 $global:translogpath = "c:\data\logs\watch598cmmresults\debug\watch598e_debugtranscrpt"
 
-
-#  SETTINGS end ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 # settings-from-file ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -74,7 +74,10 @@ Get-Content watch598settings.conf | Foreach-Object{
 $global:PathToMonitor = "$s_PathToMonitor"
 $global:watch_file_filter = $s_watch_file_filter
 
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+#  SETTINGS end ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 # Prep ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -118,6 +121,8 @@ cmd /c mkdir $copyToQCcalc
 cmd /c mkdir $copyToGeneral
 cmd /c mkdir $global:copyToLitmus
 cmd /c mkdir $global:copyToLitmust3
+cmd /c mkdir $global:copyToLitmust4
+cmd /c mkdir $global:copyToLitmust5
 
 $mts = (Get-Date).toString("yyyyMMdd_HH.mm.ss")
 $cmd = "cmd /c echo Starting watch598e at $mts>>$logpath\$(gc env:computername)-$thisNickName--run-log_$((Get-Date).toString("yyyy-MM-dd")).txt"
@@ -169,7 +174,7 @@ if ($isfile.Length -gt 0) {
       echo 'moving to cmm 10001...'
       # copying to cmm10001 \result means that qccalc will ingest the files twice. once on on the source cmm and once on the destination.
       # copy to \litmus-data-cmm
-      robocopy $copyToLitmus  "\\$s_litmus_destination_host\litmus-from-other-cmm\"  /mov /is /R:3 /W:4 | C:\prg\cygwin64\bin\grep.exe  -v '*EXTRA File'
+      cmd /c robocopy $copyToLitmus  "\\$s_litmus_destination_host\litmus-from-other-cmm\"  /mov /is /R:10 /W:6 | C:\prg\cygwin64\bin\grep.exe  -v '*EXTRA File'
     }
     else {
       echo 'Not moving litmus to central pc.'
@@ -189,7 +194,8 @@ if ($isfile.Length -gt 0) {
       write-host $isfile2.Length
       if ($isfile2) {
         echo 'moving 185..'
-        cmd /c robocopy  $litmusfromother $copyToLitmus /mov /is /R:3 /W:4 | C:\prg\cygwin64\bin\grep.exe  -v '*EXTRA File'
+        cmd /c robocopy  $litmusfromother  $copyToLitmust5  /xo /is |  C:\prg\cygwin64\bin\grep.exe  -v '*EXTRA File'
+        cmd /c robocopy  $litmusfromother  $copyToLitmus /mov /is /R:9 /W:6 | C:\prg\cygwin64\bin\grep.exe  -v '*EXTRA File'
         echo "ps1 moveitem 190.."
         move-item $litmusfromother\*.txt $copyToLitmus
       }
@@ -210,7 +216,7 @@ if ($isfile.Length -gt 0) {
     $mts = (Get-Date).toString("yyyyMMdd_HH.mm.ss")
     #cmd /c robocopy $interimfolder $copyToQCcalc  '*chr.txt*' '*hdr.txt*' '*fet.txt*' /mov /is /R:3 /W:4      /log:$global:logpath\debug\robocopy.qcc_$mts.txt |  C:\prg\cygwin64\bin\grep.exe  -v '*EXTRA File'
     #cmd /c robocopy $interimfolder $copyToQCcalc  '*chr.txt*' '*hdr.txt*' '*fet.txt*' /mov /is /R:3 /W:4 /tee /log:$global:logpath\debug\robocopy.qcc_$mts.txt
-    cmd /c robocopy $interimfolder $copyToQCcalc  '*chr.txt*' '*hdr.txt*' '*fet.txt*' /mov /is /R:3 /W:4 | C:\prg\cygwin64\bin\grep.exe  -v '*EXTRA File'
+    cmd /c robocopy $interimfolder $copyToQCcalc  '*chr.txt*' '*hdr.txt*' '*fet.txt*' /mov /is /R:9 /W:6 | C:\prg\cygwin64\bin\grep.exe  -v '*EXTRA File'
 } else {
     write-host "--------------  NO files to process. ---------------------"
 }

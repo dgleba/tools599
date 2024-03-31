@@ -38,24 +38,26 @@ echo Start main routine
 @echo on
 
 set pth=c:\prg\rclone\
-%pth%\rclone move --delete-empty-src-dirs --min-age 2d   -v --progress --stats=30s ^
+%pth%\rclone move  --min-age 4h   -v --progress --stats=30s ^
  D:\data\vision_6365_1\image_data  ^
- dock-vi641-ssh:/media/albe/vi641-002/mcdata/mc_6365_vision_1  ^
+ dock-vi641-ssh:/media/albe/vi641-002/mcdata/mc_6365_vision_1  --transfers 2  ^
  --log-file=%logdir%\rclone6365vis1-dockssh_%dhms%.log.txt 
 
- ::2>&1|%pth%\tee %logdir%\rclonedockssh_%dhms%.log.txt
-
-::--log-file=%logdir%\rclonedockssh_%dhms%.log.txt
+:: --delete-empty-src-dirs
+:: for nas2.. Z:\mcdata\mc_6365_vision_1 ^
+:: 2>&1|%pth%\tee %logdir%\rclonedockssh_%dhms%.log.txt
+:: --log-file=%logdir%\rclonedockssh_%dhms%.log.txt
 
 
  
-timeout 145
+timeout 14
 
 goto end
 
 
 
-:create-rclone-sshs-sftp-connection
+:How-to-create-rclone-sshs-sftp-connection
+:: Just copy paste the following to create the connection. It doesn't run in this script.
 
 set pth=c:\prg\rclone\
 %pth%\rclone config create dock-vi641-ssh sftp host 10.4.168.141 user albe pass Stackpole1325
@@ -92,4 +94,4 @@ timeout 36
 endlocal
 
 :end
-timeout 99
+timeout 9

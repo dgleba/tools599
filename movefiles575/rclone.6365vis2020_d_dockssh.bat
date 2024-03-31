@@ -38,9 +38,9 @@ echo Start main routine
 @echo on
 
 set pth=c:\prg\rclone\
-%pth%\rclone move --delete-empty-src-dirs --min-age  2d -v --progress --stats=30s ^
+%pth%\rclone move --delete-empty-src-dirs --min-age  12h -v --progress --stats=30s ^
  D:\data\vision_6365_2\image_data ^
- dock-vi641-ssh:/media/albe/vi641-002/mcdata/mc_6365_vision_2/image_data ^
+ dock-vi641-ssh:/media/albe/vi641-002/mcdata/mc_6365_vision_2/image_data --transfers 2 ^
  --log-file=%logdir%\rclone6365vis2-dockssh_%dhms%.log.txt 
 
  ::2>&1|%pth%\tee %logdir%\rclonedockssh_%dhms%.log.txt
@@ -49,7 +49,7 @@ set pth=c:\prg\rclone\
 
 
  
-timeout 145
+timeout 19
 
 goto end
 
@@ -92,4 +92,4 @@ timeout 36
 endlocal
 
 :end
-timeout 99
+timeout 19

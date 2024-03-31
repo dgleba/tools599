@@ -1,6 +1,9 @@
 watch598settings.conf
 watch598set-litmus.filecopy.list.conf
-/zTS/
-zTS/
+**/zTS/*
+**/zTS/*
 /backup/
 6830_xml_to_csv_env/
+.env
+secrets.txt
+**/x/*

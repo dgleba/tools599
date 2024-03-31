@@ -61,7 +61,7 @@ if ($otherScriptInstances -ne $null)
 {
     $mts = (Get-Date).toString("yyyyMMdd_HH.mm.ss")
     "Already running another instance. This will exit now."
-    "$mts Already running another instance. This will exit now." | Out-File $global:logpath\processmonitor_oneinstancelog_$((Get-Date).toString("yyyy-MM-dd")).log.txt -Append -NoClobber
+    "$mts Already running another instance. This will exit now." | Out-File $script:logpath\processmonitor_oneinstancelog_$((Get-Date).toString("yyyy-MM-dd")).log.txt -Append -NoClobber
     timeout 15
     exit  
 }else
@@ -197,7 +197,7 @@ if ($filesForA.Length -gt 0) {
 
 # run between two times @ ..
   [int]$shr = 23
-  [int]$smin = 44
+  [int]$smin = 30
   $min = Get-Date ( "{0}:{1}:00" -f $shr, $smin )
   $max = Get-Date ( "{0}:{1}:00" -f $shr, ($smin+15) ) 
   $now = Get-Date
@@ -214,4 +214,5 @@ if ($filesForA.Length -gt 0) {
 
 # pause for 11 minutes so it will only run every 15 minutes.
 # this is all thanks to how slow prismo1 cmm computer is.
-timeout 680
+
+timeout 659

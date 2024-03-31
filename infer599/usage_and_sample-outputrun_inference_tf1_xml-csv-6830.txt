@@ -1,4 +1,30 @@
 
+python D:\data\script\tools599\infer599\run_inference_tf1_xml-csv.py  --mem_frac 0.55 --model_path D:\data\inference\test\dv_innerrim_v2_96461.pb --image_paths D:\data\inference\test\image-sample
+
+
+
+bse=/home/albe/crib/tf1678/6670clutch_obj709tf1_mine02
+cd $bse
+conda activate tf1a
+
+export PYTHONPATH=$bse/tensorflow_models/research:$bse/tensorflow_models/research/object_detection:$bse/tensorflow_models/research/slim
+ echo $PYTHONPATH
+export PATH=$PATH:/usr/local/cuda/bin
+ echo $PATH
+export CUDA_VISIBLE_DEVICES="0"
+python run_inference_tf1_xml-csv.py  --mem_frac 0.55 --model_path trained_frozen_models/c_83525/6670cltch-ob709min02_83525.pb  \
+--image_paths /home/albe/crib/tf1678/6670mining-img01/batch01
+
+
+=================================================
+
+
+
+
+=================================================
+
+
+
 Python D:\data\script\tools599\infer599\tf1_run_inference.py  --mem_frac 0.55 --model_path D:\data\inference\test\dv_innerrim_v2_96461.pb --image_paths D:\data\inference\test\image-sample
 
 

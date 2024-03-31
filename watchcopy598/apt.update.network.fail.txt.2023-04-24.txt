@@ -1,0 +1,47 @@
+
+albe@ml696b:/home/dg$
+albe@ml696b:/home/dg$ sudo apt update
+[sudo] password for albe:
+Hit:1 https://nvidia.github.io/libnvidia-container/stable/ubuntu18.04/amd64  InRelease
+Hit:2 https://nvidia.github.io/nvidia-container-runtime/stable/ubuntu18.04/amd64  InRelease
+Hit:3 https://download.docker.com/linux/ubuntu focal InRelease
+Err:4 http://ca.archive.ubuntu.com/ubuntu focal InRelease
+  Cannot initiate the connection to ca.archive.ubuntu.com:80 (2001:67c:1562::18). - connect (101: Network is unreachable) Cannot initiate the connection to ca.archive.ubuntu.com:80 (2001:67c:1562::15). - connect (101: Network is unreachable) Could not connect to ca.archive.ubuntu.com:80 (91.189.91.39), connection timed out Could not connect to ca.archive.ubuntu.com:80 (91.189.91.38), connection timed out
+Err:5 http://ca.archive.ubuntu.com/ubuntu focal-updates InRelease
+  Cannot initiate the connection to ca.archive.ubuntu.com:80 (2001:67c:1562::18). - connect (101: Network is unreachable) Cannot initiate the connection to ca.archive.ubuntu.com:80 (2001:67c:1562::15). - connect (101: Network is unreachable)
+Err:6 http://ca.archive.ubuntu.com/ubuntu focal-backports InRelease
+  Cannot initiate the connection to ca.archive.ubuntu.com:80 (2001:67c:1562::18). - connect (101: Network is unreachable) Cannot initiate the connection to ca.archive.ubuntu.com:80 (2001:67c:1562::15). - connect (101: Network is unreachable)
+Err:7 http://security.ubuntu.com/ubuntu focal-security InRelease
+  Cannot initiate the connection to security.ubuntu.com:80 (2620:2d:4000:1::16). - connect (101: Network is unreachable) Cannot initiate the connection to security.ubuntu.com:80 (2001:67c:1562::15). - connect (101: Network is unreachable) Cannot initiate the connection to security.ubuntu.com:80 (2620:2d:4000:1::19). - connect (101: Network is unreachable) Cannot initiate the connection to security.ubuntu.com:80 (2001:67c:1562::18). - connect (101: Network is unreachable) Could not connect to security.ubuntu.com:80 (185.125.190.39), connection timed out Could not connect to security.ubuntu.com:80 (185.125.190.36), connection timed out Could not connect to security.ubuntu.com:80 (91.189.91.38), connection timed out Could not connect to security.ubuntu.com:80 (91.189.91.39), connection timed out
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+363 packages can be upgraded. Run 'apt list --upgradable' to see them.
+W: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/dists/focal/InRelease  Cannot initiate the connection to ca.archive.ubuntu.com:80 (2001:67c:1562::18). - connect (101: Network is unreachable) Cannot initiate the connection to ca.archive.ubuntu.com:80 (2001:67c:1562::15). - connect (101: Network is unreachable) Could not connect to ca.archive.ubuntu.com:80 (91.189.91.39), connection timed out Could not connect to ca.archive.ubuntu.com:80 (91.189.91.38), connection timed out
+W: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/dists/focal-updates/InRelease  Cannot initiate the connection to ca.archive.ubuntu.com:80 (2001:67c:1562::18). - connect (101: Network is unreachable) Cannot initiate the connection to ca.archive.ubuntu.com:80 (2001:67c:1562::15). - connect (101: Network is unreachable)
+W: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/dists/focal-backports/InRelease  Cannot initiate the connection to ca.archive.ubuntu.com:80 (2001:67c:1562::18). - connect (101: Network is unreachable) Cannot initiate the connection to ca.archive.ubuntu.com:80 (2001:67c:1562::15). - connect (101: Network is unreachable)
+W: Failed to fetch http://security.ubuntu.com/ubuntu/dists/focal-security/InRelease  Cannot initiate the connection to security.ubuntu.com:80 (2620:2d:4000:1::16). - connect (101: Network is unreachable) Cannot initiate the connection to security.ubuntu.com:80 (2001:67c:1562::15). - connect (101: Network is unreachable) Cannot initiate the connection to security.ubuntu.com:80 (2620:2d:4000:1::19). - connect (101: Network is unreachable) Cannot initiate the connection to security.ubuntu.com:80 (2001:67c:1562::18). - connect (101: Network is unreachable) Could not connect to security.ubuntu.com:80 (185.125.190.39), connection timed out Could not connect to security.ubuntu.com:80 (185.125.190.36), connection timed out Could not connect to security.ubuntu.com:80 (91.189.91.38), connection timed out Could not connect to security.ubuntu.com:80 (91.189.91.39), connection timed out
+W: Some index files failed to download. They have been ignored, or old ones used instead.
+albe@ml696b:/home/dg$ sudo apt update
+Hit:1 https://download.docker.com/linux/ubuntu focal InRelease
+Hit:2 https://nvidia.github.io/libnvidia-container/stable/ubuntu18.04/amd64  InRelease
+Hit:3 https://nvidia.github.io/nvidia-container-runtime/stable/ubuntu18.04/amd64  InRelease
+Err:4 http://ca.archive.ubuntu.com/ubuntu focal InRelease
+  Cannot initiate the connection to ca.archive.ubuntu.com:80 (2001:67c:1562::18). - connect (101: Network is unreachable) Cannot initiate the connection to ca.archive.ubuntu.com:80 (2001:67c:1562::15). - connect (101: Network is unreachable) Could not connect to ca.archive.ubuntu.com:80 (91.189.91.39), connection timed out Could not connect to ca.archive.ubuntu.com:80 (91.189.91.38), connection timed out
+Err:5 http://ca.archive.ubuntu.com/ubuntu focal-updates InRelease
+  Cannot initiate the connection to ca.archive.ubuntu.com:80 (2001:67c:1562::18). - connect (101: Network is unreachable) Cannot initiate the connection to ca.archive.ubuntu.com:80 (2001:67c:1562::15). - connect (101: Network is unreachable)
+Err:6 http://ca.archive.ubuntu.com/ubuntu focal-backports InRelease
+  Cannot initiate the connection to ca.archive.ubuntu.com:80 (2001:67c:1562::18). - connect (101: Network is unreachable) Cannot initiate the connection to ca.archive.ubuntu.com:80 (2001:67c:1562::15). - connect (101: Network is unreachable)
+Err:7 http://security.ubuntu.com/ubuntu focal-security InRelease
+  Connection failed [IP: 185.125.190.36 80]
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+363 packages can be upgraded. Run 'apt list --upgradable' to see them.
+W: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/dists/focal/InRelease  Cannot initiate the connection to ca.archive.ubuntu.com:80 (2001:67c:1562::18). - connect (101: Network is unreachable) Cannot initiate the connection to ca.archive.ubuntu.com:80 (2001:67c:1562::15). - connect (101: Network is unreachable) Could not connect to ca.archive.ubuntu.com:80 (91.189.91.39), connection timed out Could not connect to ca.archive.ubuntu.com:80 (91.189.91.38), connection timed out
+W: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/dists/focal-updates/InRelease  Cannot initiate the connection to ca.archive.ubuntu.com:80 (2001:67c:1562::18). - connect (101: Network is unreachable) Cannot initiate the connection to ca.archive.ubuntu.com:80 (2001:67c:1562::15). - connect (101: Network is unreachable)
+W: Failed to fetch http://ca.archive.ubuntu.com/ubuntu/dists/focal-backports/InRelease  Cannot initiate the connection to ca.archive.ubuntu.com:80 (2001:67c:1562::18). - connect (101: Network is unreachable) Cannot initiate the connection to ca.archive.ubuntu.com:80 (2001:67c:1562::15). - connect (101: Network is unreachable)
+W: Failed to fetch http://security.ubuntu.com/ubuntu/dists/focal-security/InRelease  Connection failed [IP: 185.125.190.36 80]
+W: Some index files failed to download. They have been ignored, or old ones used instead.
+albe@ml696b:/home/dg$
+albe@ml696b:/home/dg$
