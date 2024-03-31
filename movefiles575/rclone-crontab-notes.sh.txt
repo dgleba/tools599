@@ -25,11 +25,10 @@ rclone config create fake sftp host 10.4.64.532 user albe pass fakepassword
 
 # cron.. leanai linux to dock rclone using logfile [not tee version]
 
-crontab -u albe -l  # list
 crontab -u albe -l | grep -v 'rclone-6365-leanailin-vis1-dock.sh'  | crontab -u albe - #remove
 crontab -u albe -l  # list
 
-crontab -u albe -l | { cat; echo "8 */2 * * 0-6 bash /ap/script/tools599/movefiles575/rclone-6365-leanailin-vis1-dock.sh 2>&1 | tee -a /ap/log/rclone/leanailin6365-rclon-vis1-dock.log "; } | crontab -u albe -  #add
+crontab -u albe -l | { cat; echo "39 * * * 0-6 bash /ap/script/tools599/movefiles575/rclone-6365-leanailin-vis1-dock.sh 2>&1 | tee -a /ap/log/rclone/leanailin6365-rclone-vis1-dock.log "; } | crontab -u albe -  #add
 
 
 # crontab -u albe -l | { cat; echo "*/6 * * * 0-6 bash /ap/script/tools599/movefiles575/rclone-6365-leanailin-vis1-dock.sh 2>&1 | tee -a /ap/log/rclone/leanailin6365-rclon-vis1-dock.log "; } | crontab -u albe -  #add
