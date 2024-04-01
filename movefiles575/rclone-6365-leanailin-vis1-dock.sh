@@ -44,15 +44,22 @@ echo "function_one running."
 
 pwd; ls -la;
 
-minage=15
-srcdir=/leanai_data/leanai_aoi_outputs
+minage=1
+srcdir=/media/leanai/leanai_data/leanai_aoi_outputs
 
 rclone move --min-age=${minage}d  --max-age=999d  --order-by modtime,ascending  -v ${srcdir} \
 dock-vi641-ssh:/media/albe/vi641-003/mcdata/mc_6365_vision_1/image_data  --log-file=$logf 
 
 # rclone  --delete-empty-src-dirs seemed to remove empty dirs newer than min-age. Use bash to rm empty dirs.
 echo removing older empty folders..
-find "${srcdir}/" -mindepth 2  -mtime +3 -type d -empty -delete
+# oddly some older date folders have their mod-date updated. Why?
+find "${srcdir}/" -mindepth 2  -mtime +2 -type d -empty -delete
+
+#this deleted empty date folders leaving camera folders.... find "${srcdir}/" -mindepth 4  -type d -empty   -delete  
+#  eg:  /media/leanai/leanai_data/leanai_aoi_outputs/parts/10R60/node_2_inner_rim_results/20240311/OK
+#after deleting as above mindepth 4 - This listed only camera folders.. find "${srcdir}/"  -type d -empty  
+#  eg output:  /media/leanai/leanai_data/leanai_aoi_outputs/parts/10R60/node_2_inner_rim_results
+
 
 }
 
@@ -76,7 +83,7 @@ function archive1 {
     # find $srcdir -type f -mtime +90 -size 0 -delete
 
     # garbage old `archive-folder` files - rm files older than n days = mtime +n
-    find $bse/* -mtime +365 -exec rm {} \;
+    find $bse/* -mtime +90 -exec rm {} \;
 }
 
 
@@ -118,6 +125,13 @@ s=16 ; read  -rsp $"Wait $s seconds or press Escape-key or Arrow key to continue
 }
 
 
+function cleanup2 {
+set -x
+echo "cleanup2 running at  $(date +"_%Y.%m.%d_%H.%M.%S")"
+echo "cleanup2 running at  $(date +"_%Y.%m.%d_%H.%M.%S")">> ${tempdir}/cleanup.run$(date +"_%Y.%m.%d").log
+s=16 ; read  -rsp $"Wait $s seconds or press Escape-key or Arrow key to continue..." -t $s -d $'\e'; echo;echo;
+}
+
 
 # -----------------------------------------
 # -----------------------------------------
@@ -131,6 +145,39 @@ s=16 ; read  -rsp $"Wait $s seconds or press Escape-key or Arrow key to continue
 cd /tmp ;mkdir -p ~/tmp; cd ~/tmp; pwd
 
 
+
+
+# flock start here 2024-03-30
+#
+func_exit () {
+echo "Exiting, maybe another instance is running."; exit 1
+}
+#
+trap "cleanup2" EXIT
+(
+  flock -n 9 || func_exit
+  # 2024-03-30 put commands executed under lock here...
+  echo "Attempting one-instance-only lock, running the content.."
+  # call function here to run the content..
+  function_one
+  archive1
+) 9>"/var/lock/lockfile_2023-02-28__$(basename -- "$0")"
+
+
+
+# -----------------------------------------
+# -----------------------------------------
+
+
+
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+function blockcomment21 {
+: <<'BLOCKCOMMENT'
+
+# notes:
+
+2024-03-30: archived the following..
 #
 # set lockdir so that script will only run one instance at a time..
 #
@@ -157,7 +204,22 @@ else
     exit 1
 fi
 
+
+BLOCKCOMMENT
+}
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
 # -----------------------------------------
 # -----------------------------------------
 # -----------------------------------------
+# -----------------------------------------
+# -----------------------------------------
+# -----------------------------------------
+
+# History:
+
+# 2024-03-31      adust empty folder cleaning.
+# 2022-08-27 r00  start
+
 # -----------------------------------------

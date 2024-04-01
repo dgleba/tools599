@@ -33,13 +33,12 @@ echo "-+-+--+-+--+-+--+-+--+-+-  Starting $0 base:$(basename -- "$0") $USER at  
 
 
 
-logbase=/ap/log
-logdir=${logbase}/rclone
-mkdir -p ${logdir}
+tempdir=/ap/log/rclone
+mkdir -p ${tempdir}
 timestart=$(date +"%Y.%m.%d_%H.%M.%S")
 rslognamepart=$(basename -- "$0")
-tfc=${logdir}/rclonefiles_${rslognamepart}_${timestart}.txt
-logf=${logdir}/rclonelog_${rslognamepart}_${timestart}.log
+tfc=${tempdir}/rclonefiles_${rslognamepart}_${timestart}.txt
+logf=${tempdir}/rclonelog_${rslognamepart}_${timestart}.log
 
 
 # end settings.
@@ -59,10 +58,6 @@ rclone copy   /media/albe/vi641-003   /media/albe/vi641-003b --log-file=$logf --
 
 }
 
-# -----------------------------------------
-# -----------------------------------------
-
-
 # notes:
 
 # --min-age=300d  --max-age=302d  --bwlimit 5k  
@@ -78,27 +73,26 @@ rclone copy   /media/albe/vi641-003   /media/albe/vi641-003b --log-file=$logf --
 
 
 function archive1 {
-    echo running function archive1..
+    echo running archive1..
     # because timestamp is in the filename of most files, archive based on date. logrotate not best here.
-    srcdir=$logdir
+    srcdir=$tempdir
     # set basedir $bse for archive
-    # bse=/ap/log/archive
+    bse=/ap/log/archive
     # arcdir=$bse/$(date +"%Y-%m")
-    arcbase=${logbase}/archive
-    arcdir=${logbase}/archive/$(date -dlast-monday +%Y%m%d)
-    mkdir -p $arcdir; echo $arcdir
+    arcdir=$bse/$(date -dlast-monday +%Y%m%d)
+    mkdir -p $arcdir
     # move the files..
     # older than..
     daysold=1
     find $srcdir/*  -type f -mtime +${daysold} -exec mv --backup=numbered '{}' $arcdir/ \; 
-    # move - bigger than and newer? than.. {bc some files dont have timestamp in filename.}
-    find $srcdir/* -type f -size +500k   -mtime -${daysold} -exec mv --backup=numbered '{}' $arcdir/ \; 
+    # bigger than and newer than.. {bc some files dont have timestamp in filename.}
+    find $srcdir/* -type f -size +100k   -mtime -${daysold} -exec mv --backup=numbered '{}' $arcdir/ \; 
     
     # remove 0 size files more than n day old..
     # find $srcdir -type f -mtime +90 -size 0 -delete
 
     # garbage old `archive-folder` files - rm files older than n days = mtime +n
-    find $arcbase/* -mtime +120 -exec rm {} \;
+    find $bse/* -mtime +120 -exec rm {} \;
 }
 
 
@@ -119,14 +113,14 @@ else
 fi
 
 echo "cleanup running at  $(date +"_%Y.%m.%d_%H.%M.%S")"
-echo "cleanup running at  $(date +"_%Y.%m.%d_%H.%M.%S")">> ${logdir}/cleanup.run$(date +"_%Y.%m.%d").log
+echo "cleanup running at  $(date +"_%Y.%m.%d_%H.%M.%S")">> ${tempdir}/cleanup.run$(date +"_%Y.%m.%d").log
 s=16 ; read  -rsp $"Wait $s seconds or press Escape-key or Arrow key to continue..." -t $s -d $'\e'; echo;echo;
 }
 
 function cleanup2 {
 set -x
 echo "cleanup running at  $(date +"_%Y.%m.%d_%H.%M.%S")"
-echo "cleanup running at  $(date +"_%Y.%m.%d_%H.%M.%S")">> ${logdir}/cleanup.run$(date +"_%Y.%m.%d").log
+echo "cleanup running at  $(date +"_%Y.%m.%d_%H.%M.%S")">> ${tempdir}/cleanup.run$(date +"_%Y.%m.%d").log
 s=16 ; read  -rsp $"Wait $s seconds or press Escape-key or Arrow key to continue..." -t $s -d $'\e'; echo;echo;
 }
 
@@ -149,7 +143,7 @@ cd /tmp ;mkdir -p ~/tmp; cd ~/tmp; pwd
 # flock start here
 #
 func_exit () {
-  echo "One instance lock attempt failed  $(date +"_%Y.%m.%d_%H.%M.%S")">> ${logdir}/oneinstance$(date +"_%Y.%m.%d").log
+  echo "One instance lock attempt failed  $(date +"_%Y.%m.%d_%H.%M.%S")">> ${tempdir}/oneinstance$(date +"_%Y.%m.%d").log
   echo "One instance lock attempt failed.. Exiting, maybe another instance is running."; exit 1
 }
 #
@@ -212,7 +206,7 @@ else
 	#disabled here by running function_one no matter what.
 	#see C:\data\script\movefiles575\start-move-files-575.bat
 	echo "Could not create one-instance lock directory '$LOCKDIR'. Is it already running?"
-	echo "Could not create one-instance lock directory '$LOCKDIR' at  $(date +"_%Y.%m.%d_%H.%M.%S")">> ${logdir}/one_instance$(date +"_%Y.%m.%d").log
+	echo "Could not create one-instance lock directory '$LOCKDIR' at  $(date +"_%Y.%m.%d_%H.%M.%S")">> ${tempdir}/one_instance$(date +"_%Y.%m.%d").log
     exit 1
 fi
 
