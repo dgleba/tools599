@@ -84,15 +84,17 @@ function archive1 {
     # set basedir $bse for archive
     # bse=/ap/log/archive
     # arcdir=$bse/$(date +"%Y-%m")
+    echo logbase: ${logbase}  .  srcdir = $logdir
     arcbase=${logbase}/archive
     arcdir=${logbase}/archive/$(date -dlast-monday +%Y%m%d)
     mkdir -p $arcdir; echo $arcdir
     # move the files..
     # older than..
     daysold=1
+    echo find001...
     find $srcdir/*  -type f -mtime +${daysold} -exec mv --backup=numbered '{}' $arcdir/ \; 
     # move - bigger than and newer? than.. {bc some files dont have timestamp in filename.}
-    find $srcdir/* -type f -size +500k   -mtime -${daysold} -exec mv --backup=numbered '{}' $arcdir/ \; 
+    #find $srcdir/* -type f -size +500k   -mtime -${daysold} +mmin 60 -exec mv --backup=numbered '{}' $arcdir/ \; 
     
     # remove 0 size files more than n day old..
     # find $srcdir -type f -mtime +90 -size 0 -delete
