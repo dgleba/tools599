@@ -6,7 +6,7 @@ git pull/push is inconsistent. Some days I cannot do it. IT issues? Likely.
 
 
 
-d:\prg\rclone\rclone config create dock-vi641-ssh sftp host 10.4.64.7 user albe pass xx
+d:\prg\rclone\rclone config create dock-vi641-ssh sftp host 10.4.64.7 user albe pass x
 
 
 # rsync -av ssh://10.4.64.7/crib/tools599 /tmp/tools599
