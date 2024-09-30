@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 =================================================
@@ -42,3 +43,49 @@ albe@pmda-dock-vi641:~$
 
 
 
+=======
+
+
+=================================================
+
+
+
+
+
+
+See also the folder - C:\data\script\tools599\vi641_vision_image_archiving
+
+
+
+
+
+
+
+
+=================================================
+
+
+
+
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+#@  
+#@  
+#@  
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@   2024-03-31[Mar-Sun]08-11AM 
+
+On old drive dock pc (before 4070 pc)
+
+albe@pmda-dock-vi641:~$ crontab -l
+13 02 * * sat bash /crib/tools599/movefiles575/findnasall.sh 2>&1 | tee -a /crib/log/albelogs/findnas-all-sh.log
+*/15 * * * 0-6 python3 /crib/tools599/ripr/ripr684.py
+17 11 * * 0-6 bash /crib/tools599/movefiles575/rclone-nas1-dock_v3_uselog.sh
+44 11 * * 0-6 bash /crib/tools599/movefiles575/rclone-nas2-dock_v3_uselog.sh
+47 */2 * * 0-6 bash /crib/tools599/movefiles575/rclone-dock003-to-dock003b.sh
+albe@pmda-dock-vi641:~$
+
+
+=================================================
+
+
+
+>>>>>>> 1f8feda2a95c0760c351fc5fcd5d2508de3b2b1f

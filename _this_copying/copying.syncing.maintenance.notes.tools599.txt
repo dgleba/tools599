@@ -26,15 +26,42 @@ echo ${HOSTNAME}
 d:\prg\rclone\rclone config create dock-vi641-ssh sftp host 10.4.64.7 user albe pass xx
 
 rclone sync /ap/script/tools599 dock-vi641-ssh:/acrib/backup/${HOSTNAME}/$(date +"%Y-%m")/tools599   -v
+rclone sync /ap/script/tools599 dock-vi641-ssh:/acrib/backup/combined/tools599   -v
 
 
-=================================================
+::
+  for /f "tokens=2 delims==" %G in ('wmic os get localdatetime /value') do set dt=%G
+  set dt=%dt:~0,6%
+::
+  d:\prg\rclone\rclone sync c:/data/script/tools599 dock-vi641-ssh:/acrib/backup/%COMPUTERNAME%/%dt%/tools599   -v --modify-window 12s
+  d:\prg\rclone\rclone sync c:/data/script/tools599 dock-vi641-ssh:/acrib/backup/combined/tools599   -v --modify-window 12s
+
 
 
 ------------
 
 
+noodling..
+
+:: for /f "tokens=2 delims==" %G in ('wmic os get localdatetime /value') do @set dt=%G && set dt=%dt:~0,4%-%dt:~4,2%
+:: for /f "tokens=2 delims==" %G in ('wmic os get localdatetime /value') do @set dttemp=%G && set dt=%dttemp:~0,4%-%dttemp:~4,2%
+::   for /f "tokens=2 delims==" %G in ('wmic os get localdatetime /value') do @set dt=%G && set dt=%dt:~0,6%
+::   for /f "tokens=2 delims==" %G in ('wmic os get localdatetime /value') do @set dttemp=%G && set dt=%dttemp:~0,4%-%dttemp:~4,2%
+
+  echo %dt%
+
+
+
+
+=================================================
+
+
+
 Check to see if my c: copy is different than drive dock..
+
+----
+
+
 
 This worked.
 

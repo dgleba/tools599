@@ -1,0 +1,27 @@
+<?xml version="1.0" standalone="yes"?>
+<unnamed_cluster>
+  <folder>D:\data\vision_6830\image_data\outer_surface\nok\220331\flag</folder>
+  <filename>outer_surface_220331T131135.png</filename>
+  <path>D:\data\vision_6830\image_data\outer_surface\nok\220331\flag\outer_surface_220331T131135.png</path>
+  <source>
+    <database>Unknown</database>
+  </source>
+  <size>
+    <width>500</width>
+    <height>7990</height>
+    <depth>1</depth>
+  </size>
+  <segmented>0</segmented>
+  <object>
+    <name>Crack</name>
+    <pose>Unspecified</pose>
+    <trancated>0</trancated>
+    <score>0.30383729934692</score>
+    <bndbox>
+      <xmin>356</xmin>
+      <ymin>7400</ymin>
+      <xmax>374</xmax>
+      <ymax>7553</ymax>
+    </bndbox>
+  </object>
+</unnamed_cluster>
