@@ -1,0 +1,197 @@
+=================================================
+
+2024-03-31:
+
+git pull/push is inconsistent. Some days I cannot do it. IT issues? Likely.
+
+
+
+d:\prg\rclone\rclone config create dock-vi641-ssh sftp host 10.4.64.7 user albe pass x
+
+
+# rsync -av ssh://10.4.64.7/crib/tools599 /tmp/tools599
+
+
+rm -r  /crib/tmp/tools599
+
+rclone sync dock-vi641-ssh:/ap/script/tools599  /crib/tmp/tools599 --exclude={.git/**,zTSzz/**} -uv
+
+
+------------
+
+
+Check to see if my c: copy is different than drive dock..
+
+This worked.
+
+d:\prg\rclone\rclone copy c:/data/script/tools599 dock-vi641-ssh:/ap/script/tools599 --dry-run -v --exclude={.git/**,zz/**}
+
+:: and from dock to c:...
+
+d:\prg\rclone\rclone copy dock-vi641-ssh:/ap/script/tools599 c:/data/script/tools599   -v --exclude={.git/**,zz/**} --dry-run
+
+
+------------
+
+this was too messy, it wanted to copy hundreds of files. yuk.
+
+try git over local network ssh instead.
+
+
+rclone copy /crib/tools599   dock-vi641-ssh:/ap/script/tools599  --dry-run -v --exclude={.git/**,6830_vision_performance_tracker_report/**} --modify-window 11s --checksum -u
+
+rclone sync /crib/tools599   dock-vi641-ssh:/ap/script/tools599  --dry-run -v --exclude={.git/**,6830_vision_performance_tracker_report/**} --modify-window 11s 
+
+
+=================================================
+
+
+
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+#@  
+#@  git to remote over ssh.
+#@  
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@   2024-03-31[Mar-Sun]17-58PM 
+
+
+
+on dock: (the git bare server)
+gsrv=/acrib/gitlocalsrv
+mkdir -p $gsrv
+cd $gsrv
+git init --bare tools599.git
+------------
+on other pc: (client with a local code repo)
+
+git remote add docksshgit ssh://10.4.64.7/acrib/gitlocalsrv/tools599.git
+git ca 2024-03-31zz
+git push docksshgit
+
+
+------------
+
+git diff <remote>/<remote branch> <local branch>
+git diff docksshgit/main main
+git diff origin/main main
+
+
+
+-------------------------------------------------
+example:
+--
+
+on dock: (the git bare server)
+
+gsrv=/acrib/gitlocalsrv
+mkdir -p $gsrv
+cd $gsrv
+git init --bare tools599.git
+#
+#git init --bare test.git
+
+------------
+
+on other pc: (client with a local code repo)
+
+git clone https://github.com/dgleba/test
+
+git remote add docksshgit ssh://10.4.64.7/acrib/gitlocalsrv/test.git
+
+git ca 2024-03-31d
+git push docksshgit
+
+works!
+
+------------
+
+
+ref:
+
+git init --bare tools599.git
+#
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint:
+hint:   git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint:   git branch -m <name>
+Initialized empty Git repository in /acrib/gitlocalsrv/tools599.git/
+(base) albe@pmda-dock-vi641c:/acrib/gitlocalsrv$
+
+
+=================================================
+
+dos2unix..
+
+
+find . -type f \( -name "*.py" -o -name "*.sh" \) -exec bash -c 'file "{}" | grep -q "text" && tr -d "\r" < "{}" > "{}.unix" && mv "{}.unix" "{}"' \;
+
+
+find . -type f \( -name "*.py" -o -name "*.sh" \) -exec bash -c 'file "{}" | grep -q "text" && dos2unix "{}"' \;
+
+
+find . -type f -exec grep -Iq $'\r$' {} \; -print
+
+
+
+=================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+#@  
+#@  scratch..
+#@  
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@   2024-03-31[Mar-Sun]17-13PM 
+
+#old: (old dock)
+rclone copy /crib/tools599   dock-vi641-ssh:/ap/script/tools599  --dry-run -v --exclude={.git/**,zz/**} --modify-window 11s --checksum -u
+rclone sync /crib/tools599   dock-vi641-ssh:/ap/script/tools599  --dry-run -v --exclude={.git/**,zz/**} --modify-window 11s 
+
+#current:
+rclone copy /ap/script/tools599   dock-vi641-ssh:/ap/script/tools599  --dry-run -v --exclude={.git/**,zz/**}
+
+=================================================
+
+
+what is the difference between:  merge (the default strategy), rebase,  fast-forward only
+
+d:\prg\rclone\rclone config create dock-vi641-ssh sftp host 10.4.64.7 user albe pass 1325
+
+d:\prg\rclone\rclone copy c:/data/script/tools599 dock-vi641-ssh:/ap/script/tools599 --dry-run -v --exclude={.git/**,zz/**}
+
+rclone copy /ap/script/tools599   dock-vi641-ssh:/ap/script/tools599  --dry-run -v --exclude={.git/**,zz/**}
+
+
+d:\prg\rclone\rclone copy c:/data/script/tools599 dock-vi641-ssh:/ap/script/tools599 --dry-run -v --exclude={.git/**}
+
+sudo date MMDDhhmm[[CC]YY][.ss]
+sudo date 03311539
+
+=================================================
+
+

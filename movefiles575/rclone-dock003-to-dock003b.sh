@@ -53,7 +53,15 @@ function_one() {
 echo "function_one is running..."
 
 pwd; ls -la;
-rclone copy   /media/albe/vi641-003   /media/albe/vi641-003b --log-file=$logf --log-level INFO 
+
+
+minage=15d
+# 2024-04-24_Wed_13.20-PM David Gleba added to move from nvme to dock-disk
+rclone move --min-age=${minage}  --max-age=999d   --order-by modtime,ascending  -v  \
+/mnt/dsk2/mcdata  /media/albe/vi641-003/mcdata  --log-file=$logf 
+
+
+rclone copy   /media/albe/vi641-003   /media/albe/vi641-003b  --exclude /x/**  --log-file=$logf --log-level INFO 
 
      #     --multi-thread-cutoff 64M    --multi-thread-streams 12  --transfers=12
 
@@ -84,15 +92,17 @@ function archive1 {
     # set basedir $bse for archive
     # bse=/ap/log/archive
     # arcdir=$bse/$(date +"%Y-%m")
+    echo logbase: ${logbase}  .  srcdir = $logdir
     arcbase=${logbase}/archive
     arcdir=${logbase}/archive/$(date -dlast-monday +%Y%m%d)
     mkdir -p $arcdir; echo $arcdir
     # move the files..
     # older than..
     daysold=1
+    echo find001...
     find $srcdir/*  -type f -mtime +${daysold} -exec mv --backup=numbered '{}' $arcdir/ \; 
     # move - bigger than and newer? than.. {bc some files dont have timestamp in filename.}
-    find $srcdir/* -type f -size +500k   -mtime -${daysold} -exec mv --backup=numbered '{}' $arcdir/ \; 
+    #find $srcdir/* -type f -size +500k   -mtime -${daysold} +mmin 60 -exec mv --backup=numbered '{}' $arcdir/ \; 
     
     # remove 0 size files more than n day old..
     # find $srcdir -type f -mtime +90 -size 0 -delete
