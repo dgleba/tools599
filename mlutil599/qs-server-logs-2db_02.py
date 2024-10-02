@@ -1,7 +1,12 @@
 '''
 
-# usage:   
+# Usage:   
             python3  /ap/script/tools599/mlutil599/qs-server-logs-2db_02.py
+
+Version info: 
+                see below
+
+Cron:
 
 add a cron entry to run this hourly
 
@@ -10,7 +15,8 @@ add a cron entry to run this hourly
   crontab -l # list
 
 
-specs:
+Purpose/specs:
+
     python script to search in /home/qualisense/leanai_aoi/output/logs/server.log (set as variable) for "nspection timeout". 
     write csv with hostname and body(which is the search result). 
     Search only the previous hour. 
@@ -52,7 +58,11 @@ import logging
 #@  
 ####################################   2024-09-30[Sep-Mon]09-43AM 
 
-searchfor = re.compile(r'ERROR.*nspection timeout')
+# Define a list of search patterns
+search_patterns = [
+    r'ERROR.*nspection timeout',
+    r'Timeout',
+]
 
 logfile_path = "/home/qualisense/leanai_aoi/output/logs/server.log"
 
@@ -83,6 +93,9 @@ logging.basicConfig(level=logging.DEBUG)
 #@  
 ####################################   2024-09-30[Sep-Mon]09-43AM 
 
+# Compile the search patterns into regex objects
+compiled_patterns = [re.compile(pattern) for pattern in search_patterns]
+
 
 # Get the current time and previous n hour time for filtering logs
 current_time = datetime.datetime.now()
@@ -104,6 +117,7 @@ def is_within_previous_hour(log_time_str):
 # List to store the filtered log entries
 filtered_logs = []
 
+'''
 # Read the log file and filter the entries
 with open(logfile_path, 'r') as logfile:
     for line in logfile:
@@ -118,7 +132,27 @@ with open(logfile_path, 'r') as logfile:
                     filtered_logs.append((hostname, line.strip()))
             except IndexError as ie:
                 logging.debug(f"Error parsing line (index error): {ie} - {line.strip()}")
+'''
 
+# Read the log file and filter the entries
+with open(logfile_path, 'r') as logfile:
+    for line in logfile:
+        for searchfor in compiled_patterns:
+            if searchfor.search(line):
+                parts = line.split()
+                try:
+                    timestamp_str = f"{parts[1]} {parts[2]}"
+                    logging.debug(f"Processing line with timestamp: {timestamp_str} - Line: {line.strip()}")
+                    
+                    if is_within_previous_hour(timestamp_str):
+                        logging.debug(f"Adding line: {line.strip()}")
+                        filtered_logs.append((hostname, line.strip()))
+                except IndexError as ie:
+                    logging.debug(f"Error parsing line (index error): {ie} - {line.strip()}")
+                break  # No need to check other patterns if one has already matched
+                
+                
+                
 # Write the filtered logs to a CSV file
 with open(csv_filepath, 'w', newline='') as csvfile:
     writer = csv.writer(csvfile)
@@ -146,6 +180,7 @@ with open(csv_filepath, 'r') as csvfile:
     next(reader)  # Skip header row
     for row in reader:
         cursor.execute(f"INSERT INTO {table_name} (hostname, body) VALUES (%s, %s)", row)
+        # pass  # comment above for testing to avoid junk records in db. uncomment this.
 
 # Commit and close
 connection.commit()
@@ -153,3 +188,13 @@ cursor.close()
 connection.close()
 
 print("Matching log entries have been written to the database.")
+
+
+'''
+
+Version info: 
+               
+v12 - 2024-10-01_Tue_15.16-PM : added multiple search strings
+
+
+'''
