@@ -61,7 +61,7 @@ db_config = {
     'host': '10.4.71.231',
     'port': 7411,
     'user': 'a',
-    'password': 'a',
+    'password': 'changemetotherealpassword',
     'database': 'ripr684'
 }
 
