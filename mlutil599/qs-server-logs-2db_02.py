@@ -200,7 +200,10 @@ print("Matching log entries have been written to the database.")
 
 Version info: 
                
+<<<<<<< HEAD
 v14 - 2024-10-08_Tue_08.30-AM : get password from .env file
+=======
+>>>>>>> e74ad6ce565b013d361c4603b36ae4747b2d253d
 v12 - 2024-10-01_Tue_15.16-PM : added multiple search strings
 
 

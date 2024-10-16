@@ -1,10 +1,52 @@
+'''
+# Usage:   
+            /ap/script/pyenv/venv0/bin/python  /ap/script/tools599/ripr/df_log.py  >> /ap/log/df_log_02.log 2>&1
+
+
+Version info: 
+                see below
+
+Cron:
+
+add a cron entry to run this hourly
+
+    mkdir -p /ap/script/pyenv
+    cd       /ap/script/pyenv
+    python -m venv venv0
+    # install packages in the env..
+    chmod +x venv0/bin/activate;
+    source venv0/bin/activate;
+    # cygwin
+    #source venv0/Scripts/activate;
+    #::# windows..
+    #.\venv0\Scripts\activate;
+    pip install python-dotenv pandas pymysql psutil
+
+
+  crontab -l | grep -v 'df_log.py'  | crontab - #remove
+  # add
+  crontab -l | { cat; echo "21 * * * 1-7 /ap/script/pyenv/venv0/bin/python /ap/script/tools599/ripr/df_log.py >> /ap/log/df_log_02.log 2>&1"; } | crontab -
+  crontab -l # list
+
+
+Purpose/specs:
+    get disk space and mounted disk info. write to db on server so it can be on dashboard in metabase with email alerts from metabase.
+
+
+------------
+
+To just run it manually..
+
+mkdir -p /ap/script
+cd /ap/script
+git clone https://github.com/dgleba/tools599.git
+cd /ap/script/tools599/ripr/
+pip list
+pip install python-dotenv pandas pymysql psutil
+
 
 '''
 
-
-pip install python-dotenv pandas pymysql
-
-'''
 
 import os
 import csv
@@ -14,6 +56,13 @@ import pandas as pd
 import pymysql
 from dotenv import load_dotenv
 import psutil
+from datetime import datetime
+
+# Get the current time
+current_time = datetime.now()
+# Format the time
+formatted_time = current_time.strftime("%Y-%m-%d %I:%M:%S %p")
+print(formatted_time)
 
 # Load environment variables from .env file
 load_dotenv()
@@ -147,3 +196,11 @@ def main():
 if __name__ == '__main__':
     main()
     
+    
+'''
+Version info:
+
+v15 2024-10-08_Tue_22.26-PM - add env to be used in cron.
+
+
+'''
