@@ -58,10 +58,10 @@ pwd; ls -la;
 minage=15d
 # 2024-04-24_Wed_13.20-PM David Gleba added to move from nvme to dock-disk
 rclone move --min-age=${minage}  --max-age=999d   --order-by modtime,ascending  -v  \
-/mnt/dsk2/mcdata  /media/albe/vi641-003/mcdata  --log-file=$logf 
+/mnt/dsk2/mcdata  /media/albe/vi641-0041/mcdata  --log-file=$logf 
 
 
-rclone copy   /media/albe/vi641-003   /media/albe/vi641-003b  --exclude /x/**  --log-file=$logf --log-level INFO 
+rclone copy   /media/albe/vi641-004   /media/albe/vi641-004b  --exclude /x/**  --log-file=$logf --log-level INFO 
 
      #     --multi-thread-cutoff 64M    --multi-thread-streams 12  --transfers=12
 
