@@ -1,0 +1,440 @@
+  UNIT                                                                                                                           LOAD   ACTIVE SUB       DESCRIPTION
+  proc-sys-fs-binfmt_misc.automount                                                                                              loaded active running   Arbitrary Executable File Formats File System Automount Point
+  sys-devices-pci0000:00-0000:00:07.1-ata2-host1-target1:0:0-1:0:0:0-block-sr0.device                                            loaded active plugged   VMware_Virtual_IDE_CDROM_Drive
+  sys-devices-pci0000:00-0000:00:11.0-0000:02:00.0-net-ens32.device                                                              loaded active plugged   82545EM Gigabit Ethernet Controller (Copper) (PRO/1000 MT Single Port Adapter)
+  sys-devices-pci0000:00-0000:00:15.0-0000:03:00.0-host2-port\x2d2:0-end_device\x2d2:0-target2:0:0-2:0:0:0-block-sda-sda1.device loaded active plugged   Virtual_disk 1
+  sys-devices-pci0000:00-0000:00:15.0-0000:03:00.0-host2-port\x2d2:0-end_device\x2d2:0-target2:0:0-2:0:0:0-block-sda-sda2.device loaded active plugged   Virtual_disk 2
+  sys-devices-pci0000:00-0000:00:15.0-0000:03:00.0-host2-port\x2d2:0-end_device\x2d2:0-target2:0:0-2:0:0:0-block-sda-sda5.device loaded active plugged   Virtual_disk 5
+  sys-devices-pci0000:00-0000:00:15.0-0000:03:00.0-host2-port\x2d2:0-end_device\x2d2:0-target2:0:0-2:0:0:0-block-sda.device      loaded active plugged   Virtual_disk
+  sys-devices-platform-serial8250-tty-ttyS1.device                                                                               loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS1
+  sys-devices-platform-serial8250-tty-ttyS10.device                                                                              loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS10
+  sys-devices-platform-serial8250-tty-ttyS11.device                                                                              loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS11
+  sys-devices-platform-serial8250-tty-ttyS12.device                                                                              loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS12
+  sys-devices-platform-serial8250-tty-ttyS13.device                                                                              loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS13
+  sys-devices-platform-serial8250-tty-ttyS14.device                                                                              loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS14
+  sys-devices-platform-serial8250-tty-ttyS15.device                                                                              loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS15
+  sys-devices-platform-serial8250-tty-ttyS16.device                                                                              loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS16
+  sys-devices-platform-serial8250-tty-ttyS17.device                                                                              loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS17
+  sys-devices-platform-serial8250-tty-ttyS18.device                                                                              loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS18
+  sys-devices-platform-serial8250-tty-ttyS19.device                                                                              loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS19
+  sys-devices-platform-serial8250-tty-ttyS2.device                                                                               loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS2
+  sys-devices-platform-serial8250-tty-ttyS20.device                                                                              loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS20
+  sys-devices-platform-serial8250-tty-ttyS21.device                                                                              loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS21
+  sys-devices-platform-serial8250-tty-ttyS22.device                                                                              loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS22
+  sys-devices-platform-serial8250-tty-ttyS23.device                                                                              loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS23
+  sys-devices-platform-serial8250-tty-ttyS24.device                                                                              loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS24
+  sys-devices-platform-serial8250-tty-ttyS25.device                                                                              loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS25
+  sys-devices-platform-serial8250-tty-ttyS26.device                                                                              loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS26
+  sys-devices-platform-serial8250-tty-ttyS27.device                                                                              loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS27
+  sys-devices-platform-serial8250-tty-ttyS28.device                                                                              loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS28
+  sys-devices-platform-serial8250-tty-ttyS29.device                                                                              loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS29
+  sys-devices-platform-serial8250-tty-ttyS3.device                                                                               loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS3
+  sys-devices-platform-serial8250-tty-ttyS30.device                                                                              loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS30
+  sys-devices-platform-serial8250-tty-ttyS31.device                                                                              loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS31
+  sys-devices-platform-serial8250-tty-ttyS4.device                                                                               loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS4
+  sys-devices-platform-serial8250-tty-ttyS5.device                                                                               loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS5
+  sys-devices-platform-serial8250-tty-ttyS6.device                                                                               loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS6
+  sys-devices-platform-serial8250-tty-ttyS7.device                                                                               loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS7
+  sys-devices-platform-serial8250-tty-ttyS8.device                                                                               loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS8
+  sys-devices-platform-serial8250-tty-ttyS9.device                                                                               loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS9
+  sys-devices-pnp0-00:05-tty-ttyS0.device                                                                                        loaded active plugged   /sys/devices/pnp0/00:05/tty/ttyS0
+  sys-devices-virtual-block-dm\x2d0.device                                                                                       loaded active plugged   /sys/devices/virtual/block/dm-0
+  sys-devices-virtual-block-dm\x2d1.device                                                                                       loaded active plugged   /sys/devices/virtual/block/dm-1
+  sys-devices-virtual-misc-rfkill.device                                                                                         loaded active plugged   /sys/devices/virtual/misc/rfkill
+  sys-devices-virtual-net-br\x2d08e417c8e416.device                                                                              loaded active plugged   /sys/devices/virtual/net/br-08e417c8e416
+  sys-devices-virtual-net-br\x2d1f6cc5c5549a.device                                                                              loaded active plugged   /sys/devices/virtual/net/br-1f6cc5c5549a
+  sys-devices-virtual-net-br\x2d25a0197612eb.device                                                                              loaded active plugged   /sys/devices/virtual/net/br-25a0197612eb
+  sys-devices-virtual-net-br\x2d2ea6af6eecde.device                                                                              loaded active plugged   /sys/devices/virtual/net/br-2ea6af6eecde
+  sys-devices-virtual-net-br\x2d2f0cf3776c6f.device                                                                              loaded active plugged   /sys/devices/virtual/net/br-2f0cf3776c6f
+  sys-devices-virtual-net-br\x2d3391bf07dbc7.device                                                                              loaded active plugged   /sys/devices/virtual/net/br-3391bf07dbc7
+  sys-devices-virtual-net-br\x2d3e3d31380352.device                                                                              loaded active plugged   /sys/devices/virtual/net/br-3e3d31380352
+  sys-devices-virtual-net-br\x2d44e762e7d3f1.device                                                                              loaded active plugged   /sys/devices/virtual/net/br-44e762e7d3f1
+  sys-devices-virtual-net-br\x2d480681e36dc1.device                                                                              loaded active plugged   /sys/devices/virtual/net/br-480681e36dc1
+  sys-devices-virtual-net-br\x2d4e6a9b7b7fb4.device                                                                              loaded active plugged   /sys/devices/virtual/net/br-4e6a9b7b7fb4
+  sys-devices-virtual-net-br\x2d540eb3e02ec4.device                                                                              loaded active plugged   /sys/devices/virtual/net/br-540eb3e02ec4
+  sys-devices-virtual-net-br\x2d55e7d6c46afa.device                                                                              loaded active plugged   /sys/devices/virtual/net/br-55e7d6c46afa
+  sys-devices-virtual-net-br\x2d57a5453ecf2c.device                                                                              loaded active plugged   /sys/devices/virtual/net/br-57a5453ecf2c
+  sys-devices-virtual-net-br\x2d6b0c33acf080.device                                                                              loaded active plugged   /sys/devices/virtual/net/br-6b0c33acf080
+  sys-devices-virtual-net-br\x2d77e51ab227a5.device                                                                              loaded active plugged   /sys/devices/virtual/net/br-77e51ab227a5
+  sys-devices-virtual-net-br\x2d85a160d34ad8.device                                                                              loaded active plugged   /sys/devices/virtual/net/br-85a160d34ad8
+  sys-devices-virtual-net-br\x2d9167988cd2ca.device                                                                              loaded active plugged   /sys/devices/virtual/net/br-9167988cd2ca
+  sys-devices-virtual-net-br\x2d9a0e1c9a08bb.device                                                                              loaded active plugged   /sys/devices/virtual/net/br-9a0e1c9a08bb
+  sys-devices-virtual-net-br\x2dab7d4f2a96e4.device                                                                              loaded active plugged   /sys/devices/virtual/net/br-ab7d4f2a96e4
+  sys-devices-virtual-net-br\x2dc4e9e233b7c7.device                                                                              loaded active plugged   /sys/devices/virtual/net/br-c4e9e233b7c7
+  sys-devices-virtual-net-br\x2dca855441ed4d.device                                                                              loaded active plugged   /sys/devices/virtual/net/br-ca855441ed4d
+  sys-devices-virtual-net-br\x2dcd42a08cbbcd.device                                                                              loaded active plugged   /sys/devices/virtual/net/br-cd42a08cbbcd
+  sys-devices-virtual-net-br\x2dd7190f952895.device                                                                              loaded active plugged   /sys/devices/virtual/net/br-d7190f952895
+  sys-devices-virtual-net-br\x2df045c84c0d1e.device                                                                              loaded active plugged   /sys/devices/virtual/net/br-f045c84c0d1e
+  sys-devices-virtual-net-br\x2df272c371c048.device                                                                              loaded active plugged   /sys/devices/virtual/net/br-f272c371c048
+  sys-devices-virtual-net-br\x2dfb5e71c6ccec.device                                                                              loaded active plugged   /sys/devices/virtual/net/br-fb5e71c6ccec
+  sys-devices-virtual-net-br\x2dfe20312d417c.device                                                                              loaded active plugged   /sys/devices/virtual/net/br-fe20312d417c
+  sys-devices-virtual-net-br\x2dff6b886a7c26.device                                                                              loaded active plugged   /sys/devices/virtual/net/br-ff6b886a7c26
+  sys-devices-virtual-net-docker0.device                                                                                         loaded active plugged   /sys/devices/virtual/net/docker0
+  sys-devices-virtual-net-veth0599305.device                                                                                     loaded active plugged   /sys/devices/virtual/net/veth0599305
+  sys-devices-virtual-net-veth0eb51ca.device                                                                                     loaded active plugged   /sys/devices/virtual/net/veth0eb51ca
+  sys-devices-virtual-net-veth1056051.device                                                                                     loaded active plugged   /sys/devices/virtual/net/veth1056051
+  sys-devices-virtual-net-veth1335ee6.device                                                                                     loaded active plugged   /sys/devices/virtual/net/veth1335ee6
+  sys-devices-virtual-net-veth21236e8.device                                                                                     loaded active plugged   /sys/devices/virtual/net/veth21236e8
+  sys-devices-virtual-net-veth22faac0.device                                                                                     loaded active plugged   /sys/devices/virtual/net/veth22faac0
+  sys-devices-virtual-net-veth253395e.device                                                                                     loaded active plugged   /sys/devices/virtual/net/veth253395e
+  sys-devices-virtual-net-veth2cf4276.device                                                                                     loaded active plugged   /sys/devices/virtual/net/veth2cf4276
+  sys-devices-virtual-net-veth3020fe0.device                                                                                     loaded active plugged   /sys/devices/virtual/net/veth3020fe0
+  sys-devices-virtual-net-veth369f01a.device                                                                                     loaded active plugged   /sys/devices/virtual/net/veth369f01a
+  sys-devices-virtual-net-veth376ba2e.device                                                                                     loaded active plugged   /sys/devices/virtual/net/veth376ba2e
+  sys-devices-virtual-net-veth4a39f91.device                                                                                     loaded active plugged   /sys/devices/virtual/net/veth4a39f91
+  sys-devices-virtual-net-veth4cb4a6a.device                                                                                     loaded active plugged   /sys/devices/virtual/net/veth4cb4a6a
+  sys-devices-virtual-net-veth580cba4.device                                                                                     loaded active plugged   /sys/devices/virtual/net/veth580cba4
+  sys-devices-virtual-net-veth5e19563.device                                                                                     loaded active plugged   /sys/devices/virtual/net/veth5e19563
+  sys-devices-virtual-net-veth6b4b2cf.device                                                                                     loaded active plugged   /sys/devices/virtual/net/veth6b4b2cf
+  sys-devices-virtual-net-veth7e39a26.device                                                                                     loaded active plugged   /sys/devices/virtual/net/veth7e39a26
+  sys-devices-virtual-net-veth7e599cd.device                                                                                     loaded active plugged   /sys/devices/virtual/net/veth7e599cd
+  sys-devices-virtual-net-veth84a53b3.device                                                                                     loaded active plugged   /sys/devices/virtual/net/veth84a53b3
+  sys-devices-virtual-net-veth84ee354.device                                                                                     loaded active plugged   /sys/devices/virtual/net/veth84ee354
+  sys-devices-virtual-net-veth89a4290.device                                                                                     loaded active plugged   /sys/devices/virtual/net/veth89a4290
+  sys-devices-virtual-net-veth8a35940.device                                                                                     loaded active plugged   /sys/devices/virtual/net/veth8a35940
+  sys-devices-virtual-net-veth9036998.device                                                                                     loaded active plugged   /sys/devices/virtual/net/veth9036998
+  sys-devices-virtual-net-veth929490b.device                                                                                     loaded active plugged   /sys/devices/virtual/net/veth929490b
+  sys-devices-virtual-net-veth9596846.device                                                                                     loaded active plugged   /sys/devices/virtual/net/veth9596846
+  sys-devices-virtual-net-vetha2c4594.device                                                                                     loaded active plugged   /sys/devices/virtual/net/vetha2c4594
+  sys-devices-virtual-net-vethab1946c.device                                                                                     loaded active plugged   /sys/devices/virtual/net/vethab1946c
+  sys-devices-virtual-net-vethb572745.device                                                                                     loaded active plugged   /sys/devices/virtual/net/vethb572745
+  sys-devices-virtual-net-vethbd0f67c.device                                                                                     loaded active plugged   /sys/devices/virtual/net/vethbd0f67c
+  sys-devices-virtual-net-vethbe06d95.device                                                                                     loaded active plugged   /sys/devices/virtual/net/vethbe06d95
+  sys-devices-virtual-net-vethbfabed5.device                                                                                     loaded active plugged   /sys/devices/virtual/net/vethbfabed5
+  sys-devices-virtual-net-vethc510751.device                                                                                     loaded active plugged   /sys/devices/virtual/net/vethc510751
+  sys-devices-virtual-net-vethc576f85.device                                                                                     loaded active plugged   /sys/devices/virtual/net/vethc576f85
+  sys-devices-virtual-net-vethc622196.device                                                                                     loaded active plugged   /sys/devices/virtual/net/vethc622196
+  sys-devices-virtual-net-vethce1e6e9.device                                                                                     loaded active plugged   /sys/devices/virtual/net/vethce1e6e9
+  sys-devices-virtual-net-vethdae4f35.device                                                                                     loaded active plugged   /sys/devices/virtual/net/vethdae4f35
+  sys-devices-virtual-net-vethe2cfeba.device                                                                                     loaded active plugged   /sys/devices/virtual/net/vethe2cfeba
+  sys-devices-virtual-net-vethfb31bca.device                                                                                     loaded active plugged   /sys/devices/virtual/net/vethfb31bca
+  sys-devices-virtual-net-vethfd770fa.device                                                                                     loaded active plugged   /sys/devices/virtual/net/vethfd770fa
+  sys-devices-virtual-net-vethfe2756a.device                                                                                     loaded active plugged   /sys/devices/virtual/net/vethfe2756a
+  sys-devices-virtual-tty-ttyprintk.device                                                                                       loaded active plugged   /sys/devices/virtual/tty/ttyprintk
+  sys-module-fuse.device                                                                                                         loaded active plugged   /sys/module/fuse
+  sys-subsystem-net-devices-br\x2d08e417c8e416.device                                                                            loaded active plugged   /sys/subsystem/net/devices/br-08e417c8e416
+  sys-subsystem-net-devices-br\x2d1f6cc5c5549a.device                                                                            loaded active plugged   /sys/subsystem/net/devices/br-1f6cc5c5549a
+  sys-subsystem-net-devices-br\x2d25a0197612eb.device                                                                            loaded active plugged   /sys/subsystem/net/devices/br-25a0197612eb
+  sys-subsystem-net-devices-br\x2d2ea6af6eecde.device                                                                            loaded active plugged   /sys/subsystem/net/devices/br-2ea6af6eecde
+  sys-subsystem-net-devices-br\x2d2f0cf3776c6f.device                                                                            loaded active plugged   /sys/subsystem/net/devices/br-2f0cf3776c6f
+  sys-subsystem-net-devices-br\x2d3391bf07dbc7.device                                                                            loaded active plugged   /sys/subsystem/net/devices/br-3391bf07dbc7
+  sys-subsystem-net-devices-br\x2d3e3d31380352.device                                                                            loaded active plugged   /sys/subsystem/net/devices/br-3e3d31380352
+  sys-subsystem-net-devices-br\x2d44e762e7d3f1.device                                                                            loaded active plugged   /sys/subsystem/net/devices/br-44e762e7d3f1
+  sys-subsystem-net-devices-br\x2d480681e36dc1.device                                                                            loaded active plugged   /sys/subsystem/net/devices/br-480681e36dc1
+  sys-subsystem-net-devices-br\x2d4e6a9b7b7fb4.device                                                                            loaded active plugged   /sys/subsystem/net/devices/br-4e6a9b7b7fb4
+  sys-subsystem-net-devices-br\x2d540eb3e02ec4.device                                                                            loaded active plugged   /sys/subsystem/net/devices/br-540eb3e02ec4
+  sys-subsystem-net-devices-br\x2d55e7d6c46afa.device                                                                            loaded active plugged   /sys/subsystem/net/devices/br-55e7d6c46afa
+  sys-subsystem-net-devices-br\x2d57a5453ecf2c.device                                                                            loaded active plugged   /sys/subsystem/net/devices/br-57a5453ecf2c
+  sys-subsystem-net-devices-br\x2d6b0c33acf080.device                                                                            loaded active plugged   /sys/subsystem/net/devices/br-6b0c33acf080
+  sys-subsystem-net-devices-br\x2d77e51ab227a5.device                                                                            loaded active plugged   /sys/subsystem/net/devices/br-77e51ab227a5
+  sys-subsystem-net-devices-br\x2d85a160d34ad8.device                                                                            loaded active plugged   /sys/subsystem/net/devices/br-85a160d34ad8
+  sys-subsystem-net-devices-br\x2d9167988cd2ca.device                                                                            loaded active plugged   /sys/subsystem/net/devices/br-9167988cd2ca
+  sys-subsystem-net-devices-br\x2d9a0e1c9a08bb.device                                                                            loaded active plugged   /sys/subsystem/net/devices/br-9a0e1c9a08bb
+  sys-subsystem-net-devices-br\x2dab7d4f2a96e4.device                                                                            loaded active plugged   /sys/subsystem/net/devices/br-ab7d4f2a96e4
+  sys-subsystem-net-devices-br\x2dc4e9e233b7c7.device                                                                            loaded active plugged   /sys/subsystem/net/devices/br-c4e9e233b7c7
+  sys-subsystem-net-devices-br\x2dca855441ed4d.device                                                                            loaded active plugged   /sys/subsystem/net/devices/br-ca855441ed4d
+  sys-subsystem-net-devices-br\x2dcd42a08cbbcd.device                                                                            loaded active plugged   /sys/subsystem/net/devices/br-cd42a08cbbcd
+  sys-subsystem-net-devices-br\x2dd7190f952895.device                                                                            loaded active plugged   /sys/subsystem/net/devices/br-d7190f952895
+  sys-subsystem-net-devices-br\x2df045c84c0d1e.device                                                                            loaded active plugged   /sys/subsystem/net/devices/br-f045c84c0d1e
+  sys-subsystem-net-devices-br\x2df272c371c048.device                                                                            loaded active plugged   /sys/subsystem/net/devices/br-f272c371c048
+  sys-subsystem-net-devices-br\x2dfb5e71c6ccec.device                                                                            loaded active plugged   /sys/subsystem/net/devices/br-fb5e71c6ccec
+  sys-subsystem-net-devices-br\x2dfe20312d417c.device                                                                            loaded active plugged   /sys/subsystem/net/devices/br-fe20312d417c
+  sys-subsystem-net-devices-br\x2dff6b886a7c26.device                                                                            loaded active plugged   /sys/subsystem/net/devices/br-ff6b886a7c26
+  sys-subsystem-net-devices-docker0.device                                                                                       loaded active plugged   /sys/subsystem/net/devices/docker0
+  sys-subsystem-net-devices-ens32.device                                                                                         loaded active plugged   82545EM Gigabit Ethernet Controller (Copper) (PRO/1000 MT Single Port Adapter)
+  sys-subsystem-net-devices-veth0599305.device                                                                                   loaded active plugged   /sys/subsystem/net/devices/veth0599305
+  sys-subsystem-net-devices-veth0eb51ca.device                                                                                   loaded active plugged   /sys/subsystem/net/devices/veth0eb51ca
+  sys-subsystem-net-devices-veth1056051.device                                                                                   loaded active plugged   /sys/subsystem/net/devices/veth1056051
+  sys-subsystem-net-devices-veth1335ee6.device                                                                                   loaded active plugged   /sys/subsystem/net/devices/veth1335ee6
+  sys-subsystem-net-devices-veth21236e8.device                                                                                   loaded active plugged   /sys/subsystem/net/devices/veth21236e8
+  sys-subsystem-net-devices-veth22faac0.device                                                                                   loaded active plugged   /sys/subsystem/net/devices/veth22faac0
+  sys-subsystem-net-devices-veth253395e.device                                                                                   loaded active plugged   /sys/subsystem/net/devices/veth253395e
+  sys-subsystem-net-devices-veth2cf4276.device                                                                                   loaded active plugged   /sys/subsystem/net/devices/veth2cf4276
+  sys-subsystem-net-devices-veth3020fe0.device                                                                                   loaded active plugged   /sys/subsystem/net/devices/veth3020fe0
+  sys-subsystem-net-devices-veth369f01a.device                                                                                   loaded active plugged   /sys/subsystem/net/devices/veth369f01a
+  sys-subsystem-net-devices-veth376ba2e.device                                                                                   loaded active plugged   /sys/subsystem/net/devices/veth376ba2e
+  sys-subsystem-net-devices-veth4a39f91.device                                                                                   loaded active plugged   /sys/subsystem/net/devices/veth4a39f91
+  sys-subsystem-net-devices-veth4cb4a6a.device                                                                                   loaded active plugged   /sys/subsystem/net/devices/veth4cb4a6a
+  sys-subsystem-net-devices-veth580cba4.device                                                                                   loaded active plugged   /sys/subsystem/net/devices/veth580cba4
+  sys-subsystem-net-devices-veth5e19563.device                                                                                   loaded active plugged   /sys/subsystem/net/devices/veth5e19563
+  sys-subsystem-net-devices-veth6b4b2cf.device                                                                                   loaded active plugged   /sys/subsystem/net/devices/veth6b4b2cf
+  sys-subsystem-net-devices-veth7e39a26.device                                                                                   loaded active plugged   /sys/subsystem/net/devices/veth7e39a26
+  sys-subsystem-net-devices-veth7e599cd.device                                                                                   loaded active plugged   /sys/subsystem/net/devices/veth7e599cd
+  sys-subsystem-net-devices-veth84a53b3.device                                                                                   loaded active plugged   /sys/subsystem/net/devices/veth84a53b3
+  sys-subsystem-net-devices-veth84ee354.device                                                                                   loaded active plugged   /sys/subsystem/net/devices/veth84ee354
+  sys-subsystem-net-devices-veth89a4290.device                                                                                   loaded active plugged   /sys/subsystem/net/devices/veth89a4290
+  sys-subsystem-net-devices-veth8a35940.device                                                                                   loaded active plugged   /sys/subsystem/net/devices/veth8a35940
+  sys-subsystem-net-devices-veth9036998.device                                                                                   loaded active plugged   /sys/subsystem/net/devices/veth9036998
+  sys-subsystem-net-devices-veth929490b.device                                                                                   loaded active plugged   /sys/subsystem/net/devices/veth929490b
+  sys-subsystem-net-devices-veth9596846.device                                                                                   loaded active plugged   /sys/subsystem/net/devices/veth9596846
+  sys-subsystem-net-devices-vetha2c4594.device                                                                                   loaded active plugged   /sys/subsystem/net/devices/vetha2c4594
+  sys-subsystem-net-devices-vethab1946c.device                                                                                   loaded active plugged   /sys/subsystem/net/devices/vethab1946c
+  sys-subsystem-net-devices-vethb572745.device                                                                                   loaded active plugged   /sys/subsystem/net/devices/vethb572745
+  sys-subsystem-net-devices-vethbd0f67c.device                                                                                   loaded active plugged   /sys/subsystem/net/devices/vethbd0f67c
+  sys-subsystem-net-devices-vethbe06d95.device                                                                                   loaded active plugged   /sys/subsystem/net/devices/vethbe06d95
+  sys-subsystem-net-devices-vethbfabed5.device                                                                                   loaded active plugged   /sys/subsystem/net/devices/vethbfabed5
+  sys-subsystem-net-devices-vethc510751.device                                                                                   loaded active plugged   /sys/subsystem/net/devices/vethc510751
+  sys-subsystem-net-devices-vethc576f85.device                                                                                   loaded active plugged   /sys/subsystem/net/devices/vethc576f85
+  sys-subsystem-net-devices-vethc622196.device                                                                                   loaded active plugged   /sys/subsystem/net/devices/vethc622196
+  sys-subsystem-net-devices-vethce1e6e9.device                                                                                   loaded active plugged   /sys/subsystem/net/devices/vethce1e6e9
+  sys-subsystem-net-devices-vethdae4f35.device                                                                                   loaded active plugged   /sys/subsystem/net/devices/vethdae4f35
+  sys-subsystem-net-devices-vethe2cfeba.device                                                                                   loaded active plugged   /sys/subsystem/net/devices/vethe2cfeba
+  sys-subsystem-net-devices-vethfb31bca.device                                                                                   loaded active plugged   /sys/subsystem/net/devices/vethfb31bca
+  sys-subsystem-net-devices-vethfd770fa.device                                                                                   loaded active plugged   /sys/subsystem/net/devices/vethfd770fa
+  sys-subsystem-net-devices-vethfe2756a.device                                                                                   loaded active plugged   /sys/subsystem/net/devices/vethfe2756a
+  -.mount                                                                                                                        loaded active mounted   /
+  boot.mount                                                                                                                     loaded active mounted   /boot
+  dev-hugepages.mount                                                                                                            loaded active mounted   Huge Pages File System
+  dev-mqueue.mount                                                                                                               loaded active mounted   POSIX Message Queue File System
+  proc-sys-fs-binfmt_misc.mount                                                                                                  loaded active mounted   Arbitrary Executable File Formats File System
+  run-docker-netns-0040c89a659a.mount                                                                                            loaded active mounted   /run/docker/netns/0040c89a659a
+  run-docker-netns-081115881b11.mount                                                                                            loaded active mounted   /run/docker/netns/081115881b11
+  run-docker-netns-0a4362428577.mount                                                                                            loaded active mounted   /run/docker/netns/0a4362428577
+  run-docker-netns-0b08f8b8c6d4.mount                                                                                            loaded active mounted   /run/docker/netns/0b08f8b8c6d4
+  run-docker-netns-0e3b5c6f5a7c.mount                                                                                            loaded active mounted   /run/docker/netns/0e3b5c6f5a7c
+  run-docker-netns-120fa538af9e.mount                                                                                            loaded active mounted   /run/docker/netns/120fa538af9e
+  run-docker-netns-139ef4ff41eb.mount                                                                                            loaded active mounted   /run/docker/netns/139ef4ff41eb
+  run-docker-netns-14e3bc3ee3dc.mount                                                                                            loaded active mounted   /run/docker/netns/14e3bc3ee3dc
+  run-docker-netns-1e0e93e46cf9.mount                                                                                            loaded active mounted   /run/docker/netns/1e0e93e46cf9
+  run-docker-netns-204d8f3c0938.mount                                                                                            loaded active mounted   /run/docker/netns/204d8f3c0938
+  run-docker-netns-2252cd9b8e96.mount                                                                                            loaded active mounted   /run/docker/netns/2252cd9b8e96
+  run-docker-netns-23ad750328e8.mount                                                                                            loaded active mounted   /run/docker/netns/23ad750328e8
+  run-docker-netns-27c884dad440.mount                                                                                            loaded active mounted   /run/docker/netns/27c884dad440
+  run-docker-netns-2fc3090746a4.mount                                                                                            loaded active mounted   /run/docker/netns/2fc3090746a4
+  run-docker-netns-4e446db84603.mount                                                                                            loaded active mounted   /run/docker/netns/4e446db84603
+  run-docker-netns-505f7993bbc5.mount                                                                                            loaded active mounted   /run/docker/netns/505f7993bbc5
+  run-docker-netns-5f1b3321fa97.mount                                                                                            loaded active mounted   /run/docker/netns/5f1b3321fa97
+  run-docker-netns-6deece2e3533.mount                                                                                            loaded active mounted   /run/docker/netns/6deece2e3533
+  run-docker-netns-798cbae07129.mount                                                                                            loaded active mounted   /run/docker/netns/798cbae07129
+  run-docker-netns-7a46af0928b3.mount                                                                                            loaded active mounted   /run/docker/netns/7a46af0928b3
+  run-docker-netns-829399fabb8c.mount                                                                                            loaded active mounted   /run/docker/netns/829399fabb8c
+  run-docker-netns-85218108ea7d.mount                                                                                            loaded active mounted   /run/docker/netns/85218108ea7d
+  run-docker-netns-863ed5440874.mount                                                                                            loaded active mounted   /run/docker/netns/863ed5440874
+  run-docker-netns-8b98a23d7aba.mount                                                                                            loaded active mounted   /run/docker/netns/8b98a23d7aba
+  run-docker-netns-8bbeb6ce9185.mount                                                                                            loaded active mounted   /run/docker/netns/8bbeb6ce9185
+  run-docker-netns-8e650563665f.mount                                                                                            loaded active mounted   /run/docker/netns/8e650563665f
+  run-docker-netns-97197bdcb194.mount                                                                                            loaded active mounted   /run/docker/netns/97197bdcb194
+  run-docker-netns-99528a3d1af3.mount                                                                                            loaded active mounted   /run/docker/netns/99528a3d1af3
+  run-docker-netns-9ab6a1ef1226.mount                                                                                            loaded active mounted   /run/docker/netns/9ab6a1ef1226
+  run-docker-netns-bc2f053c3dcd.mount                                                                                            loaded active mounted   /run/docker/netns/bc2f053c3dcd
+  run-docker-netns-c7cf8237fdd4.mount                                                                                            loaded active mounted   /run/docker/netns/c7cf8237fdd4
+  run-docker-netns-d4013c25001a.mount                                                                                            loaded active mounted   /run/docker/netns/d4013c25001a
+  run-docker-netns-e5905186d7a8.mount                                                                                            loaded active mounted   /run/docker/netns/e5905186d7a8
+  run-docker-netns-ec89e9ab821f.mount                                                                                            loaded active mounted   /run/docker/netns/ec89e9ab821f
+  run-docker-netns-f039a0153969.mount                                                                                            loaded active mounted   /run/docker/netns/f039a0153969
+  run-docker-netns-f03f0eb38ce1.mount                                                                                            loaded active mounted   /run/docker/netns/f03f0eb38ce1
+  run-docker-netns-f72ef37c4429.mount                                                                                            loaded active mounted   /run/docker/netns/f72ef37c4429
+  run-docker-netns-fa50dd266461.mount                                                                                            loaded active mounted   /run/docker/netns/fa50dd266461
+  run-docker-netns-fc7aa368be44.mount                                                                                            loaded active mounted   /run/docker/netns/fc7aa368be44
+  run-docker-netns-ffbb889609a0.mount                                                                                            loaded active mounted   /run/docker/netns/ffbb889609a0
+  run-user-1000.mount                                                                                                            loaded active mounted   /run/user/1000
+  sys-fs-fuse-connections.mount                                                                                                  loaded active mounted   FUSE Control File System
+  sys-kernel-debug-tracing.mount                                                                                                 loaded active mounted   /sys/kernel/debug/tracing
+  sys-kernel-debug.mount                                                                                                         loaded active mounted   Debug File System
+  var-lib-docker-containers-06a2b9692ababdb9e06d99ecc805f69bd4cbb3803429b8eb16acac78b73c89e5-mounts-shm.mount                    loaded active mounted   /var/lib/docker/containers/06a2b9692ababdb9e06d99ecc805f69bd4cbb3803429b8eb16acac78b73c89e5/mounts/shm
+  var-lib-docker-containers-06ed5c2d2e116d573b1b81388858466151b4a8a13ed8a788b80f3d160bd669b6-mounts-shm.mount                    loaded active mounted   /var/lib/docker/containers/06ed5c2d2e116d573b1b81388858466151b4a8a13ed8a788b80f3d160bd669b6/mounts/shm
+  var-lib-docker-containers-081cbf247304e0aa8c48f3c273cfa67643cbe2b4e4e78e04dabcf4608dec1285-mounts-shm.mount                    loaded active mounted   /var/lib/docker/containers/081cbf247304e0aa8c48f3c273cfa67643cbe2b4e4e78e04dabcf4608dec1285/mounts/shm
+  var-lib-docker-containers-0f6edd13f0703bed33de7633213567d3719295ff92d9003941959a6b91f9bbc1-mounts-shm.mount                    loaded active mounted   /var/lib/docker/containers/0f6edd13f0703bed33de7633213567d3719295ff92d9003941959a6b91f9bbc1/mounts/shm
+  var-lib-docker-containers-11db4dff83a698cf5a86af9e58efa78720c96947c6d3ba6a5d1aea5f33286ba7-mounts-shm.mount                    loaded active mounted   /var/lib/docker/containers/11db4dff83a698cf5a86af9e58efa78720c96947c6d3ba6a5d1aea5f33286ba7/mounts/shm
+  var-lib-docker-containers-181b75d661352a73a5cf7c0c5be9df3ead44cb7bcbe48308e78f842e52aa81d2-mounts-shm.mount                    loaded active mounted   /var/lib/docker/containers/181b75d661352a73a5cf7c0c5be9df3ead44cb7bcbe48308e78f842e52aa81d2/mounts/shm
+  var-lib-docker-containers-1f52136271d04ccd51d50ec0b4bb7f23023520b7fc193b375f0b96f6487e372a-mounts-shm.mount                    loaded active mounted   /var/lib/docker/containers/1f52136271d04ccd51d50ec0b4bb7f23023520b7fc193b375f0b96f6487e372a/mounts/shm
+  var-lib-docker-containers-219a553cac06f96cead29b49cea0a13e2d07e752a8f2052a86efe83f9e704207-mounts-shm.mount                    loaded active mounted   /var/lib/docker/containers/219a553cac06f96cead29b49cea0a13e2d07e752a8f2052a86efe83f9e704207/mounts/shm
+  var-lib-docker-containers-23357e1979cdb3f7a8af83b1616e6e64ab97eceb51496a9269507ff50f798875-mounts-shm.mount                    loaded active mounted   /var/lib/docker/containers/23357e1979cdb3f7a8af83b1616e6e64ab97eceb51496a9269507ff50f798875/mounts/shm
+  var-lib-docker-containers-27ec59172fe0097bdeb53661bb181779dbe033eb2926a780316dd92cb3b23b12-mounts-shm.mount                    loaded active mounted   /var/lib/docker/containers/27ec59172fe0097bdeb53661bb181779dbe033eb2926a780316dd92cb3b23b12/mounts/shm
+  var-lib-docker-containers-28eab717aaa743dffbd6115b8a605e3c0354ae1ce1d14cfacb017d7779f4d686-mounts-shm.mount                    loaded active mounted   /var/lib/docker/containers/28eab717aaa743dffbd6115b8a605e3c0354ae1ce1d14cfacb017d7779f4d686/mounts/shm
+  var-lib-docker-containers-2be10db87018ef65d213a0a39f849f9e589c98655b7d694eef7b74ad8effc19f-mounts-shm.mount                    loaded active mounted   /var/lib/docker/containers/2be10db87018ef65d213a0a39f849f9e589c98655b7d694eef7b74ad8effc19f/mounts/shm
+  var-lib-docker-containers-2fbed74733ff42532cb2af2d03e0fff06cf084d6a79357a3965bba3615417bcf-mounts-shm.mount                    loaded active mounted   /var/lib/docker/containers/2fbed74733ff42532cb2af2d03e0fff06cf084d6a79357a3965bba3615417bcf/mounts/shm
+  var-lib-docker-containers-3ae759753ea11fa5db17263fff4df206bf3f314f1c3552352b3c988ae129bc1e-mounts-shm.mount                    loaded active mounted   /var/lib/docker/containers/3ae759753ea11fa5db17263fff4df206bf3f314f1c3552352b3c988ae129bc1e/mounts/shm
+  var-lib-docker-containers-48c4ede75243f74100193112d06e8e6f1a367942c94f3463a69b40feb8731f0d-mounts-shm.mount                    loaded active mounted   /var/lib/docker/containers/48c4ede75243f74100193112d06e8e6f1a367942c94f3463a69b40feb8731f0d/mounts/shm
+  var-lib-docker-containers-4fc73eb538e39aeafc5e720653851e505c9cd1157b613d95d5c84885590f8138-mounts-shm.mount                    loaded active mounted   /var/lib/docker/containers/4fc73eb538e39aeafc5e720653851e505c9cd1157b613d95d5c84885590f8138/mounts/shm
+  var-lib-docker-containers-5da54191a6425203c122338d420525b3e2bcda0d910dc7473b88d35ae26235c5-mounts-shm.mount                    loaded active mounted   /var/lib/docker/containers/5da54191a6425203c122338d420525b3e2bcda0d910dc7473b88d35ae26235c5/mounts/shm
+  var-lib-docker-containers-63ea8a6af390a8252bca94ca318b102eb9b0bd163d98b22a9443976f6c69c93b-mounts-shm.mount                    loaded active mounted   /var/lib/docker/containers/63ea8a6af390a8252bca94ca318b102eb9b0bd163d98b22a9443976f6c69c93b/mounts/shm
+  var-lib-docker-containers-6b527dd540ff08bd19e1530c4e715cec9a25e671d0e69155efddf36e6463af0d-mounts-shm.mount                    loaded active mounted   /var/lib/docker/containers/6b527dd540ff08bd19e1530c4e715cec9a25e671d0e69155efddf36e6463af0d/mounts/shm
+  var-lib-docker-containers-6befe8779ed2a876e3adad6099d3bed8d9f1645aaedb3228f79cc352ec77e658-mounts-shm.mount                    loaded active mounted   /var/lib/docker/containers/6befe8779ed2a876e3adad6099d3bed8d9f1645aaedb3228f79cc352ec77e658/mounts/shm
+  var-lib-docker-containers-6d7f160ddd9a29b001f59c46661648066261e0fc1a0953e46689d8c1461ce91d-mounts-shm.mount                    loaded active mounted   /var/lib/docker/containers/6d7f160ddd9a29b001f59c46661648066261e0fc1a0953e46689d8c1461ce91d/mounts/shm
+  var-lib-docker-containers-7ccb99a91e43ad1357e1c4ccac1e19108d9c2d68953d422440a2ef33aa5067db-mounts-shm.mount                    loaded active mounted   /var/lib/docker/containers/7ccb99a91e43ad1357e1c4ccac1e19108d9c2d68953d422440a2ef33aa5067db/mounts/shm
+  var-lib-docker-containers-873e76e0a0396d8b07abbb6ea3f11606e26f4d7fc3973fbbe6bffc39fa84bf33-mounts-shm.mount                    loaded active mounted   /var/lib/docker/containers/873e76e0a0396d8b07abbb6ea3f11606e26f4d7fc3973fbbe6bffc39fa84bf33/mounts/shm
+  var-lib-docker-containers-92799011a27301db02746045c6d4709a72ac9319f6db35aed612240fed51d873-mounts-shm.mount                    loaded active mounted   /var/lib/docker/containers/92799011a27301db02746045c6d4709a72ac9319f6db35aed612240fed51d873/mounts/shm
+  var-lib-docker-containers-96d1791cf8964ef636eff1d222d9301af333d518f99e3b2bbdda21aa11a4d832-mounts-shm.mount                    loaded active mounted   /var/lib/docker/containers/96d1791cf8964ef636eff1d222d9301af333d518f99e3b2bbdda21aa11a4d832/mounts/shm
+  var-lib-docker-containers-96f41ceea6020f7dd6fcec9ee8d3e9950b52866f281d41a5c0a44e3aefc44c4b-mounts-shm.mount                    loaded active mounted   /var/lib/docker/containers/96f41ceea6020f7dd6fcec9ee8d3e9950b52866f281d41a5c0a44e3aefc44c4b/mounts/shm
+  var-lib-docker-containers-a0481b826e4c71c696f0dac3d680c8223dd66184215d974f7c2cc9d1d460ea49-mounts-shm.mount                    loaded active mounted   /var/lib/docker/containers/a0481b826e4c71c696f0dac3d680c8223dd66184215d974f7c2cc9d1d460ea49/mounts/shm
+  var-lib-docker-containers-a6455c0a5c2245725097f7d8d2a8a6273567416c91fe2c508d6da92907eb9a4d-mounts-shm.mount                    loaded active mounted   /var/lib/docker/containers/a6455c0a5c2245725097f7d8d2a8a6273567416c91fe2c508d6da92907eb9a4d/mounts/shm
+  var-lib-docker-containers-a8ac828a1657eb15616eef411ea4a67ba38732f5d440dde999c2f848e57c2eec-mounts-shm.mount                    loaded active mounted   /var/lib/docker/containers/a8ac828a1657eb15616eef411ea4a67ba38732f5d440dde999c2f848e57c2eec/mounts/shm
+  var-lib-docker-containers-b231ef082f232e3a013ec4ab5ee3143a3df614315ac0e7ea71cf8fa5cb8c4014-mounts-shm.mount                    loaded active mounted   /var/lib/docker/containers/b231ef082f232e3a013ec4ab5ee3143a3df614315ac0e7ea71cf8fa5cb8c4014/mounts/shm
+  var-lib-docker-containers-c70be88c34ca15983cff1216aa30ff0b2052f6a9e8f89b51fa2eef1a86e593c8-mounts-shm.mount                    loaded active mounted   /var/lib/docker/containers/c70be88c34ca15983cff1216aa30ff0b2052f6a9e8f89b51fa2eef1a86e593c8/mounts/shm
+  var-lib-docker-containers-cd7fee2c40330477405328c71db566a76c147d6f2eb2e4b9c76428edb765af9a-mounts-shm.mount                    loaded active mounted   /var/lib/docker/containers/cd7fee2c40330477405328c71db566a76c147d6f2eb2e4b9c76428edb765af9a/mounts/shm
+  var-lib-docker-containers-d5534b944416ae594e3d792501d405a0db0e0a57ff69ca3ec4d6cecdc251aae0-mounts-shm.mount                    loaded active mounted   /var/lib/docker/containers/d5534b944416ae594e3d792501d405a0db0e0a57ff69ca3ec4d6cecdc251aae0/mounts/shm
+  var-lib-docker-containers-d8bef55f9b65886f56932ff31c7f1e85505d6accff17e0248d97f28f533d87a4-mounts-shm.mount                    loaded active mounted   /var/lib/docker/containers/d8bef55f9b65886f56932ff31c7f1e85505d6accff17e0248d97f28f533d87a4/mounts/shm
+  var-lib-docker-containers-d94ac97cac650f0cc62a84ba1199f1af3a8d32a4e43e477056017ec00f11c9c0-mounts-shm.mount                    loaded active mounted   /var/lib/docker/containers/d94ac97cac650f0cc62a84ba1199f1af3a8d32a4e43e477056017ec00f11c9c0/mounts/shm
+  var-lib-docker-containers-deab4f32b8f1885bd305045c37d500e869426830afe1687f295c47a167399b2e-mounts-shm.mount                    loaded active mounted   /var/lib/docker/containers/deab4f32b8f1885bd305045c37d500e869426830afe1687f295c47a167399b2e/mounts/shm
+  var-lib-docker-containers-e08c4643e1ccc479690ec763d7b18ca553c0130746ee08db597524d57be8a547-mounts-shm.mount                    loaded active mounted   /var/lib/docker/containers/e08c4643e1ccc479690ec763d7b18ca553c0130746ee08db597524d57be8a547/mounts/shm
+  var-lib-docker-containers-ec821459e067050a5355cb913cb76ec37db4f90b83877f654acdfeddafa6fbab-mounts-shm.mount                    loaded active mounted   /var/lib/docker/containers/ec821459e067050a5355cb913cb76ec37db4f90b83877f654acdfeddafa6fbab/mounts/shm
+  var-lib-docker-containers-ef0e5f85b370ce56c40de5f2a1789e8a4a6043e0fc3c100d3ea8fddb9b2fe9b3-mounts-shm.mount                    loaded active mounted   /var/lib/docker/containers/ef0e5f85b370ce56c40de5f2a1789e8a4a6043e0fc3c100d3ea8fddb9b2fe9b3/mounts/shm
+  var-lib-docker-containers-f880344f01a1f45c073620ca1bc669ed894037710a77ac465257c778c196bc8a-mounts-shm.mount                    loaded active mounted   /var/lib/docker/containers/f880344f01a1f45c073620ca1bc669ed894037710a77ac465257c778c196bc8a/mounts/shm
+  var-lib-docker-overlay2-02424a9378414fbb959b0f3316f8b95b96638a1a73b66a6cb3d1b0abce9c1526-merged.mount                          loaded active mounted   /var/lib/docker/overlay2/02424a9378414fbb959b0f3316f8b95b96638a1a73b66a6cb3d1b0abce9c1526/merged
+  var-lib-docker-overlay2-0761ba76d10dc036651d965fb8175b10d51f2ad174402395d25c3f9390e72d31-merged.mount                          loaded active mounted   /var/lib/docker/overlay2/0761ba76d10dc036651d965fb8175b10d51f2ad174402395d25c3f9390e72d31/merged
+  var-lib-docker-overlay2-143d2711019d6c18413bfae0910dbe7235456881c13ea2e76dc1c610563ea037-merged.mount                          loaded active mounted   /var/lib/docker/overlay2/143d2711019d6c18413bfae0910dbe7235456881c13ea2e76dc1c610563ea037/merged
+  var-lib-docker-overlay2-14734d99ffcf8d51a21fe43ba65b76c72e89dbb3b7578ef6203332cfbc65104f-merged.mount                          loaded active mounted   /var/lib/docker/overlay2/14734d99ffcf8d51a21fe43ba65b76c72e89dbb3b7578ef6203332cfbc65104f/merged
+  var-lib-docker-overlay2-1525840555c99ef55a9cff2c7a6ef96ffccd29b27f66bfda705817884a6ad3c1-merged.mount                          loaded active mounted   /var/lib/docker/overlay2/1525840555c99ef55a9cff2c7a6ef96ffccd29b27f66bfda705817884a6ad3c1/merged
+  var-lib-docker-overlay2-1fe06bf5d9121c4e6312ef13b9abf0d4efc6240349ada83e3e94363c448c8d21-merged.mount                          loaded active mounted   /var/lib/docker/overlay2/1fe06bf5d9121c4e6312ef13b9abf0d4efc6240349ada83e3e94363c448c8d21/merged
+  var-lib-docker-overlay2-24b826f57a62bcae55ba0c0e60fc64835092d8c15a8b92c6e1f14b9c0c35e28c-merged.mount                          loaded active mounted   /var/lib/docker/overlay2/24b826f57a62bcae55ba0c0e60fc64835092d8c15a8b92c6e1f14b9c0c35e28c/merged
+  var-lib-docker-overlay2-257e25505e6796b1e5489e95367ebe28be40e460c8689eff54abb92289d50bec-merged.mount                          loaded active mounted   /var/lib/docker/overlay2/257e25505e6796b1e5489e95367ebe28be40e460c8689eff54abb92289d50bec/merged
+  var-lib-docker-overlay2-2d1c6f0bc73b11cb2f140d07288f6aecc9c039e577999f6718e1b20ebb863198-merged.mount                          loaded active mounted   /var/lib/docker/overlay2/2d1c6f0bc73b11cb2f140d07288f6aecc9c039e577999f6718e1b20ebb863198/merged
+  var-lib-docker-overlay2-33c7cec09af0a482ad4aecc95d1b14725622056db0c49841e86fe1fc0fb103fd-merged.mount                          loaded active mounted   /var/lib/docker/overlay2/33c7cec09af0a482ad4aecc95d1b14725622056db0c49841e86fe1fc0fb103fd/merged
+  var-lib-docker-overlay2-3781ed05663c116c537108dc4f001cd262223d6eb611a4cd1c5e98c885643667-merged.mount                          loaded active mounted   /var/lib/docker/overlay2/3781ed05663c116c537108dc4f001cd262223d6eb611a4cd1c5e98c885643667/merged
+  var-lib-docker-overlay2-3c295321ebfd663c986f4e7c76a4652de6b4a5e178e1b91393f6dfe21f72175c-merged.mount                          loaded active mounted   /var/lib/docker/overlay2/3c295321ebfd663c986f4e7c76a4652de6b4a5e178e1b91393f6dfe21f72175c/merged
+  var-lib-docker-overlay2-4e9c84f772a74b441304038193aaaa0474080af21e49e98a2039b786cea4f957-merged.mount                          loaded active mounted   /var/lib/docker/overlay2/4e9c84f772a74b441304038193aaaa0474080af21e49e98a2039b786cea4f957/merged
+  var-lib-docker-overlay2-4f01574f47f3e46b1c31654da2319bfffc5ae694cecf1887b15fccf9d6fce99c-merged.mount                          loaded active mounted   /var/lib/docker/overlay2/4f01574f47f3e46b1c31654da2319bfffc5ae694cecf1887b15fccf9d6fce99c/merged
+  var-lib-docker-overlay2-55e4cb806a15c55cb65aa42199c3c822a7f3d939a01af7fce31c9f995ba9f1f1-merged.mount                          loaded active mounted   /var/lib/docker/overlay2/55e4cb806a15c55cb65aa42199c3c822a7f3d939a01af7fce31c9f995ba9f1f1/merged
+  var-lib-docker-overlay2-5c7beaa4ec9fcdca1992e812206dbe229449e2fadcb98c98f34c1a847570b3e1-merged.mount                          loaded active mounted   /var/lib/docker/overlay2/5c7beaa4ec9fcdca1992e812206dbe229449e2fadcb98c98f34c1a847570b3e1/merged
+  var-lib-docker-overlay2-5f701e64bdc89759abfe3fe61bbbc5bc2131825d1d56229b5bc243fab35b61f7-merged.mount                          loaded active mounted   /var/lib/docker/overlay2/5f701e64bdc89759abfe3fe61bbbc5bc2131825d1d56229b5bc243fab35b61f7/merged
+  var-lib-docker-overlay2-68abab566d59cffa0d32f9123854caa8d61187e1ff69a97bb631fef128a97d3f-merged.mount                          loaded active mounted   /var/lib/docker/overlay2/68abab566d59cffa0d32f9123854caa8d61187e1ff69a97bb631fef128a97d3f/merged
+  var-lib-docker-overlay2-69ef551b915d0e7a8f676169a2f87f9f9a98e3fbbcee567dfe855e77ea0c8c3f-merged.mount                          loaded active mounted   /var/lib/docker/overlay2/69ef551b915d0e7a8f676169a2f87f9f9a98e3fbbcee567dfe855e77ea0c8c3f/merged
+  var-lib-docker-overlay2-73cecbd5da608502b12e356d83cd62292940128d31e4cef69248e10582031619-merged.mount                          loaded active mounted   /var/lib/docker/overlay2/73cecbd5da608502b12e356d83cd62292940128d31e4cef69248e10582031619/merged
+  var-lib-docker-overlay2-7bf19733e6353362e46c3656619ac1c70574204f9d707ba0e1792d2d7483b729-merged.mount                          loaded active mounted   /var/lib/docker/overlay2/7bf19733e6353362e46c3656619ac1c70574204f9d707ba0e1792d2d7483b729/merged
+  var-lib-docker-overlay2-81158a595f8e426b535b2c0fe6c0d13187bad8fa23b2c2cae4f744417a0caa2b-merged.mount                          loaded active mounted   /var/lib/docker/overlay2/81158a595f8e426b535b2c0fe6c0d13187bad8fa23b2c2cae4f744417a0caa2b/merged
+  var-lib-docker-overlay2-90aa0c27c4fe68ccc7d3ed40b756127d35a0d49336b38866e66c16a9e9cb0346-merged.mount                          loaded active mounted   /var/lib/docker/overlay2/90aa0c27c4fe68ccc7d3ed40b756127d35a0d49336b38866e66c16a9e9cb0346/merged
+  var-lib-docker-overlay2-9243ef6a99844bf8bf8e8079ca88b8607d7ff65009a92cb49922ce4b58273eb3-merged.mount                          loaded active mounted   /var/lib/docker/overlay2/9243ef6a99844bf8bf8e8079ca88b8607d7ff65009a92cb49922ce4b58273eb3/merged
+  var-lib-docker-overlay2-9a540ef032e917ff1c0eb2b23dc8125e733a32c15664bc9da99656a5f5107315-merged.mount                          loaded active mounted   /var/lib/docker/overlay2/9a540ef032e917ff1c0eb2b23dc8125e733a32c15664bc9da99656a5f5107315/merged
+  var-lib-docker-overlay2-9a949dec8954e4d5316b9b3077bc526695638e0793d55006e88933347014b245-merged.mount                          loaded active mounted   /var/lib/docker/overlay2/9a949dec8954e4d5316b9b3077bc526695638e0793d55006e88933347014b245/merged
+  var-lib-docker-overlay2-9b14eddd787cb4ba35b56ba602d771d67da6997ae09007a112e6e467bf714bfd-merged.mount                          loaded active mounted   /var/lib/docker/overlay2/9b14eddd787cb4ba35b56ba602d771d67da6997ae09007a112e6e467bf714bfd/merged
+  var-lib-docker-overlay2-a50b9f3f7548ce153ce9518e40ddfb5ca9fa78f63b4928ac7794e6f060472f94-merged.mount                          loaded active mounted   /var/lib/docker/overlay2/a50b9f3f7548ce153ce9518e40ddfb5ca9fa78f63b4928ac7794e6f060472f94/merged
+  var-lib-docker-overlay2-a7511e6a8d3d78ef16f83eb60383325da42e37724835c9e3cabd199875ea4ca6-merged.mount                          loaded active mounted   /var/lib/docker/overlay2/a7511e6a8d3d78ef16f83eb60383325da42e37724835c9e3cabd199875ea4ca6/merged
+  var-lib-docker-overlay2-b0897d6c7f9531c9600f765d686bf8f152eea3587f97b2aada76662eda62e771-merged.mount                          loaded active mounted   /var/lib/docker/overlay2/b0897d6c7f9531c9600f765d686bf8f152eea3587f97b2aada76662eda62e771/merged
+  var-lib-docker-overlay2-b3a226472c9565e964dc7e7f364a3218cce375787a012addc13af6c23e4650d7-merged.mount                          loaded active mounted   /var/lib/docker/overlay2/b3a226472c9565e964dc7e7f364a3218cce375787a012addc13af6c23e4650d7/merged
+  var-lib-docker-overlay2-c4ec88c2de0cb42fcc73d9c38f1a85e93ac63920335c3d38c91adf163fd373ed-merged.mount                          loaded active mounted   /var/lib/docker/overlay2/c4ec88c2de0cb42fcc73d9c38f1a85e93ac63920335c3d38c91adf163fd373ed/merged
+  var-lib-docker-overlay2-d3259782b0d5e146d5ef363ec0804adc1cea4337931ba35f490f71d9783f4d57-merged.mount                          loaded active mounted   /var/lib/docker/overlay2/d3259782b0d5e146d5ef363ec0804adc1cea4337931ba35f490f71d9783f4d57/merged
+  var-lib-docker-overlay2-d3663628a40a395546736e6c7b05d743fb5250c7ff03eedd3c702753b1619e2f-merged.mount                          loaded active mounted   /var/lib/docker/overlay2/d3663628a40a395546736e6c7b05d743fb5250c7ff03eedd3c702753b1619e2f/merged
+  var-lib-docker-overlay2-da081a03a5a5556f20d97e4ad42a09f2c01a692f71e51f2432062dd39b08e678-merged.mount                          loaded active mounted   /var/lib/docker/overlay2/da081a03a5a5556f20d97e4ad42a09f2c01a692f71e51f2432062dd39b08e678/merged
+  var-lib-docker-overlay2-db0c4669c2fdd89327f62bfab24d7e864a7b17b2a643004c7573e63590197bf8-merged.mount                          loaded active mounted   /var/lib/docker/overlay2/db0c4669c2fdd89327f62bfab24d7e864a7b17b2a643004c7573e63590197bf8/merged
+  var-lib-docker-overlay2-ea25985ce6019654ceb7763a62f100184db675ac7f238a3b3ac06a5f288b40af-merged.mount                          loaded active mounted   /var/lib/docker/overlay2/ea25985ce6019654ceb7763a62f100184db675ac7f238a3b3ac06a5f288b40af/merged
+  var-lib-docker-overlay2-ecf20527595d0d2026401a157bfe8c9eb59367fee31bc51dc078b38836ba1e0f-merged.mount                          loaded active mounted   /var/lib/docker/overlay2/ecf20527595d0d2026401a157bfe8c9eb59367fee31bc51dc078b38836ba1e0f/merged
+  var-lib-docker-overlay2-f21c18e5d9c5cbd2e39e4da4c0cfa3a13c2cd5acae6750ec5f1bccb7c48f4792-merged.mount                          loaded active mounted   /var/lib/docker/overlay2/f21c18e5d9c5cbd2e39e4da4c0cfa3a13c2cd5acae6750ec5f1bccb7c48f4792/merged
+  var-lib-docker-overlay2-f9f0835f9d0ab25a0f0699cf78723b5de48332bb7753fd9ea9f39b36522058d8-merged.mount                          loaded active mounted   /var/lib/docker/overlay2/f9f0835f9d0ab25a0f0699cf78723b5de48332bb7753fd9ea9f39b36522058d8/merged
+  var-lib-lxcfs.mount                                                                                                            loaded active mounted   /var/lib/lxcfs
+  acpid.path                                                                                                                     loaded active running   ACPI Events Check
+  systemd-ask-password-console.path                                                                                              loaded active waiting   Dispatch Password Requests to Console Directory Watch
+  systemd-ask-password-wall.path                                                                                                 loaded active waiting   Forward Password Requests to Wall Directory Watch
+  systemd-networkd-resolvconf-update.path                                                                                        loaded active waiting   Trigger resolvconf update for networkd DNS
+  init.scope                                                                                                                     loaded active running   System and Service Manager
+  session-1050.scope                                                                                                             loaded active running   Session 1050 of user albe
+  session-1069.scope                                                                                                             loaded active running   Session 1069 of user albe
+  session-1072.scope                                                                                                             loaded active running   Session 1072 of user albe
+  session-1078.scope                                                                                                             loaded active running   Session 1078 of user albe
+  session-1079.scope                                                                                                             loaded active running   Session 1079 of user albe
+  accounts-daemon.service                                                                                                        loaded active running   Accounts Service
+  acpid.service                                                                                                                  loaded active running   ACPI event daemon
+  apparmor.service                                                                                                               loaded active exited    LSB: AppArmor initialization
+  apport.service                                                                                                                 loaded active exited    LSB: automatic crash report generation
+  atd.service                                                                                                                    loaded active running   Deferred execution scheduler
+  console-setup.service                                                                                                          loaded active exited    Set console font and keymap
+  cron.service                                                                                                                   loaded active running   Regular background program processing daemon
+  dbus.service                                                                                                                   loaded active running   D-Bus System Message Bus
+  dkms-service.service                                                                                                           loaded active exited    Builds and install new kernel modules through DKMS
+  docker.service                                                                                                                 loaded active running   Docker Application Container Engine
+  getty@tty1.service                                                                                                             loaded active running   Getty on tty1
+  getty@tty2.service                                                                                                             loaded active running   Getty on tty2
+  grub-common.service                                                                                                            loaded active exited    LSB: Record successful boot for GRUB
+  ifup@ens32.service                                                                                                             loaded active exited    ifup for ens32
+  irqbalance.service                                                                                                             loaded active running   LSB: daemon to balance interrupts for SMP systems
+  iscsid.service                                                                                                                 loaded active running   iSCSI initiator daemon (iscsid)
+  keyboard-setup.service                                                                                                         loaded active exited    Set console keymap
+  kmod-static-nodes.service                                                                                                      loaded active exited    Create list of required static device nodes for the current kernel
+  lpd.service                                                                                                                    loaded active exited    LSB: BSD lpr/lpd line printer spooling system
+  lvm2-lvmetad.service                                                                                                           loaded active running   LVM2 metadata daemon
+  lvm2-monitor.service                                                                                                           loaded active exited    Monitoring of LVM2 mirrors, snapshots etc. using dmeventd or progress polling
+  lxcfs.service                                                                                                                  loaded active running   FUSE filesystem for LXC
+  lxd-containers.service                                                                                                         loaded active exited    LXD - container startup/shutdown
+  mdadm.service                                                                                                                  loaded active running   LSB: MD monitoring daemon
+  networking.service                                                                                                             loaded active exited    Raise network interfaces
+  nmbd.service                                                                                                                   loaded active running   LSB: start Samba NetBIOS nameserver (nmbd)
+  ondemand.service                                                                                                               loaded active exited    LSB: Set the CPU Frequency Scaling governor to "ondemand"
+  open-iscsi.service                                                                                                             loaded active exited    Login to default iSCSI targets
+  open-vm-tools.service                                                                                                          loaded active running   Service for virtual machines hosted on VMware
+  polkitd.service                                                                                                                loaded active running   Authenticate and Authorize Users to Run Privileged Tasks
+  rapidrecovery-agent.service                                                                                                    loaded active running   Provides Rapid Recovery Agent service
+  rapidrecovery-mapper.service                                                                                                   loaded active exited    Provides Rapid Recovery Volume Mapper service
+  rapidrecovery-vdisk.service                                                                                                    loaded active running   Provides Rapid Recovery VDisk service
+  rc-local.service                                                                                                               loaded active exited    /etc/rc.local Compatibility
+  resolvconf.service                                                                                                             loaded active exited    Nameserver information manager
+  rsyslog.service                                                                                                                loaded active running   System Logging Service
+  samba-ad-dc.service                                                                                                            loaded active exited    LSB: start Samba daemons for the AD DC
+  setvtrgb.service                                                                                                               loaded active exited    Set console scheme
+  smbd.service                                                                                                                   loaded active running   LSB: start Samba SMB/CIFS daemon (smbd)
+  snapd.apparmor.service                                                                                                         loaded active exited    Load AppArmor profiles managed internally by snapd
+  snapd.seeded.service                                                                                                           loaded active exited    Wait until snapd is fully seeded
+  ssh.service                                                                                                                    loaded active running   OpenBSD Secure Shell server
+  systemd-fsck@dev-disk-by\x2duuid-977f5a24\x2ddfd3\x2d4404\x2d9897\x2d3bdfedf9492c.service                                      loaded active exited    File System Check on /dev/disk/by-uuid/977f5a24-dfd3-4404-9897-3bdfedf9492c
+  systemd-journal-flush.service                                                                                                  loaded active exited    Flush Journal to Persistent Storage
+  systemd-journald.service                                                                                                       loaded active running   Journal Service
+  systemd-logind.service                                                                                                         loaded active running   Login Service
+● systemd-modules-load.service                                                                                                   loaded failed failed    Load Kernel Modules
+  systemd-random-seed.service                                                                                                    loaded active exited    Load/Save Random Seed
+  systemd-remount-fs.service                                                                                                     loaded active exited    Remount Root and Kernel File Systems
+  systemd-sysctl.service                                                                                                         loaded active exited    Apply Kernel Variables
+  systemd-timesyncd.service                                                                                                      loaded active running   Network Time Synchronization
+  systemd-tmpfiles-setup-dev.service                                                                                             loaded active exited    Create Static Device Nodes in /dev
+  systemd-tmpfiles-setup.service                                                                                                 loaded active exited    Create Volatile Files and Directories
+  systemd-udev-trigger.service                                                                                                   loaded active exited    udev Coldplug all Devices
+  systemd-udevd.service                                                                                                          loaded active running   udev Kernel Device Manager
+  systemd-update-utmp.service                                                                                                    loaded active exited    Update UTMP about System Boot/Shutdown
+  systemd-user-sessions.service                                                                                                  loaded active exited    Permit User Sessions
+  ufw.service                                                                                                                    loaded active exited    Uncomplicated firewall
+  unattended-upgrades.service                                                                                                    loaded active exited    Unattended Upgrades Shutdown
+  user@1000.service                                                                                                              loaded active running   User Manager for UID 1000
+  vsftpd.service                                                                                                                 loaded active running   vsftpd FTP server
+  -.slice                                                                                                                        loaded active active    Root Slice
+  system-getty.slice                                                                                                             loaded active active    system-getty.slice
+  system-systemd\x2dfsck.slice                                                                                                   loaded active active    system-systemd\x2dfsck.slice
+  system.slice                                                                                                                   loaded active active    System Slice
+  user-1000.slice                                                                                                                loaded active active    User Slice of albe
+  user.slice                                                                                                                     loaded active active    User and Session Slice
+  acpid.socket                                                                                                                   loaded active running   ACPID Listen Socket
+  dbus.socket                                                                                                                    loaded active running   D-Bus System Message Bus Socket
+  dm-event.socket                                                                                                                loaded active listening Device-mapper event daemon FIFOs
+  docker.socket                                                                                                                  loaded active running   Docker Socket for the API
+  lvm2-lvmetad.socket                                                                                                            loaded active running   LVM2 metadata daemon socket
+  lvm2-lvmpolld.socket                                                                                                           loaded active listening LVM2 poll daemon socket
+  lxd.socket                                                                                                                     loaded active listening LXD - unix socket
+  snapd.socket                                                                                                                   loaded active listening Socket activation for snappy daemon
+  syslog.socket                                                                                                                  loaded active running   Syslog Socket
+  systemd-fsckd.socket                                                                                                           loaded active listening fsck to fsckd communication Socket
+  systemd-initctl.socket                                                                                                         loaded active listening /dev/initctl Compatibility Named Pipe
+  systemd-journald-audit.socket                                                                                                  loaded active running   Journal Audit Socket
+  systemd-journald-dev-log.socket                                                                                                loaded active running   Journal Socket (/dev/log)
+  systemd-journald.socket                                                                                                        loaded active running   Journal Socket
+  systemd-rfkill.socket                                                                                                          loaded active listening Load/Save RF Kill Switch Status /dev/rfkill Watch
+  systemd-udevd-control.socket                                                                                                   loaded active running   udev Control Socket
+  systemd-udevd-kernel.socket                                                                                                    loaded active running   udev Kernel Socket
+  uuidd.socket                                                                                                                   loaded active listening UUID daemon activation socket
+  dev-mapper-pmdsdata7\x2d\x2dvg\x2dswap_1.swap                                                                                  loaded active active    /dev/mapper/pmdsdata7--vg-swap_1
+  basic.target                                                                                                                   loaded active active    Basic System
+  cryptsetup.target                                                                                                              loaded active active    Encrypted Volumes
+  getty.target                                                                                                                   loaded active active    Login Prompts
+  graphical.target                                                                                                               loaded active active    Graphical Interface
+  local-fs-pre.target                                                                                                            loaded active active    Local File Systems (Pre)
+  local-fs.target                                                                                                                loaded active active    Local File Systems
+  multi-user.target                                                                                                              loaded active active    Multi-User System
+  network-online.target                                                                                                          loaded active active    Network is Online
+  network-pre.target                                                                                                             loaded active active    Network (Pre)
+  network.target                                                                                                                 loaded active active    Network
+  nss-user-lookup.target                                                                                                         loaded active active    User and Group Name Lookups
+  paths.target                                                                                                                   loaded active active    Paths
+  remote-fs-pre.target                                                                                                           loaded active active    Remote File Systems (Pre)
+  remote-fs.target                                                                                                               loaded active active    Remote File Systems
+  slices.target                                                                                                                  loaded active active    Slices
+  sockets.target                                                                                                                 loaded active active    Sockets
+  swap.target                                                                                                                    loaded active active    Swap
+  sysinit.target                                                                                                                 loaded active active    System Initialization
+  time-sync.target                                                                                                               loaded active active    System Time Synchronized
+  timers.target                                                                                                                  loaded active active    Timers
+  apt-daily-upgrade.timer                                                                                                        loaded active waiting   Daily apt upgrade and clean activities
+  apt-daily.timer                                                                                                                loaded active waiting   Daily apt download activities
+  systemd-tmpfiles-clean.timer                                                                                                   loaded active waiting   Daily Cleanup of Temporary Directories
+
+LOAD   = Reflects whether the unit definition was properly loaded.
+ACTIVE = The high-level unit activation state, i.e. generalization of SUB.
+SUB    = The low-level unit activation state, values depend on unit type.
+
+432 loaded units listed. Pass --all to see loaded but inactive units, too.
+To show all installed unit files use 'systemctl list-unit-files'.

@@ -50,11 +50,6 @@ import re
 import pymysql
 import os
 import logging
-from dotenv import load_dotenv
-
-# Load environment variables from .env file
-load_dotenv()
-DB_PASSWORD = os.getenv('DB_PASSWORD')
 
 
 #################################################################
@@ -67,6 +62,7 @@ DB_PASSWORD = os.getenv('DB_PASSWORD')
 search_patterns = [
     r'ERROR.*nspection timeout',
     r'Timeout',
+    r' ack ',
 ]
 
 logfile_path = "/home/qualisense/leanai_aoi/output/logs/server.log"
@@ -78,12 +74,11 @@ hostname = os.uname().nodename
 
 csv_filepath = "/var/tmp/qslogs_tmpcsvfile.csv"  # Updated CSV file path
 
-    
 db_config = {
     'host': '10.4.71.231',
     'port': 7411,
     'user': 'a',
-    'password': DB_PASSWORD,
+    'password': 'a',
     'database': 'ripr684'
 }
 table_name = 'qs_server_log' # target table name in the db
@@ -200,10 +195,6 @@ print("Matching log entries have been written to the database.")
 
 Version info: 
                
-<<<<<<< HEAD
-v14 - 2024-10-08_Tue_08.30-AM : get password from .env file
-=======
->>>>>>> e74ad6ce565b013d361c4603b36ae4747b2d253d
 v12 - 2024-10-01_Tue_15.16-PM : added multiple search strings
 
 
