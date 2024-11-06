@@ -1,0 +1,13 @@
+
+one:
+  # Log file path
+  log_file: "/ap/log/fileinfolog.log"
+  # Path to the file to monitor
+  file_path: /srv/dkr/metabase6176d/sysdata/mysqldata/ib_logfile0
+  db_host: 10.4.65.191
+  db_port: 7411
+  db_name: ripr684
+
+# Database details
+#   10.4.65.191:7411
+

@@ -1,0 +1,8 @@
+
+
+ 1889  conda activate env01
+ 1890  conda export
+ 1891  conda install pyyaml
+
+
+cd /ap/tools599/ripr/file_info_log/ && /home/albe/miniconda3/envs/env01/bin/python /ap/tools599/ripr/file_info_log/file_info_log-yml.py
