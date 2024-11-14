@@ -3,6 +3,26 @@
 
 python that calls bash find to look for filenames containing string in the filename and copy the files to output path without subfolders. if duplicate filename is found, then add _# to the name.
 
+
+
+
+
+# Example usage -- see bottom of file..
+
+search_configs = [
+    {"input_path": "./", "search_string": "_36_"},
+    {"input_path": "./", "search_string": "242011110824049691"},
+]
+output_path = "/home/qualisense/tmp/out/1105h"
+find_and_copy_files(search_configs, output_path)
+
+   python3  ~/tmp/findcp.py 
+
+ test find . -type f -name "*242011110824049691*"
+
+
+
+
 '''
 
 import os
@@ -55,10 +75,10 @@ def find_and_copy_files(search_configs, output_path):
 
 # Example usage:
 search_configs = [
-    {"input_path": "./", "search_string": "242011110824049691"},
-    {"input_path": "./", "search_string": "242011110824049691"},
+    {"input_path": "./", "search_string": "_36_"},
+    
 ]
-output_path = "/home/qualisense/tmp/out/1105h"
+output_path = "/ap/tmp/out/1108a"
 find_and_copy_files(search_configs, output_path)
 
 #   python3  ~/tmp/findcp.py 
