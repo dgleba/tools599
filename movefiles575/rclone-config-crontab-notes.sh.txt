@@ -7,15 +7,19 @@
 
 # create-rclone-ssh-sftp-connection
 
+
 # Windows
+
 set pth=c:\prg\rclone\
-%pth%\rclone config create dock-vi641-ssh sftp host 10.4.168.141 user albe pass password
+%pth%\rclone config create dock-vi641-ssh sftp host 10.4.64.7 user albe pass (changeme)
+
 
 # linux
 
-rclone config create dock-vi641-ssh sftp host 10.4.64.7 user albe pass password
+rclone config create dock-vi641-ssh sftp host 10.4.64.7 user albe pass (changeme)
 
 rclone config create fake sftp host 10.4.64.532 user albe pass fakepassword
+
 
 
 ------------
