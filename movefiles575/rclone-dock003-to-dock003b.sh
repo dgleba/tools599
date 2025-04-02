@@ -56,14 +56,17 @@ pwd; ls -la;
 
 
 minage=15d
+
+
+rclone copy   /media/albe/vi641-9641   /media/albe/vi641-9641b  --exclude /x/**  --log-file=$logf --log-level INFO \
+--checkers=32 --transfers=32 --drive-chunk-size=64M --max-backlog=999999
+
+
 # 2024-04-24_Wed_13.20-PM David Gleba added to move from nvme to dock-disk
 rclone move --min-age=${minage}  --max-age=999d   --order-by modtime,ascending  -v  \
-/mnt/dsk2/mcdata  /media/albe/vi641-0041/mcdata  --log-file=$logf 
+/mnt/dsk2/mcdata  /media/albe/vi641-9641/mcdata  --log-file=$logf 
 
 
-rclone copy   /media/albe/vi641-004   /media/albe/vi641-004b  --exclude /x/**  --log-file=$logf --log-level INFO 
-
-     #     --multi-thread-cutoff 64M    --multi-thread-streams 12  --transfers=12
 
 }
 
@@ -101,14 +104,15 @@ function archive1 {
     daysold=1
     echo find001...
     find $srcdir/*  -type f -mtime +${daysold} -exec mv --backup=numbered '{}' $arcdir/ \; 
+    
     # move - bigger than and newer? than.. {bc some files dont have timestamp in filename.}
     #find $srcdir/* -type f -size +500k   -mtime -${daysold} +mmin 60 -exec mv --backup=numbered '{}' $arcdir/ \; 
     
     # remove 0 size files more than n day old..
-    # find $srcdir -type f -mtime +90 -size 0 -delete
+    # find $srcdir -type f -mtime +20 -size 0 -delete
 
     # garbage old `archive-folder` files - rm files older than n days = mtime +n
-    find $arcbase/* -mtime +120 -exec rm {} \;
+    find $arcbase/* -mtime +20 -exec rm {} \;
 }
 
 
@@ -135,8 +139,8 @@ s=16 ; read  -rsp $"Wait $s seconds or press Escape-key or Arrow key to continue
 
 function cleanup2 {
 set -x
-echo "cleanup running at  $(date +"_%Y.%m.%d_%H.%M.%S")"
-echo "cleanup running at  $(date +"_%Y.%m.%d_%H.%M.%S")">> ${logdir}/cleanup.run$(date +"_%Y.%m.%d").log
+echo "cleanup2 running at  $(date +"_%Y.%m.%d_%H.%M.%S")"
+echo "cleanup2 running at  $(date +"_%Y.%m.%d_%H.%M.%S")">> ${logdir}/cleanup.run$(date +"_%Y.%m.%d").log
 s=16 ; read  -rsp $"Wait $s seconds or press Escape-key or Arrow key to continue..." -t $s -d $'\e'; echo;echo;
 }
 

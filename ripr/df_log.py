@@ -33,6 +33,9 @@ Purpose/specs:
     get disk space and mounted disk info. write to db on server so it can be on dashboard in metabase with email alerts from metabase.
 
 
+ref : http://pmadata01:6186/dashboard/24-ripr-dashboard-monitoring-of-systems
+
+
 ------------
 
 To just run it manually..
@@ -200,7 +203,7 @@ if __name__ == '__main__':
 '''
 Version info:
 
-v15 2024-10-08_Tue_22.26-PM - add env to be used in cron.
+v15 2024-10-08_Tue_22.26-PM - add venv to be used in cron.
 
 
 '''
