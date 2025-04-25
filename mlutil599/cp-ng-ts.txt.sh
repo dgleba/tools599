@@ -1,9 +1,9 @@
 ---
-tags: cp-ng-ts.sh.txt, mk6,
+tags: cp-ng-ts.txt.sh, mk6,
 ---
 # cp-ng-ts.sh.txt  -  find and copy pmvis772 ng defects png/xml files by time and serial to tmp folder
 
-rev: 2025-04-02_Wed_08.46-AM
+rev: 2025-04-02_Wed_08.48-AM
 
 =
 vision

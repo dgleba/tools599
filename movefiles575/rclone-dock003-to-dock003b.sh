@@ -57,9 +57,11 @@ pwd; ls -la;
 
 minage=15d
 
+# 2025-04-03 this is too aggressive I think. load average was 58.
+# rclone copy   /media/albe/vi641-9641   /media/albe/vi641-9641b  --exclude /x/**  --log-file=$logf --log-level INFO --checkers=32 --transfers=32 --drive-chunk-size=64M --max-backlog=999999
 
-rclone copy   /media/albe/vi641-9641   /media/albe/vi641-9641b  --exclude /x/**  --log-file=$logf --log-level INFO \
---checkers=32 --transfers=32 --drive-chunk-size=64M --max-backlog=999999
+# 2025-04-03_Thu_08.34-AM try this..
+rclone copy   /media/albe/vi641-9641   /media/albe/vi641-9641b  --exclude /x/**  --log-file=$logf --log-level INFO 
 
 
 # 2024-04-24_Wed_13.20-PM David Gleba added to move from nvme to dock-disk
