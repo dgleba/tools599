@@ -1,0 +1,90 @@
+2025-07-16 10:15:18,131	INFO	Created PID file with PID 28328	SICS-BGWSN93
+2025-07-16 10:15:18,132	INFO	Starting disk space management	SICS-BGWSN93
+2025-07-16 10:15:18,132	INFO	Loading configuration from .env file	SICS-BGWSN93
+2025-07-16 10:15:18,134	INFO	Configuration loaded successfully: target=20000000MB, delete_amount=500MB, folder=C:/code/disk-space-actor/crap_data_to_delete, retain_min_files=5000, retain_min_hours=24	SICS-BGWSN93
+2025-07-16 10:15:18,134	INFO	Starting disk space management	SICS-BGWSN93
+2025-07-16 10:15:18,134	INFO	Disk space: total=487745MB, used=380462MB, free=107282MB	SICS-BGWSN93
+2025-07-16 10:15:18,134	WARNING	Insufficient free space: 107282MB (target: 20000000MB)	SICS-BGWSN93
+2025-07-16 10:15:18,134	INFO	Scanning for files with extensions: ['jpg', 'png', 'jpeg', 'xml']	SICS-BGWSN93
+2025-07-16 10:15:18,345	INFO	Found 1314 matching files	SICS-BGWSN93
+2025-07-16 10:15:18,346	INFO	Retaining 1314 files (newest 5000 and files modified within last 24 hours)	SICS-BGWSN93
+2025-07-16 10:15:18,346	INFO	0 files available for deletion	SICS-BGWSN93
+2025-07-16 10:15:18,346	WARNING	No files available for deletion after applying retention rules	SICS-BGWSN93
+2025-07-16 10:15:18,346	INFO	Process completed successfully	SICS-BGWSN93
+2025-07-16 10:15:18,347	INFO	Removed PID file	SICS-BGWSN93
+
+2025-07-16 10:16:45,821	INFO	Created PID file with PID 25884	SICS-BGWSN93
+2025-07-16 10:16:45,823	INFO	Starting disk space management	SICS-BGWSN93
+2025-07-16 10:16:45,823	INFO	Loading configuration from .env file	SICS-BGWSN93
+2025-07-16 10:16:45,827	INFO	Configuration loaded successfully: target=20000000MB, delete_amount=500MB, folder=C:/code/disk-space-actor/crap_data_to_delete, retain_min_files=1300, retain_min_hours=24	SICS-BGWSN93
+2025-07-16 10:16:45,827	INFO	Starting disk space management	SICS-BGWSN93
+2025-07-16 10:16:45,827	INFO	Disk space: total=487745MB, used=380463MB, free=107282MB	SICS-BGWSN93
+2025-07-16 10:16:45,827	WARNING	Insufficient free space: 107282MB (target: 20000000MB)	SICS-BGWSN93
+2025-07-16 10:16:45,827	INFO	Scanning for files with extensions: ['jpg', 'png', 'jpeg', 'xml']	SICS-BGWSN93
+2025-07-16 10:16:45,985	INFO	Found 1314 matching files	SICS-BGWSN93
+2025-07-16 10:16:45,987	INFO	Retaining 1300 files (newest 1300 and files modified within last 24 hours)	SICS-BGWSN93
+2025-07-16 10:16:45,987	INFO	14 files available for deletion	SICS-BGWSN93
+2025-07-16 10:16:45,987	WARNING	Required space (19892718MB) exceeds maximum allowed deletion (500MB)	SICS-BGWSN93
+2025-07-16 10:16:45,998	INFO	Deleted file: C:/code/disk-space-actor/crap_data_to_delete\2025_06\04\OK_OLD_Model\OK_00007355T4_20250604T92404_image.png (13MB)	SICS-BGWSN93
+2025-07-16 10:16:45,998	INFO	Disk space: total=487745MB, used=380449MB, free=107295MB	SICS-BGWSN93
+2025-07-16 10:16:45,998	INFO	Deleted file: C:/code/disk-space-actor/crap_data_to_delete\2025_06\04\OK_OLD_Model\OK_overlay_00007355T4_20250604T92404_image.png (0MB)	SICS-BGWSN93
+2025-07-16 10:16:46,000	INFO	Disk space: total=487745MB, used=380449MB, free=107296MB	SICS-BGWSN93
+2025-07-16 10:16:46,000	INFO	Deleted file: C:/code/disk-space-actor/crap_data_to_delete\2025_06\04\OK_OLD_Model\OK_00007356T4_20250604T92917_image.png (13MB)	SICS-BGWSN93
+2025-07-16 10:16:46,000	INFO	Disk space: total=487745MB, used=380435MB, free=107309MB	SICS-BGWSN93
+2025-07-16 10:16:46,000	INFO	Deleted file: C:/code/disk-space-actor/crap_data_to_delete\2025_06\04\OK_OLD_Model\OK_overlay_00007356T4_20250604T92917_image.png (0MB)	SICS-BGWSN93
+2025-07-16 10:16:46,000	INFO	Disk space: total=487745MB, used=380435MB, free=107309MB	SICS-BGWSN93
+2025-07-16 10:16:46,003	INFO	Deleted file: C:/code/disk-space-actor/crap_data_to_delete\2025_06\04\NOK_OLD_Model\NOK_00007360T4_20250604T93129_image.png (13MB)	SICS-BGWSN93
+2025-07-16 10:16:46,003	INFO	Disk space: total=487745MB, used=380421MB, free=107323MB	SICS-BGWSN93
+2025-07-16 10:16:46,003	INFO	Deleted file: C:/code/disk-space-actor/crap_data_to_delete\2025_06\04\NOK_OLD_Model\NOK_overlay_00007360T4_20250604T93129_image.png (0MB)	SICS-BGWSN93
+2025-07-16 10:16:46,003	INFO	Disk space: total=487745MB, used=380421MB, free=107323MB	SICS-BGWSN93
+2025-07-16 10:16:46,003	INFO	Deleted file: C:/code/disk-space-actor/crap_data_to_delete\2025_06\04\OK_OLD_Model\OK_00007362T4_20250604T94019_image.png (13MB)	SICS-BGWSN93
+2025-07-16 10:16:46,003	INFO	Disk space: total=487745MB, used=380408MB, free=107337MB	SICS-BGWSN93
+2025-07-16 10:16:46,003	INFO	Deleted file: C:/code/disk-space-actor/crap_data_to_delete\2025_06\04\OK_OLD_Model\OK_overlay_00007362T4_20250604T94019_image.png (0MB)	SICS-BGWSN93
+2025-07-16 10:16:46,005	INFO	Disk space: total=487745MB, used=380407MB, free=107337MB	SICS-BGWSN93
+2025-07-16 10:16:46,005	INFO	Deleted file: C:/code/disk-space-actor/crap_data_to_delete\2025_06\04\NOK_OLD_Model\NOK__20250604T94803_image.png (16MB)	SICS-BGWSN93
+2025-07-16 10:16:46,005	INFO	Disk space: total=487745MB, used=380391MB, free=107354MB	SICS-BGWSN93
+2025-07-16 10:16:46,007	INFO	Deleted file: C:/code/disk-space-actor/crap_data_to_delete\2025_06\04\NOK_OLD_Model\NOK_overlay__20250604T94803_image.png (22MB)	SICS-BGWSN93
+2025-07-16 10:16:46,007	INFO	Disk space: total=487745MB, used=380369MB, free=107376MB	SICS-BGWSN93
+2025-07-16 10:16:46,009	INFO	Deleted file: C:/code/disk-space-actor/crap_data_to_delete\2025_06\04\NOK_OLD_Model\NOK__20250604T95220_image.png (13MB)	SICS-BGWSN93
+2025-07-16 10:16:46,009	INFO	Disk space: total=487745MB, used=380355MB, free=107389MB	SICS-BGWSN93
+2025-07-16 10:16:46,009	INFO	Deleted file: C:/code/disk-space-actor/crap_data_to_delete\2025_06\04\NOK_OLD_Model\NOK_overlay__20250604T95220_image.png (0MB)	SICS-BGWSN93
+2025-07-16 10:16:46,009	INFO	Disk space: total=487745MB, used=380355MB, free=107389MB	SICS-BGWSN93
+2025-07-16 10:16:46,011	INFO	Deleted file: C:/code/disk-space-actor/crap_data_to_delete\2025_06\04\NOK_OLD_Model\NOK__20250604T95329_image.png (13MB)	SICS-BGWSN93
+2025-07-16 10:16:46,011	INFO	Disk space: total=487745MB, used=380342MB, free=107403MB	SICS-BGWSN93
+2025-07-16 10:16:46,011	INFO	Deleted file: C:/code/disk-space-actor/crap_data_to_delete\2025_06\04\NOK_OLD_Model\NOK_overlay__20250604T95329_image.png (0MB)	SICS-BGWSN93
+2025-07-16 10:16:46,013	INFO	Disk space: total=487745MB, used=380342MB, free=107403MB	SICS-BGWSN93
+2025-07-16 10:16:46,013	CRITICAL	Failed to free up enough space. Current: 107403MB, Target: 20000000MB	SICS-BGWSN93
+2025-07-16 10:16:46,013	INFO	Disk space: total=487745MB, used=380342MB, free=107403MB	SICS-BGWSN93
+2025-07-16 10:16:46,013	CRITICAL	Failed: Free space target not met. Current: 107403MB	SICS-BGWSN93
+2025-07-16 10:16:46,013	INFO	Process completed successfully	SICS-BGWSN93
+2025-07-16 10:16:46,013	INFO	Removed PID file	SICS-BGWSN93
+
+2025-07-16 10:18:11,398	INFO	Created PID file with PID 17848	SICS-BGWSN93
+2025-07-16 10:18:11,399	INFO	Starting disk space management	SICS-BGWSN93
+2025-07-16 10:18:11,399	INFO	Loading configuration from .env file	SICS-BGWSN93
+2025-07-16 10:18:11,401	INFO	Configuration loaded successfully: target=20000000MB, delete_amount=500MB, folder=C:/code/disk-space-actor/crap_data_to_delete, retain_min_files=1300, retain_min_hours=24	SICS-BGWSN93
+2025-07-16 10:18:11,401	INFO	Starting disk space management	SICS-BGWSN93
+2025-07-16 10:18:11,401	INFO	Disk space: total=487745MB, used=380341MB, free=107403MB	SICS-BGWSN93
+2025-07-16 10:18:11,401	WARNING	Insufficient free space: 107403MB (target: 20000000MB)	SICS-BGWSN93
+2025-07-16 10:18:11,401	INFO	Scanning for files with extensions: ['jpg', 'png', 'jpeg', 'xml']	SICS-BGWSN93
+2025-07-16 10:18:11,554	INFO	Found 1300 matching files	SICS-BGWSN93
+2025-07-16 10:18:11,556	INFO	Retaining 1300 files (newest 1300 and files modified within last 24 hours)	SICS-BGWSN93
+2025-07-16 10:18:11,556	INFO	0 files available for deletion	SICS-BGWSN93
+2025-07-16 10:18:11,556	WARNING	No files available for deletion after applying retention rules	SICS-BGWSN93
+2025-07-16 10:18:11,556	INFO	Process completed successfully	SICS-BGWSN93
+2025-07-16 10:18:11,557	INFO	Removed PID file	SICS-BGWSN93
+
+2025-07-16 10:19:32,120	INFO	Created PID file with PID 27884	SICS-BGWSN93
+2025-07-16 10:19:32,121	INFO	Starting disk space management	SICS-BGWSN93
+2025-07-16 10:19:32,121	INFO	Loading configuration from .env file	SICS-BGWSN93
+2025-07-16 10:19:32,123	INFO	Configuration loaded successfully: target=20000000MB, delete_amount=500MB, folder=C:/code/disk-space-actor/crap_data_to_delete, retain_min_files=10, retain_min_hours=240000	SICS-BGWSN93
+2025-07-16 10:19:32,123	INFO	Starting disk space management	SICS-BGWSN93
+2025-07-16 10:19:32,123	INFO	Disk space: total=487745MB, used=380340MB, free=107404MB	SICS-BGWSN93
+2025-07-16 10:19:32,123	WARNING	Insufficient free space: 107404MB (target: 20000000MB)	SICS-BGWSN93
+2025-07-16 10:19:32,123	INFO	Scanning for files with extensions: ['jpg', 'png', 'jpeg', 'xml']	SICS-BGWSN93
+2025-07-16 10:19:32,310	INFO	Found 1300 matching files	SICS-BGWSN93
+2025-07-16 10:19:32,312	INFO	Retaining 1300 files (newest 10 and files modified within last 240000 hours)	SICS-BGWSN93
+2025-07-16 10:19:32,312	INFO	0 files available for deletion	SICS-BGWSN93
+2025-07-16 10:19:32,312	WARNING	No files available for deletion after applying retention rules	SICS-BGWSN93
+2025-07-16 10:19:32,312	INFO	Process completed successfully	SICS-BGWSN93
+2025-07-16 10:19:32,312	INFO	Removed PID file	SICS-BGWSN93

@@ -1,0 +1,45 @@
+
+#################################################################
+#@  
+#@  diskspace_actor.py  - noodling spec..
+#@  
+####################################   2025-03-04[Mar-Tue]12-52PM 
+
+
+
+------------
+
+
+.env
+freespace_target_mb=
+delete_amount_mb=
+delete_folder=
+delete_types=[jpg,png]
+
+------------
+
+purpose: delete files in desig folder if space too low.
+
+
+run once
+
+get disk free space
+
+if folder exists and threshold then find oldest files and remove.
+
+
+------------
+
+Must retain some files. cannot delete newest N files, or M hours which ever is more?
+
+
+
+------------
+
+write logging to local disk in /ap/log/diskpace_actor.log
+format: ts \t info/error/critical/etc \t message \t hostname
+
+write logged info to ripr684 db table diskspace_actor_log
+
+------------
+
