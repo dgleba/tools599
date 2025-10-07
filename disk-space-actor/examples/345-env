@@ -1,0 +1,21 @@
+# Don't delete files from last RETAIN_MIN_HOURS hours, Default 24 in the script if not set in .env
+RETAIN_MIN_HOURS = 24 
+
+# Don't delete files Newest #RETAIN_MIN_FILES files in the folder, Default 5000 in the script if not set in .env
+RETAIN_MIN_FILES = 5010 
+
+FREESPACE_TARGET_MB=400000
+
+DELETE_AMOUNT_MB=10000
+
+DELETE_FOLDER=/home/f344/Desktop/Github_projects/X-V_MARK/save_inf
+
+DELETE_TYPES=["jpg","png","jpeg","xml"]
+
+
+DB_HOST=localhost
+DB_PORT=5432
+DB_USER=user
+DB_PASSWORD=
+DB_NAME=diskactor
+DB_TABLE=diskactorlog

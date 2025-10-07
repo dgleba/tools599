@@ -14,7 +14,7 @@ Run with: python disk_space_actor.py
 setup a cron so it runs every hour. crontab -e to edit cron.
 
 crontab -e
-* * * * * cd /ap/script/diskactor && /usr/bin/python3 /ap/script/diskactor/disk-space-actor.py
+9 * * * * cd /ap/script/diskactor && /usr/bin/python3 /ap/script/diskactor/disk-space-actor.py
 
 
 RETAIN_MIN_HOURS = 240000 # Don't delete files from last RETAIN_MIN_HOURS hours, Default 24 in the script if not set in .env

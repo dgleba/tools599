@@ -18,7 +18,7 @@ delete_types=[jpg,png]
 
 ------------
 
-purpose: delete files in desig folder if space too low.
+purpose: delete files in designated folder if space lower than threshold.
 
 
 run once

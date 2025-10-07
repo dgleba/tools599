@@ -334,7 +334,7 @@ class DiskSpaceManager:
 
 if __name__ == "__main__":
     try:
-        # Check if another instance is already running
+        # Check if another instance is already running. Limit it to only one instance of this script at one time.
         if is_already_running():
             print("Another instance of the script is already running.")
             sys.exit(2)  # Exit code 2 indicates another instance is running
@@ -356,3 +356,4 @@ if __name__ == "__main__":
     finally:
         # Always remove PID file
         remove_pid_file()
+
