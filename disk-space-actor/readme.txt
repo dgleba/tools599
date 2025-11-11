@@ -7,20 +7,40 @@ disk-space-actor-check-cross-platform.py: Checks if another instance is running,
 This also retains the Newest #N files (default to 5000 in script) and retains files from last #M hours (default to 24 hrs in script)
 
 Setup
+
 Install dependencies: pip install python-dotenv psutil
-sudo mkdir -p /ap/script/diskactor; sudo chown -R 1000:1000 /ap;
+
+sudo mkdir -p /ap/script/tools599; sudo chown -R 1000:1000 /ap;
+
 Create a .env file with parameters like: FREESPACE_TARGET_MB, DELETE_AMOUNT_MB, DELETE_FOLDER, and DELETE_TYPES.
+
 Run with: python disk_space_actor.py
+
+Setup with miniconda:
+
+See albe@10.4.64.6 /ap/condadev-det-env/condapipenv-dev/cpenv22util/cpenv22util-makepaste.sh
+
+Make the conda env or copy the conda env over it is already made.
+
+
 setup a cron so it runs every hour. crontab -e to edit cron.
 
 crontab -e
-9 * * * * cd /ap/script/diskactor && /usr/bin/python3 /ap/script/diskactor/disk-space-actor.py
+9 * * * * cd /ap/tools599/script/disk-space-actor && /usr/bin/python3 /ap/script/tools599/disk-space-actor/disk-space-actor.py
+
+or with miniconda..
+
+9 * * * * /home/albe/miniconda3/envs/cpenv22util/bin/python /ap/script/tools599/disk-space-actor/disk-space-actor.py
+
+
+
+
+Notes:
 
 
 RETAIN_MIN_HOURS = 240000 # Don't delete files from last RETAIN_MIN_HOURS hours, Default 24 in the script if not set in .env
 RETAIN_MIN_FILES = 10000 # Don't delete files Newest #RETAIN_MIN_FILES files in the folder, Default 5000 in the script if not set in .env
 
-Run with: python disk_space_actor.py
 
 # Warning Types
 

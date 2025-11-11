@@ -21,13 +21,14 @@ from dotenv import load_dotenv
 from pathlib import Path
 
 # Create log directory if it doesn't exist
-log_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "logs")
+#log_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "log")
+log_dir =  "/ap/log"
 os.makedirs(log_dir, exist_ok=True)
 log_file = os.path.join(log_dir, "diskspace_actor.log")
 
 # Setup logging
 logging.basicConfig(
-    filename='./logs/diskspace_actor.log',
+    filename=log_file,
     level=logging.INFO,
     format='%(asctime)s\t%(levelname)s\t%(message)s\t%(hostname)s',
 )
