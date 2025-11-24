@@ -47,6 +47,8 @@ conda deactivate; conda deactivate; conda deactivate; conda deactivate; deactiva
 
 cd /tmp
 
+conda tos accept
+
 
 #################################################################
 
@@ -62,7 +64,7 @@ conda activate ${memenv}
 
 #################################################################
 
-# install packs necessary..
+# install packs necessary for postgres..
 
 sudo apt -y install python3-venv
 sudo apt -y install libpq-dev
@@ -94,23 +96,13 @@ date
 # install first..
 
 
+pip install psutil  python-dotenv  requests ; date;
 
-pip install psutil  python-dotenv ; date;
-
-
-
-#################################################################
-
-# install some..
-
-pip install pyodbc sqlalchemy  pymssql pymysql  colorama; date;
-
+pip install pyodbc sqlalchemy  pymssql pymysql psycopg2  ; date;
 
 # pip install  backcall bottleneck numexpr  fvcore cloudpickle ; date;
 
-
-#sudo apt install libpq-dev
-pip install psycopg2  wheel; date;
+pip install  numpy pandas openpyxl wheel  colorama   ; date;
 
 # pip install   jupyterlab tensorboard tensorboard-data-server 
 
@@ -123,22 +115,21 @@ pip install psycopg2  wheel; date;
 
 #################################################################
 
-
 # add pip only packs..
 
-pip install pycomm3;
-pip install pymodbus;
-pip install pylogix;
-pip install pyueye;
-pip install aphyt;
-pip install pyserial;
-pip install pyusb;
+pip install pycomm3  ;
+pip install pymodbus  ;
+pip install pylogix  ;
+pip install pyueye   ;
+pip install aphyt    ;
+pip install pyserial ;
+pip install pyusb    ;
+
 date;
 
 pip install pypylon;
 
 date;
-
 
 
 
@@ -150,6 +141,8 @@ date;
 example_packit_function () {
 
 #memenv=det16env
+
+# conda activate base; conda install conda-pack;
 
 echo ${memenv};
 
@@ -211,77 +204,36 @@ example_unpacking_function () {
 # just paste the following code that is inside this function.
 
 
-  memenv=cpenv22util;
-  #memenv=det16env
+memenv=cpenv22util;
+#memenv=det16env
 
-  echo ${memenv};
+echo ${memenv};
 
 
-  cd ~/miniconda3/envs;
-  ls -l;
-  mkdir -p ${memenv};
+cd ~/miniconda3/envs;
+ls -l;
+mkdir -p ${memenv};
 
-  echo 'unpacking with tar... please wait...'
+echo 'unpacking with tar... please wait...'
 
-  tar -xzf /ap/conda-pack.ed/${memenv}.tar.gz  -C ${memenv};
-  #    or
-  # tar -xzf /mnt/data/conda-pack.ed/${memenv}.tar.gz  -C ${memenv};
+tar -xzf /ap/conda-pack.ed/${memenv}.tar.gz  -C ${memenv};
+#    or
+# tar -xzf /mnt/data/conda-pack.ed/${memenv}.tar.gz  -C ${memenv};
 
-  conda deactivate;
-  source ~/miniconda3/envs/${memenv}/bin/activate;
-  # fix prefixes so it will be all good to go..;
-  conda-unpack;
-  source ~/miniconda3/envs/${memenv}/bin/deactivate;
-  conda env list;
+conda deactivate;
+source ~/miniconda3/envs/${memenv}/bin/activate;
+# fix prefixes so it will be all good to go..;
+conda-unpack;
+source ~/miniconda3/envs/${memenv}/bin/deactivate;
+conda env list;
 
-  conda activate ${memenv};
-  conda env export;
+conda activate ${memenv};
+conda env export;
 
-  conda deactivate;
+conda deactivate;
 
 
 }
-
-
-
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-
-
-
-
-
-
-
-
-
-
-# S P A C E R  
-
-
-
-
-
-
-
-
-
-
-# S P A C E R  
-
-
-
-
-
-
-
-
-
-
-
-
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 
@@ -301,6 +253,20 @@ conda create --clone det16env --name det16e59a
 
 #@  cd /ap/condadev-det-env/ipt-dev-51b/det22env; bash ./ipt58.sh 2>&1 | tee -a log-ipt58-sh$(date +"__%Y.%m.%d_%b-%a_%H.%M.%S").log
 
+
+Windows:
+
+use anaconda prompt..
+
+set memenv=cpenv22util
+echo %memenv%
+# conda create --name %memenv% python=3.12 --yes
+conda activate %memenv%
+
+pip install psutil  python-dotenv 
+pip install pyodbc sqlalchemy  pymssql pymysql psycopg2  requests 
+pip install numpy pandas openpyxl wheel  colorama
+# pip install  backcall bottleneck numexpr  fvcore cloudpickle ; date;
 
 }
 
