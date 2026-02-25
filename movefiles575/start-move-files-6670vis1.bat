@@ -6,6 +6,13 @@
 ::# usage:   in task scheduler:  command:  %SystemRoot%\system32\wscript.exe  
 ::            parameters: "C:\data\script\movefiles575\invisible.vbs"  "C:\data\script\movefiles575\start-move-files-575.bat" //nologo
 
+REM 2026-02-25:
+REM Task scheduler settings:
+REM cmd.exe  
+REM params:  /c start /min "images2dock-DONOTCLOSE" cmd.exe /c "C:\data\script\tools599\movefiles575\start-move-files-6670vis1.bat & exit"
+REM start in:  c:\temp
+
+
 
 :Prepare date and temp folders
 set timea=%TIME: =0%
