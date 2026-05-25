@@ -49,7 +49,7 @@ setup a cron so it runs every hour. crontab -e to edit cron.
 `crontab -e`
 
 
-	9 * * * * cd /ap/tools599/script/disk-space-actor && /usr/bin/python3 /ap/script/tools599/disk-space-actor/disk-space-actor.py
+	9 * * * * cd /ap/script/tools599/disk-space-actor && /usr/bin/python3 /ap/script/tools599/disk-space-actor/disk-space-actor.py
 
 or with miniconda..
 
