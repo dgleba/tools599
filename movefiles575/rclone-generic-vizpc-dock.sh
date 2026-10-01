@@ -92,8 +92,16 @@ pwd; ls -la;
 # remove log file so it doesn't take up too much disk space.
 rm $logf
 
-minage=4
-srcdir=/mnt/data
+
+minage=14
+if [ -d "/data/img" ]; then
+    srcdir="/data/img"
+elif [ -d "/mnt/data/img" ]; then
+    srcdir="/mnt/data/img"
+else
+    echo "Error: Neither /data/img nor /mnt/data/img exists." >&2
+    exit 1
+fi
 
 rclone move --min-age=${minage}d  --max-age=999d  --order-by modtime,ascending  -v ${srcdir} \
 dock-vi641-ssh:/media/albe/vi641-9641/mcdata/${HOSTNAME}  --log-file=$logf 
